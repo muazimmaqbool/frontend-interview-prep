@@ -30,9 +30,9 @@ Example Inputs & Outputs:
 */
 function isValidPalindrome(str){
     const clean=str.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
-    console.log("clean:",clean)
+    // console.log("clean:",clean)
     const reverse=clean.split("").reverse().join('')
-    console.log("reverse:",reverse)
+    // console.log("reverse:",reverse)
     return clean===reverse
 }
 console.log(isValidPalindrome("A man, a plan, a canal: Panama")) // true

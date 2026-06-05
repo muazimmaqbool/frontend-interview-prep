@@ -28,13 +28,13 @@ Q: You are given an array containing n distinct numbers taken from the range 0 t
 function findMissingNum(nums){
     //calculate the sum of number form 0 to n, by using the formulla sum =  (n*(n+1))/2
     const n=nums.length;
-    console.log("n=",n)
+    // console.log("n=",n)
     const expectedSum=(n * (n+1))/2;
-    console.log("expectedSum=",expectedSum)
+    // console.log("expectedSum=",expectedSum)
 
     //calculating the actual sum of the nums array
     const actualSum=nums.reduce((acc,num)=>acc+num,0)
-    console.log("actualSum=",actualSum)
+    // console.log("actualSum=",actualSum)
 
     //missing number wil be the difference between expectedsum and actual sum
     return expectedSum-actualSum
