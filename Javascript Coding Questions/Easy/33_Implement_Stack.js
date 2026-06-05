@@ -1,6 +1,4 @@
 /*
-Note: Also checkout DSA folder > 5_Stack then -> 1_Intro.js file
-
 Implement a Stack data structure in JavaScript. A stack follows the Last-In-First-Out (LIFO) principle. 
 
 Your implementation should include the following operations:
