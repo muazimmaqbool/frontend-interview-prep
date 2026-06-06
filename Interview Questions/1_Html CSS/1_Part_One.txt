@@ -1,0 +1,78 @@
+1: Difference between display: none and visibility: hidden?
+   ANS: 
+    display: none: This completely removes the element from the document flow. 
+                    It is as if the element does not exist on the page; other elements will move to fill the empty space.
+
+    visibility: hidden: This hides the element visually, but it still occupies its original space in the layout. 
+                        The element remains in the document flow, resulting in an empty or "blank" gap where the element would normally be
+
+    display: none → removes from layout
+    visibility: hidden → keeps space
+
+----------------------------------------------------------------------
+2: What is Flexbox vs Grid? When would you use each?
+   ANS:
+    Flexbox → 1D layout
+    Grid → 2D layout
+    Your Example: “I use Flexbox for components and Grid for full dashboard layouts.”
+
+    ->Flexbox (Flexible Box Layout) is for one-dimensional layouts (a single row or column), 
+      while CSS Grid is for two-dimensional layouts (both rows and columns simultaneously).
+      Think of Flexbox as content-driven (expanding to fit text/items) and Grid as layout-driven (defining the rigid structure first).
+
+-----------------------------------------------------------------------
+3. What is responsive design? How do you implement it?
+   ANS:
+    Responsive design is a web design approach where a website automatically scales, shrinks, or reorganizes its layout to fit perfectly 
+    on any device—whether it's a mobile phone, tablet, or desktop
+    We can implement it using:
+        Media queries
+        Flexible layouts
+        Mobile-first
+
+--------------------------------------------------------------------------
+4. Difference Between Relative, Absolute, Fixed, and Sticky Positioning?
+   ANS:
+      ->Relative: Position relative to itself.
+                  Eg: 
+                     .box {
+                           position: relative;
+                           top: 10px;
+                        }
+                  
+      ->Absolute: Position relative to nearest positioned parent.
+                  Eg:
+                     .box {
+                           position: absolute;
+                           top: 0;
+                        }
+
+      ->Fixed: Position relative to viewport.
+               Eg:
+                  .navbar {
+                           position: fixed;
+                           top: 0;
+                        }
+
+      ->Sticky: Acts relative until scroll threshold.
+                Eg:
+                  .header {
+                           position: sticky;
+                           top: 0;
+                        }
+
+---------------------------------------------------------------------------
+5. Explain CSS Specificity?
+   ANS:
+      CSS Specificity is a set of rules browsers use to determine which style rule "wins" when multiple rules target the same HTML element. 
+      It is essentially a ranking system where more specific selectors carry more "weight" than general ones
+
+      ->Priority: Inline Styles, ID, Class / Attribute / Pseudo-class, Element
+
+      ->Eg: #title {
+               color: red;
+            }
+            .title {
+               color: blue;
+            }
+         Result: red (because ID has higher specificity then class)
