@@ -34,7 +34,8 @@ function largestNumFormed(arr){
     numsStr.sort((a,b)=>(b+a).localeCompare(a+b))
     // console.log("numstr sored:",numsStr)
 
-    //edge case, if all numbers are 0 i.e [0,0,0] then result should be 0 not 000, so if first element after sorting is 0 then we return 0 because first element is largest
+    //edge case, if all numbers are 0 i.e [0,0,0] then result should be 0 not 000, 
+    // so if first element after sorting is 0 then we return 0 because first element is largest
     if(numsStr[0]==="0") return "0"
 
     //joining the sorted array back to form largest number
