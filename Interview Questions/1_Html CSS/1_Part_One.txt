@@ -76,3 +76,44 @@
                color: blue;
             }
          Result: red (because ID has higher specificity then class)
+
+-------------------------------------------------------------------------------
+6. What is Box Model?
+   ANS:
+      The CSS box model is a fundamental concept where every HTML element is treated as a rectangular box. It determines how an element's total size 
+      and its spacing relative to other elements are calculated.
+      Every element consists of:
+                     Content
+                     Padding
+                     Border
+                     Margin
+      Visual:
+         Margin
+            └ Border
+               └ Padding
+                  └ Content
+
+---------------------------------------------------------------------------------
+7. Difference Between content-box and border-box?
+   ANS:
+      The main difference between content-box and border-box is how the width and height of an element are calculated in relation to its padding and border.
+
+      -> Default: box-sizing: content-box;
+         Width excludes padding and border.
+      
+      ->Preferred:
+         box-sizing: border-box;
+          Width includes padding and border.
+         Most projects use:
+         * {
+             box-sizing: border-box;
+            }
+
+-----------------------------------------------------------------------------------
+8. What Causes Layout Shift?
+   ANS:
+      Common reasons:
+         Images without width/height
+         Dynamic content insertion
+         Font loading
+         Ads
