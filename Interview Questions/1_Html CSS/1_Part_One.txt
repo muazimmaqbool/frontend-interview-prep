@@ -117,3 +117,11 @@
          Dynamic content insertion
          Font loading
          Ads
+
+---------------------------------------------------------------------------------------
+9. Difference Between Inline, Inline-Block, and Block?
+   ANS:
+      In CSS, block, inline, and inline-block control how elements flow and stack on a webpage.
+      ->Block: Takes up the full width available and always starts on a new line (e.g., <div>, <p>).
+      ->Inline: Takes up only the space it needs and sits side-by-side with other elements (no width/height support) (e.g., <span>, <a>).
+      ->Inline-block: Sits side-by-side like an inline element, but allows you to set custom widths and heights
