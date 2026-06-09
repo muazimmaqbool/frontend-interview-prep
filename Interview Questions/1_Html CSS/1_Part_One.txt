@@ -162,3 +162,45 @@ Interview Summary:
    rem → root-based
    % → parent-based sizing
    vw/vh → viewport-based sizing
+
+
+10. Difference Between inline, block, and inline-block?
+
+ANS:
+   These determine how elements behave in the document layout.
+
+Block:
+   Takes full available width.
+   Starts on a new line.
+   Width and height can be set.
+
+Examples: div, p, section
+
+div {
+  display: block;
+}
+
+Inline:
+   Takes only required width.
+   Does not start on a new line.
+   Width and height cannot be applied properly.
+
+Examples: span, a, strong
+
+span {
+  display: inline;
+}
+
+Inline-Block:
+   Stays inline like text.
+   Width and height can be set.
+   button {
+   display: inline-block;
+   width: 150px;
+   }
+
+Interview Summary:
+
+   block → New line + full width
+   inline → Same line + content width
+   inline-block → Same line + custom width/height
