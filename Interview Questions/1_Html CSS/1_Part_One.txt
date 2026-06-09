@@ -125,3 +125,22 @@
       ->Block: Takes up the full width available and always starts on a new line (e.g., <div>, <p>).
       ->Inline: Takes up only the space it needs and sits side-by-side with other elements (no width/height support) (e.g., <span>, <a>).
       ->Inline-block: Sits side-by-side like an inline element, but allows you to set custom widths and heights
+
+----------------------------------------------------------------------------------------
+10. What are Semantic amd non-Semantic tags/elements HTML?
+    ANS:
+      The core difference between them is that semantic tags tell the browser and developer exactly what kind of content they contain, 
+      while non-semantic tags act as generic containers with no inherent meaning.
+
+      ->Semantic tags describe meaning. Eg: <header>
+                                             <nav>
+                                             <main>
+                                             <section>
+                                             <article>
+                                             <footer>
+
+         Benefits: SEO, Accessibility, Readability
+
+      ->non-semantic tags. Eg: <div>
+                               <span>
+         benefits are versatility, flexibility, and structural neutrality
