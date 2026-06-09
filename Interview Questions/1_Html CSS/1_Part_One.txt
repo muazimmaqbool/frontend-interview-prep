@@ -117,3 +117,48 @@
          Dynamic content insertion
          Font loading
          Ads
+
+-----------------------------------------------------------------------------------
+
+9. Difference Between em, rem, %, vw, and vh?
+
+ANS:
+These are CSS units used for sizing elements, fonts, spacing, etc.
+
+   em → Relative to the parent element's font size.
+   rem → Relative to the root (html) font size.
+   % → Relative to the parent element.
+   vw → Relative to the viewport width (1vw = 1% of viewport width).
+   vh → Relative to the viewport height (1vh = 1% of viewport height).
+
+# Example
+   html {
+   font-size: 16px;
+   }
+
+   .parent {
+   font-size: 20px;
+   }
+
+   .child {
+   font-size: 2em;   /* 40px */
+   }
+
+   .title {
+   font-size: 2rem;  /* 32px */
+   }
+
+   .box {
+   width: 50%;
+   }
+
+   .hero {
+   height: 100vh;
+   }
+
+Interview Summary:
+
+   em → parent-based
+   rem → root-based
+   % → parent-based sizing
+   vw/vh → viewport-based sizing
