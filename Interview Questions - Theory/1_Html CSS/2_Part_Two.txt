@@ -1,0 +1,57 @@
+11. Difference Between id and class?
+    ANS:
+        In HTML, id and class are global attributes used to target elements for CSS styling and JavaScript manipulation, with the primary difference being that
+        an id must be completely unique to a single element on a page, while a class can be reused across multiple elements
+        
+        ID : <div id="hero"></div>
+        Unique.
+
+        Class : <div class="card"></div>
+        Reusable.
+
+-------------------------------------------------------------
+12. What is Accessibility (a11y)?
+    ANS:
+        Accessibility in HTML (often abbreviated as "a11y") is the practice of structuring web pages so that everyone, including people with physical, 
+        visual, auditory, or cognitive disabilities, can fully navigate, understand, and interact with the content. 
+        The term "a11y" is a numeronym where "11" represents the eleven letters between the starting "a" and the ending "y" in the word "accessibility."
+        In short: Building websites usable by everyone.
+
+    Examples:
+        <button aria-label="Close">
+            Close
+        </button>
+
+        Use:
+            Semantic HTML
+            Keyboard navigation
+            ARIA attributes
+            Proper contrast
+
+---------------------------------------------------------------------
+13. Difference Between em, rem, %, px?
+    ANS:
+        'px' is an absolute unit that remains fixed, while 'rem' and 'em' are relative units that scale dynamically based on font sizes and % is relative to parent dimension.
+
+        Here's a simple interview-friendly explanation:
+            | Unit    | Relative To                                             | Use Case                             | Example              |
+            | ------- | ------------------------------------------------------- | ------------------------------------ | -------------------- |
+            |   px    | Fixed pixels                                            | Exact sizes                          | `font-size: 16px;`   |
+            |   %     | Parent element's size                                   | Responsive widths/heights            | `width: 50%;`        |
+            |   em    | Font size of the parent (or itself for some properties) | Scalable spacing and typography      | `padding: 2em;`      |
+            |   rem   | Root (`html`) font size                                 | Consistent typography across the app | `font-size: 1.5rem;` |
+
+---------------------------------------------------------------------------
+14. How Do Browsers Render a Web Page?
+    ANS: (Check system design notes for deep understanding)
+
+    Browsers render a web page through a sequence of steps known as the Critical Rendering Path (CRP). 
+    This process transforms raw code files (HTML, CSS, and JavaScript) into an interactive, visual interface:
+        1. Parse HTML → DOM
+        1. Parse CSS → CSSOM
+        3. Create Render Tree (DOM + CSSOM)
+        4. Layout
+        5. Paint
+        6. Composite
+        
+
