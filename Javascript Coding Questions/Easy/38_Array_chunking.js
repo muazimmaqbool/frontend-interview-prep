@@ -9,7 +9,7 @@ Input:
 Output:
     . An array of subarrays, each with a length of n (except possibly the last one)
 
-Example Inputs & Outputs:
+Example:
     Example 1:
         Input: ([1, 2, 3, 4], 2)
         Output: [[1, 2], [3, 4]]
@@ -33,7 +33,8 @@ Constraints & Edge Cases:
     . If n is 1, return an array of single-element arrays.
 */
 function arrayChunking(arr,n){
-    if(arr.length===0) return []
+    if(arr.length===0) return [];
+    if(n<=0) return false;
     let result=[];
     for(let i=0;i<arr.length;i+=n){
         // console.log("i=",i,)
