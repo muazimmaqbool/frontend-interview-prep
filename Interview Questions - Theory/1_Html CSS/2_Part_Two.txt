@@ -53,5 +53,88 @@
         4. Layout
         5. Paint
         6. Composite
-        
 
+--------------------------------------------------------------------------------
+15. Difference Between Reflow and Repaint?
+    ANS:
+        Reflow:  Layout recalculation.
+                 Expensive.
+                 Eg. element.style.width = "200px";
+
+        Repaint: Visual change only.
+                 Less expensive. 
+                 Eg. element.style.color = "red";
+
+-----------------------------------------------------------------------------------
+16. How Would You Center a Div?
+    ANS:
+        ->Flexbox:
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        
+        ->Gird:
+            .container {
+                display: grid;
+                place-items: center;
+            }
+
+--------------------------------------------------------------------------------------
+17. What is the Difference Between srcset and Media Queries?
+    ANS:
+        The primary difference is that media queries apply layout and styling rules (such as CSS styling or background-images) depending on device characteristics, 
+        whereas srcset is an HTML attribute that tells the browser to choose the most optimal source file for a primary <img> element based on device width and pixel density.
+
+        ->srcset: responsive images
+                    <img
+                        srcset="
+                            small.jpg 400w,
+                            large.jpg 800w
+                        "
+                    >
+
+        ->Media Query: Responsive layouts.
+                        @media (max-width: 768px) {
+                                .container {
+                                    flex-direction: column;
+                                }
+                            }
+
+------------------------------------------------------------------------------------------
+18. Difference Between overflow: hidden, scroll, and auto?
+    ANS:
+        The main difference between overflow: hidden, scroll, and auto is how they handle content that is too large for its container box and whether they display scrollbar  .
+        -> overflow: hidden; Clips content.
+        -> overflow: scroll; always shows srcollbar.
+        -> overflow: auto; Scrollbar only when needed.
+                
+------------------------------------------------------------------------------------------
+19. What is Lazy Loading?
+    ANS: Load recourses only when needed.
+        <img
+            src="image.jpg"
+            loading="lazy"
+        />
+        Benefits:
+            Faster page load
+            Better performance
+
+---------------------------------------------------------------------------------------------
+20. How Do You Make a Website Responsive?
+    ANS:
+        Answer
+            I use:
+            Mobile-first approach
+            Flexbox/Grid
+            Media queries
+            Relative units (rem, %)
+            Responsive images
+
+            Example:
+                @media (max-width: 768px) {
+                    .sidebar {
+                        display: none;
+                    }
+                }
