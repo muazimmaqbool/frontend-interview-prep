@@ -3,11 +3,9 @@ Q: Remove duplicates from an array:
     Given an array, your task is to return a new array with all duplicate elements removed.
     You should preserve the order of the first occurrence of each element.
 
-    Input:
-    . An array of any primitive values: number, string, boolean, null, or undefined.
+    Input: An array of any primitive values: number, string, boolean, null, or undefined.
 
-    Output:
-    . A new array containing only unique elements, in the order they first appear.
+    Output: A new array containing only unique elements, in the order they first appear.
 
     ->Edge Cases:
         . Empty array should return an empty array.
@@ -48,4 +46,4 @@ console.log(removeDuplicates(["a", "b", "a", "c"])) // ["a", "b", "c"]
 console.log(removeDuplicates([1, "1", 1])) // [1, "1"]
 console.log(removeDuplicates([])) // []
 console.log(removeDuplicates([true,false,false,true])) // [true,false]
-console.log(removeDuplicates("hello")) // false
+console.log(removeDuplicates("hello")) // false (because "hello" is string not array)
