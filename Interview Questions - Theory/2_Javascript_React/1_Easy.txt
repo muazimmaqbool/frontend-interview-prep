@@ -1,0 +1,55 @@
+1. What is the difference between == and === in JavaScript?
+    ANS:
+        == performs type coercion before comparison, while === compares both value and type without conversion.
+            Examples:
+                5 == "5"   // true
+                5 === "5"  // false
+        It is recommended to use === to avoid unexpected results.
+
+-------------------------------------------------------------
+2. What are let, const, and var?
+    ANS:
+        var is function-scoped and can be redeclared.
+        let is block-scoped and can be reassigned.
+        const is block-scoped and cannot be reassigned.
+            Example:
+                let age = 20;
+                    age = 25;
+
+                const PI = 3.14;
+                    // PI = 4; // Error
+
+-------------------------------------------------------------
+3. What is the difference between null and undefined?
+    ANS:
+        undefined means a variable has been declared but not assigned a value.
+            Example:
+                let a;
+                console.log(a); // undefined
+
+        null represents an intentional absence of value.
+            Example:
+                let user = null;
+
+-------------------------------------------------------------
+4. What is the DOM?
+    ANS:
+        DOM stands for Document Object Model. It represents the HTML page as a tree structure, allowing JavaScript to access and modify elements dynamically.
+
+-------------------------------------------------------------
+5. What are JavaScript data types?
+    ANS:
+        Primitive data types: Primitive values are immutable (cannot be changed after creation) and are stored and passed by value directly in the stack memory
+            String
+            Number
+            Boolean
+            Undefined
+            Null
+            Symbol
+            BigInt
+
+        Non-primitive: Non-primitive data types (also known as Reference Types) can store collections of data, are mutable, and store a reference (memory address) 
+                       to the actual data location in the heap memory.
+            Object
+            Array
+            Function
