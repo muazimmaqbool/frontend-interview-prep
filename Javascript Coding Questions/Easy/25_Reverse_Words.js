@@ -20,9 +20,9 @@ function reverseWords(str){
     // or const reverse=seperate.map((word)=>word.split('').reverse().join(''))
     // console.log(reverse)
     
-    // return reverse.join(' ')
+    return reverse.join(' ')
     //or
-    return str.split(" ").map((word)=>word.trim()?word.split('').reverse().join(''):word).join(" ")
+    //return str.split(" ").map((word)=>word.trim()?word.split('').reverse().join(''):word).join(" ")
 }
 //Note: word.trim() is used to check if the item is an actual word or just spaces before reversing it
 
