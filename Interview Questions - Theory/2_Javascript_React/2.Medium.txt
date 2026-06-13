@@ -1,0 +1,60 @@
+1. What are closures?
+    Answer:
+        A closure allows a function to access variables from its outer/parent scope even after the outer function has finished execution.
+
+        function outer(){
+        let count=0;
+
+        return function(){
+                count++;
+                return count;
+            };
+        }
+        let counter=outer();
+        counter()
+        counter()
+
+        Closures are used for data privacy and maintaining state.
+
+-------------------------------------------------------------
+2. What is event delegation?
+    Answer:
+        Event delegation attaches a single event listener to a parent element instead of multiple child elements.
+        It improves performance and works well with dynamically created elements.
+
+-------------------------------------------------------------
+3. Explain promises?
+    Answer:
+        Promises represent the result of asynchronous operations.
+                                or
+        Promise is an object representing the eventual completion or failure of an asynchronous operation. 
+        It serves as a temporary placeholder for a value that is not yet known when the promise is created but will be delivered in the future
+
+        States:
+            Pending
+            Fulfilled
+            Rejected
+            fetch(url)
+            .then(res=>res.json())
+            .catch(err=>console.log(err));
+
+-------------------------------------------------------------
+4. Difference between synchronous and asynchronous code?
+    Answer:
+        Synchronous code executes one line after another.
+
+        Asynchronous code allows tasks to run without blocking the main thread.
+        Examples include:
+            setTimeout
+            API calls
+            Promises
+
+-------------------------------------------------------------
+5. What is the Event Loop?
+    Answer:
+        The event loop continuously checks the call stack and callback queue. When the stack becomes empty, it moves queued tasks for execution.
+        It enables JavaScript to perform asynchronous operations.
+                        or
+        Event Loop is a core mechanism within the runtime environment that enables asynchronous, 
+        non-blocking programming while running on a single thread. It continuously monitors the execution state and coordinates the processing of code
+        between the call stack, background APIs, and task queues.
