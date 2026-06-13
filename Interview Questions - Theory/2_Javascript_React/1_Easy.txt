@@ -53,3 +53,44 @@
             Object
             Array
             Function
+
+--------------------------------------------------------------
+6. What is an array?
+    ANS:
+        An array is a collection of ordered values stored in a single variable.
+        const fruits = ["Apple", "Banana", "Mango"];
+        Arrays provide methods like map(), filter(), and reduce().
+
+---------------------------------------------------------------
+7. What is an object in JavaScript?
+    ANS: Objects store data in key-value pairs.
+
+        const user = {
+            name: "John",
+            age: 25
+        };
+
+        Objects help organize related information.
+
+-----------------------------------------------------------------
+8. What is event bubbling?
+    ANS:
+        Event bubbling means an event starts from the target element and propagates upward through its parent elements.
+        button → div → body
+        In other words:
+            Event bubbling is a JavaScript mechanism where an event triggered on a nested child element automatically propagates upward through its parent 
+            and ancestor elements in the DOM tree until it reaches the root. 
+            This allows you to handle events at a higher level without needing to attach listeners to every single child
+
+-----------------------------------------------------------------
+9. What is the difference between map() and forEach()?
+    ANS:
+        map() returns a new array, whereas forEach() only iterates and returns undefined.
+        arr.map(x => x * 2);
+        arr.forEach(x => console.log(x));
+
+-----------------------------------------------------------------
+10. What is hoisting?
+    ANS:
+        Hoisting is JavaScript's behavior of moving declarations to the top of their scope before execution.
+        Variables declared with var are initialized with undefined, whereas let and const remain in the temporal dead zone.
