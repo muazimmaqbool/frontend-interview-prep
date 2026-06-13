@@ -94,3 +94,86 @@
     ANS:
         Hoisting is JavaScript's behavior of moving declarations to the top of their scope before execution.
         Variables declared with var are initialized with undefined, whereas let and const remain in the temporal dead zone.
+
+-----------------------------------------------------------------
+11. What is a callback function?
+    ANS:
+        A callback is a function passed as an argument to another function and executed later.
+        function greet(name, callback){
+            callback();
+        }
+    Callbacks are commonly used in asynchronous programming.
+
+-----------------------------------------------------------------
+12. What is the spread operator?
+    ANS:
+        The spread operator (...) expands arrays or objects.
+        const arr1 = [1,2];
+        const arr2 = [...arr1,3];
+
+        It is useful for copying and merging data.
+
+-----------------------------------------------------------------
+13. What is destructuring?
+    ANS:
+        Destructuring extracts values from arrays or objects.
+        const user = {name:"Ali"};
+        const {name} = user;
+
+        It improves readability and reduces repetitive code.
+
+-----------------------------------------------------------------
+14. What is the purpose of useState in React?
+    ANS:
+        useState is used to manage state/data inside functional components.
+        const [count,setCount]=useState(0);
+
+        Whenever state changes, React re-renders the component.
+
+-----------------------------------------------------------------
+15. What is JSX?
+        ANS:
+        JSX stands for JavaScript XML. It allows writing HTML-like syntax inside JavaScript.
+        <h1>Hello</h1>
+
+        React converts JSX into JavaScript objects.
+
+-----------------------------------------------------------------
+16. What is the Virtual DOM?
+    ANS:
+        Virtual DOM is a lightweight copy of the real DOM. React compares changes and updates only necessary elements, improving performance.
+
+-----------------------------------------------------------------
+17. What is conditional rendering?
+    ANS:
+        Conditional rendering displays UI based on conditions.
+
+        {isLoggedIn ? <Home/> : <Login/>}
+
+-----------------------------------------------------------------
+18. What is CSS Flexbox?
+    ANS:
+        Flexbox is a one-dimensional layout system used for aligning and distributing elements efficiently.
+        
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+-----------------------------------------------------------------
+19. What is localStorage?
+    ANS:
+        localStorage stores data in the browser permanently until manually removed.
+        localStorage.setItem("name","John");
+
+        Data persists even after page refresh.
+
+-----------------------------------------------------------------
+20. What is semantic HTML?
+    ANS:
+        Semantic HTML uses meaningful tags like:
+        <header>
+        <nav>
+        <article>
+        <footer>
+
+        These improve accessibility and SEO.
