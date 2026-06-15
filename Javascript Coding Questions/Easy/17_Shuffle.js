@@ -13,7 +13,7 @@ function shuffle(array){
     for (let i=result.length - 1; i > 0;i--){
         //j is random between 0 and i (inclusive)
         const j = Math.floor(Math.random() * (i + 1));
-        console.log("i=",i," : j=",j);
+        // console.log("i=",i," : j=",j);
         /*
         current element at i
         random element at j
