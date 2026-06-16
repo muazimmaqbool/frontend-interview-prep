@@ -58,3 +58,66 @@
         Event Loop is a core mechanism within the runtime environment that enables asynchronous, 
         non-blocking programming while running on a single thread. It continuously monitors the execution state and coordinates the processing of code
         between the call stack, background APIs, and task queues.
+
+----------------------------------------------------------------
+6. Difference between call(), apply(), and bind()?
+    Answer:
+        All three control the value of 'this'
+            call() accepts arguments individually.
+            apply() accepts an array.
+            bind() returns a new function.
+
+        The core difference is that call() and apply() invoke a function immediately, whereas bind() returns a brand new function with a pre-set context to be executed later.
+
+----------------------------------------------------------------
+7. What are higher-order functions?
+    Answer:
+        Functions that accept another function as an argument or return a function(modified version of function which it aceepts via arguments).    
+        Example of some prebuild HOF: map()
+                                      filter()
+                                      reduce()
+
+----------------------------------------------------------------
+8. Difference between slice() and splice()?
+    Answer:
+        slice() creates a copy without modifying the original array.
+        splice() changes the original array.
+        
+        ->slice() method is a built-in function used to extract a portion of an array or a string and return it as a new entity without modifying 
+          the original data. Because it keeps the source data intact, it is considered a non-destructive or immutable operation
+        Syntax: sequence.slice(start, end)
+
+        ->splice() method in JavaScript is a built-in function used to modify an array by removing, replacing, or adding elements in place
+
+        ->Checkout code and example of slice and splice in js repo
+
+----------------------------------------------------------------
+9. What is debounce?
+    Answer:
+        Debouncing delays execution until a certain amount of time has passed.
+
+        Common use cases:
+            Search bars
+            API calls
+            Input validation
+
+        It prevents unnecessary function executions.
+
+        ->Note: debounce implementation is in js repo and in coding question of js in medium section
+
+
+----------------------------------------------------------------
+10. What is throttling?
+     Answer:
+        Throttling limits how often a function executes.
+
+        Used for:
+            Scroll events
+            Resize events
+            Mouse movement
+
+        ->Throttling is a performance optimization technique that limits how often a function can execute over a specific period. 
+         It ensures that a function runs at most once within a designated time window, ignoring any additional triggers until that interval ends
+
+----------------------------------------------------------------
+11. 
