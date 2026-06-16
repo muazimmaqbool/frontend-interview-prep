@@ -16,7 +16,7 @@ Means: "To decide the order of a and b, compare which is bigger: b followed by a
 //3. Why concatenate?
 /*
 Because we are solving: "Which order makes the bigger combined number?"
-Not: "Which individual number is bigger?"
+Note: "Which individual number is bigger?"
 */
 
 //4. Concrete example:
@@ -67,7 +67,7 @@ const largestNumberFormed=(arr)=>{
      // Sort numbers using custom logic:
     // Compare which combination forms a bigger number:
     // (b + a) vs (a + b)
-    // If (b + a) is bigger → b should come before a
+    // If (b + a) is bigger → b should come before a, and if a+b is bigger then a comes before b,
     nums.sort((a,b)=>(b+a).localeCompare(a+b))
 
     // Edge case:
