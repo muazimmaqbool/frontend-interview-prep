@@ -2,10 +2,10 @@
 //Example:
 /*
 input-[1,2,3,4,5]
-output=[4,2,5,1,3], etc
+output=[4,2,5,1,3]
 */
 function shuffle(array){
-    //slice() creates a shallow copy,We don’t want to modify the original array
+    //slice() creates a shallow copy, as we don’t want to modify the original array
     const result = array.slice() // or const result = [...array] but slice is bit faster and makes it O(n)
     // console.log(result)
 
