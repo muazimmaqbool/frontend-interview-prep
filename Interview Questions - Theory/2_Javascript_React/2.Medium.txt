@@ -120,4 +120,41 @@
          It ensures that a function runs at most once within a designated time window, ignoring any additional triggers until that interval ends
 
 ----------------------------------------------------------------
-11. 
+11. What is useEffect?
+    Answer:
+        useEffect performs side effects such as:
+
+        API calls
+        Timers
+        Event listeners
+
+        Syntax:
+            useEffect(()=>{
+                fetchData();
+            },[]);
+
+----------------------------------------------------------------
+12. What are controlled components?
+    Answer:
+        Controlled components are form elements whose values are managed by React state.
+        They provide better control over user input.
+
+----------------------------------------------------------------
+13. What is React reconciliation?
+    Answer:
+        Reconciliation is React's process of comparing the Virtual DOM with the previous version and updating only changed elements.
+
+----------------------------------------------------------------
+14. What is prop drilling?
+    Answer:
+        Prop drilling occurs when data is passed through multiple components unnecessarily.
+        It can be avoided using:
+            Context API
+            Redux
+            Zustand
+
+----------------------------------------------------------------
+15. Difference between Context API and Redux?
+    Answer:
+        Context API is suitable for small global states.
+        Redux is preferred for large applications requiring predictable and centralized state management.
