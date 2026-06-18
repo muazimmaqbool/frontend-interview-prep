@@ -54,7 +54,7 @@ Why does this work?
 | `call/apply/bind` | ❌ Ignored      | ✅ Works          |
 */
 
-//2. Arrow Function this
+//2. Arrow Function this:
 const arrow=()=>console.log("this inside arrow function():",this);
 arrow() // o/p: window (or {} in Node)
 /*
@@ -62,9 +62,9 @@ Why?
 Arrow functions do not have their own this.
 They take this from where they are written, not called.
 If written globally:
-Browser → window
-Node → {}
-Module → undefined
+  Browser → window
+  Node → {}
+  Module → undefined
 */
 
 /*
