@@ -1,0 +1,60 @@
+1. Explain the JavaScript execution context.
+    Answer:
+        Execution context is the environment which provides all the tools to run the  javaScript code runs.
+
+        It consists of:
+            Global execution context
+            Function execution context,
+            JS Engine, 
+            EventLoop,
+            CallbackQueue
+            Microtask queue
+
+        During execution, memory allocation happens first, followed by code execution.
+
+-------------------------------------------------------------
+2. Explain prototypal inheritance.
+    Answer:
+        JavaScript objects inherit properties and methods from another object through prototypes.
+        In simple words: Prototypal inheritance is a feature in JavaScript where objects can inherit properties and methods directly from other objects.
+        
+        child.__proto__ = parent;
+
+        This mechanism enables code reuse.
+
+-------------------------------------------------------------
+3. Explain the difference between shallow copy and deep copy.
+    Answer:
+
+        A shallow copy copies references of nested objects.
+            Object.assign()
+            spread operator
+
+        Deep copy creates completely independent objects.
+            structuredClone()
+
+-------------------------------------------------------------
+4. What are microtasks and macrotasks?
+    Answer:
+        Microtasks:
+            Promise callbacks
+            queueMicrotask()
+
+        Macrotasks/Callback queue:
+            setTimeout
+            setInterval
+
+        Microtasks execute before macrotasks.
+
+-------------------------------------------------------------
+5. Explain currying.
+    Answer:
+        Currying converts a function with multiple arguments into nested functions.
+
+        function add(a){
+            return function(b){
+                return a+b;
+            }
+        }
+
+        It improves reusability and function composition.
