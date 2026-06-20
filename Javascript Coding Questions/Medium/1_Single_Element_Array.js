@@ -66,8 +66,10 @@ function findSingleElement(arr) {
 
   // Solution 3 : Using filter (Simple but slower)
   //return arr.find((num) => arr.filter((n) => n === num).length === 1);
-  //Time complexity= O(n) * O(n) = O(n²)  (arr.find(...) runs on every element so O(n) and then arr.filter(...) also run for every element so O(n))
-  //space complexity= O(n) : Creates a new array Worst case → size = n i.e O(n) space
+  /*
+    Time complexity= O(n) * O(n) = O(n²)  (arr.find(...) runs on every element so O(n) and then arr.filter(...) also run for every element so O(n))
+    space complexity= O(n) : Creates a new array Worst case → size = n i.e O(n) space
+  */
 }
 console.log(findSingleElement([1, 1, 2, 3, 3, 4])); // 2 as 2 appears only once
 console.log(findSingleElement([1, 1, 2, 2, 3, 4, 5, 5])); // 3 as it 3 appears only once and it's first element that's why 4 was not returned
