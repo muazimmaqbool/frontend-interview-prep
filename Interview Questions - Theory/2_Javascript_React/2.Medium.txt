@@ -156,5 +156,46 @@
 ----------------------------------------------------------------
 15. Difference between Context API and Redux?
     Answer:
-        Context API is suitable for small global states.
+        Context API is suitable for small global states. (Its builtin)
         Redux is preferred for large applications requiring predictable and centralized state management.
+
+----------------------------------------------------------------
+16. What is lazy loading?
+    Answer:
+        Lazy loading loads components only when required.
+        
+        Syntax: const Home = React.lazy(() => import("./Home"));
+
+        It improves initial page load performance.
+
+----------------------------------------------------------------
+17. What is code splitting?
+    Answer:
+        Code splitting divides JavaScript bundles into smaller chunks, reducing initial load time.
+        React uses:
+            React.lazy()
+            Suspense
+
+----------------------------------------------------------------
+18. What is CORS?
+    Answer:
+        CORS stands for Cross-Origin Resource Sharing.
+        It is a browser security mechanism that controls access to resources from different origins.
+
+----------------------------------------------------------------
+19. Difference between cookies and localStorage?
+    Answer:
+        Cookies are sent to the server with every request.
+        
+        localStorage remains on the client side and provides larger storage capacity.
+
+----------------------------------------------------------------
+20. What is memoization?
+    Answer:
+        Memoization stores previously calculated results and avoids repeated computations.
+
+        React provides:
+            useMemo()
+            React.memo()
+
+        for optimization.
