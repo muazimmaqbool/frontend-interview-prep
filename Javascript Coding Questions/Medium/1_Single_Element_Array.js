@@ -17,8 +17,8 @@ Example:
 */
 function findSingleElement(arr) {
   //Soltuon 1 (Original solution with time complexity O(log n))
-    //   When to Use This
-    // Use this ONLY when:
+    //When to Use This
+    //Use this ONLY when:
     //Array is sorted
     //Every element appears twice except one
   /*
@@ -28,8 +28,8 @@ function findSingleElement(arr) {
     . Ensure mid is even so that we always compare a full pair (mid and mid+1).
     . Depending on whether arr[mid] equals arr[mid+1], we eliminate half the search space.
   */
-  // This works because the array is SORTED and every element appears twice except one
-  let low = 0;
+  // This works because the array is SORTED and every element appears twice except one element
+  let low = 0; 
   let high = arr.length - 1;
 
   while (low <= high) {
