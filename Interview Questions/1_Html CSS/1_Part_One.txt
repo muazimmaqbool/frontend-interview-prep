@@ -163,6 +163,8 @@ Interview Summary:
    % → parent-based sizing
    vw/vh → viewport-based sizing
 
+-----------------------------------------------------------------------------------
+
 
 10. Difference Between inline, block, and inline-block?
 
@@ -204,3 +206,202 @@ Interview Summary:
    block → New line + full width
    inline → Same line + content width
    inline-block → Same line + custom width/height
+
+
+-----------------------------------------------------------------------------------
+
+
+ 11. What is the Difference Between id and class?
+
+ANS:
+  Both are used to select and style HTML elements, but they serve different purposes.
+
+id:
+ -Must be unique within a page.
+ -One element should have one unique id.
+ -Selected using #.
+
+      <h1 id="title">Welcome</h1>
+
+      #title {
+      color: blue;
+      }
+
+class:
+      Can be used on multiple elements.
+      Reusable across the page.
+      Selected using .
+
+      <p class="text">Paragraph 1</p>
+      <p class="text">Paragraph 2</p>
+
+      .text {
+      color: green;
+      }
+
+Interview Summary:
+
+   id → Unique element
+   class → Reusable styles for multiple elements
+
+
+-----------------------------------------------------------------------------------
+
+12. What is the Difference Between CSS margin and padding?
+
+ANS:
+  Both create space, but in different areas of the box model.
+
+Margin:
+   Creates space outside the border.
+   Separates elements from each other.
+
+   .box {
+   margin: 20px;
+   }
+
+Padding:
+Creates space inside the border.
+Adds space between content and border.
+
+   .box {
+   padding: 20px;
+   }
+
+Visual:
+
+   Margin
+   └ Border
+      └ Padding
+         └ Content
+
+Example
+   .box {
+   width: 200px;
+   padding: 20px;
+   margin: 20px;
+   border: 1px solid black;
+   }
+
+Interview Summary:
+
+margin → Space outside the element
+padding → Space inside the element
+
+-----------------------------------------------------------------------------------
+
+13. What is the Difference Between display: none and opacity: 0?
+
+ANS:
+   Both hide an element visually, but they behave differently.
+
+display: none
+   Element is completely removed from layout.
+   Takes no space.
+   Not clickable.
+
+   .box {
+   display: none;
+   }
+
+opacity: 0
+   Element becomes invisible.
+   Still occupies space.
+   Can still receive clicks/events.
+
+   .box {
+   opacity: 0;
+   }
+
+Interview Summary:
+
+   display: none → Hidden + removed from layout
+   opacity: 0 → Hidden but still occupies space
+
+
+-----------------------------------------------------------------------------------
+
+
+14. What is the Difference Between width: 100% and width: 100vw?
+
+ANS:
+
+width: 100%
+ Takes 100% width of its parent element.
+
+.box {
+  width: 100%;
+}
+
+width: 100vw
+ Takes 100% width of the viewport.
+
+.box {
+  width: 100vw;
+}
+
+Example:
+
+<div class="parent">
+  <div class="child"></div>
+</div>
+
+.parent {
+  width: 500px;
+}
+
+.child {
+  width: 100%;
+}
+
+Result:
+
+ Child width = 500px
+
+If:
+
+.child {
+  width: 100vw;
+}
+
+Result:
+
+Child width = Browser viewport width
+
+Interview Summary:
+
+   100% → Parent width
+   100vw → Viewport width
+
+
+-----------------------------------------------------------------------------------
+
+
+15. What is Semantic HTML? Why is it Important?
+
+ANS:
+  Semantic HTML uses meaningful tags that describe the content they contain.
+
+Non-Semantic:
+   <div class="header"></div>
+   <div class="nav"></div>
+   <div class="footer"></div>
+
+Semantic:
+   <header></header>
+   <nav></nav>
+   <main></main>
+   <section></section>
+   <article></article>
+   <footer></footer>
+
+Benefits
+   Better accessibility
+   Better SEO
+   Easier maintenance
+   Improves code readability
+
+Interview Summary:
+
+Semantic HTML = Meaningful tags
+Improves SEO, accessibility, and maintainability
