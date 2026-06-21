@@ -58,3 +58,43 @@
         }
 
         It improves reusability and function composition.
+
+-------------------------------------------------------------
+6. What is React Fiber?
+    Answer:
+        React Fiber is React's reconciliation engine introduced to improve rendering performance.
+
+        It enables:
+            Incremental rendering
+            Prioritization of updates
+            Better responsiveness
+
+-------------------------------------------------------------
+47. What is hydration in React?
+    Answer:
+        Hydration attaches event listeners to HTML generated on the server.
+        It converts static server-rendered HTML into an interactive React application.
+
+-------------------------------------------------------------
+48. What is Server Side Rendering (SSR)?
+    Answer:
+        SSR renders HTML on the server before sending it to the browser.
+
+        Benefits:
+            Better SEO
+            Faster first page load
+            Improved user experience
+
+-------------------------------------------------------------
+49. Difference between CSR and SSR?
+    Answer:
+        CSR renders content in the browser.
+        SSR renders content on the server.
+
+        SSR offers better SEO, while CSR provides richer client-side interactions.
+
+-------------------------------------------------------------
+50. What is React.memo?
+    Answer:
+        React.memo prevents unnecessary component re-renders by memoizing the component output.
+        It improves performance when props remain unchanged.
