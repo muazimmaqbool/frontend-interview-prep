@@ -70,13 +70,13 @@
             Better responsiveness
 
 -------------------------------------------------------------
-47. What is hydration in React?
+7. What is hydration in React?
     Answer:
         Hydration attaches event listeners to HTML generated on the server.
         It converts static server-rendered HTML into an interactive React application.
 
 -------------------------------------------------------------
-48. What is Server Side Rendering (SSR)?
+8. What is Server Side Rendering (SSR)?
     Answer:
         SSR renders HTML on the server before sending it to the browser.
 
@@ -86,7 +86,7 @@
             Improved user experience
 
 -------------------------------------------------------------
-49. Difference between CSR and SSR?
+9. Difference between CSR and SSR?
     Answer:
         CSR renders content in the browser.
         SSR renders content on the server.
@@ -94,7 +94,94 @@
         SSR offers better SEO, while CSR provides richer client-side interactions.
 
 -------------------------------------------------------------
-50. What is React.memo?
+10. What is React.memo?
     Answer:
         React.memo prevents unnecessary component re-renders by memoizing the component output.
         It improves performance when props remain unchanged.
+
+-------------------------------------------------------------
+11. Explain useMemo.
+    Answer:
+        useMemo caches expensive calculations and recalculates them only when dependencies change.
+
+        This reduces unnecessary computations.
+
+----------------------------------------------------------
+12. Explain useCallback.
+    Answer:
+        useCallback memoizes functions so that they are recreated only when dependencies change.
+
+        It helps avoid unnecessary child component renders.
+
+----------------------------------------------------------
+13. What is Redux middleware?
+    Answer:
+        Middleware sits between dispatching an action and reaching reducers.
+
+        Examples:
+            Redux Thunk
+            Redux Saga
+
+        They handle asynchronous logic and side effects.
+
+----------------------------------------------------------
+14. What is a Pure Component?
+    Answer:
+        A pure component re-renders only when props or state change.
+        It performs shallow comparison and improves performance.
+
+----------------------------------------------------------
+15. Explain React keys.
+    Answer:
+        Keys uniquely identify list elements.
+
+        users.map(user=>(
+            <li key={user.id}>{user.name}</li>
+        ))
+
+        Keys help React efficiently update lists.
+
+----------------------------------------------------------
+16. What are Web Workers?
+    Answer:
+        Web Workers run JavaScript in background threads.
+        They prevent heavy computations from blocking the UI thread.
+
+----------------------------------------------------------
+17. What are memory leaks in React?
+    Answer:
+        Memory leaks occur when resources such as timers or event listeners are not cleaned up.
+        Using cleanup functions inside useEffect helps prevent them.
+
+----------------------------------------------------------
+18. What is tree shaking?
+    Answer:
+        Tree shaking removes unused code from bundles during build time.
+        Bundlers like Webpack and Vite use it to reduce bundle size.
+
+----------------------------------------------------------
+19. How would you optimize a React application?
+    Answer:
+        Common optimizations include:
+            React.memo
+            useMemo
+            useCallback
+            Lazy loading
+            Code splitting
+            Pagination
+            Debouncing
+            Virtualization
+            Image optimization
+            Reducing unnecessary re-renders
+
+----------------------------------------------------------
+20. Explain the React component lifecycle.
+    Answer:
+        Functional components mainly use hooks.
+
+        Lifecycle phases are:
+            Mounting
+            Updating
+            Unmounting
+
+        useEffect can mimic lifecycle behavior for handling side effects and cleanup.
