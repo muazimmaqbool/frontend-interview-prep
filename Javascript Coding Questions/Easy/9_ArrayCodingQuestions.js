@@ -14,7 +14,7 @@ Explanation:
   ->This uses ES6 Set which automatically removes duplicates and converts back to array using spread operator.
 */
 
-//remove duplicate without builtin function
+//remove duplicate without builtin function:
 console.log("------------ Custom Method -------------")
 const removeDuplicate = (arr) => {
   let unique = [];
@@ -35,7 +35,7 @@ const removeDuplicate = (arr) => {
 };
 console.log("remove duplicate:", removeDuplicate(nums));
 
-//another method of removing dulicate
+//another method of removing dulicate:
 console.log("------------ Another Custom Method -----------")
 const removeDuplicateElement = (arr) => {
   let result = [];
