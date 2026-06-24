@@ -11,7 +11,7 @@ Explanation:
     new Set(arr) removes duplicates
     ... spreads back into an array
 
-->This uses ES6 Set which automatically removes duplicates and converts back to array using spread operator.
+  ->This uses ES6 Set which automatically removes duplicates and converts back to array using spread operator.
 */
 
 //remove duplicate without builtin function
