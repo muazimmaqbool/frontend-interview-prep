@@ -143,8 +143,7 @@ console.log("countOccuences:", countOccurences([1, 2, 3, 4, 5, 5, 6, 6, 6], 6));
 console.log("countOccuences:", countOccurences(["A", "B", "C", "B"], "B")); //2
 
 console.log("------------- pagination -------------");
-//split array into chunks
-//The goal of this function is to break a large array into smaller pieces (pages or chunks) of fixed size
+//split array into chunks : The goal of this function is to break a large array into smaller pieces (pages or chunks) of fixed size
 const pagination = (arr, size) => {
   let res = [];
   //So if size = 3, i becomes: 0 → 3 → 6 → 9
