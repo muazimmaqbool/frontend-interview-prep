@@ -111,6 +111,7 @@ const rotateArray = (arr) => {
 };
 console.log("Original Array:",arrNums) // o/p: [1,2,3,4,5,6,7,8,9]
 console.log("Reverse/Rotate Array:", rotateArray(arrNums)); // o/p: [9,8,7,6,5,4,3,2,1]
+//using built-in method .reverse()
 console.log("using reverse() method:",arrNums.reverse()) // o/p: [9,8,7,6,5,4,3,2,1]
 
 console.log("--------- Check array if sorted -------------");
