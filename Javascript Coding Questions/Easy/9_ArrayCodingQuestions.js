@@ -48,8 +48,9 @@ console.log("remove duplicate element:", removeDuplicateElement(nums));
 
 console.log("----------- Flatten Array ----------------");
 //2. Flatten Deep Array:
+//Using built-in .flat() method
 const flatten = (arr) => {
-  return arr.flat(Infinity);
+  return arr.flat(Infinity); // also try for arr.flat(1), (2), etc
 };
 //without built-in function
 const flattenFunction = (arr) => {
