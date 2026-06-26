@@ -11,7 +11,7 @@ async function retry(fn, retries = 3) {
     return retry(fn, retries - 1);
   }
 }
-//It retries a failed async function automatically.
+//It retries a async function automatically if the function fails.
 retry(() => fetch("data/api/")) // replace api inside fetch with this: https://jsonplaceholder.typicode.com/posts : it returns success
   .then((data) => console.log("Success"))
   .catch((err) => console.log("Failed after retries"));
