@@ -405,3 +405,73 @@ Interview Summary:
 
 Semantic HTML = Meaningful tags
 Improves SEO, accessibility, and maintainability
+
+
+----------------------------------------------------------------------------------
+
+
+16. What is the Difference Between src and href?
+
+ANS:
+
+Both are HTML attributes used to include external resources, but they serve different purposes.
+
+src (Source):
+
+   Used to embed a resource into the current document.
+   Browser downloads and executes/displays the resource.
+
+Examples:
+
+   <img src="image.jpg" alt="Image">
+   <script src="app.js"></script>
+
+href (Hypertext Reference):
+
+   Used to link to another resource.
+   Browser fetches the resource only when needed.
+
+Examples:
+
+   <a href="https://example.com">Visit</a>
+
+   <link rel="stylesheet" href="style.css">
+
+Interview Summary:
+
+   src → Embeds a resource.
+   href → Links to a resource.
+
+
+----------------------------------------------------------------------------------------
+
+17. What are HTML data-* Attributes?
+
+ANS:
+
+   data-* attributes allow you to store custom data on HTML elements without affecting their appearance or behavior.
+
+Example:
+
+   <button data-id="101" data-role="admin">
+   Edit User
+   </button>
+
+Access using JavaScript:
+
+   const btn = document.querySelector("button");
+
+   console.log(btn.dataset.id);    // 101
+   console.log(btn.dataset.role);  // admin
+
+Common Use Cases:
+
+   Store IDs
+   Store status values
+   Store configuration for JavaScript
+   Pass data without creating hidden inputs
+
+Interview Summary:
+
+   data-* → Stores custom data in HTML.
+   Access using element.dataset.
