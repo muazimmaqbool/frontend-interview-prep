@@ -64,7 +64,7 @@
 ---------------------------------------------------------------------------
 5. Explain CSS Specificity?
    ANS:
-      CSS Specificity is a set of rules browsers use to determine which style rule "wins" when multiple rules target the same HTML element. 
+      CSS Specificity is a set of rules browsers use to determine which style rule "wins" when multiple style rules target the same HTML element. 
       It is essentially a ranking system where more specific selectors carry more "weight" than general ones
 
       ->Priority: Inline Styles, ID, Class / Attribute / Pseudo-class, Element
