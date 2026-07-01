@@ -1,0 +1,6 @@
+Question:
+     Scenario Based: You have an e-commerce product listing where multiple users can add items to cart simultaneously.
+     How would you use React Query / SWR with optimistic updates to prevent stale UI?
+
+Answer:
+    

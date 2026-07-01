@@ -1,4 +1,6 @@
 Question: 
-    You're building a real-time chat application where multiple messages arrive simultaneously. How would you ensure the DOM updates efficiently without blocking the main thread?
+    You're building a real-time chat application where multiple messages arrive simultaneously. 
+    How would you ensure the DOM updates efficiently without blocking the main thread?
+    
 Answer:
     
