@@ -82,6 +82,7 @@
    ANS:
       The CSS box model is a fundamental concept where every HTML element is treated as a rectangular box. It determines how an element's total size 
       and its spacing relative to other elements are calculated.
+
       Every element consists of:
                      Content
                      Padding
@@ -99,11 +100,12 @@
       The main difference between content-box and border-box is how the width and height of an element are calculated in relation to its padding and border.
 
       -> Default: box-sizing: content-box;
-         Width excludes padding and border.
+                  Width excludes padding and border. (i.e width is calculated without padding and border)
       
       ->Preferred:
          box-sizing: border-box;
-          Width includes padding and border.
+                     Width includes padding and border. (i.e width is calculated with padding and border)
+
          Most projects use:
          * {
              box-sizing: border-box;
