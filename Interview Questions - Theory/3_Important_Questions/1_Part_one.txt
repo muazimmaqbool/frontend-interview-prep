@@ -1,0 +1,79 @@
+Question: Component lifecycle methods vs Hooks lifecycle (Mounting, Updating, Unmounting) ?
+Answer:
+    -> In class components, React provides lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount to 
+       perform actions during different phases of a component's lifecycle.
+
+    -> In functional components, these lifecycle methods are replaced by the useEffect hook. 
+       By controlling the dependency array, useEffect can mimic mounting, updating, and unmounting behavior.
+
+    | Lifecycle Phase | Class Component          | Functional Component (Hooks)               |
+    | --------------- | ------------------------ | ------------------------------------------ |
+    | Mounting        | `componentDidMount()`    | `useEffect(() => {}, [])`                  |
+    | Updating        | `componentDidUpdate()`   | `useEffect(() => {}, [dependencies])`      |
+    | Unmounting      | `componentWillUnmount()` | `useEffect(() => { return () => {} }, [])` |
+
+
+
+----------------------------------------------------------------------------------------------------------
+Question: Explain React reconciliation and the Virtual DOM diffing algorithm ?
+Answer:
+    ->React Reconciliation is the process React uses to determine what has changed in the UI and update only the necessary parts of the 
+      DOM instead of re-rendering the entire page.
+
+    ->When a component's state or props change, React creates a new Virtual DOM. It then compares this new Virtual DOM with the previous one using the diffing algorithm. 
+     This comparison identifies the minimum set of changes required to make the real DOM match the new Virtual DOM.
+
+    ->The diffing algorithm is optimized to work efficiently by following a few assumptions:
+        1. If two elements have different types (for example, <div> changes to <span>), React removes the old element and creates a new one.
+        2. If two elements are of the same type, React updates only the changed attributes instead of replacing the entire element.
+        3. When rendering lists, React uses the key prop to identify which items have been added, removed, or reordered. 
+          Stable and unique keys help React update lists efficiently and avoid unnecessary re-renders.
+
+    This entire process makes React fast because it minimizes direct manipulation of the real DOM, which is relatively expensive.
+
+
+-------------------------------------------------------------------------------------------------------------------
+Question: Explain React Server Components and their advantages. ?
+Answer:
+    ->React Server Components (RSC) are components that are rendered on the server instead of the browser. 
+      They allow you to fetch data and generate UI on the server, sending only the rendered result to the client. 
+      Unlike Client Components, Server Components do not include client-side JavaScript by default, making applications faster and more efficient.
+
+    ->Server Components are commonly used in frameworks like Next.js (App Router).
+
+    ->Advantages:
+        Smaller JavaScript bundle: Since Server Components don't send their JavaScript to the browser, the client downloads less code.
+        Better performance: Less JavaScript means faster page loads and quicker rendering.
+        Direct data fetching: Server Components can fetch data directly from databases or APIs without exposing secrets to the client.
+        Improved SEO: The HTML is generated on the server, making it easier for search engines to crawl.
+        Enhanced security: Sensitive logic, API keys, and database queries remain on the server.
+    
+    ->Example:
+        // Server Component
+        export default async function Products() {
+          const products = await getProducts();
+
+          return (
+            <div>
+              {products.map(product => (
+                <p key={product.id}>{product.name}</p>
+              ))}
+            </div>
+          );
+        }
+
+        Here, getProducts() runs on the server, and only the rendered HTML is sent to the browser.
+
+    ->Difference between Server Components and Client Components:
+      | Server Components                               | Client Components                                    |
+      | ----------------------------------------------- | ---------------------------------------------------- |
+      | Render on the server                            | Render in the browser                                |
+      | Can fetch data directly                         | Fetch data using APIs                                |
+      | Don't send JavaScript to the client by default  | JavaScript is downloaded and executed in the browser |
+      | Cannot use hooks like `useState` or `useEffect` | Can use React hooks and browser APIs                 |
+      | Best for static content and data fetching       | Best for interactive UI                              |
+
+    ->Interview Summary:
+        "React Server Components are rendered on the server, allowing data fetching and UI generation before sending the result to the browser. 
+         They reduce the client-side JavaScript bundle, improve performance and SEO, and keep sensitive logic on the server. 
+         However, they cannot use client-side hooks like useState or useEffect, so interactive features are implemented using Client Components."
