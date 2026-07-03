@@ -4,7 +4,6 @@
 //input: "  hello world    " ->>> output: "world hello"
 //input: "a good           boy" ->>> output: "boy good a "
 
-
 //Approach:
 // "the sky is blue" => [the, sky, is, blue]
 // [the, sky, is, blue] => [blue, is, sky, the]
