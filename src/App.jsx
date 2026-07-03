@@ -1,8 +1,10 @@
+import A_Debounce from "../Machine_Coding/A_useDebounce_Custom"
+
 function App() {
 
   return (
     <div>
-      <h1>hello</h1>
+      <A_Debounce/>
     </div>
   )
 }
