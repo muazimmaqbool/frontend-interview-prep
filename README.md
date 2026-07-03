@@ -1,38 +1,16 @@
-# Frontend Engineering Prep 🚀
+# React + Vite
 
-A comprehensive repository for mastering frontend engineering interviews.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This repository contains structured notes, practical examples, coding exercises, interview questions, and real-world engineering concepts designed to help developers strengthen their frontend knowledge and prepare for technical interviews.
+Currently, two official plugins are available:
 
-## 🎯 Purpose
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-The goal of this repository is to create a single source of truth for frontend interview preparation and continuous learning.
+## React Compiler
 
-Whether you're preparing for your first frontend role, transitioning to a product-based company, targeting senior frontend positions, or refreshing core frontend concepts, this repository is intended to provide clear explanations, practical implementations, and interview-focused learning materials.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📖 What You'll Find
+## Expanding the ESLint configuration
 
-- Well-organized learning notes
-- Practical code examples
-- Coding exercises and challenges
-- Interview-focused explanations
-- Common interview questions
-- Real-world engineering concepts
-- Best practices and design patterns
-- Frontend system design discussions
-- Performance optimization techniques
-
-## 🚀 Philosophy
-
-The objective is not just to memorize interview answers, but to develop a strong understanding of frontend engineering through fundamentals, practical implementation, and consistent problem-solving.
-
-## 🤝 Contributions
-
-Contributions, suggestions, and improvements are welcome. Feel free to open an issue or submit a pull request.
-
-## ⭐ Support
-
-If you find this repository useful, consider giving it a star.
-
----
-Made with ❤️ for frontend engineers.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
