@@ -77,3 +77,13 @@ Answer:
         "React Server Components are rendered on the server, allowing data fetching and UI generation before sending the result to the browser. 
          They reduce the client-side JavaScript bundle, improve performance and SEO, and keep sensitive logic on the server. 
          However, they cannot use client-side hooks like useState or useEffect, so interactive features are implemented using Client Components."
+
+
+-------------------------------------------------------------------------------------------------------------------
+Question: How would you implement infinite scrolling efficiently?
+Answer:
+    I would use the Intersection Observer API to detect when the user reaches the bottom of the list,
+    then fetch the next page of data from the server. 
+    I would maintain pagination state, display a loading indicator, and stop requesting data when no more results are available. 
+    For large datasets, I would also use list virtualization libraries like react-window or react-virtualized so that only the 
+    visible items are rendered, improving performance and reducing memory usage."
