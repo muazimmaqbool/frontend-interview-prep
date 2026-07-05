@@ -88,6 +88,40 @@ Answer:
     For large datasets, I would also use list virtualization libraries like react-window or react-virtualized so that only the 
     visible items are rendered, improving performance and reducing memory usage."
 
+
+-------------------------------------------------------------------------------------------------------------------
+Question: What are Core Web Vitals?
+Answer:
+      Core Web Vitals are a set of performance metrics defined by Google to measure the real-world user experience of a website.
+
+      They focus on three key aspects:
+          Loading Performance – How quickly the main content loads.
+          Interactivity – How quickly the page responds to user interactions.
+          Visual Stability – Whether the page layout remains stable while loading.
+
+      The three Core Web Vitals are:
+
+        1. Largest Contentful Paint (LCP):
+              Measures loading performance.
+              It records how long it takes for the largest visible content (such as an image or heading) to appear.
+              Good score: 2.5 seconds or less
+
+        2. Interaction to Next Paint (INP)
+              Measures responsiveness.
+              It records how quickly the page responds after a user interaction, such as a click or key press.
+              Good score: 200 ms or less
+
+        3. Cumulative Layout Shift (CLS)
+              Measures visual stability.
+              It tracks unexpected layout shifts while the page is loading.
+              Good score: 0.1 or less
+
+        Interview Summary:
+            "Core Web Vitals are Google's key metrics for measuring user experience. They include Largest Contentful Paint (LCP) for loading speed,
+             Interaction to Next Paint (INP) for responsiveness, and Cumulative Layout Shift (CLS) for visual stability. Optimizing these metrics
+             improves user experience, SEO, and overall website performance."
+
+
 -------------------------------------------------------------------------------------------------------------------
 Question: What techniques would you use to improve Core Web Vitals?
 Answer:
