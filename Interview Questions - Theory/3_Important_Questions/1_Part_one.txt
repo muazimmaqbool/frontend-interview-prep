@@ -87,3 +87,21 @@ Answer:
     I would maintain pagination state, display a loading indicator, and stop requesting data when no more results are available. 
     For large datasets, I would also use list virtualization libraries like react-window or react-virtualized so that only the 
     visible items are rendered, improving performance and reducing memory usage."
+
+-------------------------------------------------------------------------------------------------------------------
+Question: What techniques would you use to improve Core Web Vitals?
+Answer:
+  To improve Core Web Vitals, I would optimize Largest Contentful Paint (LCP) by compressing images, using lazy loading for non-critical images,
+                                  preloading important assets, and reducing JavaScript bundle size. 
+  To improve Interaction to Next Paint (INP), I would minimize long-running JavaScript tasks, debounce or throttle event handlers, and 
+                                        avoid unnecessary React re-renders using techniques like React.memo, useMemo, and useCallback. 
+  To reduce Cumulative Layout Shift (CLS), I would always specify image and video dimensions, reserve space for dynamic content, 
+           and avoid inserting content above existing elements. 
+           
+  I would also use code splitting, caching, and a CDN to improve overall page performance."
+
+  Short Points to Remember:
+    LCP: Optimize images, preload critical assets, reduce bundle size.
+    INP: Reduce JavaScript execution time, optimize event handlers, avoid unnecessary re-renders.
+    CLS: Set width/height for images, reserve space for dynamic content, avoid layout shifts.
+    Overall: Code splitting, lazy loading, caching, CDN, compression.
