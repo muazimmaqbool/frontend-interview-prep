@@ -105,7 +105,7 @@
 ------------------------------------------------------------------------------------------
 18. Difference Between overflow: hidden, scroll, and auto?
     ANS:
-        The main difference between overflow: hidden, scroll, and auto is how they handle content that is too large for its container box and whether they display scrollbar  .
+    The main difference between overflow: hidden, scroll, and auto is how they handle content that is too large for its container box and whether they display scrollbar.
         -> overflow: hidden; Clips content.
         -> overflow: scroll; always shows srcollbar.
         -> overflow: auto; Scrollbar only when needed.
@@ -117,6 +117,7 @@
             src="image.jpg"
             loading="lazy"
         />
+
         Benefits:
             Faster page load
             Better performance
