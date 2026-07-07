@@ -139,3 +139,19 @@ Answer:
     INP: Reduce JavaScript execution time, optimize event handlers, avoid unnecessary re-renders.
     CLS: Set width/height for images, reserve space for dynamic content, avoid layout shifts.
     Overall: Code splitting, lazy loading, caching, CDN, compression.
+
+
+-------------------------------------------------------------------------------------------------------------------
+Question:How do you manage state in large React applications?
+Answer:
+  In large React applications, I manage state based on its scope and complexity. I use local state (useState) for component-specific data,
+  Context API for simple global state like themes or authentication, and Redux Toolkit for complex shared state such as user data, shopping carts, 
+  or application-wide settings. 
+  For server state, I prefer libraries like TanStack Query to handle data fetching, caching, and synchronization.
+   I also keep the state normalized, avoid unnecessary global state, and split it into feature-based slices to make the application scalable and maintainable."
+
+  State Management Strategy:
+    Local State (useState) → Component-specific data
+    Context API → Authentication, theme, language
+    Redux Toolkit → Complex global state
+    TanStack Query → API data, caching, synchronization
