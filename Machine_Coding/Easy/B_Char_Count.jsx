@@ -22,7 +22,7 @@ const B_Char_Count = () => {
 
 /*
 Explanation:
-    ->  const words=text.trim() ? text.trim().split(/\s+/).length:0;
+    ->  const words=text.trim() ? text.trim().split(/\s+/).length:0; // if the string is empty after trimming, return 0.
 
     1. text.trim() : trim() removes whitespace from the beginning and end of the string.
 
