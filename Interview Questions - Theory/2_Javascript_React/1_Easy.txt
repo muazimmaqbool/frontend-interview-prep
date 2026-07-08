@@ -9,15 +9,17 @@
 -------------------------------------------------------------
 2. What are let, const, and var?
     ANS:
-        var is function-scoped and can be redeclared.
-        let is block-scoped and can be reassigned.
-        const is block-scoped and cannot be reassigned.
+        var is function-scoped and can be redeclared and reassigned.
+        let is block-scoped and can be reassigned but not redeclared.
+        const is block-scoped and cannot be reassigned neither redeclared.
             Example:
                 let age = 20;
                     age = 25;
+                let age=30; //Error
 
                 const PI = 3.14;
-                    // PI = 4; // Error
+                      PI = 4; // Error
+                const PI = 5.6 // Error
 
 -------------------------------------------------------------
 3. What is the difference between null and undefined?
@@ -57,28 +59,29 @@
 --------------------------------------------------------------
 6. What is an array?
     ANS:
-        An array is a collection of ordered values stored in a single variable.
+        An array is a collection of ordered values of same data type stored in a single variable.
         const fruits = ["Apple", "Banana", "Mango"];
-        Arrays provide methods like map(), filter(), and reduce().
+        Arrays provide methods like map(), filter(), and reduce() etc.
 
 ---------------------------------------------------------------
 7. What is an object in JavaScript?
-    ANS: Objects store data in key-value pairs.
-
-        const user = {
-            name: "John",
-            age: 25
-        };
+    ANS: 
+        Objects store data in key-value pairs.
+        Example:
+            const user = {
+                name: "John",
+                age: 25
+            };
 
         Objects help organize related information.
 
 -----------------------------------------------------------------
 8. What is event bubbling?
     ANS:
-        Event bubbling means an event starts from the target element and propagates upward through its parent elements.
+        Event bubbling means an event starts from the target element and propagates upward through it's parent elements.
         button → div → body
         In other words:
-            Event bubbling is a JavaScript mechanism where an event triggered on a nested child element automatically propagates upward through its parent 
+            Event bubbling is a JavaScript mechanism where an event triggered on a nested child element automatically propagates upward through it's parent 
             and ancestor elements in the DOM tree until it reaches the root. 
             This allows you to handle events at a higher level without needing to attach listeners to every single child
 
