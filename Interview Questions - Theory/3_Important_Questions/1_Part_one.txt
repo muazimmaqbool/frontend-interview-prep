@@ -1,4 +1,4 @@
-Question: Component lifecycle methods vs Hooks lifecycle (Mounting, Updating, Unmounting) ?
+Question 1: Component lifecycle methods vs Hooks lifecycle (Mounting, Updating, Unmounting) ?
 Answer:
     -> In class components, React provides lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount to 
        perform actions during different phases of a component's lifecycle.
@@ -15,7 +15,7 @@ Answer:
 
 
 ----------------------------------------------------------------------------------------------------------
-Question: Explain React reconciliation and the Virtual DOM diffing algorithm ?
+Question 2: Explain React reconciliation and the Virtual DOM diffing algorithm ?
 Answer:
     ->React Reconciliation is the process React uses to determine what has changed in the UI and update only the necessary parts of the 
       DOM instead of re-rendering the entire page.
@@ -33,7 +33,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------------
-Question: Explain React Server Components and their advantages. ?
+Question 3: Explain React Server Components and their advantages. ?
 Answer:
     ->React Server Components (RSC) are components that are rendered on the server instead of the browser. 
       They allow you to fetch data and generate UI on the server, sending only the rendered result to the client. 
@@ -80,7 +80,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------------
-Question: How would you implement infinite scrolling efficiently?
+Question 4: How would you implement infinite scrolling efficiently?
 Answer:
     I would use the Intersection Observer API to detect when the user reaches the bottom of the list,
     then fetch the next page of data from the server. 
@@ -90,7 +90,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------------
-Question: What are Core Web Vitals?
+Question 5: What are Core Web Vitals?
 Answer:
       Core Web Vitals are a set of performance metrics defined by Google to measure the real-world user experience of a website.
 
@@ -123,7 +123,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------------
-Question: What techniques would you use to improve Core Web Vitals?
+Question 6: What techniques would you use to improve Core Web Vitals?
 Answer:
   To improve Core Web Vitals, I would optimize Largest Contentful Paint (LCP) by compressing images, using lazy loading for non-critical images,
                                   preloading important assets, and reducing JavaScript bundle size. 
@@ -142,7 +142,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------------
-Question:How do you manage state in large React applications?
+Question 7:How do you manage state in large React applications?
 Answer:
   In large React applications, I manage state based on its scope and complexity. I use local state (useState) for component-specific data,
   Context API for simple global state like themes or authentication, and Redux Toolkit for complex shared state such as user data, shopping carts, 
