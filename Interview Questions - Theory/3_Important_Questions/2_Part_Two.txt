@@ -1,0 +1,23 @@
+Question 1: Explain frontend caching strategies.
+Answer:
+    Frontend caching improves application performance by storing frequently used resources so they don't need to be fetched from the server every time. 
+    Different caching strategies are used depending on the type of data. 
+        ->For static assets like JavaScript, CSS, and images, I rely on browser caching with proper cache headers. 
+        ->For API data, I use libraries like TanStack Query, which cache responses and automatically refetch stale data when needed. 
+        I also use localStorage or sessionStorage for small client-side data and Service Workers for offline support and 
+        advanced caching in Progressive Web Apps (PWAs)
+
+    Common Frontend Caching Strategies:
+    Browser Cache: Caches static assets (JS, CSS, images) using HTTP cache headers.
+    API Caching: Cache API responses using TanStack Query or similar libraries.
+    localStorage / sessionStorage: Store small pieces of data like user preferences or tokens (avoid storing sensitive tokens unless appropriate).
+    Service Workers: Cache assets and API responses for offline access and faster loading in PWAs.
+    CDN Caching: Serve static assets from geographically distributed servers to reduce latency.
+
+    Interview Summary:
+        "I use browser caching for static assets, TanStack Query for API response caching, localStorage or sessionStorage for small client-side data,
+        Service Workers for offline caching, and CDNs to deliver static content quickly. 
+        Choosing the right caching strategy improves performance, reduces server load, and enhances the user experience."
+
+
+-------------------------------------------------------------------------------------------------------------------
