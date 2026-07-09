@@ -19,5 +19,8 @@ Answer:
         Service Workers for offline caching, and CDNs to deliver static content quickly. 
         Choosing the right caching strategy improves performance, reduces server load, and enhances the user experience."
 
+    SubQuestion: Do browser cache works automatically?
+        ->
+        Ans: Yes, browser caching works automatically, but only if the server provides the appropriate caching headers.
 
 -------------------------------------------------------------------------------------------------------------------
