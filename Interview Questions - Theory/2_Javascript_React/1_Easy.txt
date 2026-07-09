@@ -139,7 +139,7 @@
         JSX stands for JavaScript XML. It allows writing HTML-like syntax inside JavaScript.
         <h1>Hello</h1>
 
-        React converts JSX into JavaScript objects.
+        React converts JSX into JavaScript objects at runtime.
 
 -----------------------------------------------------------------
 16. What is the Virtual DOM?
@@ -174,9 +174,9 @@
 20. What is semantic HTML?
     ANS:
         Semantic HTML uses meaningful tags like:
-        <header>
-        <nav>
-        <article>
-        <footer>
+            <header>
+            <nav>
+            <article>
+            <footer>
 
         These improve accessibility and SEO.
