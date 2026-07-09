@@ -24,3 +24,24 @@ Answer:
         Ans: Yes, browser caching works automatically, but only if the server provides the appropriate caching headers.
 
 -------------------------------------------------------------------------------------------------------------------
+Question 2: How do you implement authentication in a React application?
+Answer:
+
+-------------------------------------------------------------------------------------------------------------------
+Question 3: What is the difference between Session Storage and Local Storage?
+Answer:
+
+-------------------------------------------------------------------------------------------------------------------
+Question 4: How does addEventListener work?
+Answer:
+
+-------------------------------------------------------------------------------------------------------------------
+Question 5: How do you handle API rate limits gracefully on the frontend? 
+Answer:
+
+-------------------------------------------------------------------------------------------------------------------
+Question 6: Explain CSR, SSR, and SSG — when would you use each? 
+Answer:
+
+-------------------------------------------------------------------------------------------------------------------
+Question 7: 
