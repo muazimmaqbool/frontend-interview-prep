@@ -81,7 +81,7 @@
         Event bubbling means an event starts from the target element and propagates upward through it's parent elements.
         button → div → body
         In other words:
-            Event bubbling is a JavaScript mechanism where an event triggered on a nested child element automatically propagates upward through it's parent 
+            Event bubbling is a JavaScript mechanism where an event is triggered on a nested child element which automatically propagates upward through it's parent 
             and ancestor elements in the DOM tree until it reaches the root. 
             This allows you to handle events at a higher level without needing to attach listeners to every single child
 
@@ -128,7 +128,7 @@
 -----------------------------------------------------------------
 14. What is the purpose of useState in React?
     ANS:
-        useState is used to manage state/data inside functional components.
+        useState is used to manage/track state/data inside functional components.
         const [count,setCount]=useState(0);
 
         Whenever state changes, React re-renders the component.
@@ -167,6 +167,8 @@
     ANS:
         localStorage stores data in the browser permanently until manually removed.
         localStorage.setItem("name","John");
+        then:
+            localStorgae.getItem("name")
 
         Data persists even after page refresh.
 

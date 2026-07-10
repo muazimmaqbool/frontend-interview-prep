@@ -23,9 +23,33 @@ Answer:
         ->
         Ans: Yes, browser caching works automatically, but only if the server provides the appropriate caching headers.
 
+
 -------------------------------------------------------------------------------------------------------------------
 Question 2: How do you implement authentication in a React application?
 Answer:
+    To implement authentication in a React application, 
+        -> I first create a login page where users submit their credentials. 
+        -> The backend validates them and returns an access token or session. 
+        -> I store the authentication state using Context API or Redux, and then protect private routes with a reusable ProtectedRoute component. 
+        -> For security, I prefer storing tokens in HTTP-only cookies because they cannot be accessed by JavaScript, reducing the risk of XSS attacks. 
+        -> On application startup, I verify whether the user is still authenticated by checking the session or validating the token. 
+        -> If authentication fails or the token expires, I log the user out and redirect them to the login page.
+
+        ->Authentication Flow:
+            User logs in
+                ↓
+            Backend verifies credentials
+                ↓
+            Returns JWT or Session
+                ↓
+            Store auth state (Context API / Redux)
+                ↓
+            Protect routes using ProtectedRoute
+                ↓
+            Verify token/session on app load
+                ↓
+            Logout if token expires or is invalid
+            
 
 -------------------------------------------------------------------------------------------------------------------
 Question 3: What is the difference between Session Storage and Local Storage?
