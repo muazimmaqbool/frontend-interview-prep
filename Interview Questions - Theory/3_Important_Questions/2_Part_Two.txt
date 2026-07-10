@@ -49,12 +49,41 @@ Answer:
             Verify token/session on app load
                 ↓
             Logout if token expires or is invalid
-            
+
 
 -------------------------------------------------------------------------------------------------------------------
 Question 3: What is the difference between Session Storage and Local Storage?
 Answer:
+    Both Local Storage and Session Storage are browser storage mechanisms used to store key-value pairs on the client side. The main difference is how long the data persists.
 
+    | Local Storage                               | Session Storage                                                        |
+    | ------------------------------------------- | ---------------------------------------------------------------------- |
+    | Data persists until manually removed.       | Data is cleared when the browser tab or window is closed.              |
+    | Shared across all tabs of the same origin.  | Unique to each browser tab.                                            |
+    | Storage limit is typically around 5–10 MB.  | Storage limit is typically around 5–10 MB.                             |
+    | Suitable for user preferences, themes, etc. | Suitable for temporary data like form progress or a multi-step wizard. |
+
+    ->Example:
+        1: Local Storage:
+            localStorage.setItem("theme", "dark");
+            const theme = localStorage.getItem("theme");
+            localStorage.removeItem("theme");
+        
+        2. Session Storage:
+            sessionStorage.setItem("username", "John");
+            const username = sessionStorage.getItem("username");
+            sessionStorage.removeItem("username");
+
+    ->Interview Summary:
+        The main difference is that Local Storage persists even after the browser is closed until it's manually cleared,
+        while Session Storage lasts only for the lifetime of the current browser tab and is cleared when the tab is closed.  
+        I use Local Storage for persistent data like user preferences and Session Storage for temporary data that's only needed during the current browsing session
+
+    ->Interview Tip:
+        Avoid storing sensitive information (such as JWT access tokens or passwords) in either Local Storage or Session Storage because they are accessible 
+        through JavaScript and can be exposed in an XSS attack. For authentication, HTTP-only cookies are generally the more secure choice.
+
+        
 -------------------------------------------------------------------------------------------------------------------
 Question 4: How does addEventListener work?
 Answer:
