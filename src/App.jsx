@@ -3,6 +3,7 @@ import A_Counter from "../Machine_Coding/Easy/A_Counter"
 import B_Char_Count from "../Machine_Coding/Easy/B_Char_Count"
 import C_Toggle_Theme from "../Machine_Coding/Easy/C_Toggle_Theme"
 import D_Show_Hide_Pass from "../Machine_Coding/Easy/D_Show_Hide_Pass"
+import E_TodoList from "../Machine_Coding/Easy/E_TodoList"
 
 function App() {
 
@@ -12,8 +13,8 @@ function App() {
       {/* <A_Counter/> */}
       {/* <B_Char_Count/> */}
       {/* <C_Toggle_Theme/> */}
-      <D_Show_Hide_Pass/>
-
+      {/* <D_Show_Hide_Pass/> */}
+      <E_TodoList/>
 
 
 
