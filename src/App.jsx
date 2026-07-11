@@ -14,7 +14,7 @@ function App() {
       {/* <B_Char_Count/> */}
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
-      <E_TodoList/>
+      {/* <E_TodoList/> */}
 
 
 

@@ -55,7 +55,7 @@
         The event loop continuously checks the call stack and callback queue. When the stack becomes empty, it moves queued tasks for execution.
         It enables JavaScript to perform asynchronous operations.
                         or
-        Event Loop is a core mechanism within the runtime environment that enables asynchronous, 
+        Event Loop is a core mechanism within the javascript runtime environment that enables asynchronous behaviour, 
         non-blocking programming while running on a single thread. It continuously monitors the execution state and coordinates the processing of code
         between the call stack, background APIs, and task queues.
 
@@ -72,7 +72,7 @@
 ----------------------------------------------------------------
 7. What are higher-order functions?
     Answer:
-        Functions that accept another function as an argument or return a function(modified version of function which it aceepts via arguments).    
+        Functions that accept another function as an argument or return a function (modified version of function which it aceepts via arguments).    
         Example of some prebuild HOF: map()
                                       filter()
                                       reduce()
@@ -88,8 +88,16 @@
         Syntax: sequence.slice(start, end)
 
         ->splice() method in JavaScript is a built-in function used to modify an array by removing, replacing, or adding elements in place
+            Splice syntax:
+                const fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
+                const removed = fruits.splice(1, 2); 
+
+                console.log(fruits);  // ['Apple', 'Date']
+                console.log(removed); // ['Banana', 'Cherry'] (Returns the deleted items)
+
 
         ->Checkout code and example of slice and splice in js repo
+
 
 ----------------------------------------------------------------
 9. What is debounce?
