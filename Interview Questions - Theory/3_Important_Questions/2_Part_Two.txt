@@ -157,6 +157,7 @@ Answer:
 
             Both fn1 and fn2 will execute.
 
+
 -------------------------------------------------------------------------------------------------------------------
 Question 5: How do you handle API rate limits gracefully on the frontend? 
 Answer:
@@ -168,9 +169,10 @@ Answer:
       disable repeated user actions while a request is in progress, 
       and show a user-friendly message instead of continuously retrying.
 
+
 -------------------------------------------------------------------------------------------------------------------
 Question 6: Explain CSR, SSR, and SSG — when would you use each? 
 Answer:
 
 -------------------------------------------------------------------------------------------------------------------
-Question 7: 
+Question 7: What happens when you hit a URL?
