@@ -146,7 +146,7 @@ Answer:
             Bubbling phase (target → top)
 
         ->Why use addEventListener instead of onclick?
-        
+
             button.onclick = fn1;
             button.onclick = fn2; // fn1 is replaced
 
@@ -160,6 +160,13 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 5: How do you handle API rate limits gracefully on the frontend? 
 Answer:
+    To handle API rate limits gracefully, 
+      I reduce unnecessary requests using debouncing/throttling, 
+      cache responses with libraries like React Query, 
+      retry failed requests with exponential backoff for 429 errors, 
+      respect the Retry-After header if provided, 
+      disable repeated user actions while a request is in progress, 
+      and show a user-friendly message instead of continuously retrying.
 
 -------------------------------------------------------------------------------------------------------------------
 Question 6: Explain CSR, SSR, and SSG — when would you use each? 
