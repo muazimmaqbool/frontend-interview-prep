@@ -87,6 +87,75 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 4: How does addEventListener work?
 Answer:
+    addEventListener() attaches an event listener (callback function) to an HTML element.
+    When the specified event occurs (like click, input, or keydown), the browser invokes the callback.
+    
+    Example:
+        const button = document.getElementById("btn");
+
+        button.addEventListener("click", () => {
+            console.log("Button clicked!");
+        });
+
+        //Important removing evenListeners:
+            button.removeEventListener("click", handleClick);
+
+    Extra but important:
+        -> How it works internally
+            button.addEventListener("click", handleClick);
+
+            addEventListener()
+                    │
+                    ▼
+            Browser stores the callback in the element's event listener list
+                    │
+                    ▼
+            User performs an action (e.g., clicks the button)
+                    │
+                    ▼
+            Browser creates an Event object
+                    │
+                    ▼
+            Event propagates through the DOM
+            (Capturing → Target → Bubbling)
+                    │
+                    ▼
+            Browser finds matching listeners for that event
+                    │
+                    ▼
+            Callback function is pushed to the Call Stack
+                    │
+                    ▼
+            Your callback executes
+
+        ->Event travels through the DOM:
+            Window
+            ↓
+            Document
+            ↓
+            html
+            ↓
+            body
+            ↓
+            div
+            ↓
+            button
+
+            Capturing phase (top → target)
+            Target phase
+            Bubbling phase (target → top)
+
+        ->Why use addEventListener instead of onclick?
+        
+            button.onclick = fn1;
+            button.onclick = fn2; // fn1 is replaced
+
+            With addEventListener:
+
+            button.addEventListener("click", fn1);
+            button.addEventListener("click", fn2);
+
+            Both fn1 and fn2 will execute.
 
 -------------------------------------------------------------------------------------------------------------------
 Question 5: How do you handle API rate limits gracefully on the frontend? 
