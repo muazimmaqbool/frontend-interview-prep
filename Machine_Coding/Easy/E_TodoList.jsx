@@ -9,6 +9,7 @@ const E_TodoList = () => {
   const [todos, settodos] = useState([]);
 
   const addTodo=()=>{
+    //is text is empty after trimming then return means not adding empty todo
     if(!text.trim()) return;
     settodos([...todos,text])
     settext("")
