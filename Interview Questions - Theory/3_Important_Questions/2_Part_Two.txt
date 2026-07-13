@@ -243,3 +243,58 @@ Answer:
 
 -------------------------------------------------------------------------------------------------------------------
 Question 7: What happens when you hit a URL?
+Answer:
+    When a user enters a URL, the browser resolves the domain through DNS, establishes a secure connection, sends an HTTP request, receives the server's response,
+    parses the HTML, downloads CSS and JavaScript, builds the DOM and CSSOM, creates the render tree, performs layout and painting, and 
+    finally executes JavaScript to make the page interactive
+
+    ->Step-by-Step Flow:
+        1. URL Parsing: 
+             The browser parses the URL to identify the protocol (https), domain, path, and query parameters.
+        2. DNS Lookup:
+             If the IP address isn't cached, the browser performs a DNS lookup to convert the domain name into an IP address.
+        3. TCP Connection & TLS Handshake:
+             The browser establishes a TCP connection with the server.
+             For HTTPS, a TLS/SSL handshake is performed to create a secure encrypted connection.
+        4. HTTP Request:
+             The browser sends an HTTP request (e.g., GET /) to the server along with headers, cookies, and other metadata.
+        5. Server Processing:
+             The server processes the request, performs any required business logic or database queries, and prepares the response.
+        6. HTTP Response:
+             The server sends back an HTTP response containing:
+             Status code (200, 404, etc.)
+             Headers
+             HTML (or JSON, images, etc.)
+        7. Browser Rendering:
+             The browser parses the HTML.
+             It downloads CSS, JavaScript, fonts, and images.
+             Builds the DOM and CSSOM.
+             Creates the Render Tree, performs Layout, and Paints the page.
+             JavaScript executes, making the page interactive.
+        8. Subsequent Requests:
+             Additional API calls, images, and lazy-loaded resources may be fetched as needed.
+
+    ->Short Flow:
+        Enter URL
+            ↓
+        DNS Lookup
+            ↓
+        TCP + TLS Handshake
+            ↓
+        HTTP Request
+            ↓
+        Server Processes Request
+            ↓
+        HTTP Response
+            ↓
+        Browser Parses HTML
+            ↓
+        Downloads CSS & JS
+            ↓
+        Builds DOM + CSSOM
+            ↓
+        Render Tree → Layout → Paint
+            ↓
+        JavaScript Executes
+            ↓
+        Page Becomes Interactive
