@@ -173,6 +173,59 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 6: Explain CSR, SSR, and SSG — when would you use each? 
 Answer:
+    CSR (Client-Side Rendering), SSR (Server-Side Rendering), and SSG (Static Site Generation) are different rendering strategies that determine where and when HTML is generated.
+
+    1. CSR (Client-Side Rendering):
+        In CSR, the server sends a minimal HTML file and JavaScript bundle. The browser downloads the JavaScript, React renders the UI, and then the page becomes interactive.
+        Use when:
+            Dashboards
+            Admin panels
+            Applications requiring frequent user interactions
+            Content that changes based on the logged-in user
+
+        Pros:
+            Rich user interactions
+            Faster client-side navigation
+            Less work for the server after the initial load
+
+        Cons:
+            Slower initial page load
+            SEO is weaker compared to SSR/SSG (unless additional techniques are used)
+
+    2. SSR (Server-Side Rendering):
+        In SSR, the server generates the HTML for each request and sends it to the browser. React then hydrates the page to make it interactive.
+        Use when:
+            SEO is important
+            Dynamic content changes frequently
+            E-commerce product pages
+            News websites
+
+        Pros:
+            Better SEO
+            Faster first content display
+            Good for dynamic data
+
+        Cons:
+            Higher server load
+            Slightly slower navigation between pages
+
+    3. SSG (Static Site Generation):
+        In SSG, HTML pages are generated at build time and served as static files.
+        Use when:
+        Blogs
+            Documentation sites
+            Marketing websites
+            Landing pages
+            Content that rarely changes
+
+        Pros:
+            Fastest loading
+            Excellent SEO
+            Can be served efficiently via a CDN
+            Low server cost
+
+        Cons:
+            Requires rebuilding the site when content changes (unless using incremental regeneration)
 
 -------------------------------------------------------------------------------------------------------------------
 Question 7: What happens when you hit a URL?
