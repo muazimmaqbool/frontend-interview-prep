@@ -131,10 +131,10 @@
 11. What is useEffect?
     Answer:
         useEffect performs side effects such as:
-
-        API calls
-        Timers
-        Event listeners
+            API calls
+            Timers
+            Event listeners,
+            and other side things
 
         Syntax:
             useEffect(()=>{
@@ -150,12 +150,12 @@
 ----------------------------------------------------------------
 13. What is React reconciliation?
     Answer:
-        Reconciliation is React's process of comparing the Virtual DOM with the previous version and updating only changed elements.
+        Reconciliation is React's process of comparing the Virtual DOM with the previous version of Virtual Dom and updating only changed elements.
 
 ----------------------------------------------------------------
 14. What is prop drilling?
     Answer:
-        Prop drilling occurs when data is passed through multiple components unnecessarily.
+        Prop drilling occurs when data is passed through multiple nested components unnecessarily.
         It can be avoided using:
             Context API
             Redux
@@ -164,7 +164,7 @@
 ----------------------------------------------------------------
 15. Difference between Context API and Redux?
     Answer:
-        Context API is suitable for small global states. (Its builtin)
+        Context API is suitable for small global states. (Its built-in)
         Redux is preferred for large applications requiring predictable and centralized state management.
 
 ----------------------------------------------------------------

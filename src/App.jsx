@@ -16,7 +16,7 @@ function App() {
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
       {/* <E_TodoList/> */}
-      <F_Search_Filter/>
+      {/* <F_Search_Filter/> */}
 
 
        {/* ************ Medium Machine Coding Questions ****************** */}
