@@ -227,5 +227,19 @@ Answer:
         Cons:
             Requires rebuilding the site when content changes (unless using incremental regeneration)
 
+    ->Comparison:
+        | Feature        | CSR              | SSR                  | SSG                        |
+        | -------------- | ---------------- | -------------------- | -------------------------- |
+        | HTML Generated | Browser          | Server (per request) | Build time                 |
+        | SEO            | Moderate         | Excellent            | Excellent                  |
+        | Initial Load   | Slower           | Fast                 | Fastest                    |
+        | Best For       | Dashboards, SPAs | E-commerce, News     | Blogs, Docs, Landing Pages |
+
+    ->Interview Summary:
+        CSR renders the application in the browser and is best for highly interactive applications like dashboards. 
+        SSR renders HTML on the server for every request, making it ideal for SEO-sensitive and dynamic content such as e-commerce sites. 
+        SSG generates pages at build time, making it the fastest option for mostly static content like blogs, documentation, and marketing websites.
+
+
 -------------------------------------------------------------------------------------------------------------------
 Question 7: What happens when you hit a URL?
