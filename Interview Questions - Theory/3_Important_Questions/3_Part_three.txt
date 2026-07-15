@@ -1,0 +1,43 @@
+Question 1:  Differences between framework-level event systems and native browser events ?
+Answer:
+    Native browser events are the events provided directly by the browser through the DOM API, such as addEventListener(). 
+    Frameworks like React provide their own event system (Synthetic Events) that wraps native events to offer a consistent API across different browsers and optimize event handling. 
+    In React, events are delegated internally, reducing the number of event listeners attached to the DOM.
+
+    Comparison:
+        | Native Browser Events                 | Framework-Level Events (React)                      |
+        | ------------------------------------- | --------------------------------------------------- |
+        | Uses `addEventListener()`             | Uses React's event handlers like `onClick`          |
+        | Browser-specific behavior may vary    | Provides a consistent API across browsers           |
+        | Attached directly to DOM elements     | Managed by React's event system                     |
+        | You manually add and remove listeners | React manages listeners automatically               |
+        | Uses native `Event` object            | Uses `SyntheticEvent` (wrapper around native event) |
+
+    Example:
+        
+        ->Native Browser Event:
+
+            const button = document.getElementById("btn");
+            button.addEventListener("click", () => {
+                console.log("Clicked");
+            });
+
+        ->React Event:
+            function App() {
+            return (
+                <button onClick={() => console.log("Clicked")}>
+                    Click Me
+                </button>
+            );
+            }
+
+        ->Interview Summary:
+            Native browser events use the DOM's addEventListener() API and expose the browser's Event object. 
+            Frameworks like React use a Synthetic Event system that wraps native events to provide consistent cross-browser behavior and centralized event handling, 
+            allowing developers to work with a simpler and more predictable event API."
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 2:
+Answer:
+    
