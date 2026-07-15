@@ -12,8 +12,26 @@ const H_Tabs = () => {
   return (
     <div>
       <h2>Tabs in react.</h2>
+
+      {/* Object.keys() returns an array of all object keys
+          ["Home", "About", "Contact"] */}
+
       {Object.keys(tabs).map((tab, index) => (
-        <button key={index} onClick={() => setactiveTab(tab)}>
+        <button
+          style={{
+            padding: "10px 18px",
+            margin: "5px",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontSize: "16px",
+            backgroundColor: activeTab === tab ? "#007bff" : "#e0e0e0",
+            color: activeTab === tab ? "#fff" : "#000",
+            transition: "0.3s",
+          }}
+          key={index}
+          onClick={() => setactiveTab(tab)}
+        >
           {tab}
         </button>
       ))}
