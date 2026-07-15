@@ -1,13 +1,13 @@
 1. Explain the JavaScript execution context.
     Answer:
-        Execution context is the environment which provides all the tools to run the  javaScript code runs.
+        Execution context is the environment which provides all the tools to run the javaScript code.
 
         It consists of:
             Global execution context
             Function execution context,
             JS Engine, 
             EventLoop,
-            CallbackQueue
+            Callback Queue
             Microtask queue
 
         During execution, memory allocation happens first, followed by code execution.
