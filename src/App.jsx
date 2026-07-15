@@ -6,6 +6,7 @@ import D_Show_Hide_Pass from "../Machine_Coding/Easy/D_Show_Hide_Pass"
 import E_TodoList from "../Machine_Coding/Easy/E_TodoList"
 import F_Search_Filter from "../Machine_Coding/Easy/F_Search_Filter"
 import G_Accordion from "../Machine_Coding/Easy/G_Accordion"
+import H_Tabs from "../Machine_Coding/Easy/H_Tabs"
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       {/* <E_TodoList/> */}
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
-
+      <H_Tabs/>
 
        {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
