@@ -24,7 +24,7 @@ function App() {
       {/* <G_Accordion/> */}
       {/* <H_Tabs/> */}
       {/* <I_Progress_Bar/> */}
-      <J_Modal/>
+      {/* <J_Modal/> */}
 
        {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
