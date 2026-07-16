@@ -7,6 +7,7 @@ import E_TodoList from "../Machine_Coding/Easy/E_TodoList"
 import F_Search_Filter from "../Machine_Coding/Easy/F_Search_Filter"
 import G_Accordion from "../Machine_Coding/Easy/G_Accordion"
 import H_Tabs from "../Machine_Coding/Easy/H_Tabs"
+import I_Progress_Bar from "../Machine_Coding/Easy/I_Progress_Bar"
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
       {/* <E_TodoList/> */}
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
-      <H_Tabs/>
+      {/* <H_Tabs/> */}
+      <I_Progress_Bar/>
 
        {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
