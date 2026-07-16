@@ -8,6 +8,7 @@ import F_Search_Filter from "../Machine_Coding/Easy/F_Search_Filter"
 import G_Accordion from "../Machine_Coding/Easy/G_Accordion"
 import H_Tabs from "../Machine_Coding/Easy/H_Tabs"
 import I_Progress_Bar from "../Machine_Coding/Easy/I_Progress_Bar"
+import J_Modal from "../Machine_Coding/Easy/J_Modal"
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
       {/* <H_Tabs/> */}
-      <I_Progress_Bar/>
+      {/* <I_Progress_Bar/> */}
+      <J_Modal/>
 
        {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
