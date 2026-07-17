@@ -96,7 +96,7 @@
 -------------------------------------------------------------
 10. What is React.memo?
     Answer:
-        React.memo prevents unnecessary component re-renders by memoizing the component output.
+        React.memo prevents unnecessary component re-renders by memoizing the components output.
         It improves performance when props remain unchanged.
 
 -------------------------------------------------------------
