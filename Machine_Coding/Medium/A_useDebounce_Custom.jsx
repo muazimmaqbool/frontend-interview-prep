@@ -12,7 +12,7 @@ const useDebounce = (value, delay = 500) => {
   return debouncedValue;
 };
 
-//usage here:
+//usage of useDebounce hook is here:
 const A_Debounce = () => {
   const [search, setsearch] = useState("");
   const debouncedSearch=useDebounce(search,1000)

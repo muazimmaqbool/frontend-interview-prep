@@ -27,7 +27,7 @@ function App() {
       {/* <J_Modal/> */}
 
        {/* ************ Medium Machine Coding Questions ****************** */}
-      {/* <A_Debounce/> */}
+      <A_Debounce/>
     </div>
   )
 }
