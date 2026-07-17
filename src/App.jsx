@@ -9,6 +9,7 @@ import G_Accordion from "../Machine_Coding/Easy/G_Accordion"
 import H_Tabs from "../Machine_Coding/Easy/H_Tabs"
 import I_Progress_Bar from "../Machine_Coding/Easy/I_Progress_Bar"
 import J_Modal from "../Machine_Coding/Easy/J_Modal"
+import B_Pagination from "../Machine_Coding/Medium/B_Pagination"
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
       {/* <J_Modal/> */}
 
        {/* ************ Medium Machine Coding Questions ****************** */}
-      <A_Debounce/>
+      {/* <A_Debounce/> */}
+      <B_Pagination/>
     </div>
   )
 }
