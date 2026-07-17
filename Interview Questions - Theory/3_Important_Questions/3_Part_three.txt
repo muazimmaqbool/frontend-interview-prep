@@ -38,6 +38,32 @@ Answer:
 
 
 ------------------------------------------------------------------------------------------------------------------
-Question 2:
+Question 2: Difference Between Hooks and Higher-Order Components (HOCs)?
 Answer:
-    
+    Hooks and Higher-Order Components (HOCs) are both patterns for reusing logic in React, but they work differently. 
+    ->A Hook is a function that lets functional components use React features like state and lifecycle methods. 
+    ->A Higher-Order Component (HOC) is a function that takes a component as input and returns a new enhanced component with additional functionality.
+
+    ->Comparison:
+        | Hooks                                            | HOCs                                   |
+        | ------------------------------------------------ | -------------------------------------- |
+        | Introduced in React 16.8                         | Used before Hooks for code reuse       |
+        | Used inside functional components                | Wrap existing components               |
+        | Share logic without changing component hierarchy | Create a new enhanced component        |
+        | Simpler and easier to read                       | Can lead to "wrapper hell" if overused |
+        | Preferred in modern React                        | Less common in new applications        |
+
+    ->Hook Example (Built-in):
+        useState()
+        useEffect()
+        useContext()
+        useReducer()
+        useMemo()
+        useCallback()
+        useRef()
+
+    ->Built-in HOC Example:
+        React.memo()
+         const MyComponent = React.memo(function MyComponent(props) {
+                                return <h1>{props.name}</h1>;
+                            });
