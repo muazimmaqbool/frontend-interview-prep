@@ -67,3 +67,44 @@ Answer:
          const MyComponent = React.memo(function MyComponent(props) {
                                 return <h1>{props.name}</h1>;
                             });
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 3: How React works internally?
+Answer: 
+    React works by creating a Virtual DOM, which is a lightweight copy of the real DOM. 
+    Whenever the state or props of a component change, React re-renders that component to create a new Virtual DOM. 
+    It then compares the new Virtual DOM with the previous one using the reconciliation (diffing) algorithm. 
+    React identifies the minimum changes required and updates only those parts of the real DOM, making UI updates efficient and improving performance
+
+    ->React Rendering Flow:
+        Component Render
+                ↓
+             JSX
+                ↓
+        React.createElement()
+                ↓
+        Virtual DOM
+                ↓
+        State/Props Change
+                ↓
+        New Virtual DOM
+                ↓
+        Reconciliation (Diffing)
+                ↓
+        Minimal Real DOM Updates
+                ↓
+        Browser Paint
+    ->Key Concepts:
+        JSX → Converted to React.createElement()
+        Virtual DOM → Lightweight copy of the UI
+        Reconciliation → Compares old and new Virtual DOM
+        Diffing Algorithm → Finds minimal changes
+        React Fiber → Prioritizes and schedules updates
+        Real DOM Update → Only changed elements are updated
+                        
+    ->Interview Summary (Best Answer):
+        "Internally, React converts JSX into JavaScript objects using React.createElement() and builds a Virtual DOM.
+         When state or props change, React creates a new Virtual DOM and compares it with the previous one using the reconciliation (diffing) algorithm. 
+         It calculates the minimum set of changes and updates only those parts of the real DOM. React's Fiber architecture further improves 
+         performance by prioritizing updates and allowing rendering work to be paused and resumed, keeping the application responsive."
