@@ -102,7 +102,7 @@
 -------------------------------------------------------------
 11. Explain useMemo.
     Answer:
-        useMemo caches expensive calculations and recalculates them only when dependencies change.
+        useMemo caches expensive calculations of a function and recalculates them only when dependencies change.
 
         This reduces unnecessary computations.
 
