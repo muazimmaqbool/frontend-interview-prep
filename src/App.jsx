@@ -10,6 +10,7 @@ import H_Tabs from "../Machine_Coding/Easy/H_Tabs"
 import I_Progress_Bar from "../Machine_Coding/Easy/I_Progress_Bar"
 import J_Modal from "../Machine_Coding/Easy/J_Modal"
 import B_Pagination from "../Machine_Coding/Medium/B_Pagination"
+import C_Infinite_Scroll from "../Machine_Coding/Medium/C_Infinite_Scroll"
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
 
        {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
-      <B_Pagination/>
+      {/* <B_Pagination/> */}
+      <C_Infinite_Scroll/>
     </div>
   )
 }
