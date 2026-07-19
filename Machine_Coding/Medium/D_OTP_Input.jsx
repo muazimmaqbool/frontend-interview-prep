@@ -79,4 +79,28 @@ const D_OTP_Input = () => {
   );
 };
 
+/*
+Initial State
+["", "", "", "", "", ""]
+        ↓
+User types 5 in first box
+        ↓
+handleChange(event, 0)
+        ↓
+Regex checks it's a digit ✔
+        ↓
+Copy state
+["", "", "", "", "", ""]
+        ↓
+Update index 0
+["5", "", "", "", "", ""]
+        ↓
+setOtp(copy)
+        ↓
+Focus moves to second input
+        ↓
+User types next digit...
+
+*/
+
 export default D_OTP_Input;
