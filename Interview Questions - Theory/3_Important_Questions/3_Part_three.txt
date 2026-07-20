@@ -108,3 +108,23 @@ Answer:
          When state or props change, React creates a new Virtual DOM and compares it with the previous one using the reconciliation (diffing) algorithm. 
          It calculates the minimum set of changes and updates only those parts of the real DOM. React's Fiber architecture further improves 
          performance by prioritizing updates and allowing rendering work to be paused and resumed, keeping the application responsive."
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 4: Does class declaration get hoisted?
+Answer:
+    Yes, class declarations are hoisted, but they cannot be accessed before they are declared because they are in the Temporal Dead Zone (TDZ).
+
+    ->Class declarations are hoisted, similar to let and const, but they are not initialized during hoisting. 
+      They remain in the Temporal Dead Zone until their declaration is reached. 
+      If you try to access a class before it's declared, JavaScript throws a ReferenceError.
+
+    ->Example:
+        const obj = new Person(); // ❌ ReferenceError
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        o/p: ReferenceError: Cannot access 'Person' before initialization
