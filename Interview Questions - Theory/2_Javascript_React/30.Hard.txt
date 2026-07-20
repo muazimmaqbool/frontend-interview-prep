@@ -147,6 +147,24 @@
         Web Workers run JavaScript in background threads.
         They prevent heavy computations from blocking the UI thread.
 
+        ->Web Workers are a browser API that allows you to run JavaScript code in a background thread completely separate from the browser's main execution thread. 
+          Because standard JavaScript is single-threaded, running heavy tasks on the main thread freezes the user interface (UI). 
+          Web Workers solve this problem by enabling a form of multi-threading, keeping your website smooth and responsive even during complex calculations.
+
+        ->Do they  work automatically?
+          Ans: No, Web Workers do not work automatically. You must explicitly create, trigger, and manage them in your JavaScript code.
+          Example:
+            // ❌ THIS FREEZES THE UI (Runs automatically on the main thread)
+            function heavyTask() {
+                for(let i = 0; i < 1000000000; i++) { /* complex math */ }
+            }
+            heavyTask(); 
+
+            //  THIS KEEPS THE UI SMOOTH (You manually hand it off)
+            const worker = new Worker('heavy-task-worker.js');
+            worker.postMessage('start'); // Manually triggering the background thread
+
+
 ----------------------------------------------------------
 17. What are memory leaks in React?
     Answer:
