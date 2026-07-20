@@ -36,34 +36,65 @@ const E_Image_Carousel = () => {
           style={{ width: "700px", height: "350px" }}
         />
         <div style={{ display: "flex", gap: "20px" }}>
+          {/* Previous Button */}
           <button
-            style={{
-              padding: "5px",
-              borderRadius: "10px",
-              backgroundColor: "skyblue",
-              color: "white",
-              border: "none",
-              fontSize: "2rem",
+            onClick={() => {
+              // If current index is 0:
+              // (0 - 1 + 6) % 6 = 5
+              //
+              // If current index is 3:
+              // (3 - 1 + 6) % 6 = 2
+              //
+              // This lets the carousel move backwards
+              // and automatically wraps from first image
+              // to the last image.
+              setindex((index - 1 + images.length) % images.length);
             }}
-            onClick={() =>
-              setindex((index - 1 + images.length) % images.length)
-            }
+            style={{
+              padding: "12px 24px",
+              border: "none",
+              borderRadius: "8px",
+              background: "#2563eb",
+              color: "#fff",
+              fontSize: "16px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              transition: "0.3s",
+            }}
+            onMouseOver={(e) => (e.target.style.background = "#1d4ed8")}
+            onMouseOut={(e) => (e.target.style.background = "#2563eb")}
           >
-            Prev
+            ⬅ Prev
           </button>
 
+          {/* Next Button */}
           <button
+            onClick={() =>
+              // If current index is 0:
+              // (0 + 1) % 6 = 1
+              //
+              // If current index is 5:
+              // (5 + 1) % 6 = 0
+              //
+              // % (modulus) wraps the index back to 0,
+              // creating an infinite looping carousel.
+              setindex((index + 1) % images.length)
+            }
             style={{
-              padding: "5px",
-              borderRadius: "10px",
-              backgroundColor: "skyblue",
-              color: "white",
+              padding: "12px 24px",
               border: "none",
-              fontSize: "2rem",
+              borderRadius: "8px",
+              background: "#16a34a",
+              color: "#fff",
+              fontSize: "16px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              transition: "0.3s",
             }}
-            onClick={() => setindex((index + 1) % images.length)}
+            onMouseOver={(e) => (e.target.style.background = "#15803d")}
+            onMouseOut={(e) => (e.target.style.background = "#16a34a")}
           >
-            Next
+            Next ➡
           </button>
         </div>
       </div>
