@@ -164,13 +164,12 @@
             const worker = new Worker('heavy-task-worker.js');
             worker.postMessage('start'); // Manually triggering the background thread
 
-
 ----------------------------------------------------------
 17. What are memory leaks in React?
     Answer:
         Memory leaks occur when resources such as timers or event listeners are not cleaned up.
         Using cleanup functions inside useEffect helps prevent them.
-
+        
 ----------------------------------------------------------
 18. What is tree shaking?
     Answer:
@@ -190,6 +189,7 @@
 
         ->How to force React to "Tree-Shake" at runtime?
             Ans: To prevent unused components from loading until they are actually needed, you must use Code Splitting via React.lazy() and Suspense
+
 ----------------------------------------------------------
 19. How would you optimize a React application?
     Answer:
