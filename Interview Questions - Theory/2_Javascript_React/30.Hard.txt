@@ -177,6 +177,19 @@
         Tree shaking removes unused code from bundles during build time.
         Bundlers like Webpack and Vite use it to reduce bundle size.
 
+        ->Does it work automatically?
+          Ans: Yes, tree shaking works automatically in modern web development, but only if you use the right code syntax and configuration
+
+        ->Modern build tools (like Vite, Webpack, Rollup, and Next.js) perform tree shaking during the production build process without requiring you to manually delete unused code.
+
+        ->Note: React does not do tree shaking at all
+            ->However, When you run a production build, tools like Vite or Webpack analyze your React code and automatically remove unused parts based on two rules:
+              Unused Imports: If you export a component or function but never import it anywhere, the bundler deletes it from the final bundle.
+              ESM Syntax: It only works if you use standard import and export statements, not CommonJS require().
+              To remove imported components that are hidden or rarely used, you must manually use React.lazy() to split the code.
+
+        ->How to force React to "Tree-Shake" at runtime?
+            Ans: To prevent unused components from loading until they are actually needed, you must use Code Splitting via React.lazy() and Suspense
 ----------------------------------------------------------
 19. How would you optimize a React application?
     Answer:
