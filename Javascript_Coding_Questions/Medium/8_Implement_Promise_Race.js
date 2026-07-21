@@ -38,6 +38,9 @@ function PromiseRace(promises){
         }
     })
 }
+// Time Complexity
+// Time: O(n) — iterates through the array once.
+// Space: O(1) (excluding the input array and internal promise bookkeeping).
 
 //Example 1: Two resolved promises:
 PromiseRace([
@@ -47,3 +50,41 @@ PromiseRace([
 // o/p: 1 (The first promise resolves immediately with 1)
 
 // Example 2: First promise rejects:
+PromiseRace([
+  Promise.reject("Error"),
+  Promise.resolve(2)
+])
+.then(console.log)
+.catch(console.error);
+// o/p: Error (Since the rejection happens first, the returned promise is rejected.)
+
+//Example 3: Non-promise value:
+PromiseRace([
+  42,
+  Promise.resolve(10)
+])
+.then(console.log)
+.catch(console.error);
+// o/p: 42 (because Promise.resole(42) resolves immediately)
+
+//Example 4: Delayed promises:
+const p1 = new Promise((resolve) =>
+  setTimeout(() => resolve("First"), 1000)
+);
+
+const p2 = new Promise((resolve) =>
+  setTimeout(() => resolve("Second"), 500)
+);
+
+PromiseRace([p1, p2])
+  .then(console.log)
+  .catch(console.error);
+// o/p: Second (Although p1 appears first in the array, p2 settles first.)
+
+//Example 5: Empty array:
+PromiseRace([])
+  .then(console.log)
+  .catch(console.error);
+
+console.log("Still running...");
+// o/p: Still running... (Nothing else happens because the returned promise never settles, exactly like the native Promise.race([]))
