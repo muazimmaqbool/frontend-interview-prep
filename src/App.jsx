@@ -37,7 +37,7 @@ function App() {
       {/* <C_Infinite_Scroll/> */}
       {/* <D_OTP_Input/> */}
       {/* <E_Image_Carousel/> */}
-      <F_File_Upload_Preview/>
+      {/* <F_File_Upload_Preview/> */}
     </div>
   )
 }
