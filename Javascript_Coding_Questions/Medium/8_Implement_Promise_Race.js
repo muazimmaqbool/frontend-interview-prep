@@ -32,8 +32,10 @@ Constraints & Edge Cases:
     . Input may include a mix of resolved, rejected, and pending promises.
 */
 function PromiseRace(promises){
+    //returms a new promise
     return new Promise((resolve,reject)=>{
         for(const item of promises){
+             // Promise.resolve() converts: Promise -> remains the same and Non-promise value -> wraps it into a resolved Promise so if 42 is Promise.resolve(42)
             Promise.resolve(item).then(resolve,reject);
         }
     })
