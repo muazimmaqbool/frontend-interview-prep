@@ -62,18 +62,25 @@
 -------------------------------------------------------------
 6. What is React Fiber?
     Answer:
-        React Fiber is React's reconciliation engine introduced to improve rendering performance.
+        React Fiber is React's new reconciliation engine introduced in react 16 to improve rendering performance.
 
         It enables:
             Incremental rendering
             Prioritization of updates
             Better responsiveness
 
+        Note: React was using the Stack Reconciler as its core rendering and reconciliation engine
+
 -------------------------------------------------------------
 7. What is hydration in React?
     Answer:
         Hydration attaches event listeners to HTML generated on the server.
         It converts static server-rendered HTML into an interactive React application.
+
+        ->React hydration is the process where client-side JavaScript attaches event listeners, initializes state, and injects interactivity into a 
+          static HTML page that was already pre-rendered on the server. 
+          It essentially bridges the gap between Server-Side Rendering (SSR) or Static Site Generation (SSG) and a fully functioning, 
+          dynamic React application in the browse
 
 -------------------------------------------------------------
 8. What is Server Side Rendering (SSR)?

@@ -35,7 +35,7 @@ function App() {
       {/* <B_Pagination/> */}
       {/* <C_Infinite_Scroll/> */}
       {/* <D_OTP_Input/> */}
-      <E_Image_Carousel/>
+      {/* <E_Image_Carousel/> */}
     </div>
   )
 }
