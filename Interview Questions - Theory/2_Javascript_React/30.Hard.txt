@@ -155,7 +155,7 @@
         They prevent heavy computations from blocking the UI thread.
 
         ->Web Workers are a browser API that allows you to run JavaScript code in a background thread completely separate from the browser's main execution thread. 
-          Because standard JavaScript is single-threaded, running heavy tasks on the main thread freezes the user interface (UI). 
+          Because standard JavaScript is single-threaded, running heavy tasks on the main thread which freezes the user interface (UI). 
           Web Workers solve this problem by enabling a form of multi-threading, keeping your website smooth and responsive even during complex calculations.
 
         ->Do they  work automatically?
@@ -189,7 +189,7 @@
         ->Modern build tools (like Vite, Webpack, Rollup, and Next.js) perform tree shaking during the production build process without requiring you to manually delete unused code.
 
         ->Note: React does not do tree shaking at all
-            ->However, When you run a production build, tools like Vite or Webpack analyze your React code and automatically remove unused parts based on two rules:
+            ->However, When you run a production build, tools like Vite or Webpack analyze your React code and automatically removes unused parts based on two rules:
               Unused Imports: If you export a component or function but never import it anywhere, the bundler deletes it from the final bundle.
               ESM Syntax: It only works if you use standard import and export statements, not CommonJS require().
               To remove imported components that are hidden or rarely used, you must manually use React.lazy() to split the code.
