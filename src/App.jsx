@@ -14,6 +14,7 @@ import C_Infinite_Scroll from "../Machine_Coding/Medium/C_Infinite_Scroll"
 import D_OTP_Input from "../Machine_Coding/Medium/D_OTP_Input"
 import E_Image_Carousel from "../Machine_Coding/Medium/E_Image_Carousel"
 import F_File_Upload_Preview from "../Machine_Coding/Medium/F_File_Upload_Preview"
+import G_Password_Strength_Meter from "../Machine_Coding/Medium/G_Password_Strength_Meter"
 
 function App() {
 
@@ -38,6 +39,8 @@ function App() {
       {/* <D_OTP_Input/> */}
       {/* <E_Image_Carousel/> */}
       {/* <F_File_Upload_Preview/> */}
+      <G_Password_Strength_Meter/>
+
     </div>
   )
 }
