@@ -6,6 +6,13 @@ const G_Password_Strength_Meter = () => {
 
   const strength =
     password.length < 6 ? "Week" : password.length < 10 ? "Medium" : "Strong";
+
+    const strengthColor =
+    strength === "Weak"
+      ? "#e74c3c"
+      : strength === "Medium"
+      ? "#f39c12"
+      : "#27ae60";
   return (
     <div>
       <h2>Password Strength Meter</h2>
@@ -17,7 +24,14 @@ const G_Password_Strength_Meter = () => {
           onChange={(e) => setpassword(e.target.value)}
         />
       </label>
-      {password!=="" && <h3>{strength}</h3>}
+      {password!=="" &&  <h3
+            style={{
+              marginTop: "15px",
+              color: strengthColor,
+            }}
+          >
+           {strength}
+          </h3>}
     </div>
   );
 };
