@@ -39,7 +39,7 @@ function App() {
       {/* <D_OTP_Input/> */}
       {/* <E_Image_Carousel/> */}
       {/* <F_File_Upload_Preview/> */}
-      <G_Password_Strength_Meter/>
+      {/* <G_Password_Strength_Meter/> */}
 
     </div>
   )

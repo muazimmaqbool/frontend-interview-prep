@@ -29,7 +29,7 @@
                 let a;
                 console.log(a); // undefined
 
-        null represents an intentional absence of value.
+        null represents an intentional absence of value. (i.e variable didn't exist at all)
             Example:
                 let user = null;
 
@@ -50,7 +50,7 @@
             Symbol
             BigInt
 
-        Non-primitive: Non-primitive data types (also known as Reference Types) can store collections of data, are mutable, and store a reference (memory address) 
+        Non-primitive data types: Non-primitive data types (also known as Reference Types) can store collections of data, are mutable, and store a reference (memory address) 
                        to the actual data location in the heap memory.
             Object
             Array
