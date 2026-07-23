@@ -128,3 +128,13 @@ Answer:
             }
         }
         o/p: ReferenceError: Cannot access 'Person' before initialization
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 5:  How would you optimize a slow React app?
+Answer:
+    When optimizing a slow React application, I first identify the bottleneck using tools like React DevTools Profiler and Chrome DevTools instead of optimizing prematurely. 
+    Then I reduce unnecessary re-renders using React.memo, useMemo, and useCallback. 
+    I optimize rendering by implementing lazy loading, code splitting, and virtualization for large lists. 
+    I also optimize API calls with caching, debouncing, or throttling, reduce bundle size through tree shaking, compress images, and use browser caching or a CDN.
+    Finally, I monitor Core Web Vitals to ensure the optimizations improve real user experience.
