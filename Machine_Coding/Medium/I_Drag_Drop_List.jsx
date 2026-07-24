@@ -43,10 +43,27 @@ const I_Drag_Drop_List = () => {
       {items.map((item, index) => (
         <div
           key={index}
+          // Makes this element draggable.
           draggable
+          // Fires when dragging starts. Store which item's index is being dragged.
           onDragStart={() => setdragIndex(index)}
+          // Prevent default to allow dropping. Without this, onDrop won't work.
           onDragOver={(e) => e.preventDefault()}
+          // Fires when dragged item is dropped. Pass the target index.
           onDrop={() => handleDrop(index)}
+          style={{
+            padding: "14px",
+            marginBottom: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
+            background: "#f8f9fa",
+            cursor: "grab",
+            fontSize: "18px",
+            fontWeight: "500",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+            transition: "0.2s",
+            userSelect: "none",
+          }}
         >
           {item}
         </div>
