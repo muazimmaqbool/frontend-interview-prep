@@ -16,6 +16,7 @@ import E_Image_Carousel from "../Machine_Coding/Medium/E_Image_Carousel"
 import F_File_Upload_Preview from "../Machine_Coding/Medium/F_File_Upload_Preview"
 import G_Password_Strength_Meter from "../Machine_Coding/Medium/G_Password_Strength_Meter"
 import H_Multi_select_Dropdown from "../Machine_Coding/Medium/H_Multi_select_Dropdown"
+import I_Drag_Drop_List from "../Machine_Coding/Medium/I_Drag_Drop_List"
 
 function App() {
 
@@ -41,7 +42,8 @@ function App() {
       {/* <E_Image_Carousel/> */}
       {/* <F_File_Upload_Preview/> */}
       {/* <G_Password_Strength_Meter/> */}
-      <H_Multi_select_Dropdown/>
+      {/* <H_Multi_select_Dropdown/> */}
+      <I_Drag_Drop_List/>
 
     </div>
   )
