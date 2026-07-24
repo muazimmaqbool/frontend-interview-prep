@@ -17,6 +17,7 @@ import F_File_Upload_Preview from "../Machine_Coding/Medium/F_File_Upload_Previe
 import G_Password_Strength_Meter from "../Machine_Coding/Medium/G_Password_Strength_Meter"
 import H_Multi_select_Dropdown from "../Machine_Coding/Medium/H_Multi_select_Dropdown"
 import I_Drag_Drop_List from "../Machine_Coding/Medium/I_Drag_Drop_List"
+import J_Nested_Comments from "../Machine_Coding/Medium/J_Nested_Comments"
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
 
-       {/* ************ Medium Machine Coding Questions ****************** */}
+      {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
       {/* <B_Pagination/> */}
       {/* <C_Infinite_Scroll/> */}
@@ -43,7 +44,8 @@ function App() {
       {/* <F_File_Upload_Preview/> */}
       {/* <G_Password_Strength_Meter/> */}
       {/* <H_Multi_select_Dropdown/> */}
-      <I_Drag_Drop_List/>
+      {/* <I_Drag_Drop_List/> */}
+      <J_Nested_Comments/>
 
     </div>
   )
