@@ -45,7 +45,7 @@ function App() {
       {/* <G_Password_Strength_Meter/> */}
       {/* <H_Multi_select_Dropdown/> */}
       {/* <I_Drag_Drop_List/> */}
-      <J_Nested_Comments/>
+      {/* <J_Nested_Comments/> */}
 
     </div>
   )
