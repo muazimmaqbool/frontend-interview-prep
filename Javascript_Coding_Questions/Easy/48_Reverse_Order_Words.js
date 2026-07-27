@@ -20,8 +20,7 @@ const reverseWords=(str)=>{
     let result=""
     while(stack.length){
         const current=stack.pop()
-        
-        //if current is empty (empty space) the condition will fail and we will not add-up empty space to the result
+        //if current is empty (empty space), then the condition will fail and we will not add-up empty space to the result
         if(current){ 
             // console.log("current:",current)
             result+=" "+current
@@ -32,7 +31,8 @@ const reverseWords=(str)=>{
 }
 console.log(reverseWords("the sky is blue")) // blue is key the
 console.log(reverseWords("       hello world  ")) // world hello
-console.log(reverseWords("a good                boy")) //  boy good a       
+console.log(reverseWords("a good                boy")) //  boy good a     
+  
 //Time complexity : for-loop O(n) and while-loop O(n) --> O(2n) here we don't take constant so : O(n)
 //Space complexity : O(n)
 
