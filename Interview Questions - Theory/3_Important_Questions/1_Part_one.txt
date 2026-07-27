@@ -1,4 +1,4 @@
-Question 1: Component lifecycle methods vs Hooks lifecycle (Mounting, Updating, Unmounting) ?
+Question 1: Components lifecycle methods vs Hooks lifecycle (Mounting, Updating, Unmounting) ?
 Answer:
     -> In class components, React provides lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount to 
        perform actions during different phases of a component's lifecycle.
@@ -21,13 +21,14 @@ Answer:
       DOM instead of re-rendering the entire page.
 
     ->When a component's state or props change, React creates a new Virtual DOM. It then compares this new Virtual DOM with the previous one using the diffing algorithm. 
-     This comparison identifies the minimum set of changes required to make the real DOM match the new Virtual DOM.
+      This comparison identifies the minimum set of changes required to make the real DOM match the new Virtual DOM.
 
     ->The diffing algorithm is optimized to work efficiently by following a few assumptions:
         1. If two elements have different types (for example, <div> changes to <span>), React removes the old element and creates a new one.
-        2. If two elements are of the same type, React updates only the changed attributes instead of replacing the entire element.
+        2. If two elements are of the same type, React updates only the changed attributes instead of replacing the entire element. 
+           Eg. class name of an element is changed it will keep element same only update class name
         3. When rendering lists, React uses the key prop to identify which items have been added, removed, or reordered. 
-          Stable and unique keys help React update lists efficiently and avoid unnecessary re-renders.
+           Stable and unique keys help React update lists efficiently and avoid unnecessary re-renders.
 
     This entire process makes React fast because it minimizes direct manipulation of the real DOM, which is relatively expensive.
 
