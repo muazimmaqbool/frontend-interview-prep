@@ -146,3 +146,48 @@ Answer:
     ->package.json describes the project and lists its dependencies, scripts, and metadata. It can specify version ranges like ^ or ~. 
     ->package-lock.json is generated automatically by npm and records the exact versions of every installed package and its dependencies. 
       This ensures consistent installations across different developers' machines and deployment environments.
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 7: What is the difference between ^ and ~ in dependency versions?
+Answer:
+    -> ^ (caret) allows npm to install newer minor and patch versions while keeping the same major version. 
+    -> ~ (tilde) is more restrictive and only allows patch updates within the same minor version. 
+    -> We use ^ when we want to receive backward-compatible feature updates and ~ when we want only bug fixes without new features.
+
+    | Symbol | Meaning                            | Example                          |
+    | ------ | ---------------------------------- | -------------------------------- |
+    | `^`    | Allows **minor and patch** updates | `^18.2.0` → `18.3.0`, `18.2.5` ✅|
+    | `~`    | Allows **patch** updates only      | `~18.2.0` → `18.2.5` ✅          |
+
+    -> ^ (Caret): Allows updates that don't change the major version.
+            Example:
+                {
+                    "react": "^18.2.0"
+                }
+            npm can install:
+                            18.2.1 ✅
+                            18.2.5 ✅
+                            18.3.0 ✅
+                            18.9.1 ✅
+                            19.0.0 ❌
+
+            Rule:
+                Major ❌
+                Minor ✅
+                Patch ✅
+
+    ->  ~ (Tilde): Allows only patch updates.
+            Example:
+                {
+                    "react": "~18.2.0"
+                }
+            npm can install:
+                            18.2.1 ✅
+                            18.2.9 ✅
+                            18.3.0 ❌
+                            19.0.0 ❌
+            Rule:
+                Major ❌
+                Minor ❌
+                Patch ✅
