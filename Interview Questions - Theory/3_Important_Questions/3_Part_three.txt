@@ -138,3 +138,11 @@ Answer:
     I optimize rendering by implementing lazy loading, code splitting, and virtualization for large lists. 
     I also optimize API calls with caching, debouncing, or throttling, reduce bundle size through tree shaking, compress images, and use browser caching or a CDN.
     Finally, I monitor Core Web Vitals to ensure the optimizations improve real user experience.
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 6: What is the difference between package.json and package-lock.json?
+Answer:
+    ->package.json describes the project and lists its dependencies, scripts, and metadata. It can specify version ranges like ^ or ~. 
+    ->package-lock.json is generated automatically by npm and records the exact versions of every installed package and its dependencies. 
+      This ensures consistent installations across different developers' machines and deployment environments.
