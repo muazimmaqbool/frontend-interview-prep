@@ -14,7 +14,7 @@ const reverseArray=(array)=>{
 
     //method 2 without reverse(): (Important)
 
-    let start=0; end=array.length-1
+    let start=0,end=array.length-1
     //end will have value less then array length and that will be index of last element in array
     while(start<end){
         [array[start],array[end]]=[array[end],array[start]];
