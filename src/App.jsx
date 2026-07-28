@@ -46,7 +46,7 @@ function App() {
       {/* <H_Multi_select_Dropdown/> */}
       {/* <I_Drag_Drop_List/> */}
       {/* <J_Nested_Comments/> */}
-      <K_Star_Rating />
+      {/* <K_Star_Rating /> */}
     </div>
   );
 }

@@ -45,7 +45,7 @@ Answer:
     ->Advantages:
         Smaller JavaScript bundle: Since Server Components don't send their JavaScript to the browser, the client downloads less code.
         Better performance: Less JavaScript means faster page loads and quicker rendering.
-        Direct data fetching: Server Components can fetch data directly from databases or APIs without exposing secrets to the client.
+        Direct data fetching: Server Components can fetch data directly from databases or APIs without exposing secret keys/apis to the client.
         Improved SEO: The HTML is generated on the server, making it easier for search engines to crawl.
         Enhanced security: Sensitive logic, API keys, and database queries remain on the server.
     
@@ -76,7 +76,7 @@ Answer:
 
     ->Interview Summary:
         "React Server Components are rendered on the server, allowing data fetching and UI generation before sending the result to the browser. 
-         They reduce the client-side JavaScript bundle, improve performance and SEO, and keep sensitive logic on the server. 
+         They reduce the client-side JavaScript bundle, which improvies performance and SEO, and keeps sensitive logic on the server. 
          However, they cannot use client-side hooks like useState or useEffect, so interactive features are implemented using Client Components."
 
 
