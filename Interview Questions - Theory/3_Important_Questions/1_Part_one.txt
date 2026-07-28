@@ -100,7 +100,6 @@ Answer:
           Visual Stability – Whether the page layout remains stable while loading.
 
       The three Core Web Vitals are:
-
         1. Largest Contentful Paint (LCP):
               Measures loading performance.
               It records how long it takes for the largest visible content (such as an image or heading) to appear.
@@ -118,7 +117,7 @@ Answer:
 
         Interview Summary:
             "Core Web Vitals are Google's key metrics for measuring user experience. They include Largest Contentful Paint (LCP) for loading speed,
-             Interaction to Next Paint (INP) for responsiveness, and Cumulative Layout Shift (CLS) for visual stability. Optimizing these metrics
+             Interaction to Next Paint (INP) for responsiveness (user interactions: click, hover, etc), and Cumulative Layout Shift (CLS) for visual stability. Optimizing these metrics
              improves user experience, SEO, and overall website performance."
 
 
