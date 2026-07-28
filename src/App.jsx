@@ -19,6 +19,7 @@ import H_Multi_select_Dropdown from "../Machine_Coding/Medium/H_Multi_select_Dro
 import I_Drag_Drop_List from "../Machine_Coding/Medium/I_Drag_Drop_List";
 import J_Nested_Comments from "../Machine_Coding/Medium/J_Nested_Comments";
 import K_Star_Rating from "../Machine_Coding/Medium/K_Star_Rating";
+import L_Copy_to_Clipboard from "../Machine_Coding/Medium/L_Copy_to_Clipboard";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       {/* <I_Drag_Drop_List/> */}
       {/* <J_Nested_Comments/> */}
       {/* <K_Star_Rating /> */}
+      <L_Copy_to_Clipboard/>
     </div>
   );
 }
