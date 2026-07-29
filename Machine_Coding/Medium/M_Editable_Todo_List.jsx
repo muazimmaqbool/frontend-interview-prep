@@ -10,7 +10,7 @@ import React, { useState } from "react";
 const M_Editable_Todo_List = () => {
   const [text, settext] = useState("");
   const [todos, settodos] = useState([]);
-  console.log(todos);
+//   console.log(todos);
 
   //function to add todo
   const addTodo = () => {
@@ -65,20 +65,20 @@ const M_Editable_Todo_List = () => {
       <h3>Todos List:</h3>
       {todos.length > 0 ? (
         todos.map((todo) => (
-          <div key={todo.id}>
+          <div key={todo.id} style={{display:"flex",alignItems:"center",gap:10}}>
             {todo.isEditing ? (
               <input
                 value={todo.text}
                 onChange={(e) => updateTodo(todo.id, e.target.value)}
               />
             ) : (
-              <span>{todo.text}</span>
+              <span style={{fontSize:"1.5rem"}}>{todo.text}</span>
             )}
 
             <button onClick={() => toggleEdit(todo.id)}>
               {todo.isEditing ? "Save" : "Edit"}
             </button>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            {!todo.isEditing && <button onClick={() => deleteTodo(todo.id)}>Delete</button>}
           </div>
         ))
       ) : (
