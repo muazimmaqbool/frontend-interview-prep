@@ -4,8 +4,8 @@ Answer:
     Different caching strategies are used depending on the type of data. 
         ->For static assets like JavaScript, CSS, and images, I rely on browser caching with proper cache headers. 
         ->For API data, I use libraries like TanStack Query, which cache responses and automatically refetch stale data when needed. 
-        I also use localStorage or sessionStorage for small client-side data and Service Workers for offline support and 
-        advanced caching in Progressive Web Apps (PWAs)
+        
+        ->I also use localStorage or sessionStorage for small client-side data and Service Workers for offline support and advanced caching in Progressive Web Apps (PWAs)
 
     Common Frontend Caching Strategies:
     Browser Cache: Caches static assets (JS, CSS, images) using HTTP cache headers.
