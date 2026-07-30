@@ -57,5 +57,35 @@ const N_Countdown_Timer = () => {
     </div>
   );
 };
+/*
+->Why setTimeout instead of setInterval?
+    A lot of developers use setInterval, but setTimeout is often safer in React
+
+    ->With setInterval:
+        setInterval(() => {
+            setSeconds((prev) => prev - 1);
+        }, 1000);
+
+        Problems:
+            Easier to accidentally create multiple intervals.
+            Must remember to clear the interval.
+            Can sometimes work with stale values if not written carefully.
+
+    ->With recursive setTimeout (your approach):
+        setTimeout(() => {
+            setSeconds((prev) => prev - 1);
+        }, 1000);
+
+        Benefits:
+            Only one timer exists at a time.
+            Every render creates a fresh timeout.
+            Easier cleanup using clearTimeout.
+            Fits naturally with React's render cycle.
+
+    ->Interview Answer:
+        I used setTimeout inside useEffect instead of setInterval. Each time the state updates, React re-renders and schedules the next timeout. 
+        This ensures only one timer exists at a time, avoids multiple interval issues, and makes cleanup simpler using clearTimeout.
+*/
+
 
 export default N_Countdown_Timer;
