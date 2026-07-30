@@ -130,15 +130,15 @@ Answer:
 
         ->Event travels through the DOM:
             Window
-            ↓
+             ↓
             Document
-            ↓
+             ↓
             html
-            ↓
+             ↓
             body
-            ↓
+             ↓
             div
-            ↓
+             ↓
             button
 
             Capturing phase (top → target)
@@ -162,12 +162,12 @@ Answer:
 Question 5: How do you handle API rate limits gracefully on the frontend? 
 Answer:
     To handle API rate limits gracefully, 
-      I reduce unnecessary requests using debouncing/throttling, 
-      cache responses with libraries like React Query, 
-      retry failed requests with exponential backoff for 429 errors, 
-      respect the Retry-After header if provided, 
-      disable repeated user actions while a request is in progress, 
-      and show a user-friendly message instead of continuously retrying.
+      -> I reduce unnecessary requests using debouncing/throttling, 
+      -> Cache responses with libraries like React Query, 
+      -> Retry failed requests with exponential backoff for 429 errors, 
+      -> Respect the Retry-After header if provided, 
+      -> Disable repeated user actions while a request is in progress, 
+      -> And show a user-friendly message instead of continuously retrying.
 
 
 -------------------------------------------------------------------------------------------------------------------

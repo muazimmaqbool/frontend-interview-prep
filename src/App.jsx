@@ -52,7 +52,7 @@ function App() {
       {/* <K_Star_Rating /> */}
       {/* <L_Copy_to_Clipboard/> */}
       {/* <M_Editable_Todo_List/> */}
-      <N_Countdown_Timer/>
+      {/* <N_Countdown_Timer/> */}
     </div>
   );
 }
