@@ -17,3 +17,17 @@ Answer:
         I improved performance by reducing unnecessary API calls with React Query caching, preventing unnecessary re-renders using 
         React.memo, useMemo, and useCallback, implementing lazy loading for routes/components, and using pagination for large datasets. 
         This reduced load times and improved UI responsiveness.
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 2: Describe the most complex feature you built
+
+------------------------------------------------------------------------------------------------------------------
+Question 3: How do you structure a large React project?
+
+------------------------------------------------------------------------------------------------------------------
+Question 4: How do you handle authentication and protected routes?
+
+------------------------------------------------------------------------------------------------------------------
+Question 5: Your company plans to expand from 50,000 users to 5 million users. The current React application is a monolith. 
+            What architectural changes would you make to support scalability?
