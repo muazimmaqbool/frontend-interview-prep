@@ -153,3 +153,27 @@ Answer:
     Context API → Authentication, theme, language
     Redux Toolkit → Complex global state like user infor, shopping cart ect
     TanStack Query → API data, caching, synchronization
+    
+
+------------------------------------------------------------------------------------------------------------------
+Question 8: How does React Query cache data?
+Answer:
+  React Query caches data in memory using a query key. When the same query is requested again, it returns the cached data instead of making a new API call, 
+  as long as the data is still considered fresh.
+
+  Example:
+    useQuery({
+      queryKey: ["users"],
+      queryFn: fetchUsers,
+      staleTime: 5000,
+    });
+
+  How it works:
+    1. First call → API request is made.
+    2. Response is stored in cache under the key: ["users"]
+    3. Another component requests the same query: ["users"]
+    4. React Query serves the cached data immediately.
+    5. After staleTime expires, it may refetch in the background.
+
+  One-liner:
+      React Query uses the queryKey as a unique identifier to store and retrieve cached API responses, reducing unnecessary network requests.
