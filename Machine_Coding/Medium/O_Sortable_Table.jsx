@@ -26,15 +26,22 @@ const O_Sortable_Table = () => {
     const sorted = [...users].sort((a, b) => {
       // String sorting (name).
       if (typeof a[field] === "string") {
+        // Ascending Order: Alice, Bob, John, Mike
+        // localeCompare():
+        // Returns:
+        // -1 => a comes before b
+        //  0 => equal
+        //  1 => a comes after b
         return order === "asc"
           ? a[field].localeCompare(b[field])
           : b[field].localeCompare(a[field]);
       }
 
       // Number sorting (age).
-      return order === "asc"
-        ? a[field] - b[field]
-        : b[field] - a[field];
+      // Ascending Order: 22, 28, 35
+      // If result is negative:
+      // 22 - 35 = -13 then 22 comes before 35
+      return order === "asc" ? a[field] - b[field] : b[field] - a[field];
     });
 
     setUsers(sorted);
@@ -48,7 +55,7 @@ const O_Sortable_Table = () => {
         fontFamily: "Arial",
       }}
     >
-      <h2 style={{textAlign:"center"}}>Sortable Table</h2>
+      <h2 style={{ textAlign: "center" }}>Sortable Table</h2>
 
       {/* buttons */}
       <div
@@ -56,7 +63,7 @@ const O_Sortable_Table = () => {
           display: "flex",
           gap: "10px",
           marginBottom: "20px",
-          justifyContent:"center"
+          justifyContent: "center",
         }}
       >
         <button
@@ -80,16 +87,11 @@ const O_Sortable_Table = () => {
         </button>
 
         <button
-          onClick={() =>
-            setOrder((prev) =>
-              prev === "asc" ? "desc" : "asc"
-            )
-          }
+          onClick={() => setOrder((prev) => (prev === "asc" ? "desc" : "asc"))}
           style={{
             padding: "8px 14px",
             cursor: "pointer",
-            background:
-              order === "asc" ? "#22c55e" : "#ef4444",
+            background: order === "asc" ? "#22c55e" : "#ef4444",
             color: "white",
             border: "none",
             borderRadius: "5px",
