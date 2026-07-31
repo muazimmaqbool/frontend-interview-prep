@@ -1,0 +1,19 @@
+Question 1: How did you improve performance in your application?
+Answer:
+    In our healthcare EMR application, we had screens with large patient lists, appointment data, and multiple API calls. 
+    Users were experiencing slow page loads and unnecessary re-renders. To improve performance:
+
+        -> I implemented React Query caching so previously fetched data was reused instead of making repeated API calls.
+        -> Added appropriate staleTime and cache settings to reduce network requests.
+        -> Used React.memo, useMemo, and useCallback because expensive calculations or unnecessary re-renders were happening.
+        -> Implemented lazy loading and code splitting using React.lazy and Suspense to reduce the initial bundle size.
+        -> Optimized images by loadin   g them lazily.
+        -> Added pagination/infinite scrolling for large datasets instead of rendering hundreds of records at once.
+        -> Moved search filtering and sorting logic into memoized computations to avoid recalculating on every render.
+
+        As a result, screen load times improved noticeably, API requests were reduced, and the UI became much more responsive.
+
+    ->Short Version (1 minute):
+        I improved performance by reducing unnecessary API calls with React Query caching, preventing unnecessary re-renders using 
+        React.memo, useMemo, and useCallback, implementing lazy loading for routes/components, and using pagination for large datasets. 
+        This reduced load times and improved UI responsiveness.
