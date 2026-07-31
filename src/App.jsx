@@ -22,6 +22,7 @@ import K_Star_Rating from "../Machine_Coding/Medium/K_Star_Rating";
 import L_Copy_to_Clipboard from "../Machine_Coding/Medium/L_Copy_to_Clipboard";
 import M_Editable_Todo_List from "../Machine_Coding/Medium/M_Editable_Todo_List";
 import N_Countdown_Timer from "../Machine_Coding/Medium/N_Countdown_Timer";
+import O_Sortable_Table from "../Machine_Coding/Medium/O_Sortable_Table";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
       {/* <L_Copy_to_Clipboard/> */}
       {/* <M_Editable_Todo_List/> */}
       {/* <N_Countdown_Timer/> */}
+      <O_Sortable_Table/>
     </div>
   );
 }
