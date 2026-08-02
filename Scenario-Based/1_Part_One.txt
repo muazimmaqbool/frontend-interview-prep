@@ -28,6 +28,8 @@ Answer:
     I used reusable form components, centralized state management, and optimized API calls to make the workflow scalable and maintainable. 
     The feature is used by healthcare staff during patient visits and significantly streamlined data entry.
 
+    ->Or answer with appointment queue management
+
     ->Tip for scenario-based questions:
             Use this simple structure:
                     Feature
@@ -38,7 +40,7 @@ Answer:
                       ↓
                     Result
 
-                    
+
 ------------------------------------------------------------------------------------------------------------------
 Question 3: How do you structure a large React project?
 
