@@ -54,7 +54,7 @@ function App() {
       {/* <L_Copy_to_Clipboard/> */}
       {/* <M_Editable_Todo_List/> */}
       {/* <N_Countdown_Timer/> */}
-      <O_Sortable_Table/>
+      {/* <O_Sortable_Table/> */}
     </div>
   );
 }

@@ -21,7 +21,24 @@ Answer:
 
 ------------------------------------------------------------------------------------------------------------------
 Question 2: Describe the most complex feature you built
+Answer:
+    One of the most complex features I built was the patient intake workflow in our EMR application. 
+    It included multiple steps such as vitals, allergies, medications, problems, immunizations, and social history and also for consultation. 
+    The challenge was managing complex form state, API integrations, validation, conditional rendering, and preserving data across steps. 
+    I used reusable form components, centralized state management, and optimized API calls to make the workflow scalable and maintainable. 
+    The feature is used by healthcare staff during patient visits and significantly streamlined data entry.
 
+    ->Tip for scenario-based questions:
+            Use this simple structure:
+                    Feature
+                      ↓
+                    Challenge
+                      ↓
+                    What you did
+                      ↓
+                    Result
+
+                    
 ------------------------------------------------------------------------------------------------------------------
 Question 3: How do you structure a large React project?
 
