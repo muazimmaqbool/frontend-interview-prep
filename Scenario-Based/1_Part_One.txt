@@ -43,6 +43,23 @@ Answer:
 
 ------------------------------------------------------------------------------------------------------------------
 Question 3: How do you structure a large React project?
+Answer: I structure a large React project using a feature-based architecture. 
+        Each feature has its own components, pages, hooks, services/API calls, and utilities. 
+        I keep shared components, common hooks, and reusable utilities in separate shared folders. 
+        This improves scalability, maintainability, and makes it easier for multiple developers to work on the project
+
+        ->Example Structure:
+                src/
+                ├── features/
+                │   ├── auth/
+                │   ├── patients/
+                │   └── appointments/
+                ├── components/
+                ├── hooks/
+                ├── services/
+                ├── utils/
+                ├── routes/
+                └── assets/
 
 ------------------------------------------------------------------------------------------------------------------
 Question 4: How do you handle authentication and protected routes?
