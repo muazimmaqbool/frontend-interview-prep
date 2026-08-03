@@ -16,10 +16,9 @@ Answer:
     Example:
         
         ->Native Browser Event:
-
             const button = document.getElementById("btn");
-            button.addEventListener("click", () => {
-                console.log("Clicked");
+                button.addEventListener("click", () => {
+                    console.log("Clicked");
             });
 
         ->React Event:
