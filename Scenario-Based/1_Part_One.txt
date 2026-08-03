@@ -43,10 +43,11 @@ Answer:
 
 ------------------------------------------------------------------------------------------------------------------
 Question 3: How do you structure a large React project?
-Answer: I structure a large React project using a feature-based architecture. 
-        Each feature has its own components, pages, hooks, services/API calls, and utilities. 
-        I keep shared components, common hooks, and reusable utilities in separate shared folders. 
-        This improves scalability, maintainability, and makes it easier for multiple developers to work on the project
+Answer: 
+      I structure a large React project using a feature-based architecture. 
+      Each feature has its own components, pages, hooks, services/API calls, and utilities. 
+      I keep shared components, common hooks, and reusable utilities in separate shared folders. 
+      This improves scalability, maintainability, and makes it easier for multiple developers to work on the project
 
         ->Example Structure:
                 src/
@@ -61,8 +62,20 @@ Answer: I structure a large React project using a feature-based architecture.
                 ├── routes/
                 └── assets/
 
+
 ------------------------------------------------------------------------------------------------------------------
 Question 4: How do you handle authentication and protected routes?
+Answer:
+    I handle authentication by storing the user's token (usually JWT) after login and maintaining the authentication state using Context API, Redux, or a global state solution. 
+    For protected routes, I create a wrapper component that checks whether the user is authenticated. 
+    If the user is not authenticated, they are redirected to the login page; otherwise, the requested page is rendered.
+
+    ->Simple Example:
+                    function ProtectedRoute({ children }) {
+                      const token = localStorage.getItem("token");
+
+                      return token ? children : <Navigate to="/login" />;
+                    }
 
 ------------------------------------------------------------------------------------------------------------------
 Question 5: Your company plans to expand from 50,000 users to 5 million users. The current React application is a monolith. 
