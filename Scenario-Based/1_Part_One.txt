@@ -78,5 +78,19 @@ Answer:
                     }
 
 ------------------------------------------------------------------------------------------------------------------
-Question 5: Your company plans to expand from 50,000 users to 5 million users. The current React application is a monolith. 
+Question 5: Your company plans to expand from 50,000 users to 5 million users. 
+            The current React application is a monolith. 
             What architectural changes would you make to support scalability?
+Answer:
+    To scale a React application from 50K to 5M users, I would move from a monolithic structure to a more scalable architecture:
+      -> Use feature-based architecture to organize code by business modules.
+      -> Implement code splitting and lazy loading to reduce initial bundle size.
+      -> Use CDN and caching strategies for static assets.
+      -> Introduce proper state management and avoid unnecessary global state.
+      -> Optimize API communication using React Query caching, pagination, and infinite scrolling.
+      -> Use micro-frontends if different teams need independent development and deployment.
+      -> Add performance monitoring and optimize bottlenecks using profiling tools.
+
+    One-liner:
+        I would make the frontend modular, optimize loading and rendering performance, introduce caching strategies, 
+        and adopt scalable architecture patterns like feature-based structure or micro-frontends as the application grows.
