@@ -129,12 +129,13 @@ Answer:
         }
         o/p: ReferenceError: Cannot access 'Person' before initialization
 
+        const obj = new Person(); // works fine here
 
 ------------------------------------------------------------------------------------------------------------------
 Question 5:  How would you optimize a slow React app?
 Answer:
-    When optimizing a slow React application, I first identify the bottleneck using tools like React DevTools Profiler and Chrome DevTools instead of optimizing prematurely. 
-    Then I reduce unnecessary re-renders using React.memo, useMemo, and useCallback. 
+    When optimizing a slow React application, I first identify the bottleneck using tools like React DevTools, Profiler and Chrome DevTools instead of optimizing prematurely. 
+    Then i reduce unnecessary re-renders using React.memo, useMemo, and useCallback. 
     I optimize rendering by implementing lazy loading, code splitting, and virtualization for large lists. 
     I also optimize API calls with caching, debouncing, or throttling, reduce bundle size through tree shaking, compress images, and use browser caching or a CDN.
     Finally, I monitor Core Web Vitals to ensure the optimizations improve real user experience.
@@ -145,13 +146,13 @@ Question 6: What is the difference between package.json and package-lock.json?
 Answer:
     ->package.json describes the project and lists its dependencies, scripts, and metadata. It can specify version ranges like ^ or ~. 
     ->package-lock.json is generated automatically by npm and records the exact versions of every installed package and its dependencies. 
-      This ensures consistent installations across different developers' machines and deployment environments.
+      This ensures consistent installations across different developers, machines and deployment environments.
 
 
 ------------------------------------------------------------------------------------------------------------------
 Question 7: What is the difference between ^ and ~ in dependency versions?
 Answer:
-    -> ^ (caret) allows npm to install newer minor and patch versions while keeping the same major version. 
+    -> ^ (caret) allows npm to install newer-> minor and patch versions while keeping the same major version. 
     -> ~ (tilde) is more restrictive and only allows patch updates within the same minor version. 
     -> We use ^ when we want to receive backward-compatible feature updates and ~ when we want only bug fixes without new features.
 
