@@ -177,3 +177,37 @@ Answer:
 
   One-liner:
       React Query uses the queryKey as a unique identifier to store and retrieve cached API responses, reducing unnecessary network requests.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+Question 9: Explain the difference between setTimeout, setImmediate, and process.nextTick?
+Answer:
+    ->setTimeout(): Schedules a callback to run after a specified delay (minimum delay, not guaranteed exact timing).
+                    setTimeout(() => {
+                      console.log("Runs later");
+                    }, 1000);
+
+    ->setImmediate(): Executes a callback in the next iteration of the event loop, after I/O operations. Mainly available in Node.js. 
+                      setImmediate(() => {
+                        console.log("Runs in next event loop cycle");
+                      });
+
+    ->process.nextTick(): Executes a callback immediately after the current operation finishes, before the event loop continues. Mainly available in Node.js.
+                          process.nextTick(() => {
+                            console.log("Runs before setTimeout and setImmediate");
+                          });
+
+    ->Execution Order:
+                      setTimeout(() => console.log("setTimeout"), 0);
+
+                      setImmediate(() => console.log("setImmediate"));
+
+                      process.nextTick(() => console.log("nextTick"));
+
+                     output: nextTick -> setTimeout / setImmediate
+                             Note: setTimeout and setImmediate order can vary depending on context.
+
+    ->Interview Answer:
+            process.nextTick() has the highest priority and runs before the event loop continues. 
+            setTimeout() runs after a specified delay, while setImmediate() runs in the next event loop iteration after I/O callbacks. 
+            In Node.js, process.nextTick() executes before both setTimeout() and setImmediate().
