@@ -3,7 +3,7 @@ import React, { useState } from "react";
 //Question: Allow selecting multiple options.
 
 const options = ["Javascript", "Python", "Java", "React", "Angular", "Vue"];
-const H_Multi_select_Dropdown = () => {
+const H_Multi_select_Checkbox = () => {
   const [selected, setselected] = useState([]);
   const handleClick = (item) => {
     setselected((prev) =>
@@ -35,4 +35,4 @@ const H_Multi_select_Dropdown = () => {
   );
 };
 
-export default H_Multi_select_Dropdown;
+export default H_Multi_select_Checkbox;

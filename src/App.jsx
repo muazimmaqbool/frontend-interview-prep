@@ -15,7 +15,7 @@ import D_OTP_Input from "../Machine_Coding/Medium/D_OTP_Input";
 import E_Image_Carousel from "../Machine_Coding/Medium/E_Image_Carousel";
 import F_File_Upload_Preview from "../Machine_Coding/Medium/F_File_Upload_Preview";
 import G_Password_Strength_Meter from "../Machine_Coding/Medium/G_Password_Strength_Meter";
-import H_Multi_select_Dropdown from "../Machine_Coding/Medium/H_Multi_select_Dropdown";
+import H_Multi_select_Checkbox from "../Machine_Coding/Medium/H_Multi_select_Checkbox";
 import I_Drag_Drop_List from "../Machine_Coding/Medium/I_Drag_Drop_List";
 import J_Nested_Comments from "../Machine_Coding/Medium/J_Nested_Comments";
 import K_Star_Rating from "../Machine_Coding/Medium/K_Star_Rating";
@@ -23,6 +23,7 @@ import L_Copy_to_Clipboard from "../Machine_Coding/Medium/L_Copy_to_Clipboard";
 import M_Editable_Todo_List from "../Machine_Coding/Medium/M_Editable_Todo_List";
 import N_Countdown_Timer from "../Machine_Coding/Medium/N_Countdown_Timer";
 import O_Sortable_Table from "../Machine_Coding/Medium/O_Sortable_Table";
+import P_Multi_Select_Dropdown from "../Machine_Coding/Medium/P_Multi_Select_Dropdown";
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
       {/* <E_Image_Carousel/> */}
       {/* <F_File_Upload_Preview/> */}
       {/* <G_Password_Strength_Meter/> */}
-      {/* <H_Multi_select_Dropdown/> */}
+      {/* <H_Multi_select_Checkbox/> */}
       {/* <I_Drag_Drop_List/> */}
       {/* <J_Nested_Comments/> */}
       {/* <K_Star_Rating /> */}
@@ -55,6 +56,7 @@ function App() {
       {/* <M_Editable_Todo_List/> */}
       {/* <N_Countdown_Timer/> */}
       {/* <O_Sortable_Table/> */}
+      <P_Multi_Select_Dropdown/>
     </div>
   );
 }
