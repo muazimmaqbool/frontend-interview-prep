@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const options = ["React", "JavaScript", "TypeScript", "Node.js", "MongoDB"];
 const P_Multi_Select_Dropdown = () => {
@@ -23,10 +24,14 @@ const P_Multi_Select_Dropdown = () => {
           borderRadius: "6px",
           cursor: "pointer",
           background: "#fff",
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"space-between"
         }}
         onClick={() => setisOpen((prev) => !prev)}
       >
         {selected.length ? selected.join(", ") : "Select Technology"}
+        {isOpen?<FaChevronUp/>:<FaChevronDown/>}
       </div>
       {/* dropdown options */}
       {isOpen && (
