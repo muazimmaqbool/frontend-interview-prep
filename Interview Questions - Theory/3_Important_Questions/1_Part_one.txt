@@ -211,3 +211,38 @@ Answer:
             process.nextTick() has the highest priority and runs before the event loop continues. 
             setTimeout() runs after a specified delay, while setImmediate() runs in the next event loop iteration after I/O callbacks. 
             In Node.js, process.nextTick() executes before both setTimeout() and setImmediate().
+
+
+------------------------------------------------------------------------------------------------------------------------
+Question 10: What are Error Boundaries, and when would you use them?
+Answer:
+    Error Boundaries are React components that catch JavaScript errors in their child component tree during rendering, lifecycle methods, and constructors. 
+    Instead of crashing the entire application, they display a fallback UI.
+
+    ->When to use them?
+        Around major sections of the app.
+        Around complex components.
+        Around third-party components that might fail.
+
+    ->Example:
+        class ErrorBoundary extends React.Component {
+            state = { hasError: false };
+
+            static getDerivedStateFromError() {
+              return { hasError: true };
+            }
+
+            render() {
+              return this.state.hasError
+                ? <h2>Something went wrong</h2>
+                : this.props.children;
+            }
+          }
+
+    ->Usage:
+      <ErrorBoundary>
+        <Dashboard />
+      </ErrorBoundary>
+
+    ->One-liner:
+      Error Boundaries prevent the entire React app from crashing by catching rendering errors and showing a fallback UI instead.gi
