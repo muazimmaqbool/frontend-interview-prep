@@ -36,7 +36,7 @@ function App() {
       {/* <E_TodoList/> */}
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
-      {/* <H_Tabs/> */}
+      <H_Tabs/>
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
 
