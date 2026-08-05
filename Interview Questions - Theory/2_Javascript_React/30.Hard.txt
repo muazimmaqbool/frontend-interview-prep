@@ -127,14 +127,12 @@
 11. Explain useMemo.
     Answer:
         useMemo caches expensive calculations of a function and recalculates them only when dependencies change.
-
         This reduces unnecessary computations.
 
 ----------------------------------------------------------
 12. Explain useCallback.
     Answer:
-        useCallback memoizes functions so that they are recreated only when dependencies change.
-
+        useCallback memoizes functions so that they are re-created only when dependencies change.
         It helps avoid unnecessary child component renders.
 
 ----------------------------------------------------------
