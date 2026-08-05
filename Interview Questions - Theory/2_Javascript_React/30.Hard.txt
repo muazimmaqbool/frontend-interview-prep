@@ -82,6 +82,23 @@
           It essentially bridges the gap between Server-Side Rendering (SSR) or Static Site Generation (SSG) and a fully functioning, 
           dynamic React application in the browse
 
+        ->Example:  
+             Suppose the server sends: <button>Click Me</button> (The button is visible, but it has no React functionality yet.)
+             When React loads in the browser:
+                function App() {
+                  return (
+                        <button onClick={() => alert("Clicked!")}>
+                            Click Me
+                        </button>
+                  );
+                }
+
+            Why is it used?
+                    Faster initial page load
+                    Better SEO
+                    Used by frameworks like Next.js
+
+
 -------------------------------------------------------------
 8. What is Server Side Rendering (SSR)?
     Answer:
