@@ -298,3 +298,50 @@ Answer:
         JavaScript Executes
             ↓
         Page Becomes Interactive
+
+
+---------------------------------------------------------------------------------------------------------------------
+Question 8: Explain web workers and service workers?
+Answer:
+    ->Web Workers:
+        Web Workers allow JavaScript code to run in a separate background thread so heavy tasks don't block the main UI thread.
+
+        Used for:
+            Large calculations
+            Data processing
+            Image/video processing
+
+        Example:
+            const worker = new Worker("worker.js");
+
+            worker.postMessage("Start calculation");
+
+            worker.onmessage = (e) => {
+            console.log(e.data);
+            };
+
+        Note: Main thread remains responsive while the worker runs.
+
+    ->Service Workers:
+        Service Workers are background scripts that sit between the browser and the network. They are mainly used for caching, offline support, and handling network requests.
+
+        Used for:
+            Progressive Web Apps (PWA)
+            Offline functionality
+            Push notifications
+            Background sync
+
+        Example:
+            navigator.serviceWorker.register("/service-worker.js");
+
+    ->Key Difference:
+        | Web Worker                           | Service Worker                       |
+        | ------------------------------------ | ------------------------------------ |
+        | Runs JavaScript in a separate thread | Acts as a network proxy              |
+        | Used for heavy computations          | Used for caching/offline features    |
+        | Communicates using `postMessage`     | Can intercept fetch requests         |
+        | Dies when the page closes            | Can run even when the page is closed |
+
+    ->Interview One-liner:
+        Web Workers improve performance by moving heavy JavaScript tasks away from the main thread, 
+        while Service Workers improve reliability by enabling caching, offline access, and background capabilities.
