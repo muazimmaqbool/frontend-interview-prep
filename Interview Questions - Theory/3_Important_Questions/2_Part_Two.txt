@@ -345,3 +345,44 @@ Answer:
     ->Interview One-liner:
         Web Workers improve performance by moving heavy JavaScript tasks away from the main thread, 
         while Service Workers improve reliability by enabling caching, offline access, and background capabilities.
+
+
+______________________________________________________________________________________________________________________
+Question 9: Explain Incremental rendering Prioritization of updates Better responsiveness?
+Answer:
+    These are commonly discussed when explaining React Fiber.
+
+    1. Incremental Rendering:
+            React breaks rendering work into small chunks instead of rendering everything at once.
+
+            Example:
+                A page has:
+                    1000 list items
+                    Search box
+
+            Instead of rendering all 1000 items in one blocking task, React renders them in smaller chunks.
+
+            Benefit: UI doesn't freeze.
+
+
+    2. Prioritization of Updates:
+            React gives higher priority to important updates and delays less important ones.
+
+            Example:
+                setInputValue(value); // High priority
+                setFilteredList(bigList); // Low priority
+
+            User typing is updated first, while the large list update can wait.
+
+            Benefit: Important interactions stay fast.
+
+
+    3. Better Responsiveness:
+            React can pause, resume, or cancel rendering work to keep the app responsive.
+
+            Example:
+                User is typing in a search box while a large table is rendering.
+
+                React can pause table rendering and immediately update the input field.
+
+                Benefit: Smooth typing and interactions even during heavy rendering.
