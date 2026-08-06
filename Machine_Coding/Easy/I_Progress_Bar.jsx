@@ -4,9 +4,12 @@ import React, { useState } from "react";
 const I_Progress_Bar = () => {
   const [progress, setprogress] = useState(0);
 
-  //   This increases the progress every second and automatically stops at 100%.
+  //will be used to stop the auto increase
+  const [timer, settimer] = useState();
+  //This increases the progress every second and automatically stops at 100%.
   const autoIncrease = () => {
     const interval = setInterval(() => {
+      settimer(interval)
       setprogress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
@@ -16,6 +19,11 @@ const I_Progress_Bar = () => {
       });
     }, 1000);
   };
+
+  const stopAutoIncrease=()=>{
+    clearInterval(timer)
+    settimer()
+  }
   return (
     <div>
       <h2>Progress Bar</h2>
@@ -45,6 +53,9 @@ const I_Progress_Bar = () => {
       </button>
       <button disabled={progress === 100} onClick={autoIncrease}>
         Auto Increase
+      </button>
+      <button disabled={timer===undefined} onClick={stopAutoIncrease}>
+       Stop Auto Increase
       </button>
     </div>
   );
