@@ -398,6 +398,6 @@ Answer:
 
             React Fiber's scheduler handles that.
 
-       ->React Fiber automatically performs incremental rendering and prioritizes updates. 
+       ->Interview Answer: React Fiber automatically performs incremental rendering and prioritizes updates. 
          As developers, we can help by using startTransition, useDeferredValue, pagination, infinite scrolling, and virtualization libraries like react-window 
          to avoid rendering large amounts of UI at once.
