@@ -386,3 +386,18 @@ Answer:
                 React can pause table rendering and immediately update the input field.
 
                 Benefit: Smooth typing and interactions even during heavy rendering.
+
+    Note:
+       -> Do these work automatically?
+            React Fiber (Incremental Rendering, Prioritization, Better Responsiveness) works automatically under the hood.
+
+            You don't manually tell React:
+                            Render this chunk now
+                            Pause
+                            Resume later
+
+            React Fiber's scheduler handles that.
+
+       ->React Fiber automatically performs incremental rendering and prioritizes updates. 
+         As developers, we can help by using startTransition, useDeferredValue, pagination, infinite scrolling, and virtualization libraries like react-window 
+         to avoid rendering large amounts of UI at once.
