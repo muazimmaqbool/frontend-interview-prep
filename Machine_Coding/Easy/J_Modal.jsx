@@ -21,7 +21,7 @@ const J_Modal = () => {
               width: 500,
             }}
           >
-            <h2>Hello</h2>
+            <h2>Hi! I am Modal</h2>
 
             <button onClick={() => setopen(false)}>Close</button>
           </div>

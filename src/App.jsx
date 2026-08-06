@@ -37,7 +37,7 @@ function App() {
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
       {/* <H_Tabs/> */}
-      <I_Progress_Bar/>
+      {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
