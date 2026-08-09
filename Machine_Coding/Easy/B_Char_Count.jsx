@@ -9,7 +9,7 @@ import React, { useState } from "react";
 */
 const B_Char_Count = () => {
   const [text, settext] = useState("");
-
+  // console.log(text.trim())
   const words=text.trim() ? text.trim().split(/\s+/).length:0; // Explanation below:
   return (
     <div>
@@ -22,11 +22,12 @@ const B_Char_Count = () => {
 
 /*
 Explanation:
-    ->  const words=text.trim() ? text.trim().split(/\s+/).length:0; // if the string is empty after trimming, return 0.
+    ->  const words=text.trim() ? text.trim().split(/\s+/).length:0; 
+          if the string is empty after trimming, return 0.
 
     1. text.trim() : trim() removes whitespace from the beginning and end of the string.
 
-    2. text.trim() ? : "ternary operator." here If the trimmed string is not empty, it is truthy.
+    2. text.trim() ? : "ternary operator." here if the trimmed string is not empty, it is truthy.
                                           If it is empty (""), it is falsy.
                        Example: text = "Hello";
                                 text.trim(); // "Hello" (truthy)
