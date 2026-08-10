@@ -182,7 +182,7 @@ Answer:
 -----------------------------------------------------------------------------------------------------------------------
 Question 9: Explain the difference between setTimeout, setImmediate, and process.nextTick?
 Answer:
-    ->setTimeout(): Schedules a callback to run after a specified delay (minimum delay, not guaranteed exact timing).
+    ->setTimeout(): Schedules a callback to run after a specified delay.
                     setTimeout(() => {
                       console.log("Runs later");
                     }, 1000);
