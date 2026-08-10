@@ -194,5 +194,43 @@ Answer:
                 Patch ✅
 
 
+-----------------------------------------------------------------------------------------------------------------------
+Question 8: How do closures affect memory usage, and when can they cause memory leaks?
+Answer:
+    A closure keeps references to variables from its outer scope, so those variables remain in memory as long as the closure is reachable. 
+    This is useful, but if a closure is kept alive unnecessarily, it can retain large objects and cause memory leaks.
+
+    Example:
+        function createHandler() {
+            const largeData = new Array(1000000).fill("data");
+
+            return () => {
+                console.log(largeData.length);
+            };
+        }
+
+        const handler = createHandler();
+
+    Here, handler keeps largeData alive because the closure references it.
+
+    ->Common Memory Leak:
+            Event listeners or timers are a common example:
+
+            useEffect(() => {
+                const handler = () => {
+                // closure keeps referenced data alive
+            };
+
+            window.addEventListener("resize", handler);
+
+            return () => {
+                window.removeEventListener("resize", handler);
+            };
+            }, []);
+            If you don't remove the listener, the browser may keep the closure and everything it references in memory.
+
+    ->Interview One-liner:
+            Closures don't inherently cause memory leaks; leaks happen when long-lived references such as event listeners, timers, or global objects 
+            unnecessarily keep closures—and the data they reference—alive.
 
 
