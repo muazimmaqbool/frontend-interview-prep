@@ -11,6 +11,8 @@ const J_Modal = () => {
       {open && (
         <div //this dev is background of the modal like will be shown to the rest of the screen
           style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)" }}
+          //clicking outside the modal will close the modal
+          onClick={() => setopen(false)}
         >
           {/* inset: 0; is a shorthand property that sets top: 0;, right: 0;, bottom: 0;, and left: 0; all at once */}
           <div
