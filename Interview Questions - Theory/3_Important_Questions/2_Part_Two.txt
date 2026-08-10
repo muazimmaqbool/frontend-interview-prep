@@ -401,3 +401,32 @@ Answer:
        ->Interview Answer: React Fiber automatically performs incremental rendering and prioritizes updates. 
          As developers, we can help by using startTransition, useDeferredValue, pagination, infinite scrolling, and virtualization libraries like react-window 
          to avoid rendering large amounts of UI at once.
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Question 10: Why is JavaScript single-threaded?
+Answer:
+    JavaScript is single-threaded primarily to prevent complexity and conflicts when manipulating the Document Object Model (DOM). 
+    If multiple threads were allowed to modify the web page structure simultaneously, it could lead to severe race conditions, data corruption, and unpredictable UI rendering
+        or
+    JavaScript is single-threaded because it uses one main thread to execute code, which makes it simpler and avoids problems like race conditions when manipulating the DOM.
+
+    For example:
+        console.log("A");
+        console.log("B");
+        console.log("C");
+
+    These execute one at a time on the call stack.
+
+    However, JavaScript can still handle asynchronous tasks using the Web APIs, Event Loop, and Callback/Task Queues.
+        JavaScript
+            ↓
+        Call Stack (single thread)
+            ↓
+        Web APIs → Timers / Fetch / Events
+            ↓
+        Event Loop
+            ↓
+        Call Stack
+
+    Important: JavaScript itself is single-threaded, but the browser/Node.js runtime can use other threads for background operations. Web Workers can also run JavaScript on separate threads.
