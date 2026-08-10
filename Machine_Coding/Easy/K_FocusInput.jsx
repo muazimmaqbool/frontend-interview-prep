@@ -30,6 +30,13 @@ const K_FocusInput = () => {
       inputRef.current.focus();
     }
   };
+
+  //extra remove focus from input.
+  const removeFocus = () => {
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
+  };
   return (
     <div>
       <h2>Focus On Input</h2>
@@ -41,6 +48,8 @@ const K_FocusInput = () => {
       */}
         <input ref={inputRef} type="text" placeholder="Type here..." />
         <button onClick={handleClick}>Focus Input</button>
+        {/* extra */}
+        <button onClick={removeFocus}>Unfocus Input</button>
       </div>
     </div>
   );
