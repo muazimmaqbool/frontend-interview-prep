@@ -40,7 +40,7 @@ function App() {
       {/* <H_Tabs/> */}
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
-      <K_FocusInput/>
+      {/* <K_FocusInput/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}

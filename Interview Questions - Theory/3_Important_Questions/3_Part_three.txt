@@ -234,3 +234,32 @@ Answer:
             unnecessarily keep closures—and the data they reference—alive.
 
 
+------------------------------------------------------------------------------------------------- 
+Question 9: What are Web Components, and how do they differ from React components?
+Answer:
+    Web Components are native browser technologies for creating reusable custom HTML elements. They work without React or any JavaScript framework.
+
+    Example:
+        class MyButton extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `<button>Click Me</button>`;
+            }
+        }
+
+        customElements.define("my-button", MyButton);      
+
+    Usage:
+        <my-button></my-button>    
+
+    Web Components vs React Components:
+        | Web Components                         | React Components                      |
+        | -------------------------------------- | ------------------------------------- |
+        | Native browser technology              | React library                         |
+        | Works without a framework              | Requires React                        |
+        | Uses Custom Elements, Shadow DOM, etc. | Uses JSX and React's rendering system |
+        | Can be used in any framework           | Mainly used within React              |
+        | DOM-based                              | React component-based                 |
+
+    One-liner:
+        Web Components are framework-independent custom HTML elements provided by the browser, 
+        while React components are JavaScript components managed by React's rendering and state system.
