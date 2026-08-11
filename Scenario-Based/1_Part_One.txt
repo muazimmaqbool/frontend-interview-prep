@@ -94,3 +94,22 @@ Answer:
     One-liner:
         I would make the frontend modular, optimize loading and rendering performance, introduce caching strategies, 
         and adopt scalable architecture patterns like feature-based structure or micro-frontends as the application grows.
+
+
+------------------------------------------------------------------------------------------------------------------
+Question 6: How would you handle cross-browser compatibility issues?
+Answer:
+    I handle cross-browser compatibility by first identifying the browser-specific issue, checking Can I Use and MDN for browser support, 
+    and then using progressive enhancement, fallbacks, or polyfills where necessary.
+
+    For example:
+        /* Fallback */
+        display: block;
+
+        /* Modern browser */
+        display: flex;
+
+    I also test across major browsers like Chrome, Firefox, Safari, and Edge, preferably using tools such as BrowserStack.
+
+    One-liner:
+        I use feature detection, fallbacks/polyfills, responsive CSS, and cross-browser testing rather than relying on browser-specific behavior.
