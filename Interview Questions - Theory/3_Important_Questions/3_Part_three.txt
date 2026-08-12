@@ -285,3 +285,46 @@ Answer:
             }, []);
 
     Note: Closures don't inherently cause memory leaks; leaks happen when long-lived references unnecessarily keep closures and the data they reference in memory.
+
+    ->How to do cleanup of closures?
+        To clean up a closure-related memory leak, remove the thing that is keeping the closure alive.
+
+        In React:
+
+        For event listeners:
+        useEffect(() => {
+            const handleResize = () => {
+                console.log("resize");
+            };
+
+            window.addEventListener("resize", handleResize);
+
+            // Cleanup
+            return () => {
+                window.removeEventListener("resize", handleResize);
+            };
+        }, []);
+
+        For timers:
+
+        useEffect(() => {
+        const timer = setInterval(() => {
+            console.log("running");
+        }, 1000);
+
+        // Cleanup
+        return () => {
+            clearInterval(timer);
+        };
+        }, []);
+
+    ->Remember:
+        addEventListener  → removeEventListener
+        setInterval       → clearInterval
+        setTimeout        → clearTimeout
+        WebSocket         → close()
+        Subscription      → unsubscribe()
+
+    ->Interview answer:
+        I clean up resources created inside effects using the useEffect cleanup function. 
+        This prevents event listeners, timers, subscriptions, or other references from keeping closures alive unnecessarily.
