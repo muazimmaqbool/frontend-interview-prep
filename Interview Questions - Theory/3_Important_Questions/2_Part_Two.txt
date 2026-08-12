@@ -257,7 +257,7 @@ Answer:
              The browser establishes a TCP connection with the server.
              For HTTPS, a TLS/SSL handshake is performed to create a secure encrypted connection.
         4. HTTP Request:
-             The browser sends an HTTP request (e.g., GET /) to the server along with headers, cookies, and other metadata.
+             The browser sends an HTTP request (e.g: GET /) to the server along with headers, cookies, and other metadata.
         5. Server Processing:
              The server processes the request, performs any required business logic or database queries, and prepares the response.
         6. HTTP Response:
@@ -343,12 +343,12 @@ Answer:
         | Dies when the page closes            | Can run even when the page is closed |
 
     ->Interview One-liner:
-        Web Workers improve performance by moving heavy JavaScript tasks away from the main thread, 
+        Web Workers improves performance by moving heavy JavaScript tasks away from the main thread, 
         while Service Workers improve reliability by enabling caching, offline access, and background capabilities.
 
 
 ______________________________________________________________________________________________________________________
-Question 9: Explain Incremental rendering Prioritization of updates Better responsiveness?
+Question 9: Explain Incremental rendering, Prioritization of updates and Better responsiveness?
 Answer:
     These are commonly discussed when explaining React Fiber.
 
