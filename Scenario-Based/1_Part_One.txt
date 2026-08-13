@@ -115,6 +115,12 @@ Answer:
         I use feature detection, fallbacks/polyfills, responsive CSS, and cross-browser testing rather than relying on browser-specific behavior.
 
 
--------------------------------------------------------------------------------------------------------------------
 Question 7: How do you prioritize technical debt vs. new features?
 Answer:
+  I prioritize technical debt based on its impact on users, business, and development speed. 
+  If the debt causes bugs, security issues, performance problems, or blocks new features, 
+  I address it first. Otherwise, I balance it with feature work by allocating some development time to technical debt in each sprint.
+
+  Example:
+    If an old component is making a new feature difficult to build, I would refactor that component first. But if the technical debt has little impact, 
+    I would deliver the business-critical feature and schedule the cleanup for a later sprint.
