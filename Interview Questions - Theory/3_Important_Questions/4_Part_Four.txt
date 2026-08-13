@@ -1,0 +1,31 @@
+Question 1: What is the difference between React.createElement and JSX under the hood?
+Answer:
+
+
+---------------------------------------------------------------------------------------------
+Question 2: What is the difference between a Higher Order Component and a custom hook?
+
+---------------------------------------------------------------------------------------------
+Question 3: What is the difference between useTransition and useDeferredValue?
+
+---------------------------------------------------------------------------------------------
+Question 4; How does React handle hydration of server rendered components with async data?
+
+---------------------------------------------------------------------------------------------
+Question 5: What are Generator Functions?
+
+---------------------------------------------------------------------------------------------
+Question 6: Difference between map(), filter(), reduce(), and forEach()
+
+---------------------------------------------------------------------------------------------
+Question 7:
+
+---------------------------------------------------------------------------------------------
+Question 8:
+
+---------------------------------------------------------------------------------------------
+Question 9:
+
+---------------------------------------------------------------------------------------------
+Question 10:
+

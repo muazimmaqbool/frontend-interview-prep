@@ -113,3 +113,8 @@ Answer:
 
     One-liner:
         I use feature detection, fallbacks/polyfills, responsive CSS, and cross-browser testing rather than relying on browser-specific behavior.
+
+
+-------------------------------------------------------------------------------------------------------------------
+Question 7: How do you prioritize technical debt vs. new features?
+Answer:
