@@ -1,6 +1,9 @@
 1. Explain the JavaScript execution context.
     Answer:
         Execution context is the environment which provides all the tools to run the javaScript code.
+         or
+        An Execution Context is an abstract container representing the environment in which your JavaScript code is evaluated and executed. 
+        Think of it as a wrapper box containing the currently running code and everything needed to aid its execution
 
         It consists of:
             Global execution context
@@ -11,6 +14,13 @@
             Microtask queue
 
         During execution, memory allocation happens first, followed by code execution.
+
+        Javascript execution context vs Javascript runtime environment?
+        -> JavaScript Execution Context is not the same as the JavaScript Runtime.
+          While they work together closely to execute your code, they exist at different levels of the JavaScript ecosystem. 
+          An Execution Context is an abstract internal environment created by the engine to evaluate specific code, 
+          whereas the JavaScript Runtime is the entire surrounding infrastructure that makes
+          JavaScript work in a specific environment like a browser or Node.js.
 
 -------------------------------------------------------------
 2. Explain prototypal inheritance.
