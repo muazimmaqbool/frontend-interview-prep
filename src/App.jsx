@@ -25,6 +25,7 @@ import N_Countdown_Timer from "../Machine_Coding/Medium/N_Countdown_Timer";
 import O_Sortable_Table from "../Machine_Coding/Medium/O_Sortable_Table";
 import P_Multi_Select_Dropdown from "../Machine_Coding/Medium/P_Multi_Select_Dropdown";
 import K_FocusInput from "../Machine_Coding/Easy/K_FocusInput";
+import L_Back_To_Top from "../Machine_Coding/Easy/L_Back_To_Top";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
       {/* <K_FocusInput/> */}
+      <L_Back_To_Top/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
