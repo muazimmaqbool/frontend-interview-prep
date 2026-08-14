@@ -1,6 +1,33 @@
 Question 1: What is the difference between React.createElement and JSX under the hood?
 Answer:
+    JSX is syntax sugar for React.createElement (in the classic JSX transform). 
+    Both ultimately create a React element object that React uses to build the UI.
 
+    ->JSX:
+        const element = <h1>Hello</h1>;
+
+        is roughly transformed into:
+
+            const element = React.createElement(
+            "h1",
+            null,
+            "Hello"
+        );
+
+    ->With props:
+        const element = <button className="btn">Click</button>;
+
+        roughly becomes:
+
+        const element = React.createElement(
+            "button",
+            { className: "btn" },
+            "Click"
+        );
+
+    ->Interview one-liner:
+        JSX is a developer-friendly syntax that gets compiled into React element creation calls; traditionally React.createElement, 
+        while modern React can use the newer JSX runtime.
 
 ---------------------------------------------------------------------------------------------
 Question 2: What is the difference between a Higher Order Component and a custom hook?
