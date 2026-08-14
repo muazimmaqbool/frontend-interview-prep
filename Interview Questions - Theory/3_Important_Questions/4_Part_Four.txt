@@ -2,6 +2,11 @@ Question 1: What is the difference between React.createElement and JSX under the
 Answer:
     JSX is syntax sugar for React.createElement (in the classic JSX transform). 
     Both ultimately create a React element object that React uses to build the UI.
+                or
+    Under the hood, JSX is purely syntactic sugar for function calls that create React elements; browsers cannot read JSX directly.
+    When you write JSX, a compiler toolchain like Babel transforms that markup into plain JavaScript objects. 
+    In older versions of React, JSX compiled directly into React.createElement()
+    In modern React (React 17+), it compiles into automatic runtime functions imported from react/jsx-runtime
 
     ->JSX:
         const element = <h1>Hello</h1>;
