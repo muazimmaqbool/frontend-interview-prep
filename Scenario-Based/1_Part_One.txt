@@ -7,7 +7,7 @@ Answer:
         -> Added appropriate staleTime and cache settings to reduce network requests.
         -> Used React.memo, useMemo, and useCallback because expensive calculations or unnecessary re-renders were happening.
         -> Implemented lazy loading and code splitting using React.lazy and Suspense to reduce the initial bundle size.
-        -> Optimized images by loadin   g them lazily.
+        -> Optimized images by loading them lazily.
         -> Added pagination/infinite scrolling for large datasets instead of rendering hundreds of records at once.
         -> Moved search filtering and sorting logic into memoized computations to avoid recalculating on every render.
 
@@ -115,6 +115,7 @@ Answer:
         I use feature detection, fallbacks/polyfills, responsive CSS, and cross-browser testing rather than relying on browser-specific behavior.
 
 
+-----------------------------------------------------------------------------------------------------------------------
 Question 7: How do you prioritize technical debt vs. new features?
 Answer:
   I prioritize technical debt based on its impact on users, business, and development speed. 
