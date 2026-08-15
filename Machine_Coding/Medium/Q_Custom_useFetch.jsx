@@ -1,4 +1,5 @@
 import React from 'react'
+import useFetch from './useFetch'
 /*
 Question:
     Build a reusable custom React hook called useFetch that fetches data from an API.
@@ -15,9 +16,24 @@ Requirements:
     -> The hook should refetch when the URL changes.
 */
 const Q_Custom_useFetch = () => {
+    //using custom useFetch here it's inside useFetch.js file
+    const{data:users,loading,error}=useFetch("https://jsonplaceholder.typicode.com/users");
+    // console.log("users fetched:",users)
+    if(loading){
+        return <h2>Loading...</h2>
+    }
+    if(error){
+        return <h2>Error: {error}</h2>
+    }
   return (
-    <div>Q_Custom_useFetch</div>
+    <div>
+        <h2>Users</h2>
+        {users && users.map((user)=>(
+            <p key={user.id}>{user.name}</p>
+        ))}
+    </div>
   )
 }
+
 
 export default Q_Custom_useFetch

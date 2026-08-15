@@ -26,6 +26,7 @@ import O_Sortable_Table from "../Machine_Coding/Medium/O_Sortable_Table";
 import P_Multi_Select_Dropdown from "../Machine_Coding/Medium/P_Multi_Select_Dropdown";
 import K_FocusInput from "../Machine_Coding/Easy/K_FocusInput";
 import L_Back_To_Top from "../Machine_Coding/Easy/L_Back_To_Top";
+import Q_Custom_useFetch from "../Machine_Coding/Medium/Q_Custom_useFetch";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
       {/* <N_Countdown_Timer/> */}
       {/* <O_Sortable_Table/> */}
       {/* <P_Multi_Select_Dropdown/> */}
+      <Q_Custom_useFetch/>
     </div>
   );
 }
