@@ -42,7 +42,7 @@ function App() {
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}
       {/* <K_FocusInput/> */}
-      <L_Back_To_Top/>
+      {/* <L_Back_To_Top/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
