@@ -151,7 +151,7 @@ Answer:
   State Management Strategy:
     Local State (useState) → Component-specific data
     Context API → Authentication, theme, language
-    Redux Toolkit → Complex global state like user infor, shopping cart ect
+    Redux Toolkit → Complex global state like user information, shopping cart ect
     TanStack Query → API data, caching, synchronization
     
 

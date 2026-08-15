@@ -62,7 +62,7 @@ function App() {
       {/* <N_Countdown_Timer/> */}
       {/* <O_Sortable_Table/> */}
       {/* <P_Multi_Select_Dropdown/> */}
-      <Q_Custom_useFetch/>
+      {/* <Q_Custom_useFetch/> */}
     </div>
   );
 }
