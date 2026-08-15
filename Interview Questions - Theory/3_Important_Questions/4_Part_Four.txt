@@ -36,6 +36,41 @@ Answer:
 
 ---------------------------------------------------------------------------------------------
 Question 2: What is the difference between a Higher Order Component and a custom hook?
+Answer:
+    Both are used for reusing logic, but they work differently.
+
+    ->Higher-Order Component (HOC):
+        A function that takes a component and returns an enhanced component.
+        Example:
+            const withAuth = (Component) => {
+                                return (props) => {
+                                    return isLoggedIn
+                                    ? <Component {...props} />
+                                    : <Login />;
+                                };
+                            };
+            Usage: export default withAuth(Dashboard);
+
+    ->Custom Hook:
+        A function that reuses stateful React logic between components.
+        Example:
+            const useAuth = () => {
+                const [isLoggedIn, setIsLoggedIn] = useState(false);
+                ......
+                ......
+                return { isLoggedIn, setIsLoggedIn };
+            };
+
+            Usage: const { isLoggedIn } = useAuth();
+
+    ->Key Difference:
+        | HOC                        | Custom Hook               |
+        | -------------------------- | ------------------------- |
+        | Enhances/wraps a component | Reuses logic              |
+        | Returns a component        | Returns values/functions  |
+        | Can cause wrapper/nesting  | Usually simpler           |
+        | Older pattern              | Preferred in modern React |
+
 
 ---------------------------------------------------------------------------------------------
 Question 3: What is the difference between useTransition and useDeferredValue?
