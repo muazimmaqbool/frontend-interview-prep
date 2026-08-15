@@ -34,6 +34,24 @@ const Q_Custom_useFetch = () => {
     </div>
   )
 }
+//How the Hook Works:
+/*
+        useFetch(url)
+            ↓
+        useEffect runs
+            ↓
+        fetch(url)
+            ↓
+    ┌───────────────┐
+    │               │
+    Success          Error
+    ↓               ↓
+    setData()       setError()
+    │               │
+    └───────┬───────┘
+            ↓
+        setLoading(false)
 
+*/
 
 export default Q_Custom_useFetch
