@@ -8,11 +8,11 @@ Answer:
         ->I also use localStorage or sessionStorage for small client-side data and Service Workers for offline support and advanced caching in Progressive Web Apps (PWAs)
 
     Common Frontend Caching Strategies:
-    Browser Cache: Caches static assets (JS, CSS, images) using HTTP cache headers.
-    API Caching: Cache API responses using TanStack Query or similar libraries.
-    localStorage / sessionStorage: Store small pieces of data like user preferences or tokens (avoid storing sensitive tokens unless appropriate).
-    Service Workers: Cache assets and API responses for offline access and faster loading in PWAs.
-    CDN Caching: Serve static assets from geographically distributed servers to reduce latency.
+        Browser Cache: Caches static assets (JS, CSS, images) using HTTP cache headers.
+        API Caching: Cache API responses using TanStack Query or similar libraries.
+        localStorage / sessionStorage: Store small pieces of data like user preferences or tokens (avoid storing sensitive tokens unless appropriate).
+        Service Workers: Cache assets and API responses for offline access and faster loading in PWAs.
+        CDN Caching: Serve static assets from geographically distributed servers to reduce latency.
 
     Interview Summary:
         "I use browser caching for static assets, TanStack Query for API response caching, localStorage or sessionStorage for small client-side data,
@@ -77,7 +77,7 @@ Answer:
     ->Interview Summary:
         The main difference is that Local Storage persists even after the browser is closed until it's manually cleared,
         while Session Storage lasts only for the lifetime of the current browser tab and is cleared when the tab is closed.  
-        I use Local Storage for persistent data like user preferences and Session Storage for temporary data that's only needed during the current browsing session
+        I use Local Storage for persistent data like user preferences and Session Storage for temporary data that is only needed during the current browsing session
 
     ->Interview Tip:
         Avoid storing sensitive information (such as JWT access tokens or passwords) in either Local Storage or Session Storage because they are accessible 
