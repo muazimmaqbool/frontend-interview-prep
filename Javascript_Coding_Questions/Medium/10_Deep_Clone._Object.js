@@ -22,9 +22,20 @@ function deepClone(obj) {
   if (obj === null || typeof obj !== "object") {
     return obj;
   }
+
+  // if the value is an array, create a new empty array. Otherwise, create a new empty object.
   let clone = Array.isArray(obj) ? [] : {};
+  //console.log("clone",clone)
+
+  //Loop through all properties of the object/array.
   for (let key in obj) {
+    // Make sure the property belongs directly to this object,
+    // not to its prototype.
     if (obj.hasOwnProperty(key)) {
+
+      // Recursively clone the value.
+      // If the value is another object/array,
+      // deepClone() will create a new copy of it.
       clone[key] = deepClone(obj[key]);
     }
   }
