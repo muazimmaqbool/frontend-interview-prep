@@ -74,6 +74,27 @@ Answer:
 
 ---------------------------------------------------------------------------------------------
 Question 3: What is the difference between useTransition and useDeferredValue?
+Answer:
+    Both are used to keep the UI responsive, but they work differently.
+
+    ->useTransition → Marks a state update as low priority.
+        startTransition(() => {
+            setResults(data);
+        });
+
+    ->useDeferredValue → Creates a delayed version of an existing value.
+        const deferredSearch = useDeferredValue(search);
+
+    ->Key Difference:
+        | `useTransition`                    | `useDeferredValue`                |
+        | ---------------------------------- | --------------------------------- |
+        | Controls **how an update happens** | Controls **when a value is used** |
+        | You wrap the state update          | You pass it a value               |
+        | Gives `isPending`                  | Doesn't give `isPending`          |
+
+    ->Interview one-liner:
+        Use useTransition when you control the state update; use useDeferredValue when you already have a value and want React to defer its expensive usage.
+
 
 ---------------------------------------------------------------------------------------------
 Question 4; How does React handle hydration of server rendered components with async data?
