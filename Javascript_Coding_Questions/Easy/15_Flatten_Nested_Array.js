@@ -15,7 +15,7 @@ console.log(flattenArrayOne(['a','b',['c','d'],['e',['f','g']],'i'])) // ['a', '
 console.log("*****************")
 //Solution Two:
 const flattenArrayTwo=(arr)=>{
-    const result=[]
+    let result=[]
     for(let i=0;i<arr.length;i++){
         if(Array.isArray(arr[i])){
             /*
@@ -29,7 +29,7 @@ const flattenArrayTwo=(arr)=>{
     return result
 }
 console.log(flattenArrayOne([1, [2, [3, 4], 5], 6])) // [1,2,3,4,5,6]
-console.log(flattenArrayOne(['a','b',['c','d'],['e',['f','g']],'i'])) // ['a', 'b', 'c','d', 'e', 'f','g', 'i']
+console.log(flattenArrayTwo(['a','b',['c','d'],['e',['f','g']],'i'])) // ['a', 'b', 'c','d', 'e', 'f','g', 'i']
 /*
 `concat()` is used because the recursive call returns an array. We want to merge its elements into the result array, not add the whole array as a single item.
 
