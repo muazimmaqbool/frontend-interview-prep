@@ -30,8 +30,8 @@ const C_Infinite_Scroll = () => {
         setcount((c) => Math.min(c + 20, allItems.length));
         //Suppose c=20, after scroll => 20+20 =40, and so on now react renders slice(0,40), then slice(0,60) and so on
         //Now why Math.min:
-            //Imagine you have reached 90 items but only 100 are available so next increment is 90+20 i.e 110 but we have only 100 items
-            //so Math.min(110,100) it will return 100
+        //Imagine you have reached 90 items but only 100 are available so next increment is 90+20 i.e 110 but we have only 100 items
+        //so Math.min(110,100) it will return 100
       }
     };
     
