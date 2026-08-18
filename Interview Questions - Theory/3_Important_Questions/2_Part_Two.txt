@@ -364,7 +364,6 @@ Answer:
 
             Benefit: UI doesn't freeze.
 
-
     2. Prioritization of Updates:
             React gives higher priority to important updates and delays less important ones.
 
@@ -375,7 +374,6 @@ Answer:
             User typing is updated first, while the large list update can wait.
 
             Benefit: Important interactions stay fast.
-
 
     3. Better Responsiveness:
             React can pause, resume, or cancel rendering work to keep the app responsive.
