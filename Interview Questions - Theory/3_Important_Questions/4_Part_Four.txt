@@ -98,6 +98,25 @@ Answer:
 
 ---------------------------------------------------------------------------------------------
 Question 4; How does React handle hydration of server rendered components with async data?
+Answer:
+    With async data, React first receives server-rendered HTML so the user can see the UI quickly. 
+    On the client, React hydrates that HTML and connects it to the React component tree. 
+    If data is still loading, React can use Suspense to show a fallback and hydrate parts of the page as their data becomes available
+
+    ->Simple flow:
+            Server
+                ↓
+            Fetch async data
+                ↓
+            Render HTML
+                ↓
+            Browser receives HTML
+                ↓
+            React hydrates
+                ↓
+            Async data/component becomes ready
+                ↓
+            UI becomes interactive
 
 ---------------------------------------------------------------------------------------------
 Question 5: What are Generator Functions?
