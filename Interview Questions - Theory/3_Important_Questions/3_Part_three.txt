@@ -266,3 +266,66 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------
+Question 10: how react does hydration on SSR show me with code?
+Answer:
+    -> 1. React component:
+            function App() {
+                    const handleClick = () => {
+                        alert("Button clicked!");
+                    };
+
+                    return (
+                        <div>
+                            <h1>Hello from SSR</h1>
+
+                            <button onClick={handleClick}>
+                                Click Me
+                            </button>
+                        </div>
+                    );
+                }
+        Note: The important thing is that the server can generate the HTML, but it cannot execute the browser onClick.
+
+    -> 2. Server renders HTML:
+                import express from "express";
+                import React from "react";
+                import { renderToString } from "react-dom/server";
+
+                const app = express();
+
+                app.get("/", (req, res) => {
+                // React renders the component into HTML on the server
+                const html = renderToString(<App />);
+
+                res.send(`
+                    <!DOCTYPE html>
+                    <html>
+                        <body>
+                            <div id="root">${html}</div>
+
+                            <script src="/client.js"></script>
+                        </body>
+                    </html>
+                    `);
+                });
+
+            The browser receives something like:
+                <div id="root">
+                    <div>
+                        <h1>Hello from SSR</h1>
+                        <button>Click Me</button>
+                    </div>
+                </div>
+
+    -> 3. Client hydrates the HTML:
+                Now the browser runs the client JavaScript:
+                    import React from "react";
+                    import { hydrateRoot } from "react-dom/client";
+
+                    hydrateRoot(
+                        document.getElementById("root"),
+                        <App />
+                    );
+    ->Important interview point
+        Hydration doesn't mean React simply renders the page again from scratch.
+        React uses the existing server-rendered HTML and hydrates it, attaching the necessary React behavior and event handling.
