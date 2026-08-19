@@ -40,7 +40,7 @@ Answer:
 Question 2: Difference Between Hooks and Higher-Order Components (HOCs)?
 Answer:
     Hooks and Higher-Order Components (HOCs) are both patterns for reusing logic in React, but they work differently. 
-    ->A Hook is a function that lets functional components use React features like state and lifecycle methods. 
+    ->A Hook is a function that let's functional components use React features like state and lifecycle methods. 
     ->A Higher-Order Component (HOC) is a function that takes a component as input and returns a new enhanced component with additional functionality.
 
     ->Comparison:
@@ -152,7 +152,7 @@ Answer:
 ------------------------------------------------------------------------------------------------------------------
 Question 7: What is the difference between ^ and ~ in dependency versions?
 Answer:
-    -> ^ (caret) allows npm to install newer-> minor and patch versions while keeping the same major version. 
+    -> ^ (caret) allows npm to install newer -> minor and patch versions while keeping the same major version. 
     -> ~ (tilde) is more restrictive and only allows patch updates within the same minor version. 
     -> We use ^ when we want to receive backward-compatible feature updates and ~ when we want only bug fixes without new features.
 
@@ -266,65 +266,3 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------
-Question 10: How do closures affect memory usage, and when can they cause memory leaks?
-Answer:
-    Closures keep references to variables from their outer scope in memory. This can cause memory leaks if a closure is unnecessarily kept 
-    alive by things like event listeners, timers, or global references.
-
-    Example:
-            useEffect(() => {
-                const handler = () => {
-                // closure
-            };
-
-            window.addEventListener("resize", handler);
-
-            return () => {
-                window.removeEventListener("resize", handler);
-              };
-            }, []);
-
-    Note: Closures don't inherently cause memory leaks; leaks happen when long-lived references unnecessarily keep closures and the data they reference in memory.
-
-    ->How to do cleanup of closures?
-        To clean up a closure-related memory leak, remove the thing that is keeping the closure alive.
-
-        In React:
-
-        For event listeners:
-        useEffect(() => {
-            const handleResize = () => {
-                console.log("resize");
-            };
-
-            window.addEventListener("resize", handleResize);
-
-            // Cleanup
-            return () => {
-                window.removeEventListener("resize", handleResize);
-            };
-        }, []);
-
-        For timers:
-
-        useEffect(() => {
-        const timer = setInterval(() => {
-            console.log("running");
-        }, 1000);
-
-        // Cleanup
-        return () => {
-            clearInterval(timer);
-        };
-        }, []);
-
-    ->Remember:
-        addEventListener  → removeEventListener
-        setInterval       → clearInterval
-        setTimeout        → clearTimeout
-        WebSocket         → close()
-        Subscription      → unsubscribe()
-
-    ->Interview answer:
-        I clean up resources created inside effects using the useEffect cleanup function. 
-        This prevents event listeners, timers, subscriptions, or other references from keeping closures alive unnecessarily.
