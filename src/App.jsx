@@ -64,7 +64,7 @@ function App() {
       {/* <O_Sortable_Table/> */}
       {/* <P_Multi_Select_Dropdown/> */}
       {/* <Q_Custom_useFetch/> */}
-      <R_Acronym_Generator/>
+      {/* <R_Acronym_Generator/> */}
     </div>
   );
 }
