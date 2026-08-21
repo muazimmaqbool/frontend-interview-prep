@@ -159,7 +159,54 @@ Answer:
             A generator is a function that can pause and resume its execution using yield and next().
 
 ---------------------------------------------------------------------------------------------
-Question 6: Difference between map(), filter(), reduce(), and forEach()
+Question 6: Difference between map(), filter(), reduce(), and forEach()?
+Answer:
+    All four are array methods, but they serve different purposes:
+
+        | Method      | Purpose                            | Returns      |
+        | ----------- | ---------------------------------- | ------------ |
+        | `map()`     | Transform every element            | New array    |
+        | `filter()`  | Select elements based on condition | New array    |
+        | `reduce()`  | Combine elements into one result   | Single value |
+        | `forEach()` | Execute code for each element      | `undefined`  |
+    
+    1. map() → Transform:
+                    const numbers = [1, 2, 3];
+                    const result = numbers.map((num) => num * 2);
+                    console.log(result); // [2, 4, 6]
+
+                    Use when you want to change/transform every element.
+
+    2. filter() → Select:
+                    const numbers = [1, 2, 3, 4];
+                    const result = numbers.filter((num) => num > 2);
+                    console.log(result); // [3, 4]
+
+                    Use when you want to keep only elements that satisfy a condition.
+
+    3. reduce() → Accumulate:
+                    const numbers = [1, 2, 3, 4];
+                    const result = numbers.reduce((total, num) => {
+                        return total + num;
+                    }, 0);
+                    console.log(result); // 10
+
+                    Use when you want to combine an array into a single result.
+
+    4. forEach() → Perform an action
+                    const numbers = [1, 2, 3];
+                    numbers.forEach((num) => {
+                        console.log(num);
+                    });
+
+                    Use when you simply want to perform an operation for each element.
+
+    Easy way to remember:
+        map     → Change
+        filter  → Select
+        reduce  → Combine
+        forEach → Do something
+
 
 ---------------------------------------------------------------------------------------------
 Question 7:
