@@ -125,3 +125,9 @@ Answer:
   Example:
     If an old component is making a new feature difficult to build, I would refactor that component first. But if the technical debt has little impact, 
     I would deliver the business-critical feature and schedule the cleanup for a later sprint.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+Question 8: How do you identify and optimize a slow-loading page?
+Answer:
+  
