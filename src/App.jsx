@@ -28,6 +28,7 @@ import K_FocusInput from "../Machine_Coding/Easy/K_FocusInput";
 import L_Back_To_Top from "../Machine_Coding/Easy/L_Back_To_Top";
 import Q_Custom_useFetch from "../Machine_Coding/Medium/Q_Custom_useFetch";
 import R_Acronym_Generator from "../Machine_Coding/Medium/R_Acronym_Generator";
+import M_URL_Validator from "../Machine_Coding/Easy/M_Url_Validator";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       {/* <J_Modal/> */}
       {/* <K_FocusInput/> */}
       {/* <L_Back_To_Top/> */}
+      <M_URL_Validator/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
