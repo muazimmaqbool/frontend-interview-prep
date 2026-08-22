@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 /*
 Build a small React component that validates whether a user's input is a proper URL in real time.
@@ -32,37 +32,68 @@ Examples:
     output: "Invalid URL"
 */
 const M_URL_Validator = () => {
-   const [input, setInput] = useState("");
+  const [input, setInput] = useState("");
   const [isValid, setIsValid] = useState(null);
 
   function validateUrl(value) {
-    // Write logic to validate the url
+    // Return false if the input is empty
+    // or contains any whitespace.
+    if (!value || /\s/.test(value)) return false;
+
+    // URL must contain a protocol such as http:// or https://
+    if (!value.includes("://")) return false;
+
     try {
-      if (!value || /\s/.test(value)) return false;
-      if (!value.includes("://")) return false;
+      // URL() parses the string and gives us
+      // useful properties like protocol and hostname.
       const url = new URL(value);
+    //   console.log("url:",url)
+
+      // Allow only HTTP and HTTPS protocols.
+      // ftp://, file://, etc. will be invalid.
       const isHTTP = url.protocol === "http:" || url.protocol === "https:";
-      const hasValidHost = url.hostname === "localhost" || /\w+\.\w+/.test(url.hostname);
+
+      // Host can be:
+      // 1. localhost
+      // 2. A domain containing at least one dot
+      //    Example: example.com, abc.io, a.b
+      const hasValidHost =
+        url.hostname === "localhost" || /\w+\.\w+/.test(url.hostname);
+
+      // URL is valid only when both conditions are true.
       return isHTTP && hasValidHost;
     } catch (err) {
+      // new URL() throws an error if the URL format is invalid.
+      // In that case, return false.
       return false;
     }
   }
   function handleChange(e) {
     const value = e.target.value;
-    setInput(value)
-    setIsValid(validateUrl(value))
+    setInput(value);
+    setIsValid(validateUrl(value));
   }
   return (
     <div>
       <h1>URL Validator</h1>
 
-      <div >{/* Add Input and Result */}
-        <input type="text" value={input} placeholder="Enter a URL" onChange={handleChange} data-testid="url-input"/>
-        {isValid !== null && <p style={{color:isValid?"green":"red"}} data-testid="result">{isValid?"Valid URL":"Invalid URL"}</p>}
+      <div>
+        {/* Add Input and Result */}
+        <input
+          type="text"
+          value={input}
+          placeholder="Enter a URL"
+          onChange={handleChange}
+          data-testid="url-input"
+        />
+        {isValid !== null && (
+          <p style={{ color: isValid ? "green" : "red" }} data-testid="result">
+            {isValid ? "Valid URL" : "Invalid URL"}
+          </p>
+        )}
       </div>
     </div>
   );
-}
+};
 
-export default M_URL_Validator
+export default M_URL_Validator;
