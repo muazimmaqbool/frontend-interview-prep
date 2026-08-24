@@ -17,10 +17,13 @@ function customAssign(target,...sources){
         throw new TypeError("Cannot convert undefined or null to object")
     }
     const to=Object(target)
+     // Loop through all source objects, example: { b: 2 }, { c: 3 }
     for(const source of sources){
         if(source===null || source===undefined)continue;
         for(const key in source){
+             // Check that the property belongs directly to the source object and is not inherited from its prototype.
             if(Object.prototype.hasOwnProperty.call(source,key)){
+                // Copy the property from source to target. If the same key already exists, it gets overwritten.
                 to[key]=source[key]
             }
         }
