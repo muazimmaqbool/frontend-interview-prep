@@ -214,7 +214,44 @@ Answer:
     
 
 ---------------------------------------------------------------------------------------------
-Question 8:
+Question 8: what is the difference between for-in and for-of loop?
+Answer:
+    for...in vs for...of
+    
+    ->for...in → keys/properties
+        Used mainly for objects.
+
+        const user = {
+            name: "Muazim",
+            age: 25
+        };
+
+        for (const key in user) {
+            console.log(key);
+        }
+
+        Output:
+        name
+        age
+
+    ->for...of → values
+        Used with iterable objects like arrays, strings, Maps, Sets, etc.       
+
+        const numbers = [10, 20, 30];
+
+        for (const value of numbers) {
+            console.log(value);
+        }
+
+        Output:
+            10
+            20
+            30
+
+    ->Easy way to remember:
+        for...in  → keys
+        for...of  → values
+        
 
 ---------------------------------------------------------------------------------------------
 Question 9:
