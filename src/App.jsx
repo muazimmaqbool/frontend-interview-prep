@@ -46,7 +46,7 @@ function App() {
       {/* <J_Modal/> */}
       {/* <K_FocusInput/> */}
       {/* <L_Back_To_Top/> */}
-      <M_URL_Validator/>
+      {/* <M_URL_Validator/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
