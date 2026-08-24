@@ -30,6 +30,30 @@ function customAssign(target,...sources){
     }
     return to;
 }
-console.log(customAssign({ a: 1 }, { b: 2 }));
-console.log(customAssign({a: 1}, {a: 2, b: 3}));
-console.log(customAssign({}, {a: undefined}, {b: null}))
+console.log(customAssign({ a: 1 }, { b: 2 })); //{ a: 1, b: 2 }
+console.log(customAssign({a: 1}, {a: 2, b: 3})); //{ a: 2, b: 3 }
+console.log(customAssign({}, {a: undefined}, {b: null}));
+// undefined and null are valid values and will be copied. so o/p is: { a: undefined, b: null }
+
+
+//Extra object.assign() example:
+const user = {
+  name: "Muazim",
+  age: 25,
+  city:"Srinagar"
+};
+
+const details = {
+  city: "Sopore",
+  role: "Developer"
+};
+
+Object.assign(user, details);
+
+console.log(user);
+// {
+//   name: "Muazim",
+//   age: 25,
+//   city: "Sopore",
+//   role: "Developer"
+// }
