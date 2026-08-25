@@ -21,7 +21,8 @@ function customAssign(target,...sources){
     for(const source of sources){
         if(source===null || source===undefined)continue;
         for(const key in source){
-             // Check that the property belongs directly to the source object and is not inherited from its prototype.
+            // Object.prototype.hasOwnProperty.call(obj, key) is a safe way to check whether a property directly belongs to an object, 
+            // especially when obj might override hasOwnProperty.  (deep explanation below)
             if(Object.prototype.hasOwnProperty.call(source,key)){
                 // Copy the property from source to target. If the same key already exists, it gets overwritten.
                 to[key]=source[key]
@@ -57,3 +58,45 @@ console.log(user);
 //   city: "Sopore",
 //   role: "Developer"
 // }
+
+
+//Extra: but important
+/*
+->if(Object.prototype.hasOwnProperty.call(source,key)){
+        to[key]=source[key]
+    }
+
+    used to check whether key directly belongs to source, rather than being inherited from its prototype.
+
+    Why not simply use source.hasOwnProperty(key)?
+        Usually you can: source.hasOwnProperty(key)
+
+    But it's not completely safe because an object can have its own property called hasOwnProperty:
+
+    const source = {
+        name: "Muazim",
+        hasOwnProperty: "hello"
+    };
+
+    source.hasOwnProperty("name"); // ❌ Error
+
+    So we use the safer version: Object.prototype.hasOwnProperty.call(source, key)
+        Breaking it down
+            Object.prototype.hasOwnProperty
+
+        Gets the original: hasOwnProperty method.
+
+    ->.call(source, key)
+        Tells JavaScript: "Run this method on source and check whether key belongs directly to it."
+
+    
+    ->Example:
+    const source = {
+                        name: "Muazim",
+                        age: 25
+                    };
+
+    Object.prototype.hasOwnProperty.call(source, "name"); // true
+
+    Object.prototype.hasOwnProperty.call(source, "toString"); // false
+*/
