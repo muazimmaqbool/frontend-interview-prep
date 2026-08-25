@@ -85,7 +85,7 @@
 17. What is the Difference Between srcset and Media Queries?
     ANS:
         The primary difference is that media queries apply layout and styling rules (such as CSS styling or background-images) depending on device characteristics, 
-        whereas srcset is an HTML attribute that tells the browser to choose the most optimal source file for a primary <img> element based on device width and pixel density.
+        where as srcset is an HTML attribute that tells the browser to choose the most optimal source file for a primary <img> element based on device width and pixel density.
 
         ->srcset: responsive images
                     <img
@@ -127,11 +127,11 @@
     ANS:
         Answer
             I use:
-            Mobile-first approach
-            Flexbox/Grid
-            Media queries
-            Relative units (rem, %)
-            Responsive images
+                Mobile-first approach
+                Flexbox/Grid
+                Media queries
+                Relative units (rem, %)
+                Responsive images
 
             Example:
                 @media (max-width: 768px) {
