@@ -211,6 +211,19 @@ Answer:
 ---------------------------------------------------------------------------------------------
 Question 7: If an API is giving a slow response, how do you debug what the problem is?
 Answer:
+    First, I check the Network tab in DevTools to see where the time is being spent. 
+    I look at DNS, connection, TTFB, response/download time, request payload, and response size.
+
+    Then I determine whether the problem is:
+        Frontend → unnecessary API calls, large payload processing, duplicate requests.
+        Backend → slow database query, heavy business logic, server performance.
+        Network → latency, large response, connection issues.
+
+    I also check backend/server logs and database query performance to identify the bottleneck.
+
+    Interview one-liner:
+        I first measure the request in the Network tab, identify whether the delay is frontend, network, or backend, 
+        and then use server logs and database metrics to find the exact bottleneck.
     
 
 ---------------------------------------------------------------------------------------------
