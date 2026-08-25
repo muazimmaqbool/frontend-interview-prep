@@ -29,6 +29,7 @@ import L_Back_To_Top from "../Machine_Coding/Easy/L_Back_To_Top";
 import Q_Custom_useFetch from "../Machine_Coding/Medium/Q_Custom_useFetch";
 import R_Acronym_Generator from "../Machine_Coding/Medium/R_Acronym_Generator";
 import M_URL_Validator from "../Machine_Coding/Easy/M_Url_Validator";
+import N_Auto_Save_Text from "../Machine_Coding/Easy/N_Auto_Save_Text";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       {/* <K_FocusInput/> */}
       {/* <L_Back_To_Top/> */}
       {/* <M_URL_Validator/> */}
+      <N_Auto_Save_Text/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
