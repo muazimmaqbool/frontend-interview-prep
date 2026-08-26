@@ -33,7 +33,7 @@
             Example:
                 let user = null;
 
--------------------------------------------------------------
+-------------------------------------------------------------jdp;cscl klcjsbd
 4. What is the DOM?
     ANS:
         DOM stands for Document Object Model. It represents the HTML page as a tree structure, allowing JavaScript to access and modify elements dynamically.
@@ -102,10 +102,11 @@
 11. What is a callback function?
     ANS:
         A callback is a function passed as an argument to another function and executed later.
-        function greet(name, callback){
-            callback();
-        }
-    Callbacks are commonly used in asynchronous programming.
+        Syntax:
+            function greet(name, callback){
+                callback();
+            }
+        Callbacks are commonly used in asynchronous programming.
 
 -----------------------------------------------------------------
 12. What is the spread operator?
@@ -113,6 +114,7 @@
         The spread operator (...) expands arrays or objects.
         const arr1 = [1,2];
         const arr2 = [...arr1,3];
+        //o/p: [1,2,3]
 
         It is useful for copying and merging data.
 
@@ -120,8 +122,8 @@
 13. What is destructuring?
     ANS:
         Destructuring extracts values from arrays or objects.
-        const user = {name:"Ali"};
-        const {name} = user;
+            const user = {name:"Ali"};
+            const {name} = user;
 
         It improves readability and reduces repetitive code.
 
@@ -135,7 +137,7 @@
 
 -----------------------------------------------------------------
 15. What is JSX?
-        ANS:
+    ANS:
         JSX stands for JavaScript XML. It allows writing HTML-like syntax inside JavaScript.
         <h1>Hello</h1>
 
