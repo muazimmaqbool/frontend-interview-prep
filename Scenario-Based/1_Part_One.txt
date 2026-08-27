@@ -130,4 +130,19 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------------
 Question 8: How do you identify and optimize a slow-loading page?
 Answer:
-  
+  Short Interview Answer:
+    First, I use Chrome DevTools → Lighthouse and Performance to identify what is making the page slow.
+
+    I check:
+      Network: large JS bundles, images, slow API calls.
+      Performance: expensive JavaScript and unnecessary renders.
+      Lighthouse: Core Web Vitals like LCP, INP, and CLS.
+
+    Then I optimize by:
+      Code splitting and lazy loading components.
+      Optimizing/compressing images.
+      Reducing unnecessary API calls.
+      Using caching.
+      Memoizing expensive calculations/components where needed.
+      Virtualizing large lists.
+      Removing unused JavaScript/CSS.
