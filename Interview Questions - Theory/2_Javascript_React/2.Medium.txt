@@ -3,9 +3,9 @@
         A closure allows a function to access variables from its outer/parent scope even after the outer function has finished execution.
 
         function outer(){
-        let count=0;
+            let count=0;
 
-        return function(){
+            return function(){
                 count++;
                 return count;
             };
@@ -67,7 +67,7 @@
             apply() accepts an array.
             bind() returns a new function.
 
-        The core difference is that call() and apply() invoke a function immediately, whereas bind() returns a brand new function with a pre-set context to be executed later.
+        The core difference is that call() and apply() invoke a function immediately, where as bind() returns a brand new function with a pre-set context to be executed later.
 
 ----------------------------------------------------------------
 7. What are higher-order functions?
