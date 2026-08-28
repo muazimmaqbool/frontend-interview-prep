@@ -81,7 +81,7 @@
 
         Note: React was using the Stack Reconciler as its core rendering and reconciliation engine
 
-        Note: these all three are discussed in important question's folder part 2 question number 9
+        Note: These all three are discussed in important question's folder part 2 question number 9
 
 -------------------------------------------------------------
 7. What is hydration in React?
