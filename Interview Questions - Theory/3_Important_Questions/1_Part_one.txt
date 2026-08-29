@@ -13,7 +13,6 @@ Answer:
     | Unmounting      | `componentWillUnmount()` | `useEffect(() => { return () => {} }, [])` |
 
 
-
 ----------------------------------------------------------------------------------------------------------
 Question 2: Explain React reconciliation and the Virtual DOM diffing algorithm ?
 Answer:
@@ -117,42 +116,44 @@ Answer:
 
         Interview Summary:
             "Core Web Vitals are Google's key metrics for measuring user experience. They include Largest Contentful Paint (LCP) for loading speed,
-             Interaction to Next Paint (INP) for responsiveness (user interactions: click, hover, etc), and Cumulative Layout Shift (CLS) for visual stability. Optimizing these metrics
-             improves user experience, SEO, and overall website performance."
+             Interaction to Next Paint (INP) for responsiveness (user interactions: click, hover, etc), and Cumulative Layout Shift (CLS) for visual stability. 
+             Optimizing these metrics improves user experience, SEO, and overall website performance."
 
 
 -------------------------------------------------------------------------------------------------------------------
 Question 6: What techniques would you use to improve Core Web Vitals?
 Answer:
-  To improve Core Web Vitals, I would optimize Largest Contentful Paint (LCP) by compressing images, using lazy loading for non-critical images,
-                                  preloading important assets, and reducing JavaScript bundle size. 
-  To improve Interaction to Next Paint (INP), I would minimize long-running JavaScript tasks, debounce or throttle event handlers, and 
-                                        avoid unnecessary React re-renders using techniques like React.memo, useMemo, and useCallback. 
-  To reduce Cumulative Layout Shift (CLS), I would always specify image and video dimensions, reserve space for dynamic content, 
-           and avoid inserting content above existing elements. 
-           
-  I would also use code splitting, caching, and a CDN to improve overall page performance."
+    To improve Core Web Vitals, I would optimize Largest Contentful Paint (LCP) by compressing images, using lazy loading for non-critical images,
+                                    preloading important assets, and reducing JavaScript bundle size.
 
-  Short Points to Remember:
-    LCP: Optimize images, preload critical assets, reduce bundle size.
-    INP: Reduce JavaScript execution time, optimize event handlers, avoid unnecessary re-renders.
-    CLS: Set width/height for images, reserve space for dynamic content, avoid layout shifts.
-    Overall: Code splitting, lazy loading, caching, CDN, compression.
+    To improve Interaction to Next Paint (INP), I would minimize long-running JavaScript tasks, debounce or throttle event handlers, and 
+                                    avoid unnecessary React re-renders using techniques like React.memo, useMemo, and useCallback. 
+
+    To reduce Cumulative Layout Shift (CLS), I would always specify image and video dimensions, reserve space for dynamic content, 
+                                    and avoid inserting content above existing elements. 
+            
+    I would also use code splitting, caching, and a CDN to improve overall page performance."
+
+    Short Points to Remember:
+      LCP: Optimize images, preload critical assets, reduce bundle size.
+      INP: Reduce JavaScript execution time, optimize event handlers, avoid unnecessary re-renders.
+      CLS: Set width/height for images, reserve space for dynamic content, avoid layout shifts.
+      Overall: Code splitting, lazy loading, caching, CDN, compression.
 
 
 -------------------------------------------------------------------------------------------------------------------
 Question 7:How do you manage state in large React applications?
 Answer:
-  In large React applications, I manage state based on its scope and complexity. I use local state (useState) for component-specific data,
-  Context API for simple global state like themes or authentication, and Redux Toolkit for complex shared state such as user data, shopping carts, or application-wide settings. 
-  For server state, I prefer libraries like TanStack Query to handle data fetching, caching, and synchronization.
-  I also keep the state normalized, avoid unnecessary global state, and split it into feature-based slices to make the application scalable and maintainable."
+    In large React applications, I manage state based on its scope and complexity. I use local state (useState) for component-specific data,
+    Context API for simple global state like themes or authentication, and Redux Toolkit for complex shared state such as user data, shopping carts, or application-wide settings. 
+    For server state, I prefer libraries like TanStack Query to handle data fetching, caching, and synchronization.
+    I also keep the state normalized, avoid unnecessary global state, and split it into feature-based slices to make the application scalable and maintainable."
 
-  State Management Strategy:
-    Local State (useState) → Component-specific data
-    Context API → Authentication, theme, language
-    Redux Toolkit → Complex global state like user information, shopping cart ect
-    TanStack Query → API data, caching, synchronization
+    State Management Strategy:
+      Local State (useState) → Component-specific data
+      Context API → Authentication, theme, language
+      Redux Toolkit → Complex global state like user information, shopping cart ect
+      TanStack Query → API data, caching, synchronization
     
 
 ------------------------------------------------------------------------------------------------------------------
