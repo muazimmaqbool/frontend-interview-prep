@@ -10,12 +10,13 @@ import React, { useState } from "react";
 const B_Char_Count = () => {
   const [text, settext] = useState("");
   // console.log(text.trim())
-  const words=text.trim() ? text.trim().split(/\s+/).length:0; // Explanation below:
+
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0; // Explanation below:
   return (
     <div>
       <textarea value={text} onChange={(e) => settext(e.target.value)} />
-        <h3>Characters: {text.length} </h3>
-        <h3>Words: {words} </h3>
+      <h3>Characters: {text.length} </h3>
+      <h3>Words: {words} </h3>
     </div>
   );
 };
@@ -43,14 +44,13 @@ Explanation:
                                         
                                         + : means one or more.
                                         
-                                        So, /\s+ means: "Split wherever there are one or more whitespace characters."
+                                        So, /\s+/ means: "Split wherever there are one or more whitespace characters."
 
                     Example:
-
-                    const text = "Hello    World   React";
-                    console.log(text.split(/\s+/));
-                    Output:
-                    ["Hello", "World", "React"]
+                      const text = "Hello    World   React";
+                      console.log(text.split(/\s+/));
+                      Output:
+                      ["Hello", "World", "React"]
 
                     Notice that even though there are multiple spaces, you still get only three words.
 
