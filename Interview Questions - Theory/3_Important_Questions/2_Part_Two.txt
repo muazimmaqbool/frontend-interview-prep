@@ -4,7 +4,6 @@ Answer:
     Different caching strategies are used depending on the type of data. 
         ->For static assets like JavaScript, CSS, and images, I rely on browser caching with proper cache headers. 
         ->For API data, I use libraries like TanStack Query, which cache responses and automatically refetch stale data when needed. 
-        
         ->I also use localStorage or sessionStorage for small client-side data and Service Workers for offline support and advanced caching in Progressive Web Apps (PWAs)
 
     Common Frontend Caching Strategies:
@@ -20,8 +19,7 @@ Answer:
         Choosing the right caching strategy improves performance, reduces server load, and enhances the user experience."
 
     SubQuestion: Do browser cache works automatically?
-        ->
-        Ans: Yes, browser caching works automatically, but only if the server provides the appropriate caching headers.
+        ->Ans: Yes, browser caching works automatically, but only if the server provides the appropriate caching headers.
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -54,7 +52,8 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 3: What is the difference between Session Storage and Local Storage?
 Answer:
-    Both Local Storage and Session Storage are browser storage mechanisms used to store key-value pairs on the client side. The main difference is how long the data persists.
+    Both Local Storage and Session Storage are browser storage mechanisms used to store key-value pairs on the client side. 
+    The main difference is how long the data persists.
 
     | Local Storage                               | Session Storage                                                        |
     | ------------------------------------------- | ---------------------------------------------------------------------- |
@@ -317,7 +316,7 @@ Answer:
             worker.postMessage("Start calculation");
 
             worker.onmessage = (e) => {
-            console.log(e.data);
+                console.log(e.data);
             };
 
         Note: Main thread remains responsive while the worker runs.
