@@ -166,6 +166,7 @@ Answer:
                 {
                     "react": "^18.2.0"
                 }
+
             npm can install:
                             18.2.1 ✅
                             18.2.5 ✅
@@ -183,11 +184,13 @@ Answer:
                 {
                     "react": "~18.2.0"
                 }
+
             npm can install:
                             18.2.1 ✅
                             18.2.9 ✅
                             18.3.0 ❌
                             19.0.0 ❌
+                            
             Rule:
                 Major ❌
                 Minor ❌
@@ -266,7 +269,7 @@ Answer:
 
 
 -------------------------------------------------------------------------------------------------------------
-Question 10: how react does hydration on SSR show me with code?
+Question 10: How react does hydration on SSR show me with code?
 Answer:
     -> 1. React component:
             function App() {
