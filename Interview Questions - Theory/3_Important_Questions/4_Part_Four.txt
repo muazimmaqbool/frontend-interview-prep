@@ -267,7 +267,28 @@ Answer:
         
 
 ---------------------------------------------------------------------------------------------
-Question 9:
+Question 9: What is React.createElement()?
+Answer:
+    React.createElement() is a function that creates a React element object. JSX is essentially a more readable way of writing React element creation.
+    Example
+        const element = <h1>Hello</h1>;
+               is roughly equivalent to: const element = React.createElement("h1", null, "Hello");
+        
+        With props:
+            <button className="btn">Click</button>
+                    roughly becomes: React.createElement(
+                                                        "button",
+                                                        { className: "btn" },
+                                                        "Click"
+                                                        );
+
+        The result is a JavaScript object describing the UI, which React later uses during rendering.
+
+        Interview one-liner:
+            React.createElement() creates a React element, while JSX provides a cleaner syntax for describing the same UI.
+                    or
+            React.createElement() is the core, low-level built-in function that React uses to create React elements. 
+            
 
 ---------------------------------------------------------------------------------------------
 Question 10:
