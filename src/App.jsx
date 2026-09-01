@@ -40,8 +40,8 @@ function App() {
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
       {/* <E_TodoList/> */}
-      <F_Search_Filter/>
-      {/* <G_Accordion/> */}
+      {/* <F_Search_Filter/> */}
+      <G_Accordion/>
       {/* <H_Tabs/> */}
       {/* <I_Progress_Bar/> */}
       {/* <J_Modal/> */}

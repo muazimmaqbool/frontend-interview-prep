@@ -30,9 +30,9 @@ const F_Search_Filter = () => {
   );
   return (
     <div>
-      <h2>Search Filter</h2>
-      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <h3>Search:</h3>
+      <h2 >Search Filter</h2>
+      <div style={{ display: "flex", gap: "10px", alignItems: "center"}}>
+        <h2 style={{ margin: 0 }}>Search:</h2>
         <input
           type="text"
           value={searchText}
@@ -41,7 +41,9 @@ const F_Search_Filter = () => {
       </div>
       <h3>Fruits found:</h3>
       {itemsFound.map((item) => (
-        <p key={item}>{item}</p>
+        <p key={item}>
+          {item}
+        </p>
       ))}
     </div>
   );
