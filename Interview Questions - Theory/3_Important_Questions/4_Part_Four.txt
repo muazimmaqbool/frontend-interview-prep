@@ -14,10 +14,10 @@ Answer:
         is roughly transformed into:
 
             const element = React.createElement(
-            "h1",
-            null,
-            "Hello"
-        );
+                                                "h1",
+                                                null,
+                                                "Hello"
+                                            );
 
     ->With props:
         const element = <button className="btn">Click</button>;
@@ -25,10 +25,10 @@ Answer:
         roughly becomes:
 
         const element = React.createElement(
-            "button",
-            { className: "btn" },
-            "Click"
-        );
+                                            "button",
+                                            { className: "btn" },
+                                            "Click"
+                                        );
 
     ->Interview one-liner:
         JSX is a developer-friendly syntax that gets compiled into React element creation calls; traditionally React.createElement, 
@@ -77,12 +77,12 @@ Question 3: What is the difference between useTransition and useDeferredValue?
 Answer:
     Both are used to keep the UI responsive, but they work differently.
 
-    ->useTransition → Marks a state update as low priority.
+    ->useTransition : Marks a state update as low priority.
         startTransition(() => {
             setResults(data);
         });
 
-    ->useDeferredValue → Creates a delayed version of an existing value.
+    ->useDeferredValue : Creates a delayed version of an existing value.
         const deferredSearch = useDeferredValue(search);
 
     ->Key Difference:
@@ -244,8 +244,8 @@ Answer:
         }
 
         Output:
-        name
-        age
+            name
+            age
 
     ->for...of → values
         Used with iterable objects like arrays, strings, Maps, Sets, etc.       
