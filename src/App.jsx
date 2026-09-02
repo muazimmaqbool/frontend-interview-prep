@@ -30,6 +30,7 @@ import Q_Custom_useFetch from "../Machine_Coding/Medium/Q_Custom_useFetch";
 import R_Acronym_Generator from "../Machine_Coding/Medium/R_Acronym_Generator";
 import M_URL_Validator from "../Machine_Coding/Easy/M_Url_Validator";
 import N_Auto_Save_Text from "../Machine_Coding/Easy/N_Auto_Save_Text";
+import S_CharCount from "../Machine_Coding/Medium/S_CharCount";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
       {/* <P_Multi_Select_Dropdown/> */}
       {/* <Q_Custom_useFetch/> */}
       {/* <R_Acronym_Generator/>  */}
+      <S_CharCount/>
     </div>
   );
 }
