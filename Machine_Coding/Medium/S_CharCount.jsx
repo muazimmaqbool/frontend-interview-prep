@@ -20,13 +20,21 @@ import React, { useState } from "react";
     . warning-text -> for the warning message shown near the limit.
     . error-text -> for the error message shown after exceeding the limit.
 */
+
+//Note: data-testid is a custom HTML attribute used mainly for testing. It gives testing tools like Jest + React Testing Library a stable way to find an element.
 const S_CharCount = () => {
   const [text, setText] = useState("");
   const [maxLength, setMaxLength] = useState(50);
 
   const charCount = text.length;
+
+  // Calculate 90% of the maximum allowed length.
+  // Example: maxLength = 50 → warningLimit = 45.
   const warningLimit = Math.floor(maxLength * 0.9);
   const overLimit = charCount > maxLength;
+
+  // Check whether the user has reached the warning limit.
+  // Warning starts at 90% of the maximum length.
   const warning = charCount >= warningLimit;
   return (
     <div
@@ -74,7 +82,7 @@ const S_CharCount = () => {
         </div>
 
         <div>
-          {/* Show Warning if it reaches to 90 */}
+          {/* Show Warning if it reaches to 90% of the maximum length */}
           {warning && !overLimit && (
             <p style={{ color: "orange" }} data-testid="warning-text">
               You are close to the limit!
