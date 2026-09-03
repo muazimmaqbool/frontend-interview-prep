@@ -99,7 +99,7 @@ Answer:
 ------------------------------------------------------------------------------------------------------------------
 Question 6: How would you handle cross-browser compatibility issues?
 Answer:
-    I handle cross-browser compatibility by first identifying the browser-specific issue, checking Can I Use and MDN for browser support, 
+    I handle cross-browser compatibility by first identifying the browser-specific issue, checking Can i Use MDN for browser support, 
     and then using progressive enhancement, fallbacks, or polyfills where necessary.
 
     For example:
@@ -146,3 +146,7 @@ Answer:
       Memoizing expensive calculations/components where needed.
       Virtualizing large lists.
       Removing unused JavaScript/CSS.
+
+  
+------------------------------------------------------------------------------------------------------------------------------
+Question 9: 
