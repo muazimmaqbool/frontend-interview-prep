@@ -149,4 +149,62 @@ Answer:
 
   
 ------------------------------------------------------------------------------------------------------------------------------
-Question 9: 
+Question 9: A React application is deployed multiple times per day. Teams face broken deployments, rollback difficulties, 
+            and environment inconsistencies. How would you design a robust CI/CD pipeline?
+Answer:
+  I would design the CI/CD pipeline around automated validation, environment consistency, safe deployments, and easy rollback.
+  ->A typical flow would be:
+      Developer
+        ↓
+      Git Push / Pull Request
+        ↓
+      CI Pipeline
+        ├── Install dependencies
+        ├── Lint
+        ├── Unit + Integration Tests
+        ├── Build React App
+        └── Security / Dependency Checks
+                ↓
+            Build Artifact
+                ↓
+            Deploy to Staging
+                ↓
+            E2E / Smoke Tests
+                ↓
+            Production
+                ↓
+            Health Monitoring
+
+  ->How I'd solve their specific problems:
+
+          1. Broken deployments:
+                Run linting, tests and production build before deployment.
+                Add E2E/smoke tests in staging.
+                Don't allow deployment if any critical check fails.
+
+          2. Environment inconsistencies:
+                Keep environment-specific configuration separate from code.
+                Use environment variables/secrets through the CI/CD platform.
+                Use the same Node/package-manager versions across environments.
+                Commit the lockfile and use deterministic installs such as npm ci.
+
+          3. Rollback difficulties:
+                Build an immutable artifact for every commit.
+                Tag releases with a version/commit SHA.
+                Keep previous production artifacts available.
+                Roll back by deploying the previous known-good artifact instead of rebuilding.
+
+          4. Multiple deployments per day:
+                Use automated deployments after PR approval.
+                Use feature flags for incomplete features.
+                For production, use canary or blue-green deployment when the application/business risk justifies it.
+
+          5. Monitoring:
+                Track deployment failures, JavaScript errors, API failures and Core Web Vitals.
+                Add health checks and automatic alerts.
+                If a deployment causes errors, quickly roll back.
+
+
+        ->One strong interview closing:
+              The key principle is: every commit should produce a tested, reproducible artifact, and production deployment should be reversible. 
+              This makes frequent deployments safer rather than slower.
