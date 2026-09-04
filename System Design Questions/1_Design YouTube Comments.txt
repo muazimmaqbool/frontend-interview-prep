@@ -108,4 +108,37 @@ you'd design a comment system that can handle:
 
     The important principle is: Keep the CommentItem reusable and keep comment-specific logic isolated from the parent.         
 
-                                 
+4. Data Model:
+--------------
+    A comment could look like:
+        {
+            id: "comment_123",
+            videoId: "video_456",
+
+            author: {
+                id: "user_1",
+                name: "John",
+                avatar: "..."
+            },
+
+            text: "This video was really helpful!",
+
+            likes: 245,
+            dislikes: 4,
+
+            userReaction: "like",
+
+            replyCount: 12,
+
+            createdAt: "2026-09-01T10:30:00Z"
+        }                              
+
+    For replies:
+        {
+            id: "reply_123",
+            parentId: "comment_123",
+            ...
+        } 
+
+    I prefer having a parentId rather than putting the entire reply tree inside every comment.
+
