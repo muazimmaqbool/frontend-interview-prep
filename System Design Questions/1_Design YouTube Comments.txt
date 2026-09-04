@@ -46,3 +46,34 @@ you'd design a comment system that can handle:
                                 Support mobile and desktop
                                 Handle network failures gracefully
                                 Be accessible
+
+2. Think about the UI:
+----------------------
+    A simplified YouTube comment section could look like:
+                                            Comments
+                                        ────────────────────────────
+
+                                        [Write a comment...]
+
+                                        Sort by: Top comments (filter)
+
+                                        ────────────────────────────
+
+                                        👤 John
+                                        This video was really helpful!
+
+                                        👍 245    👎    Reply
+
+                                        12 replies
+                                        └── Show replies
+
+                                        ────────────────────────────
+
+                                        👤 Sarah
+                                        Great explanation!
+
+                                        👍 120    👎    Reply
+
+                                        ────────────────────────────
+
+                                                Load more
