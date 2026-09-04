@@ -77,3 +77,35 @@ you'd design a comment system that can handle:
                                         ────────────────────────────
 
                                                 Load more
+
+3. Component Architecture:
+--------------------------
+    I'd break the feature into smaller components:
+                                                Comments
+                                                │
+                                                ├── CommentsHeader
+                                                │   ├── CommentCount
+                                                │   └── SortDropdown
+                                                │
+                                                ├── CommentInput
+                                                │
+                                                ├── CommentList
+                                                │   │
+                                                │   ├── CommentItem
+                                                │   │   ├── CommentAuthor
+                                                │   │   ├── CommentContent
+                                                │   │   ├── CommentActions
+                                                │   │   │   ├── LikeButton
+                                                │   │   │   ├── DislikeButton
+                                                │   │   │   └── ReplyButton
+                                                │   │   │
+                                                │   │   └── ReplyList
+                                                │   │       └── CommentItem
+                                                │   │
+                                                │   └── LoadingSkeleton
+                                                │
+                                                └── LoadMore     
+
+    The important principle is: Keep the CommentItem reusable and keep comment-specific logic isolated from the parent.         
+
+                                 
