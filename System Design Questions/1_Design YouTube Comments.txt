@@ -1,0 +1,48 @@
+************* Design YouTube Comments *******************************
+
+Interview Question: Design the frontend architecture for a YouTube-like comment system.
+
+The interviewer isn't primarily asking you to build the UI. They want to know how 
+you'd design a comment system that can handle:
+            Thousands of comments
+            Nested replies
+            Likes
+            Sorting
+            Pagination
+            Adding/deleting comments
+            Real-time updates
+            Loading states
+            Performance
+
+1. First clarify the requirements:
+----------------------------------
+    In an interview, don't immediately start writing components.
+
+    Start by asking: "Should I focus only on the frontend architecture, or should I also discuss backend/API design?"
+
+    Assuming we're designing the frontend, I'd define the requirements.
+
+    ->Functional requirements
+      -----------------------
+        Users should be able to:
+                                View comments
+                                Add a comment
+                                Edit their comment
+                                Delete their comment
+                                Like/unlike comments
+                                Reply to comments
+                                View nested replies
+                                Sort comments
+                                Load more comments
+                                See comment counts
+                                See loading/error states
+    
+    ->Non-functional requirements
+      ---------------------------
+        The application should:
+                                Remain responsive with thousands of comments
+                                Avoid unnecessary API calls
+                                Avoid unnecessary React re-renders
+                                Support mobile and desktop
+                                Handle network failures gracefully
+                                Be accessible
