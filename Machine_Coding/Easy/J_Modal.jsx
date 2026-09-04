@@ -5,7 +5,7 @@ const J_Modal = () => {
   const [open, setopen] = useState(false);
   return (
     <div>
-      <h2>Modal:</h2>
+      <h2>Custom Modal:</h2>
       <button onClick={() => setopen(true)}>Open Modal</button>
 
       {open && (
