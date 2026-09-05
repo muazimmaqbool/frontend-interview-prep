@@ -164,18 +164,15 @@ you'd design a comment system that can handle:
         For pagination:
             GET /videos/123/comments?sort=top&cursor=abc123&limit=20
 
-I'd prefer cursor-based pagination over offset pagination.
 
-Why?
+        Important:
+            I'd prefer cursor-based pagination over offset pagination.
 
-With thousands of comments, offset pagination can become problematic when new comments are inserted.
+        Why?
+            With thousands of comments, offset pagination can become problematic when new comments are inserted.
 
-Instead of:
+        Instead of: ?page=5
 
-?page=5
+        we use: ?cursor=abc123
 
-we use:
-
-?cursor=abc123
-
-The backend tells us the cursor for the next batch.
+        The backend tells us the cursor for the next batch.
