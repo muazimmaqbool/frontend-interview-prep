@@ -212,3 +212,31 @@ you'd design a comment system that can handle:
             Newest comments
 
         creates a different cache entry.
+
+7. Why Infinite Query?
+----------------------
+
+    YouTube can have:
+            10 comments
+            100 comments
+            10,000 comments
+            1,000,000 comments
+
+    We should never load all comments at once.
+            Instead:
+                    Initial request
+                        ↓
+                    20 comments
+                        ↓
+                    User scrolls
+                        ↓
+                    Next 20
+                        ↓
+                    User scrolls
+                        ↓
+                    Next 20
+
+            This reduces:
+                        Network usage
+                        Memory consumption
+                        Initial rendering cost
