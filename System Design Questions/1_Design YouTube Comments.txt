@@ -176,3 +176,39 @@ you'd design a comment system that can handle:
         we use: ?cursor=abc123
 
         The backend tells us the cursor for the next batch.
+
+6. Fetching Comments:
+---------------------
+    If you're using TanStack Query, this is a great use case.
+
+    For example:
+                const {
+                    data,
+                    fetchNextPage,
+                    hasNextPage,
+                    isFetchingNextPage
+                } = useInfiniteQuery({
+                    queryKey: ["comments", videoId, sort],
+                    queryFn: fetchComments,
+                    initialPageParam: null,
+
+                    getNextPageParam: (lastPage) =>
+                        lastPage.nextCursor ?? undefined
+                });
+
+        The query key is important: ["comments", videoId, sort]
+
+        If the user changes:
+                            Video
+                                A
+                                ↓
+                                B
+
+        the cache is separated automatically.
+
+        Similarly:
+            Top comments
+                ↓
+            Newest comments
+
+        creates a different cache entry.
