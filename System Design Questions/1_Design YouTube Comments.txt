@@ -142,3 +142,40 @@ you'd design a comment system that can handle:
 
     I prefer having a parentId rather than putting the entire reply tree inside every comment.
 
+5. API Design:
+--------------
+    We might have APIs like:
+
+        GET    /videos/:videoId/comments
+        GET    /comments/:commentId/replies
+
+        POST   /videos/:videoId/comments
+
+        POST   /comments/:commentId/replies
+
+        PATCH  /comments/:commentId
+
+        DELETE /comments/:commentId
+
+        POST   /comments/:commentId/like
+
+        DELETE /comments/:commentId/like
+
+        For pagination:
+            GET /videos/123/comments?sort=top&cursor=abc123&limit=20
+
+I'd prefer cursor-based pagination over offset pagination.
+
+Why?
+
+With thousands of comments, offset pagination can become problematic when new comments are inserted.
+
+Instead of:
+
+?page=5
+
+we use:
+
+?cursor=abc123
+
+The backend tells us the cursor for the next batch.
