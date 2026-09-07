@@ -267,3 +267,83 @@ you'd design a comment system that can handle:
                         queryKey: ["replies", commentId],
                         ...
                     });
+
+9. State Management:
+--------------------
+
+        This is an important interview discussion.
+        I wouldn't put everything into Redux.
+
+        I'd divide state into:
+            Server state
+
+            Things coming from the backend:
+                                        comments
+                                        replies
+                                        likes
+                                        comment counts
+                                        user reactions
+
+            Use: TanStack Query
+
+                UI state
+                Things such as:
+                                currentlyEditingComment
+                                replyingToComment
+                                openReplySections
+                                sortOption
+
+                        These can remain local: useState()
+
+            Global state:
+                Only if genuinely needed:
+                            authenticatedUser
+                            theme
+                            global notification state
+
+                Potentially Redux/Zustand/Context depending on the application.
+
+10. Optimistic Like
+
+Imagine the user clicks:
+
+👍 Like
+
+We don't want:
+
+Click
+ ↓
+API request
+ ↓
+wait 500ms
+ ↓
+UI changes
+
+Instead:
+
+Click
+ ↓
+UI immediately changes
+ ↓
+API request
+ ↓
+Success → keep change
+Failure → rollback
+
+That's an optimistic update.
+
+With TanStack Query:
+
+onMutate: async () => {
+  // update cache optimistically
+},
+
+onError: () => {
+  // rollback
+},
+
+onSettled: () => {
+  // refetch / synchronize
+}
+
+This makes the UI feel much faster.
