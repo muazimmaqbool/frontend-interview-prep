@@ -68,7 +68,6 @@ const L_Back_To_Top = () => {
       {[...Array(50)].map((_, i) => (
         <p key={i}>This is paragraph {i + 1}</p>
       ))}
-      <div className="container">
         {/* Show this button only after scrolling down */}
         {isVisible && (
           <button
@@ -85,7 +84,6 @@ const L_Back_To_Top = () => {
             Back to Top
           </button>
         )}
-      </div>
     </div>
   );
 };
