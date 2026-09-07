@@ -240,3 +240,30 @@ you'd design a comment system that can handle:
                         Network usage
                         Memory consumption
                         Initial rendering cost
+
+8. Nested Replies:
+------------------
+    One important question is: Should we load all replies together with the parent comment?
+                          Ans: No.
+
+        Suppose:
+            Comment
+            └── 5,000 replies
+
+        Loading all 5,000 replies immediately would be wasteful.
+
+        Instead:
+                Comment
+
+                    12 replies
+                        ↓
+                    Show replies
+
+                When the user clicks: GET /comments/123/replies?cursor=...
+
+                Then load them. We can use another infinite query:
+
+                    useInfiniteQuery({
+                        queryKey: ["replies", commentId],
+                        ...
+                    });
