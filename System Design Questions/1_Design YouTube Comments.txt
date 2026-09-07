@@ -360,3 +360,32 @@ you'd design a comment system that can handle:
             If it fails:
                 Failed to post comment
                 Retry
+
+12. Avoiding Excessive Re-renders:
+----------------------------------
+
+    Imagine: 100 comments
+
+    If one comment receives a like, we don't want:
+                                                Comment 1 rerender
+                                                Comment 2 rerender
+                                                Comment 3 rerender
+                                                ...
+                                                ...
+                                                Comment 100 rerender
+
+    We can use: React.memo(CommentItem)
+        and make sure props are stable.
+
+        For example:
+
+        <CommentItem
+            comment={comment}
+            onLike={handleLike}
+        />
+
+    If handleLike is recreated unnecessarily, memoization can become less useful.
+
+    Depending on the architecture, we can use: useCallback()
+
+    for stable callbacks.
