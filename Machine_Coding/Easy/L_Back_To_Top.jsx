@@ -6,7 +6,7 @@ Create a floating Back to Top button that appears when the user scrolls down the
 Things to do:
     . Add a Back to Top button to the page.
     . Keep it hidden when the scroll position is near the top.
-    . Show it only when the user scrolls beyond a certain distance (e.g., 500px).
+    . Show it only when the user scrolls beyond a certain distance (e.g., 400px).
     . When clicked, smoothly scroll the page to the top.
     . Make sure the button is positioned so it's always visible on the screen when shown.
 
@@ -24,8 +24,7 @@ const L_Back_To_Top = () => {
       /*
         window.scrollY gives the current vertical scroll position.
 
-        If the user has scrolled more than 400px,
-        show the Back to Top button.
+        If the user has scrolled more than 400px, show the Back to Top button.
 
         Otherwise, hide the button.
       */
@@ -61,13 +60,12 @@ const L_Back_To_Top = () => {
     <div style={{ marginBottom: "2.5rem", textAlign: "center" }}>
       <h2>Back To Top</h2>
        {/*
-        Generate 40 paragraphs so that the page has
-        enough content to create a scrollbar.
+        ->Generate 50 paragraphs so that the page has enough content to create a scrollbar.
 
-        Array(40) creates an array with 40 empty positions.
-        map() is then used to create a paragraph for each position.
+        ->Array(50) creates an array with 50 empty positions.
+          map() is then used to create a paragraph for each position.
       */}
-      {[...Array(40)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <p key={i}>This is paragraph {i + 1}</p>
       ))}
       <div className="container">
