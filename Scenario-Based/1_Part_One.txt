@@ -81,6 +81,7 @@ Answer:
 Question 5: Your company plans to expand from 50,000 users to 5 million users. 
             The current React application is a monolith. 
             What architectural changes would you make to support scalability?
+            
 Answer:
     To scale a React application from 50K to 5M users, I would move from a monolithic structure to a more scalable architecture:
       -> Use feature-based architecture to organize code by business modules.
@@ -208,3 +209,27 @@ Answer:
         ->One strong interview closing:
               The key principle is: every commit should produce a tested, reproducible artifact, and production deployment should be reversible. 
               This makes frequent deployments safer rather than slower.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+Question 10: An admin panel renders 100,000 rows and becomes unusable. How would you improve performance and user experience?
+Answer:
+    If an admin panel renders 100,000 rows, I would first avoid rendering all rows at once. 
+    My primary solution would be virtualization/pagination, where only the rows currently visible in the viewport are rendered.
+
+    ->Approach:
+        Virtualize the list/table using libraries like react-window or react-virtualized.
+        Implement server-side pagination or infinite scrolling so all 100,000 records aren't fetched unnecessarily.
+        Add searching, filtering, and sorting on the server for large datasets.
+        Use React.memo, useMemo, and useCallback where unnecessary re-renders are identified.
+        Use debouncing for search inputs.
+        Ensure each row has stable key values.
+        Lazy load heavy components or columns if needed.
+
+    ->User Experience:
+        I would also provide pagination or infinite scrolling, loading indicators, skeleton states, and responsive filtering so the user 
+        can navigate a large dataset without waiting for the entire table to render.
+
+    ->Interview One-liner:
+        For 100,000 rows, I would combine server-side data handling with UI virtualization, so the browser renders only visible rows 
+        instead of creating 100,000 DOM elements at once.
