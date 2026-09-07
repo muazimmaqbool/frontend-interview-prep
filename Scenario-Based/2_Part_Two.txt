@@ -1,0 +1,34 @@
+Question 1: A marketing website has excellent content but poor SEO performance. How would you evaluate SSR, CSR, SSG, and hybrid rendering strategies?
+Answer:
+    For a marketing website with poor SEO, I would first analyze which pages need to be discovered and indexed by search engines, 
+    how often the content changes, and whether fast initial load is important. 
+    Then I would choose the rendering strategy per page rather than using one approach for the entire application.
+
+    ->Evaluation:
+        CSR (Client-Side Rendering)
+            HTML is initially mostly empty and content is rendered using JavaScript.
+            Can be weaker for SEO and initial page load.
+            Better for highly interactive dashboards and authenticated applications.
+
+        SSR (Server-Side Rendering)
+            HTML is generated on every request.
+            Good for SEO because content is available in the initial HTML.
+            Useful for dynamic pages that change frequently.
+
+        SSG (Static Site Generation)
+            HTML is generated at build time.
+            Excellent for SEO and performance.
+            Best for marketing pages, blogs, documentation, and content that changes less frequently.
+
+    ->Hybrid Rendering:
+        Use different strategies for different pages.
+            For example:
+                Home/About/Pricing → SSG
+                Blog → SSG + incremental regeneration
+                Frequently changing product/content pages → SSR
+                Logged-in dashboard → CSR
+
+    ->My recommendation:
+        For a marketing website, I would primarily use SSG for static marketing pages because it provides fast loading and SEO-friendly HTML.
+                                 I would use SSR or incremental regeneration for frequently changing content, 
+                                 and keep highly interactive authenticated sections as CSR.
