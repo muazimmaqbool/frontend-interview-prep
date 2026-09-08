@@ -444,3 +444,26 @@ you'd design a comment system that can handle:
     versus: ["comments", videoId, "newest"]
 
             This allows separate caching.
+
+15. Error Handling:
+-------------------
+    We should handle failures at different levels.
+
+    ->Initial loading: Loading comments...
+    
+    ->Network failure: Couldn't load comments.
+                        [Retry]
+
+    ->Load more failure:
+        Don't destroy already-loaded comments.
+
+        Instead:
+            20 comments
+            ...
+            Couldn't load more comments.
+            [Retry]
+
+    ->Comment submission failure:
+        Failed to post comment.
+
+        [Retry]
