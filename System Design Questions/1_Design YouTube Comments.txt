@@ -431,3 +431,16 @@ you'd design a comment system that can handle:
                             Virtualized List
                                 ↓
                             Visible CommentItems
+
+14. Sorting:
+------------
+    We might support:
+                    Top comments
+                    Newest first
+
+    Changing the sort should change the query key:
+                                                ["comments", videoId, "top"]
+
+    versus: ["comments", videoId, "newest"]
+
+            This allows separate caching.
