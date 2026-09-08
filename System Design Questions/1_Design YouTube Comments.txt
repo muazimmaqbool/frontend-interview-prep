@@ -389,3 +389,45 @@ you'd design a comment system that can handle:
     Depending on the architecture, we can use: useCallback()
 
     for stable callbacks.
+
+13. What if there are 100,000 comments?
+---------------------------------------
+    This is where the interviewer may push further.
+
+    Pagination alone doesn't solve everything.
+
+    If we've loaded:
+
+        20
+        ↓
+        20
+        ↓
+        20
+        ↓
+        ...
+        10,000 comments
+
+    we could still have thousands of DOM nodes.
+
+    For extremely large lists, I'd introduce virtualization.
+
+    ->nstead of rendering:
+            10,000 DOM elements
+
+    ->we render approximately:
+            20–50 visible items
+
+    ->while scrolling.
+        Libraries such as:
+                react-window
+                TanStack Virtual
+                    can help.
+
+    ->The architecture becomes:
+                            API Pagination
+                                ↓
+                            Infinite Query
+                                ↓
+                            Virtualized List
+                                ↓
+                            Visible CommentItems
