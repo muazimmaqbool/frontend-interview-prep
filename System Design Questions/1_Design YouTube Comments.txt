@@ -504,3 +504,25 @@ you'd design a comment system that can handle:
             <div dangerouslySetInnerHTML={{ __html: comment.text }} />
 
     If rich text is supported, it needs proper sanitization.
+
+18. Real-time Updates:
+----------------------
+    ->The interviewer might ask:
+            "What if another user adds a comment while I'm watching the video?"
+
+        We could use: WebSocket or Server-Sent Events
+
+        Flow:
+            User A posts comment
+                    ↓
+            Backend
+                    ↓
+            WebSocket
+                    ↓
+            User B
+                    ↓
+            Update React Query cache
+
+        But I wouldn't automatically make the entire comment system real-time unless the product requires it.
+
+        For YouTube-like comments, polling/refetching or refresh-on-focus may be sufficient for many scenarios.
