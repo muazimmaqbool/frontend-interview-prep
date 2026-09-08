@@ -467,3 +467,23 @@ you'd design a comment system that can handle:
         Failed to post comment.
 
         [Retry]
+
+16. Accessibility:
+------------------
+    This is often forgotten in system-design interviews.
+
+    ->Buttons should have meaningful labels:
+            <button aria-label="Like comment">
+            👍
+            </button>
+
+    ->Reply input should have:
+               <label>
+                  Reply
+                </label>             
+
+    ->Keyboard users should be able to:
+            - Navigate buttons
+            - Open replies
+            - Submit comments
+            - Close editing mode
