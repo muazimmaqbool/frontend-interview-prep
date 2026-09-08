@@ -526,3 +526,27 @@ you'd design a comment system that can handle:
         But I wouldn't automatically make the entire comment system real-time unless the product requires it.
 
         For YouTube-like comments, polling/refetching or refresh-on-focus may be sufficient for many scenarios.
+
+19.
+
+20. Strong Interview Answer: (IMPORTANT)
+----------------------------
+    If the interviewer says: "Okay, explain your design in 2–3 minutes."
+
+    You could answer:
+
+        "I would divide the comment system into a presentation layer, server-state layer, and UI-state layer. The comment section would have components such as CommentHeader, CommentInput, CommentList, CommentItem, and ReplyList.
+
+        For server state, I'd use TanStack Query with cursor-based infinite pagination because a video can have thousands or even millions of comments. I wouldn't load all comments initially; I'd fetch a small page and fetch additional pages as the user scrolls.
+
+        Replies would also be loaded lazily when the user expands them rather than fetching all nested replies upfront.
+
+        I'd keep temporary UI state such as the comment being edited, the comment being replied to, and the selected sort option locally, while server data would remain in the query cache.
+
+        For likes and adding comments, I'd use optimistic updates so the UI responds immediately and roll back if the API request fails.
+
+        To prevent unnecessary rendering, I'd memoize individual CommentItem components, and if the number of loaded comments becomes very large, I'd introduce list virtualization.
+
+        I'd also handle loading, pagination, and mutation errors independently, and make sure comment content is properly sanitized and that all interactive elements are accessible.
+
+        If real-time comments are a product requirement, I'd add WebSockets or SSE and update the TanStack Query cache when new events arrive."
