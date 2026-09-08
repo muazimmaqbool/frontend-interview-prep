@@ -527,7 +527,59 @@ you'd design a comment system that can handle:
 
         For YouTube-like comments, polling/refetching or refresh-on-focus may be sufficient for many scenarios.
 
-19.
+19. Final Architecture:
+-----------------------
+    I'd explain the architecture like this:
+                    ┌──────────────────┐
+                    │      YouTube     │
+                    │   Comment UI     │
+                    └────────┬─────────┘
+                             │
+                             ↓
+                    ┌──────────────────┐
+                    │  CommentInput    │
+                    └──────────────────┘
+
+                             │
+                             ↓
+
+                    ┌──────────────────┐
+                    │  CommentList     │
+                    │                  │
+                    │  CommentItem     │
+                    │      ↓           │
+                    │  ReplyList       │
+                    └────────┬─────────┘
+                             │
+                             ↓
+                    ┌──────────────────┐
+                    │ TanStack Query   │
+                    │                  │
+                    │ Infinite Query   │
+                    │ Cache            │
+                    │ Mutations        │
+                    └────────┬─────────┘
+                             │
+                             ↓
+                    ┌──────────────────┐
+                    │   API Layer      │
+                    └────────┬─────────┘
+                             │
+                             ↓
+                    ┌──────────────────┐
+                    │     Backend      │
+                    └──────────────────┘
+
+        For very large datasets:
+                                API
+                                 ↓
+                                Cursor Pagination
+                                 ↓
+                                TanStack Infinite Query
+                                 ↓
+                                Virtualized Comment List
+                                 ↓
+                                Memoized CommentItem    
 
 20. Strong Interview Answer: (IMPORTANT)
 ----------------------------
