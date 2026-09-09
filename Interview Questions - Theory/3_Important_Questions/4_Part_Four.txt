@@ -291,5 +291,20 @@ Answer:
             
 
 ---------------------------------------------------------------------------------------------
-Question 10:
+Question 10: What is the difference between cursor-based pagination over offset pagination?
+Answer:
+    Offset pagination is simpler and supports direct page navigation, 
+    while cursor-based pagination is more efficient and consistent for large or frequently changing datasets, especially for infinite scrolling.
+
+    Quick Comparison:
+        | Offset                           | Cursor                         |
+        | -------------------------------- | ------------------------------ |
+        | Uses page/offset                 | Uses last item's cursor        |
+        | Easy page jumping                | Sequential navigation          |
+        | Can slow down on large data      | Better for large datasets      |
+        | Can have duplicates/missing data | More consistent                |
+        | Good for admin tables            | Good for feeds/infinite scroll |
+
+    ->In details:
+
 
