@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 /*
-Build an input field that automatically saves whatever the user types into localStorage by the name "autosave-text", and
+Build an input field that automatically saves whatever the user types and saves it to localStorage by the name "autosave-text", and
 restores it even after a page refresh. Include a Clear button to reset both the input and the stored value.
 
 Things to do:
