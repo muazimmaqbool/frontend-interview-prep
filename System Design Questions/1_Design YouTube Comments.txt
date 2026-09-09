@@ -607,3 +607,46 @@ you'd design a comment system that can handle:
           that all interactive elements are accessible.
 
         -> If real-time comments are a product requirement, I'd add WebSockets or SSE and update the TanStack Query cache when new events arrive."
+
+->visual system-design sketch/architecture diagram:
+                    YOUTUBE COMMENTS
+                        │
+                        ▼
+              ┌────────────────────────────┐
+              │          Comment UI        │
+              │                            │
+              │  👤 John                    
+              │  Great video!              │
+              │  👍 245   ↩ Reply          │
+              │                            │
+              │  👤 Sarah                  │
+              │  Very helpful              │
+              └─────────────┬──────────────┘
+                            │
+                            ▼
+              ┌────────────────────────────┐
+              │       Frontend Logic       │
+              │                            │
+              │  State + TanStack Query    │
+              │  Pagination + Cache        │
+              └──────┬───────────┬────────-┘
+                     │           │
+             REST API│           │WebSocket*
+                     │           │
+                     ▼           ▼
+              ┌──────────┐   ┌──────────┐
+              │ Comments │   │  Real    │
+              │   API    │   │  Time    │
+              └────┬─────┘   └────┬─────┘
+                   │              │
+                   └──────┬───────┘
+                          ▼
+                    ┌───────────┐
+                    │  Backend  │
+                    │    + DB   │
+                    └───────────┘
+
+            ┌──────────────┐  ┌──────────────┐
+            │   Infinite   │  │  Optimistic  │
+            │  Pagination  │  │   Updates    │
+            └──────────────┘  └──────────────┘
