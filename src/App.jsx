@@ -49,10 +49,10 @@ function App() {
       {/* <K_FocusInput/> */}
       {/* <L_Back_To_Top/> */}
       {/* <M_URL_Validator/> */}
-      <N_Auto_Save_Text/>
+      {/* <N_Auto_Save_Text/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
-      {/* <A_Debounce/> */}
+      <A_Debounce/>
       {/* <B_Pagination/> */}
       {/* <C_Infinite_Scroll/> */}
       {/* <D_OTP_Input/> */}
