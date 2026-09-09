@@ -2,17 +2,17 @@
 
 Interview Question: Design the frontend architecture for a YouTube-like comment system.
 
-The interviewer isn't primarily asking you to build the UI. They want to know how 
-you'd design a comment system that can handle:
-            Thousands of comments
-            Nested replies
-            Likes
-            Sorting
-            Pagination
-            Adding/deleting comments
-            Real-time updates
-            Loading states
-            Performance
+The interviewer isn't primarily asking you to build the UI. 
+They want to know how you'd design a comment system that can handle:
+                        Thousands of comments
+                        Nested replies
+                        Likes
+                        Sorting
+                        Pagination
+                        Adding/deleting comments
+                        Real-time updates
+                        Loading states
+                        Performance
 
 1. First clarify the requirements:
 ----------------------------------
@@ -22,8 +22,7 @@ you'd design a comment system that can handle:
 
     Assuming we're designing the frontend, I'd define the requirements.
 
-    ->Functional requirements
-      -----------------------
+    ->Functional requirements:
         Users should be able to:
                                 View comments
                                 Add a comment
@@ -37,8 +36,7 @@ you'd design a comment system that can handle:
                                 See comment counts
                                 See loading/error states
     
-    ->Non-functional requirements
-      ---------------------------
+    ->Non-functional requirements:
         The application should:
                                 Remain responsive with thousands of comments
                                 Avoid unnecessary API calls
@@ -62,7 +60,7 @@ you'd design a comment system that can handle:
                                         👤 John
                                         This video was really helpful!
 
-                                        👍 245    👎    Reply
+                                        👍 245    👎12    Reply
 
                                         12 replies
                                         └── Show replies
@@ -72,7 +70,7 @@ you'd design a comment system that can handle:
                                         👤 Sarah
                                         Great explanation!
 
-                                        👍 120    👎    Reply
+                                        👍 120    👎1    Reply
 
                                         ────────────────────────────
 
@@ -118,18 +116,15 @@ you'd design a comment system that can handle:
             author: {
                 id: "user_1",
                 name: "John",
-                avatar: "..."
+                avatar: "..." // or image: "..."
             },
 
             text: "This video was really helpful!",
 
             likes: 245,
             dislikes: 4,
-
             userReaction: "like",
-
             replyCount: 12,
-
             createdAt: "2026-09-01T10:30:00Z"
         }                              
 
@@ -145,12 +140,11 @@ you'd design a comment system that can handle:
 5. API Design:
 --------------
     We might have APIs like:
-
+    
         GET    /videos/:videoId/comments
         GET    /comments/:commentId/replies
 
         POST   /videos/:videoId/comments
-
         POST   /comments/:commentId/replies
 
         PATCH  /comments/:commentId
