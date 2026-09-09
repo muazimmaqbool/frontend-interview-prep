@@ -325,3 +325,32 @@ Answer:
                 Cons:
                     Can become slower with very large datasets.
                     Can cause duplicate or missing items when new records are added or deleted.
+
+        2. Cursor-Based Pagination:
+
+                Uses a reference to the last item received.
+                        ?limit=10&cursor=abc123
+
+                Example idea:
+                            SELECT * FROM users
+                            WHERE id > lastSeenId
+                            ORDER BY id
+                            LIMIT 10;
+
+                The API response might return:
+                        {
+                            data: [...],
+                            nextCursor: "user_10"
+                        }
+
+                Then the next request uses:
+                                ?limit=10&cursor=user_10
+
+                Pros:
+                    Better performance for large datasets.
+                    More consistent when data changes.
+                    Great for infinite scrolling.
+
+                Cons:
+                    Cannot easily jump directly to page 50.
+                    Slightly more complex to implement.
