@@ -296,6 +296,14 @@ Answer:
     Offset pagination is simpler and supports direct page navigation, 
     while cursor-based pagination is more efficient and consistent for large or frequently changing datasets, especially for infinite scrolling.
 
+    ->Offset pagination:
+        Offset pagination is a database and API querying method that breaks large datasets into smaller chunks by specifying 
+        how many records to skip (offset) and how many records to display (limit)
+
+    ->Cursor-based pagination:
+        Cursor-based pagination is a technique used to fetch large sets of data from a database or API in smaller, 
+        manageable chunks by using a unique pointer—called a cursor—to reference the last item seen in the previous request
+
     Quick Comparison:
         | Offset                           | Cursor                         |
         | -------------------------------- | ------------------------------ |
@@ -354,3 +362,5 @@ Answer:
                 Cons:
                     Cannot easily jump directly to page 50.
                     Slightly more complex to implement.
+
+                
