@@ -307,4 +307,21 @@ Answer:
 
     ->In details:
 
+        1. Offset Pagination:
 
+                Uses page and limit (or offset): 
+                    ?page=3&limit=10
+                            or:
+                    ?offset=20&limit=10
+
+                Example:
+                        SELECT * FROM users
+                        LIMIT 10 OFFSET 20;
+
+                Pros:
+                    Simple to implement.
+                    Easy to jump directly to any page.
+
+                Cons:
+                    Can become slower with very large datasets.
+                    Can cause duplicate or missing items when new records are added or deleted.
