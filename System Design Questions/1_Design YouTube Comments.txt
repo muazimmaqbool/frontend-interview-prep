@@ -237,7 +237,7 @@ They want to know how you'd design a comment system that can handle:
 8. Nested Replies:
 ------------------
     One important question is: Should we load all replies together with the parent comment?
-                          Ans: No.
+                               Ans: No.
 
         Suppose:
             Comment
@@ -263,38 +263,36 @@ They want to know how you'd design a comment system that can handle:
 
 9. State Management:
 --------------------
-
         This is an important interview discussion.
         I wouldn't put everything into Redux.
 
         I'd divide state into:
-            Server state
-
-            Things coming from the backend:
+            ->Server state
+                    Things coming from the backend:
                                         comments
                                         replies
                                         likes
                                         comment counts
                                         user reactions
 
-            Use: TanStack Query
+                        Use TanStack Query
 
-                UI state
-                Things such as:
+            ->UI state
+                    Things such as:
                                 currentlyEditingComment
                                 replyingToComment
                                 openReplySections
                                 sortOption
 
-                        These can remain local: useState()
+                       These can remain local: useState()
 
-            Global state:
-                Only if genuinely needed:
+            ->Global state:
+                    Only if genuinely needed:
                             authenticatedUser
                             theme
                             global notification state
 
-                Potentially Redux/Zustand/Context depending on the application.
+                    Potentially Redux/Zustand/Context depending on the application.
 
 10. Optimistic Like:
 --------------------
