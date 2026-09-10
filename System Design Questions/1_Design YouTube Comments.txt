@@ -352,9 +352,7 @@ They want to know how you'd design a comment system that can handle:
 
 12. Avoiding Excessive Re-renders:
 ----------------------------------
-
     Imagine: 100 comments
-
     If one comment receives a like, we don't want:
                                                 Comment 1 rerender
                                                 Comment 2 rerender
@@ -367,17 +365,13 @@ They want to know how you'd design a comment system that can handle:
         and make sure props are stable.
 
         For example:
-
-        <CommentItem
-            comment={comment}
-            onLike={handleLike}
-        />
+            <CommentItem
+                comment={comment}
+                onLike={handleLike}
+            />
 
     If handleLike is recreated unnecessarily, memoization can become less useful.
-
-    Depending on the architecture, we can use: useCallback()
-
-    for stable callbacks.
+    Depending on the architecture, we can use: useCallback() for stable callbacks.
 
 13. What if there are 100,000 comments?
 ---------------------------------------
