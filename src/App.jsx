@@ -52,8 +52,8 @@ function App() {
       {/* <N_Auto_Save_Text/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
-      <A_Debounce/>
-      {/* <B_Pagination/> */}
+      {/* <A_Debounce/> */}
+      <B_Pagination/>
       {/* <C_Infinite_Scroll/> */}
       {/* <D_OTP_Input/> */}
       {/* <E_Image_Carousel/> */}

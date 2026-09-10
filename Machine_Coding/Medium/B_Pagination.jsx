@@ -73,7 +73,7 @@ const B_Pagination = () => {
 
     3) const current = users.slice(start, start + pageSize);
         slice(start, end):Returns elements from start to end-1
-        returns elements at indices 0 through 9 (10 elements total).
+        returns elements at index 0 through 9 (10 elements total).
         but const users = [
         "User 1",  // index 0
         "User 2",  // index 1
