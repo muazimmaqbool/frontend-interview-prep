@@ -35,3 +35,7 @@ Answer:
     ->Interview answer:
             setCount(count + 1) uses the state value from the current render, while setCount(prev => prev + 1) receives the latest previous state 
             and is preferred when the new state depends on the old state.
+
+
+--------------------------------------------------------------------------------------------------------
+Question 2:
