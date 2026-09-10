@@ -332,13 +332,11 @@ They want to know how you'd design a comment system that can handle:
                   // refetch / synchronize
                 }
 
-            This makes the UI feel much faster.
+        This makes the UI feel much faster.
 
 11. Adding Comments:
 --------------------
-
         When the user submits: "Great video!"
-
         We can optimistically add: Great video!   Sending...
 
         Then:
