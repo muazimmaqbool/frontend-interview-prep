@@ -174,7 +174,6 @@ They want to know how you'd design a comment system that can handle:
 6. Fetching Comments:
 ---------------------
     If you're using TanStack Query, this is a great use case.
-
     For example:
                 const {
                     data,
@@ -209,7 +208,6 @@ They want to know how you'd design a comment system that can handle:
 
 7. Why Infinite Query?
 ----------------------
-
     YouTube can have:
             10 comments
             100 comments
@@ -224,11 +222,12 @@ They want to know how you'd design a comment system that can handle:
                         ↓
                     User scrolls
                         ↓
-                    Next 20
+                    Next 20 comments
                         ↓
                     User scrolls
                         ↓
-                    Next 20
+                    Next 20 Comments
+                       ...
 
             This reduces:
                         Network usage
