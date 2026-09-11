@@ -474,17 +474,17 @@ They want to know how you'd design a comment system that can handle:
     Never trust comment content from the client.
 
     ->The backend should handle:
-            - Authentication
-            - Authorization
-            - Input validation
-            - Rate limiting
-            - Spam detection
-            - XSS protection
+                        - Authentication
+                        - Authorization
+                        - Input validation
+                        - Rate limiting
+                        - Spam detection
+                        - XSS protection
 
     ->For example, don't blindly render:
             <div dangerouslySetInnerHTML={{ __html: comment.text }} />
 
-    If rich text is supported, it needs proper sanitization.
+    If rich text is supported, it needs proper sanitization. via domPurify etc
 
 18. Real-time Updates:
 ----------------------
