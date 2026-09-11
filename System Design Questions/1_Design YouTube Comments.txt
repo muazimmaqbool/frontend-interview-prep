@@ -446,9 +446,8 @@ They want to know how you'd design a comment system that can handle:
             [Retry]
 
     ->Comment submission failure:
-        Failed to post comment.
-
-        [Retry]
+                        Failed to post comment.
+                        [Retry]
 
 16. Accessibility:
 ------------------
