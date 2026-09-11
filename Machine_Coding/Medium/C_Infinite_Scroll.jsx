@@ -23,7 +23,7 @@ const C_Infinite_Scroll = () => {
         //Add them together i.e 800 + 1200 = 2000px
 
         //Now:document.body.offsetHeight: Total height of the page. suppose its 2000px
-        //now 2000px >=2000px true means: The bottom of the visible screen has reached the bottom of the page.
+        //now 2000px >=2000px true means: The bottom of the visible screen has been reached.
 
         //Load 20 more items
         setcount((c) => Math.min(c + 20, allItems.length));
