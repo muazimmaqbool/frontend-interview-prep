@@ -421,12 +421,11 @@ They want to know how you'd design a comment system that can handle:
                     Top comments
                     Newest first
 
-    Changing the sort should change the query key:
-                                                ["comments", videoId, "top"]
+    Changing the sort should change the query key: ["comments", videoId, "top"]
 
     versus: ["comments", videoId, "newest"]
 
-            This allows separate caching.
+    This allows separate caching.
 
 15. Error Handling:
 -------------------
