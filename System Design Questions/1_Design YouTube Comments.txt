@@ -455,7 +455,7 @@ They want to know how you'd design a comment system that can handle:
 
     ->Buttons should have meaningful labels:
             <button aria-label="Like comment">
-            👍
+                👍
             </button>
 
     ->Reply input should have:
@@ -464,10 +464,10 @@ They want to know how you'd design a comment system that can handle:
                 </label>             
 
     ->Keyboard users should be able to:
-            - Navigate buttons
-            - Open replies
-            - Submit comments
-            - Close editing mode
+                                    - Navigate buttons
+                                    - Open replies
+                                    - Submit comments
+                                    - Close editing mode
 
 17. Security:
 -------------
