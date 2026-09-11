@@ -490,17 +490,16 @@ They want to know how you'd design a comment system that can handle:
 ----------------------
     ->The interviewer might ask:
             "What if another user adds a comment while I'm watching the video?"
-
-        We could use: WebSocket or Server-Sent Events
+             Ans: We could use:-> WebSocket or Server-Sent Events
 
         Flow:
             User A posts comment
                     ↓
-            Backend
+                Backend
                     ↓
-            WebSocket
+                WebSocket
                     ↓
-            User B
+                User B
                     ↓
             Update React Query cache
 
