@@ -511,7 +511,7 @@ They want to know how you'd design a comment system that can handle:
 -----------------------
     I'd explain the architecture like this:
                     ┌──────────────────┐
-                    │      YouTube     │
+                    │    YouTube       │
                     │   Comment UI     │
                     └────────┬─────────┘
                              │
@@ -519,10 +519,8 @@ They want to know how you'd design a comment system that can handle:
                     ┌──────────────────┐
                     │  CommentInput    │
                     └──────────────────┘
-
                              │
                              ↓
-
                     ┌──────────────────┐
                     │  CommentList     │
                     │                  │
