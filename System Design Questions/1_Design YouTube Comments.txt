@@ -566,7 +566,7 @@ They want to know how you'd design a comment system that can handle:
     You could answer:
 
         -> "I would divide the comment system into a presentation layer, server-state layer, and UI-state layer. 
-           The comment section would have components such as CommentHeader, CommentInput, CommentList, CommentItem, and ReplyList.
+            The comment section would have components such as CommentHeader, CommentInput, CommentList, CommentItem, and ReplyList.
 
         -> For server state, I'd use TanStack Query with cursor-based infinite pagination because a video can have thousands or even millions of comments. 
            I wouldn't load all comments initially; I'd fetch a small page and fetch additional pages as the user scrolls.
@@ -582,18 +582,19 @@ They want to know how you'd design a comment system that can handle:
            I'd introduce list virtualization.
 
         -> I'd also handle loading, pagination, and mutation errors independently, and make sure comment content is properly sanitized and 
-          that all interactive elements are accessible.
+           that all interactive elements are accessible.
 
         -> If real-time comments are a product requirement, I'd add WebSockets or SSE and update the TanStack Query cache when new events arrive."
 
 ->visual system-design sketch/architecture diagram:
-                    YOUTUBE COMMENTS
+
+                  YOUTUBE COMMENTS
                         │
                         ▼
               ┌────────────────────────────┐
               │          Comment UI        │
               │                            │
-              │  👤 John                    
+              │  👤 John                   | 
               │  Great video!              │
               │  👍 245   ↩ Reply          │
               │                            │
@@ -609,7 +610,7 @@ They want to know how you'd design a comment system that can handle:
               │  Pagination + Cache        │
               └──────┬───────────┬────────-┘
                      │           │
-             REST API│           │WebSocket*
+             REST API│           │WebSocket
                      │           │
                      ▼           ▼
               ┌──────────┐   ┌──────────┐
