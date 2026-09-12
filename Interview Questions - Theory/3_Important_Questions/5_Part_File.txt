@@ -1,4 +1,4 @@
-Question 1: What is difference between onClick={()=>setCount(count+1)} and onClick={()=>setCount((count)=>count+1)}?
+Question 1: What is difference between ' onClick={()=>setCount(count+1)} ' and ' onClick={()=>setCount((count)=>count+1)} '?
 Answer:
     The difference is how React gets the previous state.
 
@@ -12,7 +12,6 @@ Answer:
             onClick={() => setCount((count) => count + 1)}
 
             React gives you the latest previous state value as the parameter.
-
             This is safer when the next state depends on the previous state.
 
     ->Example where the difference matters:

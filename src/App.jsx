@@ -55,7 +55,7 @@ function App() {
       {/* <A_Debounce/> */}
       {/* <B_Pagination/> */}
       {/* <C_Infinite_Scroll/> */}
-      {/* <D_OTP_Input/> */}
+      <D_OTP_Input/>
       {/* <E_Image_Carousel/> */}
       {/* <F_File_Upload_Preview/> */}
       {/* <G_Password_Strength_Meter/> */}
