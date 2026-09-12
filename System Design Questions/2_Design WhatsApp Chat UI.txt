@@ -1,0 +1,21 @@
+******************** Design WhatsApp Chat UI *******************************
+
+1. Start by clarifying the requirements:
+----------------------------------------
+    Functional requirements
+            Users should be able to:
+                - View a list of chats
+                - Open a conversation
+                - Send messages
+                - Receive messages in real time
+                - Send images/files
+                - See typing indicators
+                - See online/offline status
+                - See message status
+                - Sending
+                - Sent
+                - Delivered
+                - Read
+                - Load older messages
+                - Search chats
+                - Receive notifications

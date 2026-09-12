@@ -1,4 +1,4 @@
-************* Design YouTube Comments *******************************
+********************** Design YouTube Comments *******************************
 
 Interview Question: Design the frontend architecture for a YouTube-like comment system.
 
