@@ -19,3 +19,36 @@
                 - Load older messages
                 - Search chats
                 - Receive notifications
+
+2. Simple YouTuber-style system design diagram:
+-----------------------------------------------
+    This is the kind of diagram I would draw first:
+                    ┌───────────────────┐
+                    │       USER        │
+                    │   WhatsApp UI     │
+                    └─────────┬─────────┘
+                              │
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+     ┌─────────────────┐             ┌─────────────────┐
+     │   REST APIs     │             │    WebSocket    │
+     │                 │             │                 │
+     │ Chats           │             │ New Message     │
+     │ Old Messages    │             │ Typing          │
+     │ Media Upload    │             │ Online Status   │
+     └────────┬────────┘             └────────┬────────┘
+              │                               │
+              └───────────────┬───────────────┘
+                              ▼
+                     ┌────────────────┐
+                     │    BACKEND     │
+                     │                │
+                     │ Chat Service   │
+                     │ Message DB     │
+                     └────────────────┘
+
+    The key idea:
+            - REST API = initial data + historical data
+            - WebSocket = live updates
+            
+    This is the core of the entire design.
