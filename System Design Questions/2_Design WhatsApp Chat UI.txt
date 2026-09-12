@@ -52,3 +52,43 @@
             - WebSocket = live updates
             
     This is the core of the entire design.
+
+3. High-Level Frontend Architecture:
+------------------------------------
+    I would divide the frontend into three major areas:
+        ┌──────────────────────────────────────────────┐
+        │                 CHAT APP                     │
+        │                                              │
+        │  ┌─────────────┐        ┌─────────────────┐  │
+        │  │ Chat List   │        │ Conversation    │  │
+        │  │             │        │                 │  │
+        │  │ 👤 John     │        │ 👤 John         │  │
+        │  │ 👤 Sarah    │        │                 │  │
+        │  │ 👤 Alex     │        │ Messages        │  │
+        │  │             │        │                 │  │
+        │  └─────────────┘        │ Message Input   │  │
+        │                         └─────────────────┘  │
+        └──────────────────────────────────────────────┘
+
+    Component structure:
+        ChatApp
+            │
+            ├── Sidebar
+            │   │
+            │   ├── ChatSearch
+            │   └── ChatList
+            │       └── ChatListItem
+            │
+            └── ChatWindow
+                │
+                ├── ChatHeader
+                │
+                ├── MessageList
+                │   └── MessageBubble
+                │
+                ├── TypingIndicator
+                │
+                └── MessageInput
+                    ├── TextInput
+                    ├── FileUpload
+                    └── SendButton
