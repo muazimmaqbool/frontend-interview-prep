@@ -16,18 +16,17 @@ Answer:
 
     ->Example where the difference matters:
             // May not increment by 3
-            setCount(count + 1);
-            setCount(count + 1);
-            setCount(count + 1);
+                setCount(count + 1);
+                setCount(count + 1);
+                setCount(count + 1);
 
             All three may use the same count value.
 
             But:
-
             // Correctly increments by 3
-            setCount((prev) => prev + 1);
-            setCount((prev) => prev + 1);
-            setCount((prev) => prev + 1);
+                setCount((prev) => prev + 1);
+                setCount((prev) => prev + 1);
+                setCount((prev) => prev + 1);
 
             Each update receives the latest updated value.
 
@@ -37,4 +36,4 @@ Answer:
 
 
 --------------------------------------------------------------------------------------------------------
-Question 2:
+Question 2:     
