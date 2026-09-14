@@ -5,8 +5,7 @@ import React, { useRef, useState } from "react";
     Create six OTP boxes.
     Requirements:
         1. Auto move to the next input after typing.
-        2. Backspace should move to the previous input.
-        3. Only numbers should be allowed.
+        2. Only numbers should be allowed.
 */
 const D_OTP_Input = () => {
   //Array(6).fill(""): creats array of size 6 with each item having value of "", i.e ["", "", "", "", "", ""]
@@ -31,7 +30,6 @@ const D_OTP_Input = () => {
     // $   -> End of string
     //
     // Allows:
-    // ""
     // "5"
     //
     // Rejects:
