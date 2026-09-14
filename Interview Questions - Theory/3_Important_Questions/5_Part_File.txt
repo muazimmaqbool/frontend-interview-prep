@@ -36,4 +36,36 @@ Answer:
 
 
 --------------------------------------------------------------------------------------------------------
-Question 2:     
+Question 2: How does JavaScript work asynchronously?
+Answer:
+        JavaScript is single-threaded, but it can handle asynchronous operations using the Event Loop.
+        Simple flow:
+                JavaScript (Call Stack)
+                        ↓
+                Async task (setTimeout, API, etc.)
+                        ↓
+                Browser/Node handles it separately
+                        ↓
+                Callback / Promise is ready
+                        ↓
+                Event Loop moves it to Call Stack
+                        ↓
+                JavaScript executes it
+
+        Example:
+                console.log("Start");
+                setTimeout(() => {
+                    console.log("Async Task");
+                }, 1000);
+
+                console.log("End");
+
+                o/p:
+                    Start
+                    End
+                    Async Task
+
+        In short: JavaScript handles asynchronous operations using browser/Node APIs, callback queues, Promise microtasks, and the Event Loop, while keeping JavaScript execution itself single-threaded.
+
+--------------------------------------------------------------------------------------------------------
+Question 3: How do you find memory leaks in a frontend application?
