@@ -20,6 +20,7 @@
                 - Search chats
                 - Receive notifications
 
+
 2. Simple YouTuber-style system design diagram:
 -----------------------------------------------
     This is the kind of diagram I would draw first:
@@ -52,6 +53,7 @@
             - WebSocket = live updates
             
     This is the core of the entire design.
+
 
 3. High-Level Frontend Architecture:
 ------------------------------------
@@ -92,3 +94,40 @@
                     ├── TextInput
                     ├── FileUpload
                     └── SendButton
+
+4. The Data Flow:
+-----------------
+    This is probably the most important diagram to understand.
+                            OPEN CHAT
+                               │
+                               ▼
+                        ┌──────────────┐
+                        │ GET Messages │
+                        └──────┬───────┘
+                               │
+                               ▼
+                        ┌──────────┐
+                        │ REST API │
+                        └────┬─────┘
+                             │
+                             ▼
+                        Initial Messages
+                             │
+                             ▼
+                        ┌──────────────┐
+                        │ Message List │
+                        └──────────────┘
+                --------------------------------
+
+                    NEW MESSAGE ARRIVES
+                            │
+                            ▼
+                        WebSocket
+                            │
+                            ▼
+                        Update Cache
+                            │
+                            ▼
+                        ┌──────────────┐
+                        │ Message List │
+                        └──────────────┘
