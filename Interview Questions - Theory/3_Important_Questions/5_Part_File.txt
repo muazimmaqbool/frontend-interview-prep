@@ -69,3 +69,22 @@ Answer:
 
 --------------------------------------------------------------------------------------------------------
 Question 3: How do you find memory leaks in a frontend application?
+Answer:
+        I use Chrome DevTools, especially the Memory and Performance tabs, to check whether memory keeps increasing after navigating, opening/closing components, or repeating an action.
+        My approach:
+                -> Reproduce the issue repeatedly.
+                        For example, open and close a modal multiple times.
+                -> Take Heap Snapshots before and after.
+                        Check whether objects/components that should be removed are still retained in memory.
+                -> Look for common causes:
+                        -Event listeners not removed
+                        -setInterval or timers not cleared
+                        -WebSocket/subscriptions not closed
+                        -Large objects kept in closures or global state
+                        -Detached DOM nodes
+                -> Fix and verify
+                        Add cleanup functions and take another Heap Snapshot to confirm memory is released.
+
+        Interview one-liner:
+                I identify memory leaks by reproducing the behavior, comparing Heap Snapshots in Chrome DevTools, finding objects that remain retained unexpectedly, 
+                and then checking common causes such as listeners, timers, subscriptions, and retained references.
