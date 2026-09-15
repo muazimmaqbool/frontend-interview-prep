@@ -30,6 +30,7 @@ const flattenArrayTwo=(arr)=>{
 }
 console.log(flattenArrayOne([1, [2, [3, 4], 5], 6])) // [1,2,3,4,5,6]
 console.log(flattenArrayTwo(['a','b',['c','d'],['e',['f','g']],'i'])) // ['a', 'b', 'c','d', 'e', 'f','g', 'i']
+console.log(flattenArrayTwo([5, 9, [11, 56, 76, 8], [20, 43]])) // [5, 9, 11, 56,76, 8, 20, 43]
 /*
 `concat()` is used because the recursive call returns an array. We want to merge its elements into the result array, not add the whole array as a single item.
 
