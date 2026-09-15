@@ -131,3 +131,11 @@
                         ┌──────────────┐
                         │ Message List │
                         └──────────────┘
+
+        So the architecture is:
+                        Initial Data → REST API
+                        Live Data → WebSocket
+
+5. How would I manage state?
+----------------------------
+    
