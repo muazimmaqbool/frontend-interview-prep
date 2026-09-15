@@ -138,4 +138,45 @@
 
 5. How would I manage state?
 ----------------------------
-    
+    This is where many candidates make a mistake.
+    They put everything into Redux.
+    I would separate state into categories.
+
+    -> A. Server State:
+            Data coming from the backend:
+                    Chats
+                    Messages
+                    Users
+                    Online status
+                    Message status
+
+            Possible tools:
+                    TanStack Query
+                    Redux Toolkit Query
+
+            For your stack, I would choose TanStack Query.
+
+    -> B. UI State:
+            Things that only control the interface:
+                    Selected chat
+                    Open attachment menu
+                    Typing text
+                    Emoji picker
+                    Search input
+                    Replying to message
+
+            These can use:
+                useState
+
+            or a lightweight global store if multiple components need them.
+
+    -> C. Real-Time State:
+            Events from WebSocket:
+                    NEW_MESSAGE
+                    MESSAGE_DELIVERED
+                    MESSAGE_READ
+                    USER_TYPING
+                    USER_ONLINE
+                    USER_OFFLINE
+
+            The WebSocket receives events and updates the existing cache/store.
