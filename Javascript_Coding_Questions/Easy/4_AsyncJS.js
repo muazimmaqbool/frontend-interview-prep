@@ -93,3 +93,27 @@ Promise.resolve().then(() => {
 });
 Promise.resolve().then(() => console.log("New Promise"));
 // o/p : New Timeout, New Promise
+
+//6. What is the output of this:
+let count = 0;
+function increment() {
+ setTimeout(() => {
+ count++;
+ console.log("timeout:", count);
+ }, 0);
+
+ Promise.resolve().then(() => {
+ count++;
+ console.log("promise:", count);
+ });
+}
+
+increment();
+
+console.log("sync:", count);
+//o/p:
+/*
+sync: 0
+promise: 1
+timeout: 2
+*/
