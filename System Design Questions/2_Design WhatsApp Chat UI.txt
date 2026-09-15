@@ -180,3 +180,47 @@
                     USER_OFFLINE
 
             The WebSocket receives events and updates the existing cache/store.
+
+
+6. Sending a Message:
+---------------------
+    Let's walk through the complete flow.
+
+    Suppose I type: Hello 👋
+                    and click send.
+
+    -> A naive implementation would be:
+                Click Send
+                    ↓
+                Wait for API
+                    ↓
+                Message appears
+
+            That feels slow.
+
+        Instead, use an optimistic update.
+
+    -> Better flow:
+            User clicks SEND
+                    │
+                    ▼
+            Create Temporary Message
+                    │
+                    ▼
+            Add Message to UI immediately
+                    │
+                    ▼
+                API / Socket
+                    │
+                    ▼
+                Server saves
+                    │
+                    ▼
+            Replace Temporary ID
+            with Real Message ID
+
+    Visual example:
+        You: Hello 👋          ⏳ Sending
+
+        Then: 
+            You: Hello 👋          ✓ Sent
