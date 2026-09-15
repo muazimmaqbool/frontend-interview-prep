@@ -33,8 +33,8 @@ function firstRepeatingChar(str) {
   // no character was repeated
   return null;
 }
-// Time: O(n)
-// Space: O(n)
+//-> Time: O(n) // We loop through the string once. If the string has n characters, we do at most n iterations.
+//-> Space: O(n) // We store characters in the Set. In the worst case, all n characters are unique, so the Set can contain n characters.
 
 console.log(firstRepeatingChar("abcdca")); // "c"
 console.log(firstRepeatingChar("hello"));  // "l"
