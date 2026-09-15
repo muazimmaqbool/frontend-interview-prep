@@ -36,17 +36,32 @@
         . Return empty array if no combination is possible.
 */
 function combinationSum(candidates,target){
-    const ans=[];
-    const temp=[];
+    const ans=[]; // stors all valid combination
+    const temp=[]; // Stores the current combination we are building
+
+    // ind = current index in candidates and target = remaining sum we need to achieve
     function solve(ind, target) {
+
+    // If target becomes 0, we found a valid combination
     if (target === 0) {
+      // Create a copy because temp will change during backtracking
       ans.push([...temp]);
       return;
     }
+
+    // Stop if we reached the end OR if the target becomes negative
     if (ind === candidates.length || target < 0) return;
+
+    // Choose the current candidate
     temp.push(candidates[ind]);
+
+    // Use the same candidate again, that's why we pass 'ind' instead of 'ind + 1'
     solve(ind, target - candidates[ind]);
+
+    // Backtrack: Remove the last candidate we added
     temp.pop();
+
+    // Skip the current candidate and move to the next candidate
     solve(ind + 1, target);
   }
   solve(0, target);
