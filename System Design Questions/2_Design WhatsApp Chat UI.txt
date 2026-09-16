@@ -355,3 +355,48 @@
                         New Message
                             ↓
                         Insert only the new message into the cache
+
+10. Loading Old Messages:
+-------------------------
+    A conversation could have:
+                    10 messages
+                    10,000 messages
+                    1,000,000 messages
+
+    We cannot load everything.
+        The initial API might return:       
+                        Latest 30 messages
+
+        When the user scrolls upward:
+            Scroll ↑
+               │
+               ▼
+            Load older messages
+               │
+               ▼
+            GET /messages?cursor=abc
+
+        Diagram:
+                    Older Messages
+                        ▲
+                        │
+                        │ Scroll Up
+                        │
+                ┌─────────────────┐
+                │   Message List  │
+                │                 │
+                │   Hello         │
+                │   Hi 👋         │
+                │   How are you?  │
+                │                 │
+                └─────────────────┘
+                        │
+                        ▼
+                    New Messages
+
+        Again, I would prefer:
+                Cursor Pagination
+
+                instead of:
+                    ?page=1
+                    &page=2
