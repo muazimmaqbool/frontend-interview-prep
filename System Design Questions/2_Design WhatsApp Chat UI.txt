@@ -224,3 +224,52 @@
 
         Then: 
             You: Hello 👋          ✓ Sent
+
+7. Message States:
+------------------
+    A message should have a state.
+
+    For example:
+            {
+                id: "123",
+
+                clientMessageId: "temporary-uuid",
+
+                conversationId: "456",
+
+                senderId: "user_1",
+
+                content: "Hello!",
+
+                status: "sending",
+
+                createdAt: "..."
+            }
+
+    Possible states:
+            sending
+             ↓
+            sent
+             ↓
+            delivered
+             ↓
+            read
+
+    Visual flow:
+        Message
+          │
+          ▼
+        Sending
+          │
+          ▼
+        Sent
+          │
+          ▼
+        Delivered
+          │
+          ▼
+        Read
+
+    The clientMessageId is important.
+    Why?
+        Because after reconnecting or retrying, we need to avoid accidentally creating duplicate messages.
