@@ -315,3 +315,43 @@
             └── No → Create message
 
         This is called idempotency.
+
+9. Receiving Messages:
+----------------------
+    When another user sends a message:
+            User A
+              │
+              ▼
+            Backend
+              │
+              ▼
+            WebSocket
+              │
+              ▼
+            User B
+              │
+              ▼
+            Update Message Cache
+              │
+              ▼
+            UI Updates
+
+        On the frontend:
+            WebSocket Event
+                │
+                ▼
+            NEW_MESSAGE
+                │
+                ▼
+            Update TanStack Query Cache
+                │
+                ▼
+            MessageList re-renders
+
+        Important point:
+                I wouldn't refetch the entire conversation every time a new message arrives.
+
+                Instead:
+                        New Message
+                            ↓
+                        Insert only the new message into the cache
