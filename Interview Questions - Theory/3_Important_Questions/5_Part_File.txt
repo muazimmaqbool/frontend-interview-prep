@@ -88,3 +88,50 @@ Answer:
         Interview one-liner:
                 I identify memory leaks by reproducing the behavior, comparing Heap Snapshots in Chrome DevTools, finding objects that remain retained unexpectedly, 
                 and then checking common causes such as listeners, timers, subscriptions, and retained references.
+
+------------------------------------------------------------------------------------------------------------
+Question 4: why index as key can cause problems?
+Answer:
+        Using the array index as a React key can cause problems when items are added, removed, sorted, or reordered.
+
+        Example:
+                {users.map((user, index) => (
+                    <User key={index} user={user} />
+                ))}
+
+        Suppose:
+                Index 0 → John
+                Index 1 → Alice
+                Index 2 → Bob
+
+        Now remove John:
+                Index 0 → Alice  // Previously John's key
+                Index 1 → Bob    // Previously Alice's key
+
+        React sees the same keys 0 and 1, so it may think these are the same components as before and reuse their existing DOM/component state incorrectly.
+
+        This can cause:
+                Wrong input values/state appearing on another row
+                Incorrect UI updates
+                Unnecessary re-renders
+                Problems with animations
+        
+        Better:
+                Use a unique and stable ID:
+
+                {users.map((user) => (
+                     <User key={user.id} user={user} />
+                ))}
+
+        Now:
+           John  → key=101
+           Alice → key=102
+           Bob   → key=103
+
+        Even if the order changes, Alice is always 102.
+
+        Interview answer:
+                Index as a key can cause incorrect component reuse when a list changes order or items are added/removed. 
+                I prefer a unique, stable ID so React can correctly identify each item across renders.
+
+       Index is generally okay when the list is static and will never be reordered, inserted into, or deleted from.
