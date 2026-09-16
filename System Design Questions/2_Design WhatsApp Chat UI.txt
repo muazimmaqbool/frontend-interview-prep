@@ -273,3 +273,45 @@
     The clientMessageId is important.
     Why?
         Because after reconnecting or retrying, we need to avoid accidentally creating duplicate messages.
+
+
+8. Preventing Duplicate Messages:
+---------------------------------
+    Imagine this:
+            User sends message
+                    │
+                    ▼
+            Server receives it
+                    │
+                    ▼
+            Network disconnects
+                    │
+                    ▼
+            Client doesn't know whether it succeeded
+                    │
+                    ▼
+            Client retries
+
+    Without a unique client-generated ID:
+                Hello
+                Hello
+
+            Duplicate message.
+
+            Instead: clientMessageId = UUID
+
+        The backend can treat repeated requests with the same ID as the same message.
+
+         Client
+            │
+            │ clientMessageId: abc123
+            ▼
+            Backend
+            │
+            ├── Already processed?
+            │
+            ├── Yes → Return existing message
+            │
+            └── No → Create message
+
+        This is called idempotency.
