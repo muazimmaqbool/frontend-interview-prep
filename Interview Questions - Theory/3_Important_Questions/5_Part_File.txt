@@ -135,3 +135,37 @@ Answer:
                 I prefer a unique, stable ID so React can correctly identify each item across renders.
 
        Index is generally okay when the list is static and will never be reordered, inserted into, or deleted from.
+
+
+-------------------------------------------------------------------------------------------------------------
+Question 5: What is the difference between api and endpoint?
+Answer:
+        An API is the overall system/interface that allows applications to communicate, while an endpoint is a specific URL within that API used for a particular operation.
+
+        Simple Example:
+           Suppose you have a User API:
+                API: https://api.example.com
+
+          It contains multiple endpoints:
+                GET  /users        → Get all users
+                GET  /users/10     → Get user 10
+                POST /users        → Create user
+                PUT  /users/10     → Update user 10
+                DELETE /users/10   → Delete user 10
+
+          So you can think of it as:
+                        API
+                        ├── /users
+                        ├── /users/:id
+                        ├── /products
+                        └── /orders
+                                ↑
+                            Endpoints
+        
+        Interview answer:
+                An API is the complete interface through which applications communicate, 
+                while an endpoint is a specific location or route in that API that performs a particular operation.
+
+        Easy way to remember:
+                API = whole restaurant menu
+                Endpoint = one specific item on the menu.
