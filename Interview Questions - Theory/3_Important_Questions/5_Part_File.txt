@@ -188,4 +188,6 @@ Answer:
                                   and then go back to the list
                    Priority Scheduling: React ranks tasks by urgency. Typing and animations get high priority, while background data loading gets low priority
 
-        ->
+        ->How They Work Together:
+                Concurrency gives React the ability to multitask under the hood, and Suspense gives you an easy way to display loading states while those tasks finish.
+                   
