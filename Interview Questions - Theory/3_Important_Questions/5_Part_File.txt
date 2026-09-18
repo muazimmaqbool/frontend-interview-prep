@@ -169,3 +169,23 @@ Answer:
         Easy way to remember:
                 API = whole restaurant menu
                 Endpoint = one specific item on the menu.
+
+
+--------------------------------------------------------------------------------------------------------
+Question 6: What are Suspense and Concurrent Rendering?
+Answer:
+        Suspense and Concurrent Rendering are modern React features that work together to make web apps load faster and feel smoother.
+
+        ->What is React Suspense?
+                Suspense is a feature that lets your components "wait" for data or code to load before showing them on the screen.
+                   Fallback UI: While waiting, React shows a temporary placeholder, like a loading spinner or skeleton text.
+                   Declarative Loading: Instead of writing complex if (loading) checks in every component, 
+                                        you wrap the part that loads slowly inside a <Suspense> boundary.
+        
+        ->What is Concurrent Rendering?
+                Concurrent Rendering is an engine update in React that allows React to work on multiple tasks at the same time
+                   Interruptible: If React is rendering a heavy list and a user types in a box, React can pause the heavy job, handle the typing instantly, 
+                                  and then go back to the list
+                   Priority Scheduling: React ranks tasks by urgency. Typing and animations get high priority, while background data loading gets low priority
+
+        ->
