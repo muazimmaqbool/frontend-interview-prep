@@ -404,3 +404,43 @@
 
 11. The Scroll Problem:
 -----------------------
+    This is a very good interview discussion.
+
+    Imagine you load older messages.
+    Before:
+        Scroll Position
+        Message 30
+        Message 31
+        Message 32
+    
+    Then you load:
+        Message 1
+        Message 2
+        ...
+        Message 29
+        Message 30
+        Message 31
+        Message 32
+
+    The UI should not suddenly jump.
+
+    So when older messages are prepended:
+        Before Fetch
+            ↓
+        Save scrollHeight
+        Save scrollTop
+
+        Fetch older messages
+            ↓
+        Prepend messages
+            ↓
+        Calculate new scrollHeight
+            ↓
+        Adjust scrollTop
+
+    Conceptually:
+        newScrollTop = oldScrollTop + (newScrollHeight - oldScrollHeight)
+
+    This preserves the user's reading position.
+
+    This is a very strong point to mention in an interview.
