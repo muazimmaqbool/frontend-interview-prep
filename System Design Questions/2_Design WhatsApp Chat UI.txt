@@ -444,3 +444,68 @@
     This preserves the user's reading position.
 
     This is a very strong point to mention in an interview.
+
+12. Performance: Virtualization:
+--------------------------------
+    Imagine 5,000 loaded messages.
+
+    Don't render: 5,000 MessageBubble components
+    Instead:
+             Viewport
+        ┌─────────────────────┐
+        │ Message 4900        │
+        │ Message 4901        │
+        │ Message 4902        │
+        │ Message 4903        │
+        └─────────────────────┘
+
+        Only visible messages
+        + small buffer
+
+        Use: TanStack Virtual
+
+    Architecture:
+        API Pagination
+            │
+            ▼
+        Message Cache
+            │
+            ▼
+        Virtualized Message List
+            │
+            ▼
+        Visible Messages Only
+
+13. Typing Indicator:
+---------------------
+    The user shouldn't send a WebSocket event for every keystroke.
+    Bad:
+        Key press
+           ↓
+        WebSocket
+
+        Key press
+           ↓
+        WebSocket
+
+        Key press
+           ↓
+        WebSocket
+
+    Instead:
+        User starts typing
+                │
+                ▼
+        Send USER_TYPING
+                │
+                ▼
+        Debounce / Throttle
+                │
+                ▼
+        User stops
+                │
+                ▼
+        Send USER_STOPPED_TYPING
+
+    Example: John is typing...
+    A debounce of roughly a few hundred milliseconds can reduce unnecessary events.
