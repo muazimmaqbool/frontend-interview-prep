@@ -666,3 +666,54 @@
 
 18. Simple Final System Design Diagram:
 ---------------------------------------
+    This is the diagram I would draw in an interview:
+                
+                WHATSAPP CHAT
+
+    ┌────────────────────────────────────────────┐
+    │               FRONTEND                     │
+    │                                            │
+    │   ┌─────────────┐   ┌──────────────────┐   │
+    │   │  Chat List  │   │   Chat Window    │   │
+    │   │             │   │                  │   │
+    │   │ 👤 John     │   │ 💬 Messages      │   │
+    │   │ 👤 Sarah    │   │                  │   │
+    │   └─────────────┘   │ [Type message]  │   │
+    │                     └────────┬─────────┘   │
+    │                              │             │
+    │                 ┌────────────▼──────────┐  │
+    │                 │  State + Cache Layer  │  │
+    │                 │                      │  │
+    │                 │ TanStack Query       │  │
+    │                 │ Optimistic Updates   │  │
+    │                 └───────┬────────┬─────┘  │
+    └─────────────────────────┼────────┼────────┘
+                              │        │
+                         REST API   WebSocket
+                              │        │
+                              ▼        ▼
+                       ┌─────────────────────┐
+                       │      BACKEND        │
+                       │                     │
+                       │ Messages            │
+                       │ Chats               │
+                       │ Real-time Events    │
+                       └─────────────────────┘
+
+->Strong 2–3 Minute Interview Answer:
+    ->I would separate the chat application into three concerns: UI state, server state, and real-time events. 
+      The UI would contain a chat list and a conversation window with reusable components for messages, the input, typing indicators, and chat headers.
+
+    ->For historical data such as conversations and messages, I would use REST APIs with cursor-based pagination and manage that server state using TanStack Query. 
+      I would initially load the latest messages and fetch older messages when the user scrolls upward.
+
+    ->For real-time events such as incoming messages, typing indicators, presence, and delivery/read receipts, 
+      I would use a centralized WebSocket connection. Instead of refetching the conversation whenever an event arrives, I would update the existing query cache.
+
+    ->When sending a message, I would use optimistic updates so the message appears immediately with a temporary client-generated ID and a sending state. 
+      Once the server acknowledges it, I replace the temporary message with the server version. The client-generated ID also helps prevent duplicates during retries.
+
+    ->For large conversations, I would use virtualization to avoid rendering thousands of messages. I would also preserve scroll position when loading older messages.
+
+    ->For offline scenarios, I would store unsent messages in IndexedDB and retry them after reconnecting. 
+      The WebSocket would reconnect using exponential backoff, and after reconnection I would synchronize any missed messages."`
