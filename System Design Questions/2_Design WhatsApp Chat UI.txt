@@ -626,3 +626,43 @@
 
     This is important because WebSocket events could have been missed while disconnected.
 
+
+17. Media Upload:
+-----------------
+    For images or files:
+        User selects image
+                │
+                ▼
+        Upload File
+                │
+                ▼
+        Get File URL
+                │
+                ▼
+        Send Message
+
+    Better architecture for large files:
+        Frontend
+            │
+            ▼
+        Request Upload URL
+            │
+            ▼
+        Backend
+            │
+            ▼
+        Signed Upload URL
+            │
+            ▼
+        Frontend uploads directly
+            │
+            ▼
+        Cloud Storage
+            │
+            ▼
+        Send message containing media URL
+
+    This avoids routing large files unnecessarily through the main application server.
+
+18. Simple Final System Design Diagram:
+---------------------------------------
