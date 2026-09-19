@@ -590,3 +590,39 @@
                         │
                         ▼
                       Send
+                      
+
+16. WebSocket Reconnection:
+---------------------------
+    The connection can drop:
+        WebSocket Connected
+                │
+                ❌
+                │
+                ▼
+        Connection Lost
+                │
+                ▼
+        Retry Connection
+                │
+                ▼
+            Connected
+
+    Don't retry infinitely and aggressively:
+            1 sec
+            2 sec
+            4 sec
+            8 sec
+
+        Use exponential backoff.
+        After reconnecting:
+            Reconnect
+                │
+                ▼
+            Fetch missed messages
+                │
+                ▼
+            Sync local state
+
+    This is important because WebSocket events could have been missed while disconnected.
+
