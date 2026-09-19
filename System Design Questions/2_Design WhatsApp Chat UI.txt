@@ -509,3 +509,36 @@
 
     Example: John is typing...
     A debounce of roughly a few hundred milliseconds can reduce unnecessary events.
+
+14. Online/Offline Status:
+--------------------------
+    Possible events:
+        USER_ONLINE
+        USER_OFFLINE
+        LAST_SEEN_UPDATED
+
+    Flow:
+        WebSocket
+            │
+            ▼
+        Presence Event
+            │
+            ▼
+        Update User Cache
+            │
+            ▼
+        Chat Header: "Online"
+
+    For a large application, you don't want every component independently maintaining socket listeners.
+    Instead:
+                WebSocket Connection
+                         │
+                         ▼
+                 Socket Manager
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+       Messages       Presence        Typing
+
+       One centralized socket connection is easier to manage.
+
