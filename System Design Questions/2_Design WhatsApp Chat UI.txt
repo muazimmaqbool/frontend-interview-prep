@@ -542,3 +542,51 @@
 
        One centralized socket connection is easier to manage.
 
+15. Offline Support:
+--------------------
+    This is another advanced topic.
+    Imagine:
+        User writes: "Hello"
+
+        Network ❌
+
+    We can store the pending message locally.
+        Message
+                │
+                ▼
+            IndexedDB
+                │
+                ▼
+            Pending Queue
+
+    When the network returns:
+        Network Reconnected
+                │
+                ▼
+        Read Pending Queue
+                │
+                ▼
+        Send Messages
+                │
+                ▼
+        Clear Successfully Sent Messages
+
+    Diagram:
+        User sends message
+                │
+                ▼
+        Network Available?
+            │         │
+            Yes        No
+            │          │
+            ▼          ▼
+        Send API    IndexedDB
+                        │
+                        ▼
+                    Pending Queue
+                        │
+                        ▼
+                    Reconnect
+                        │
+                        ▼
+                      Send
