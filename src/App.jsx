@@ -31,6 +31,7 @@ import R_Acronym_Generator from "../Machine_Coding/Medium/R_Acronym_Generator";
 import M_URL_Validator from "../Machine_Coding/Easy/M_Url_Validator";
 import N_Auto_Save_Text from "../Machine_Coding/Easy/N_Auto_Save_Text";
 import S_CharCount from "../Machine_Coding/Medium/S_CharCount";
+import T_Track_Prev_Value from "../Machine_Coding/Medium/T_Track_Prev_Value";
 
 function App() {
   return (
@@ -71,7 +72,7 @@ function App() {
       {/* <Q_Custom_useFetch/> */}
       {/* <R_Acronym_Generator/>  */}
       {/* <S_CharCount/> */}
-      
+      <T_Track_Prev_Value/>
     </div>
   );
 }
