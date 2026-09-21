@@ -20,9 +20,18 @@ const O_GetWeekDay = () => {
   const handleDateChange = (e) => setDateInput(e.target.value);
   const findWeekDay = () => {
     if (!dateInput) return;
-    const date = new Date(dateInput);
-    const options = { weekday: "long" };
-    const dayName = date.toLocaleDateString("en-US", options);
+    // Convert the input date into a JavaScript Date object
+  // Example: "2026-09-21" → Date object
+  const date = new Date(dateInput);
+
+  // Tell JavaScript that we only want the full weekday name
+  // Example: "Sunday", "Monday", "Tuesday"
+  const options = { weekday: "long" };
+
+  // Convert the date into its weekday name
+  // "en-US" ensures the result is in English
+  // Example: "2026-09-21" → "Monday"
+  const dayName = date.toLocaleDateString("en-US", options);
     setDayOfWeek(dayName)
   }
   return (
