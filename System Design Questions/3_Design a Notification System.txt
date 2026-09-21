@@ -34,3 +34,47 @@ Assume the interviewer asks:
               └────────────────────────┘
 
     The important frontend requirements are real-time delivery, unread/read state, pagination, caching, deduplication, reconnection, and good performance
+
+2. The system-design diagram:
+-----------------------------
+    This is the kind of diagram I'd draw in an interview:
+                        USER
+                          │
+                          ▼
+               ┌─────────────────────┐
+               │    React App        │
+               │                     │
+               │ 🔔 NotificationBell │
+               │ NotificationPanel   │
+               │ NotificationItem    │
+               └──────────┬──────────┘
+                          │
+                ┌─────────┴─────────┐
+                │                   │
+                ▼                   ▼
+       ┌────────────────┐    ┌────────────────┐
+       │ TanStack Query │    │   WebSocket    │
+       │                │    │                │
+       │ Cache          │    │ Real-time      │
+       │ Pagination     │    │ notifications  │
+       └───────┬────────┘    └───────┬────────┘
+               │                     │
+               │ REST API            │ WS
+               │                     │
+               └──────────┬──────────┘
+                          ▼
+                 ┌─────────────────┐
+                 │ Notification    │
+                 │ Backend         │
+                 └────────┬────────┘
+                          │
+                          ▼
+                     ┌─────────┐
+                     │   DB    │
+                     └─────────┘
+
+    That diagram is enough to drive most of the interview discussion.
+    The key idea is:
+        REST API      → Existing/older notifications
+        WebSocket     → New real-time notifications
+        TanStack Query → Frontend server-state/cache
