@@ -32,6 +32,7 @@ import M_URL_Validator from "../Machine_Coding/Easy/M_Url_Validator";
 import N_Auto_Save_Text from "../Machine_Coding/Easy/N_Auto_Save_Text";
 import S_CharCount from "../Machine_Coding/Medium/S_CharCount";
 import T_Track_Prev_Value from "../Machine_Coding/Medium/T_Track_Prev_Value";
+import O_GetWeekDay from "../Machine_Coding/Easy/O_GetWeekDay";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
       {/* <L_Back_To_Top/> */}
       {/* <M_URL_Validator/> */}
       {/* <N_Auto_Save_Text/> */}
+      <O_GetWeekDay/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
