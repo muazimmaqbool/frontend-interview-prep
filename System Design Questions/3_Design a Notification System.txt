@@ -100,7 +100,11 @@ Assume the interviewer asks:
                     └── LoadMore
 
     ->NotificationItem should remain reusable.
-        <NotificationItem
-            notification={notification}
-            onRead={handleRead}
-        />
+            <NotificationItem
+                notification={notification}
+                onRead={handleRead}
+            />
+
+4. Notification data model:
+---------------------------
+    
