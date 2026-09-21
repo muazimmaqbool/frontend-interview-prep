@@ -78,3 +78,29 @@ Assume the interviewer asks:
         REST API      → Existing/older notifications
         WebSocket     → New real-time notifications
         TanStack Query → Frontend server-state/cache
+
+3. Component structure:
+-----------------------
+    I'd structure the frontend approximately like this:
+        App
+        │
+        ├── Header
+        │    └── NotificationBell
+        │          └── UnreadBadge
+        │
+        └── NotificationPanel
+            │
+            ├── NotificationHeader
+            │     └── MarkAllAsRead
+            │
+            └── NotificationList
+                    │
+                    ├── NotificationItem
+                    ├── NotificationItem
+                    └── LoadMore
+
+    ->NotificationItem should remain reusable.
+        <NotificationItem
+            notification={notification}
+            onRead={handleRead}
+        />
