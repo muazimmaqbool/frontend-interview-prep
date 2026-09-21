@@ -8,3 +8,29 @@ Assume the interviewer asks:
      how they're stored/cached on the client, 
      unread counts, real-time updates, pagination, optimistic updates, and performance.
 
+1. Clarify requirements:
+------------------------
+    I'd first establish that users should be able:
+                     to receive notifications in real time, see an unread badge, open a notification panel, 
+                     mark individual notifications as read, mark all as read, navigate to the relevant page, 
+                     and load older notifications.
+
+    Example:
+                        🔔 3
+
+              ┌────────────────────────┐
+              │ Notifications          │
+              │                        │
+              │ ● John mentioned you   │
+              │   2 min ago            │
+              │                        │
+              │ ● New appointment      │
+              │   10 min ago           │
+              │                        │
+              │   Report completed     │
+              │   Yesterday            │
+              │                        │
+              │      Load more         │
+              └────────────────────────┘
+
+    The important frontend requirements are real-time delivery, unread/read state, pagination, caching, deduplication, reconnection, and good performance
