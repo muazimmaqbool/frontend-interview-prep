@@ -1,0 +1,10 @@
+Design a Notification System — Frontend System Design:
+
+Assume the interviewer asks:
+    Design a notification system for a large web application like LinkedIn, Facebook, or an EMR.
+
+->For a frontend interview, focus on:
+     how notifications reach the browser, 
+     how they're stored/cached on the client, 
+     unread counts, real-time updates, pagination, optimistic updates, and performance.
+
