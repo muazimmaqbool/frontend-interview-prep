@@ -107,4 +107,40 @@ Assume the interviewer asks:
 
 4. Notification data model:
 ---------------------------
-    
+    A frontend notification could look like:
+        {
+            id: "notif_123",
+
+            type: "COMMENT",
+
+            title: "John replied to your comment",
+
+            message: "Nice explanation!",
+
+            isRead: false,
+
+            createdAt: "2026-09-19T10:20:00Z",
+
+            actor: {
+                id: "user_22",
+                name: "John",
+                avatar: "..."
+            },
+
+            target: {
+                type: "video",
+                id: "video_123",
+                url: "/videos/video_123"
+            }
+        }
+    Having type is particularly useful.
+
+    For example:
+                COMMENT
+                MESSAGE
+                APPOINTMENT
+                PAYMENT
+                SYSTEM
+                MENTION
+
+    The UI can render each type differently.
