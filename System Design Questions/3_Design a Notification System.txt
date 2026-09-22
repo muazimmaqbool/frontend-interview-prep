@@ -165,3 +165,33 @@ Assume the interviewer asks:
     Then: GET /notifications?cursor=abc123&limit=20
 
     I'd prefer cursor-based pagination.
+    
+
+6. TanStack Query:
+------------------
+    Notifications are server state, so TanStack Query is a good fit.
+
+    const notificationsQuery = useInfiniteQuery({
+        queryKey: ["notifications"],
+
+        queryFn: ({ pageParam }) => fetchNotifications(pageParam),
+
+        initialPageParam: null,
+
+        getNextPageParam: (lastPage) =>
+            lastPage.nextCursor ?? undefined
+    });
+
+    Now we get:
+        Server
+          ↓
+        TanStack Query
+          ↓
+        Query Cache
+          ↓
+        NotificationPanel
+
+    We don't need to copy all of that data into Redux.
+
+
+
