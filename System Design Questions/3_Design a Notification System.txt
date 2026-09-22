@@ -194,4 +194,36 @@ Assume the interviewer asks:
     We don't need to copy all of that data into Redux.
 
 
+7. Real-time notifications:
+---------------------------
+    This is the most important part of this system-design question.
 
+    Imagine another user mentions me.
+        User A
+        │
+        │ mentions User B
+        ▼
+     Backend
+        │
+        │ notification event
+        ▼
+      WebSocket
+        │
+        ▼
+        User B's Browser
+
+    Frontend listens for something like:
+        socket.on("notification", (notification) => {
+            ...
+        });
+
+    When a notification arrives, we update the query cache.
+        Conceptually:
+            queryClient.setQueryData(
+                ["notifications"],
+                oldData => {
+                    // add notification to the beginning
+                }
+            );
+
+    The UI immediately becomes: 🔔 3 to 🔔 4 without refreshing the page.
