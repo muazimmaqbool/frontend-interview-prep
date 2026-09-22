@@ -1,19 +1,19 @@
 // Question: Reverse a string without using the built-in reverse() method.
-//
+
 // Write a function that takes a string as input and returns the reversed string
 // without using Array.prototype.reverse().
-//
+
 // Example 1:
-// Input: "hello"
-// Output: "olleh"
-//
+    // Input: "hello"
+    // Output: "olleh"
+
 // Example 2:
-// Input: "JavaScript"
-// Output: "tpircSavaJ"
-//
+    // Input: "JavaScript"
+    // Output: "tpircSavaJ"
+
 // Example 3:
-// Input: "madam"
-// Output: "madam"
+    // Input: "madam"
+    // Output: "madam"
 
 function reverseString(str) {
     let reversed="";
