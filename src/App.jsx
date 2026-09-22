@@ -33,6 +33,7 @@ import N_Auto_Save_Text from "../Machine_Coding/Easy/N_Auto_Save_Text";
 import S_CharCount from "../Machine_Coding/Medium/S_CharCount";
 import T_Track_Prev_Value from "../Machine_Coding/Medium/T_Track_Prev_Value";
 import O_GetWeekDay from "../Machine_Coding/Easy/O_GetWeekDay";
+import U_usePreviousHook from "../Machine_Coding/Medium/U_usePreviousHook";
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
       {/* <L_Back_To_Top/> */}
       {/* <M_URL_Validator/> */}
       {/* <N_Auto_Save_Text/> */}
-      <O_GetWeekDay/>
+      {/* <O_GetWeekDay/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
@@ -75,6 +76,7 @@ function App() {
       {/* <R_Acronym_Generator/>  */}
       {/* <S_CharCount/> */}
       {/* <T_Track_Prev_Value/> */}
+      <U_usePreviousHook/>
     </div>
   );
 }
