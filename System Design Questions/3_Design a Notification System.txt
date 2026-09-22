@@ -8,6 +8,7 @@ Assume the interviewer asks:
      how they're stored/cached on the client, 
      unread counts, real-time updates, pagination, optimistic updates, and performance.
 
+
 1. Clarify requirements:
 ------------------------
     I'd first establish that users should be able:
@@ -34,6 +35,7 @@ Assume the interviewer asks:
               └────────────────────────┘
 
     The important frontend requirements are real-time delivery, unread/read state, pagination, caching, deduplication, reconnection, and good performance
+
 
 2. The system-design diagram:
 -----------------------------
@@ -79,6 +81,7 @@ Assume the interviewer asks:
         WebSocket     → New real-time notifications
         TanStack Query → Frontend server-state/cache
 
+
 3. Component structure:
 -----------------------
     I'd structure the frontend approximately like this:
@@ -104,6 +107,7 @@ Assume the interviewer asks:
                 notification={notification}
                 onRead={handleRead}
             />
+
 
 4. Notification data model:
 ---------------------------
@@ -144,3 +148,20 @@ Assume the interviewer asks:
                 MENTION
 
     The UI can render each type differently.
+
+
+5. Initial loading — REST API:
+------------------------------
+    When the application loads, we don't need to fetch 10,000 notifications.
+
+    Use pagination: GET /notifications?limit=20
+        Response:
+            {
+                notifications: [...],
+                unreadCount: 7,
+                nextCursor: "abc123"
+            }
+
+    Then: GET /notifications?cursor=abc123&limit=20
+
+    I'd prefer cursor-based pagination.
