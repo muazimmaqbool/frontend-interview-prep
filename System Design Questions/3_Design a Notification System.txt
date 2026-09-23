@@ -360,3 +360,25 @@ Assume the interviewer asks:
         notification.id
 
     and we should deduplicate by ID when merging server results and real-time events.
+
+
+13. Browser notification vs in-app notification:
+------------------------------------------------
+    Another useful distinction:
+
+    -> In-app:
+          🔔 4
+        Displayed inside the application.
+
+    -> Browser push:
+        ┌─────────────────────────┐
+        │ You have a new message  │
+        │ John: Hey!              │
+        └─────────────────────────┘
+
+        Browser push is a different layer, commonly involving:
+                    Service Worker
+                        +
+                    Push API
+
+        So I'd mention it as an optional extension rather than mixing it into the core in-app design.
