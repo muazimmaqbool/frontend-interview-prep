@@ -258,3 +258,28 @@ Assume the interviewer asks:
         WebSocket → Real-time events
 
     This distinction is excellent to mention in an interview.
+
+
+9. Unread count:
+----------------
+    Don't calculate the unread count by downloading every notification.
+
+    -> Bad approach:
+            notifications.filter(n => !n.isRead).length
+
+        Imagine the user has: 32,000 notifications
+
+        but the frontend loaded only 20.
+
+    -> Instead the backend should provide:
+            {
+                unreadCount: 37
+            }
+
+    Frontend can keep/cache that value.
+                 🔔
+                ┌───┐
+                │37 │
+                └───┘
+    When a real-time notification arrives: 37 → 38
+    When one is marked read: 38 → 37
