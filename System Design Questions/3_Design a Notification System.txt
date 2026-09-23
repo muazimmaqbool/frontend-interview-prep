@@ -309,3 +309,37 @@ Assume the interviewer asks:
         If it fails: rollback
 
         Same concept for: Mark all as read
+
+
+11. What happens when WebSocket disconnects?
+--------------------------------------------
+    This is where you can demonstrate stronger frontend knowledge.
+
+    Connections can fail because of:
+                    Wi-Fi lost
+                    Laptop sleeps
+                    Server restart
+                    Network switches
+                    Browser backgrounding
+
+    Don't assume WebSocket stays connected forever.
+                    Connected
+                        │
+                        X
+                    Disconnected
+                        │
+                        ▼
+                    Reconnect
+                        │
+                        ▼
+                    Re-sync notifications
+
+    Use exponential backoff for reconnection:   
+                    1 sec
+                    2 sec
+                    4 sec
+                    8 sec
+                    ...
+
+    After reconnection, refetch notifications or request events since the last known cursor/timestamp.
+    This prevents missed notifications.
