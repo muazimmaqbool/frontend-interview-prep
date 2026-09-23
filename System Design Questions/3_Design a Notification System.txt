@@ -283,3 +283,29 @@ Assume the interviewer asks:
                 └───┘
     When a real-time notification arrives: 37 → 38
     When one is marked read: 38 → 37
+
+
+10. Mark notification as read:
+------------------------------
+    When the user clicks: ● John mentioned you
+        we could call: PATCH /notifications/notif_123/read
+
+        But I wouldn't wait for the API before changing the UI.
+        Use an optimistic update:
+            User clicks
+                │
+                ▼
+            Update UI immediately
+
+            ● Notification
+                ↓
+            Notification
+                │
+                ▼
+            Send API request
+
+        If it API succeeds: keep state
+
+        If it fails: rollback
+
+        Same concept for: Mark all as read
