@@ -343,3 +343,20 @@ Assume the interviewer asks:
 
     After reconnection, refetch notifications or request events since the last known cursor/timestamp.
     This prevents missed notifications.
+
+
+12. Duplicate notifications:
+----------------------------
+    Consider this:
+        WebSocket receives Notification #123
+                        +
+        REST refetch returns Notification #123
+
+    Without handling this, we might show:
+        John mentioned you
+        John mentioned you
+
+    Each notification should therefore have a unique:
+        notification.id
+
+    and we should deduplicate by ID when merging server results and real-time events.
