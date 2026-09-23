@@ -227,3 +227,34 @@ Assume the interviewer asks:
             );
 
     The UI immediately becomes: 🔔 3 to 🔔 4 without refreshing the page.
+
+
+8. Why both REST and WebSocket?
+-------------------------------
+    This is a very common follow-up.
+    I'd explain:
+        WebSockets are used to receive new events, while REST is used to retrieve the persistent notification history.
+
+    ->Suppose I haven't opened the application for three days.
+    ->WebSocket can't magically give me all historical notifications unless the protocol is designed to replay them.
+
+    So when I return after 3 days:
+                    Application opens
+                            │
+                            ▼
+                    GET /notifications
+                            │
+                            ▼
+                    Existing history
+
+    After connection:
+                WebSocket
+                   │
+                   ▼
+           New notifications
+
+    So,
+        REST      → History / pagination / mutations
+        WebSocket → Real-time events
+
+    This distinction is excellent to mention in an interview.
