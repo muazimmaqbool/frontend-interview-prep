@@ -494,3 +494,24 @@ Assume the interviewer asks:
        Optimistic → Mark as read
 
     That's simple enough to draw in 1–2 minutes, but it gives you plenty to talk about.
+
+->Optional Section regarding question/answers (Very very important)
+
+19. 2-minute interview answer:
+------------------------------
+    - "I'd separate the notification system into UI, server-state, API, and real-time layers. 
+       The UI would consist of a notification bell, unread badge, panel, list, and reusable notification items.
+- 
+    - For existing notifications, I'd use a REST API with cursor-based pagination and manage that server state using TanStack Query. 
+      I wouldn't fetch all notifications just to calculate the unread count; the backend would return that separately.
+
+    - For new notifications, I'd establish a WebSocket connection after authentication. 
+      When an event arrives, I'd update the TanStack Query cache and increment the unread count, which updates the UI immediately.
+
+    - Marking notifications as read would use optimistic updates so the interface responds immediately, with rollback if the request fails.
+
+    - I'd also handle WebSocket reconnection with backoff and re-sync after reconnecting so we don't miss notifications. 
+      Since notifications can arrive through both REST and WebSocket, I'd deduplicate them using their notification IDs.
+
+    - For scalability, I'd use cursor pagination, lazy loading and potentially virtualization for very large lists. 
+      Browser push notifications could be added separately using a service worker and the Push API."
