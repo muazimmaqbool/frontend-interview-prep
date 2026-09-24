@@ -34,6 +34,7 @@ import S_CharCount from "../Machine_Coding/Medium/S_CharCount";
 import T_Track_Prev_Value from "../Machine_Coding/Medium/T_Track_Prev_Value";
 import O_GetWeekDay from "../Machine_Coding/Easy/O_GetWeekDay";
 import U_usePreviousHook from "../Machine_Coding/Medium/U_usePreviousHook";
+import P_Guess_Number from "../Machine_Coding/Easy/P_Guess_Number";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
       {/* <M_URL_Validator/> */}
       {/* <N_Auto_Save_Text/> */}
       {/* <O_GetWeekDay/> */}
+      <P_Guess_Number/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
@@ -76,7 +78,7 @@ function App() {
       {/* <R_Acronym_Generator/>  */}
       {/* <S_CharCount/> */}
       {/* <T_Track_Prev_Value/> */}
-      <U_usePreviousHook/>
+      {/* <U_usePreviousHook/> */}
     </div>
   );
 }
