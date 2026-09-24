@@ -436,7 +436,7 @@ Assume the interviewer asks:
     A WebSocket failure shouldn't make the entire application unusable.
 
 
-17. Important edge cases:
+17. Important edge cases: (Optional but important)
 -------------------------
     These are good to mention toward the end of your answer:
             - WebSocket reconnects
@@ -451,3 +451,46 @@ Assume the interviewer asks:
             - Notification links to inaccessible content
 
     For multiple tabs, you can optionally coordinate using BroadcastChannel so tabs don't behave completely independently.
+
+
+18. Final interview diagram:
+----------------------------
+    If you're standing at a whiteboard, draw this:
+                  ┌─────────────────────┐
+                  │     React App       │
+                  │                     │
+                  │   🔔 Badge          │
+                  │   Notification List │
+                  └──────────┬──────────┘
+                             │
+                   ┌─────────┴─────────┐
+                   │                   │
+                   ▼                   ▼
+          ┌────────────────┐   ┌────────────────┐
+          │ TanStack Query │   │   WebSocket    │
+          │                │   │                │
+          │ Cache          │   │ Real-time      │
+          │ Pagination     │   │ Events         │
+          └───────┬────────┘   └───────┬────────┘
+                  │                    │
+             REST │                    │ WS
+                  │                    │
+                  └──────────┬─────────┘
+                             ▼
+                    ┌────────────────┐
+                    │ Notification   │
+                    │    Service     │
+                    └───────┬────────┘
+                            │
+                            ▼
+                       ┌─────────┐
+                       │   DB    │
+                       └─────────┘
+
+
+       REST       → History + Pagination
+       WebSocket  → Real-time notifications
+       Cache      → Fast UI + Deduplication
+       Optimistic → Mark as read
+
+    That's simple enough to draw in 1–2 minutes, but it gives you plenty to talk about.
