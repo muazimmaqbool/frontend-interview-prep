@@ -399,3 +399,17 @@ Assume the interviewer asks:
     or another virtual-list implementation.
         The browser might then render only: 20–40 visible notifications
         instead of thousands of DOM elements.
+
+
+15. State management:
+---------------------
+    I'd divide state into three categories.
+
+    -> Server state belongs in TanStack Query: notifications, unread count, pagination data, and read/unread state synchronized with the backend.
+
+    -> Local UI state can stay in React: whether the notification panel is open, selected filters, hover state, and so on.
+        const [isNotificationOpen, setNotificationOpen] = useState(false);
+
+    -> Global client state such as authentication/user information can live in the application's existing global-state solution.
+       
+    Don't introduce Redux just because notifications exist.
