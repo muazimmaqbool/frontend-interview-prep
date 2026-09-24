@@ -382,3 +382,20 @@ Assume the interviewer asks:
                     Push API
 
         So I'd mention it as an optional extension rather than mixing it into the core in-app design.
+
+    
+14. Performance:
+----------------
+    Suppose a user has: 100,000 notifications
+
+    We don't render them all.
+    Use:
+        Cursor pagination
+            +
+        Infinite loading
+
+    If the UI accumulates a very large list, introduce virtualization: TanStack Virtual
+    
+    or another virtual-list implementation.
+        The browser might then render only: 20–40 visible notifications
+        instead of thousands of DOM elements.
