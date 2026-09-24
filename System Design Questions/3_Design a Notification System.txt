@@ -434,3 +434,20 @@ Assume the interviewer asks:
 
     
     A WebSocket failure shouldn't make the entire application unusable.
+
+
+17. Important edge cases:
+-------------------------
+    These are good to mention toward the end of your answer:
+            - WebSocket reconnects
+            - Duplicate events
+            - Notification arrives while panel is open
+            - Mark-as-read request fails
+            - Deleted target content
+            - User has thousands of unread notifications
+            - User logs out while socket is connected
+            - Out-of-order WebSocket events
+            - Permission denied for browser push
+            - Notification links to inaccessible content
+
+    For multiple tabs, you can optionally coordinate using BroadcastChannel so tabs don't behave completely independently.
