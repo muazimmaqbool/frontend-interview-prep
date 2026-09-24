@@ -413,3 +413,24 @@ Assume the interviewer asks:
     -> Global client state such as authentication/user information can live in the application's existing global-state solution.
        
     Don't introduce Redux just because notifications exist.
+
+
+16. Error handling:
+-------------------
+    Different failures should be isolated.
+
+    -> If initial fetching fails:
+                    Unable to load notifications
+                            Retry
+
+    -> If loading older notifications fails:
+                    [existing notifications]
+
+                    Couldn't load more
+                        Retry
+
+    -> If mark-as-read fails, rollback the optimistic update and optionally show:
+                    Couldn't update notification.
+
+    
+    A WebSocket failure shouldn't make the entire application unusable.
