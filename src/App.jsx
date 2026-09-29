@@ -36,6 +36,7 @@ import O_GetWeekDay from "../Machine_Coding/Easy/O_GetWeekDay";
 import U_usePreviousHook from "../Machine_Coding/Medium/U_usePreviousHook";
 import P_Guess_Number from "../Machine_Coding/Easy/P_Guess_Number";
 import V_Undo_Redo from "../Machine_Coding/Medium/V_Undo_Redo";
+import Q_Implement_useContext from "../Machine_Coding/Easy/Q_Implement_useContext";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
       {/* <N_Auto_Save_Text/> */}
       {/* <O_GetWeekDay/> */}
       {/* <P_Guess_Number/> */}
+      <Q_Implement_useContext/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
@@ -80,7 +82,7 @@ function App() {
       {/* <S_CharCount/> */}
       {/* <T_Track_Prev_Value/> */}
       {/* <U_usePreviousHook/> */}
-      <V_Undo_Redo/>
+      {/* <V_Undo_Redo/> */}
     </div>
   );
 }
