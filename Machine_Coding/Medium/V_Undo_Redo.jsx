@@ -33,19 +33,28 @@ const V_Undo_Redo = () => {
   return (
     <div>
       <h2>Undo/Redo Text Editor</h2>
-      <textarea
-        value={value}
-        onChange={handleChange}
-        placeholder="Start typing..."
-      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+          width: "fit-content",
+        }}
+      >
+        <textarea
+          value={value}
+          onChange={handleChange}
+          placeholder="Start typing..."
+        />
 
-      <button onClick={undo} disabled={index === 0}>
-        Undo
-      </button>
+        <button onClick={undo} disabled={index === 0}>
+          Undo
+        </button>
 
-      <button onClick={redo} disabled={index === history.length - 1}>
-        Redo
-      </button>
+        <button onClick={redo} disabled={index === history.length - 1}>
+          Redo
+        </button>
+      </div>
     </div>
   );
 };
