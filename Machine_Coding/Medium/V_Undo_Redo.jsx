@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+// Implement Undo/Redo in React:
+/*
+Build a simple text editor where:
+    - Every change is stored in history.
+    - Undo restores the previous value.
+    - Redo restores an undone value.
+    - Making a new change after Undo clears the redo history.
+*/
+const V_Undo_Redo = () => {
+  const [history, sethistory] = useState([""]);
+  const [index, setIndex] = useState(0);
+
+  const value = history[index];
+
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    const newHistory = [...history.slice(0, index + 1), newValue];
+    sethistory(newHistory);
+    setIndex(newHistory.length - 1);
+  };
+  const undo = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+    }
+  };
+
+  const redo = () => {
+    if (index < history.length - 1) {
+      setIndex(index + 1);
+    }
+  };
+  return (
+    <div>
+      <h2>Undo/Redo Text Editor</h2>
+      <textarea
+        value={value}
+        onChange={handleChange}
+        placeholder="Start typing..."
+      />
+
+      <button onClick={undo} disabled={index === 0}>
+        Undo
+      </button>
+
+      <button onClick={redo} disabled={index === history.length - 1}>
+        Redo
+      </button>
+    </div>
+  );
+};
+
+export default V_Undo_Redo;

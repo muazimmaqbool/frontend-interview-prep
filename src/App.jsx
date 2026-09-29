@@ -35,6 +35,7 @@ import T_Track_Prev_Value from "../Machine_Coding/Medium/T_Track_Prev_Value";
 import O_GetWeekDay from "../Machine_Coding/Easy/O_GetWeekDay";
 import U_usePreviousHook from "../Machine_Coding/Medium/U_usePreviousHook";
 import P_Guess_Number from "../Machine_Coding/Easy/P_Guess_Number";
+import V_Undo_Redo from "../Machine_Coding/Medium/V_Undo_Redo";
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
       {/* <S_CharCount/> */}
       {/* <T_Track_Prev_Value/> */}
       {/* <U_usePreviousHook/> */}
+      <V_Undo_Redo/>
     </div>
   );
 }
