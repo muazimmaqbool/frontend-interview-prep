@@ -51,3 +51,20 @@ function Comp5() {
 }
 
 export default Q_Implement_useContext;
+/*
+->React useContext hook:
+    React useContext hook is a way to manage state/data globally.
+    It can be used together with the useState Hook to share state/data between deeply nested components more easily than with useState alone.
+
+    ->Common Types of Data Used with useContext:
+        User Authentication: Managing login status, tokens, or profile data (isLoggedIn, user).
+        UI Themes: Switching between light and dark modes or custom branding colors.
+        User Preferences: Storing language settings, timezone, or accessibility choices.
+        App Services & Functions: Sharing application-wide functions like data fetchers, notification triggers, or routers
+
+    ->The Problem:
+        State should be held by the highest parent component in the stack that requires access to the state.
+        To illustrate, we have many nested components. 
+        The component at the top and bottom of the stack needs access to the state.
+        To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
+*/
