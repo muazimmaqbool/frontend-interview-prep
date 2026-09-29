@@ -76,8 +76,48 @@ const V_Undo_Redo = () => {
   );
 };
 /*
-->
+->How it works:
+    Suppose the user types:
+        H
+        He
+        Hel
+        Hell
+        Hello
 
+    Your state becomes:
+        history = [
+                    "",
+                    "H",
+                    "He",
+                    "Hel",
+                    "Hell",
+                    "Hello"
+                  ];
+
+                index = 5;
+
+    And because you have: const value = history[index];
+        the textarea displays: Hello
+        Now the user clicks Undo twice: index = 3;
+        so: history[index] : history[3] = "Hel"
+        and the textarea displays: Hel
+
+    Notice that the history itself hasn't changed:
+        [
+         "",       // 0
+         "H",      // 1
+         "He",     // 2
+         "Hel",    // 3  <-- current index
+         "Hell",   // 4
+         "Hello"   // 5
+        ]
 */
-
+//Interview explanation
+/*
+    If the interviewer asks "Explain your handleChange logic", a clean answer would be:
+    Whenever the user changes the textarea, I first take the new value. 
+    Then I keep the history only up to the current index using slice(0, index + 1). 
+    This removes any redo states if the user previously performed an undo. After that, 
+    I append the new value to the history and move the current index to the latest history entry.
+*/
 export default V_Undo_Redo;
