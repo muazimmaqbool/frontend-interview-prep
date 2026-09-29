@@ -9,16 +9,33 @@ Build a simple text editor where:
 */
 const V_Undo_Redo = () => {
   const [history, sethistory] = useState([""]);
+//   console.log("history", history);
   const [index, setIndex] = useState(0);
 
   const value = history[index];
 
-  const handleChange = (e) => {
-    const newValue = e.target.value;
-    const newHistory = [...history.slice(0, index + 1), newValue];
-    sethistory(newHistory);
-    setIndex(newHistory.length - 1);
-  };
+ const handleChange = (e) => {
+  // Get the latest text entered by the user
+  const newValue = e.target.value;
+
+  // Keep history only up to the CURRENT index.
+  // This is important when:
+  // 1. User makes some changes
+  // 2. User clicks Undo
+  // 3. User starts typing again
+  //
+  // Any old "Redo" history must now be removed.
+  const currentHistory = history.slice(0, index + 1);
+
+  // Add the new textarea value to history
+  const newHistory = [...currentHistory, newValue];
+
+  // Save the updated history
+  sethistory(newHistory);
+
+  // Move the index to the newly added history item
+  setIndex(newHistory.length - 1);
+};
   const undo = () => {
     if (index > 0) {
       setIndex(index - 1);
@@ -58,5 +75,9 @@ const V_Undo_Redo = () => {
     </div>
   );
 };
+/*
+->
+
+*/
 
 export default V_Undo_Redo;
