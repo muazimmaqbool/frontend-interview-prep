@@ -23,7 +23,7 @@
 -----------------------------------------------------------------------
 3. What is responsive design? How do you implement it?
    ANS:
-    Responsive design is a web design approach where a website automatically scales, shrinks, or reorganizes its layout to fit perfectly 
+    Responsive design is a web design approach where a website automatically scales, shrinks, or reorganizes it's layout to fit perfectly 
     on any device—whether it's a mobile phone, tablet, or desktop
     We can implement it using:
         Media queries
@@ -65,7 +65,7 @@
 5. Explain CSS Specificity?
    ANS:
       CSS Specificity is a set of rules browsers use to determine which style rule "wins" when multiple style rules target the same HTML element. 
-      It is essentially a ranking system where more specific selectors carry more "weight" than general ones
+      It is essentially a ranking system where more specific selectors carry more "weight" than general ones.
 
       ->Priority: Inline Styles, ID, Class / Attribute / Pseudo-class, Element
 
@@ -102,14 +102,13 @@
       -> Default: box-sizing: content-box;
                   Width excludes padding and border. (i.e width is calculated without padding and border)
       
-      ->Preferred:
-         box-sizing: border-box;
-                     Width includes padding and border. (i.e width is calculated with padding and border)
+      -> Preferred: box-sizing: border-box;
+                    Width includes padding and border. (i.e width is calculated with padding and border)
 
          Most projects use:
          * {
-             box-sizing: border-box;
-            }
+            box-sizing: border-box;
+           }
 
 -----------------------------------------------------------------------------------
 8. What Causes Layout Shift?
