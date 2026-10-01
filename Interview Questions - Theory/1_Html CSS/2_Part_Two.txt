@@ -28,6 +28,7 @@
             ARIA attributes
             Proper contrast
 
+    Note: ARIA stands for Accessible Rich Internet Applications
 ---------------------------------------------------------------------
 13. Difference Between em, rem, %, px?
     ANS:
