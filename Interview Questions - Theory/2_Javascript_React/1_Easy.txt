@@ -32,8 +32,9 @@
         null represents an intentional absence of value. (i.e variable didn't exist at all)
             Example:
                 let user = null;
+                console.log(b); //null
 
--------------------------------------------------------------jdp;cscl klcjsbd
+-------------------------------------------------------------
 4. What is the DOM?
     ANS:
         DOM stands for Document Object Model. It represents the HTML page as a tree structure, allowing JavaScript to access and modify elements dynamically.
@@ -91,6 +92,14 @@
         map() returns a new array, whereas forEach() only iterates and returns undefined.
         arr.map(x => x * 2);
         arr.forEach(x => console.log(x));
+
+        ->Comparison Overview:
+            Feature	         |    map()	                                                         |  forEach()
+            --------------------------------------------------------------------------------------------------------
+            Return Value	 |   A new array containing the results of the callback function.	 |  undefined.
+            Primary Purpose	 |   Transforming data (e.g., doubling numbers, formatting strings). |	Executing side effects (e.g., saving to a database, modifying the DOM, logging).
+            Method Chaining	 |   Yes. You can chain it with .filter(), .reduce(), etc.	         |  No. Since it returns undefined, it breaks the chain.
+            Original Array   |   Does not mutate the original array                              |  Does not mutate the original array (though you can force mutation inside the callback).
 
 -----------------------------------------------------------------
 10. What is hoisting?
