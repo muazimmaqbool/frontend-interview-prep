@@ -55,9 +55,9 @@
         The event loop continuously checks the call stack and callback queue. When the stack becomes empty, it moves queued tasks for execution.
         It enables JavaScript to perform asynchronous operations.
                         or
-        Event Loop is a core mechanism within the javascript runtime environment that enables asynchronous behaviour, 
-        non-blocking programming while running on a single thread. It continuously monitors the execution state and coordinates the processing of code
-        between the call stack, background APIs, and task queues.
+        Event Loop is a core mechanism within the javascript runtime environment that enables asynchronous behaviour, non-blocking programming 
+        while running on a single thread. 
+        It continuously monitors the execution state and coordinates the processing of code between the call stack, background APIs, and task queues.
 
 ----------------------------------------------------------------
 6. Difference between call(), apply(), and bind()?
@@ -84,13 +84,13 @@
         splice() changes the original array.
         
         ->slice() method is a built-in function used to extract a portion of an array or a string and return it as a new entity without modifying 
-          the original data. Because it keeps the source data intact, it is considered a non-destructive or immutable operation
+                  the original data. Because it keeps the source data intact, it is considered a non-destructive or immutable operation
         Syntax: sequence.slice(start, end)
 
         ->splice() method in JavaScript is a built-in function used to modify an array by removing, replacing, or adding elements in place
             Splice syntax:
                 const fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
-                const removed = fruits.splice(1, 2); 
+                const removed = fruits.splice(1, 2); //removes two element starting from index 1 i.e it willr remove elements and index 1 and 2
 
                 console.log(fruits);  // ['Apple', 'Date']
                 console.log(removed); // ['Banana', 'Cherry'] (Returns the deleted items)
@@ -125,7 +125,7 @@
             Mouse movement
 
         ->Throttling is a performance optimization technique that limits how often a function can execute over a specific period. 
-         It ensures that a function runs at most once within a designated time window, ignoring any additional triggers until that interval ends
+          It ensures that a function runs at most once within a designated time window, ignoring any additional triggers until that interval ends
 
 ----------------------------------------------------------------
 11. What is useEffect?
