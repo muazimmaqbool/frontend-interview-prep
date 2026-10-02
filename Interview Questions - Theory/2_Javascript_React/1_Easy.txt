@@ -147,15 +147,17 @@
 -----------------------------------------------------------------
 15. What is JSX?
     ANS:
-        JSX stands for JavaScript XML. It allows writing HTML-like syntax inside JavaScript.
-        <h1>Hello</h1>
+        JSX stands for JavaScript XML. 
+        It allows writing HTML-like syntax inside JavaScript.
+        Eg. : <h1>Hello</h1>
 
         React converts JSX into JavaScript objects at runtime.
 
 -----------------------------------------------------------------
 16. What is the Virtual DOM?
     ANS:
-        Virtual DOM is a lightweight copy of the real DOM. React compares changes and updates only necessary elements, improving performance.
+        Virtual DOM is a lightweight copy of the real DOM. 
+        React compares changes and updates only necessary elements, improving performance.
 
 -----------------------------------------------------------------
 17. What is conditional rendering?
