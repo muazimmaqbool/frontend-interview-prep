@@ -47,7 +47,8 @@
 4. What are microtasks and macrotasks?
     Answer:
         Microtasks:
-            Promise callbacks
+            Promises
+            callbacks
             queueMicrotask()
 
         Macrotasks/Callback queue:
@@ -79,9 +80,9 @@
             Prioritization of updates
             Better responsiveness
 
-        Note: React was using the Stack Reconciler as its core rendering and reconciliation engine
+            Note: These all three are discussed in important question's folder part 2 question number 9
 
-        Note: These all three are discussed in important question's folder part 2 question number 9
+        Note: React was using the Stack Reconciler as its core rendering and reconciliation engine
 
 -------------------------------------------------------------
 7. What is hydration in React?
@@ -216,10 +217,11 @@
         ->Modern build tools (like Vite, Webpack, Rollup, and Next.js) perform tree shaking during the production build process without requiring you to manually delete unused code.
 
         ->Note: React does not do tree shaking at all
-            ->However, When you run a production build, tools like Vite or Webpack analyze your React code and automatically removes unused parts based on two rules:
-              Unused Imports: If you export a component or function but never import it anywhere, the bundler deletes it from the final bundle.
-              ESM Syntax: It only works if you use standard import and export statements, not CommonJS require().
-              To remove imported components that are hidden or rarely used, you must manually use React.lazy() to split the code.
+        ->However, When you run a production build, tools like Vite or Webpack analyze your React code and automatically 
+              removes unused parts based on two rules:
+              1) Unused Imports: If you export a component or function but never import it anywhere, the bundler deletes it from the final bundle.
+              2) ESM Syntax: It only works if you use standard import and export statements, not CommonJS require().
+            Note: To remove imported components that are hidden or rarely used, you must manually use React.lazy() to split the code.
 
         ->How to force React to "Tree-Shake" at runtime?
             Ans: To prevent unused components from loading until they are actually needed, you must use Code Splitting via React.lazy() and Suspense
