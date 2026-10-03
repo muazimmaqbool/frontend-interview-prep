@@ -19,7 +19,8 @@ Answer:
     ->React Reconciliation is the process React uses to determine what has changed in the UI and update only the necessary parts of the 
       DOM instead of re-rendering the entire page.
 
-    ->When a component's state or props change, React creates a new Virtual DOM. It then compares this new Virtual DOM with the previous one using the diffing algorithm. 
+    ->When a component's state or props change, React creates a new Virtual DOM. 
+      It then compares this new Virtual DOM with the previous one using the diffing algorithm. 
       This comparison identifies the minimum set of changes required to make the real DOM match the new Virtual DOM.
 
     ->The diffing algorithm is optimized to work efficiently by following a few assumptions:
@@ -67,9 +68,9 @@ Answer:
     ->Difference between Server Components and Client Components:
       | Server Components                               | Client Components                                    |
       | ----------------------------------------------- | ---------------------------------------------------- |
-      | Render on the server                            | Render in the browser                                |
+      | Render on the server  ->                          | Render in the browser                                |
       | Can fetch data directly                         | Fetch data using APIs                                |
-      | Don't send JavaScript to the client by default  | JavaScript is downloaded and executed in the browser |
+      | Didn't send JavaScript to the client by default  | JavaScript is downloaded and executed in the browser |
       | Cannot use hooks like `useState` or `useEffect` | Can use React hooks and browser APIs                 |
       | Best for static content and data fetching       | Best for interactive UI                              |
 
@@ -82,10 +83,10 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 4: How would you implement infinite scrolling efficiently?
 Answer:
-    I would use the Intersection Observer API to detect when the user reaches the bottom of the list, then fetch the next page of data from the server. 
-    I would maintain pagination state, display a loading indicator, and stop requesting data when no more results are available. 
-    For large datasets, I would also use list virtualization libraries like react-window or react-virtualized so that only the 
-    visible items are rendered, improving performance and reducing memory usage."
+    ->I would use the Intersection Observer API to detect when the user reaches the bottom of the list, then fetch the next page of data from the server. 
+    ->I would maintain pagination state, display a loading indicator, and stop requesting data when no more results are available. 
+    ->For large datasets, I would also use list virtualization libraries like react-window or react-virtualized so that only the 
+      visible items are rendered, improving performance and reducing memory usage."
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -144,9 +145,11 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 7:How do you manage state in large React applications?
 Answer:
-    In large React applications, I manage state based on its scope and complexity. I use local state (useState) for component-specific data,
-    Context API for simple global state like themes or authentication, and Redux Toolkit for complex shared state such as user data, shopping carts, or application-wide settings. 
-    For server state, I prefer libraries like TanStack Query to handle data fetching, caching, and synchronization.
+    In large React applications, I manage state based on its scope and complexity.
+    -> I use local state (useState) for component-specific data,
+    -> Context API for simple global state like themes or authentication
+    -> Redux Toolkit for complex shared state such as user data, shopping carts, or application-wide settings. 
+    -> For server state, I prefer libraries like TanStack Query to handle data fetching, caching, and synchronization.
     I also keep the state normalized, avoid unnecessary global state, and split it into feature-based slices to make the application scalable and maintainable."
 
     State Management Strategy:
@@ -183,17 +186,17 @@ Answer:
 -----------------------------------------------------------------------------------------------------------------------
 Question 9: Explain the difference between setTimeout, setImmediate, and process.nextTick?
 Answer:
-    ->setTimeout(): Schedules a callback to run after a specified delay.
+    ->setTimeout(): Schedules a callback function to run after a specified delay.
                     setTimeout(() => {
                       console.log("Runs later");
                     }, 1000);
 
-    ->setImmediate(): Executes a callback in the next iteration of the event loop, after I/O operations. Mainly available in Node.js. 
+    ->setImmediate(): Executes a callback function in the next iteration of the event loop, after I/O operations. Mainly available in Node.js. 
                       setImmediate(() => {
                         console.log("Runs in next event loop cycle");
                       });
 
-    ->process.nextTick(): Executes a callback immediately after the current operation finishes, before the event loop continues. Mainly available in Node.js.
+    ->process.nextTick(): Executes a callback function immediately after the current operation finishes, before the event loop continues. Mainly available in Node.js.
                           process.nextTick(() => {
                             console.log("Runs before setTimeout and setImmediate");
                           });
