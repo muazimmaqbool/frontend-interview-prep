@@ -25,7 +25,7 @@ Answer:
 -------------------------------------------------------------------------------------------------------------------
 Question 2: How do you implement authentication in a React application?
 Answer:
-    To implement authentication in a React application, 
+    To implement authentication in a React application 
         -> I first create a login page where users submit their credentials. 
         -> The backend validates them and returns an access token or session. 
         -> I store the authentication state using Context API or Redux, and then protect private routes with a reusable ProtectedRoute component. 
@@ -40,7 +40,7 @@ Answer:
                 ↓
             Returns JWT or Session
                 ↓
-            Store auth state (Context API / Redux)
+            Store auth state/token (using Context API / Redux)
                 ↓
             Protect routes using ProtectedRoute
                 ↓
@@ -87,7 +87,7 @@ Answer:
 Question 4: How does addEventListener work?
 Answer:
     addEventListener() attaches an event listener (callback function) to an HTML element.
-    When the specified event occurs (like click, input, or keydown), the browser invokes the callback.
+    When the specified event occurs (like click, input, keydown etc), the browser invokes the callback.
     
     Example:
         const button = document.getElementById("btn");
@@ -97,7 +97,7 @@ Answer:
         });
 
         //Important removing evenListeners:
-            button.removeEventListener("click", handleClick);
+        button.removeEventListener("click", handleClick);
 
     Extra but important:
         -> How it works internally
@@ -322,7 +322,7 @@ Answer:
         Note: Main thread remains responsive while the worker runs.
 
     ->Service Workers:
-        Service Workers are background scripts that sit between the browser and the network. They are mainly used for caching, offline support, and handling network requests.
+        Service Workers are background scripts that sit between the browser and the network/server. They are mainly used for caching, offline support, and handling network requests.
 
         Used for:
             Progressive Web Apps (PWA)
