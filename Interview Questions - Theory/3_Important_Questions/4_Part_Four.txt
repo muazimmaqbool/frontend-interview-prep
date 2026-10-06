@@ -13,11 +13,11 @@ Answer:
 
         is roughly transformed into:
 
-            const element = React.createElement(
-                                                "h1",
-                                                null,
-                                                "Hello"
-                                            );
+        const element = React.createElement(
+                                            "h1",
+                                            null,
+                                            "Hello"
+                                        );
 
     ->With props:
         const element = <button className="btn">Click</button>;
@@ -229,7 +229,7 @@ Answer:
 ---------------------------------------------------------------------------------------------
 Question 8: what is the difference between for-in and for-of loop?
 Answer:
-    for...in vs for...of
+    for...in vs for...of loops
     
     ->for...in → keys/properties
         Used mainly for objects.
@@ -276,11 +276,11 @@ Answer:
         
         With props:
             <button className="btn">Click</button>
-                    roughly becomes: React.createElement(
-                                                        "button",
-                                                        { className: "btn" },
-                                                        "Click"
-                                                        );
+                roughly becomes: React.createElement(
+                                                    "button",
+                                                    { className: "btn" },
+                                                    "Click"
+                                                );
 
         The result is a JavaScript object describing the UI, which React later uses during rendering.
 
@@ -294,7 +294,7 @@ Answer:
 Question 10: What is the difference between cursor-based pagination over offset pagination?
 Answer:
     Offset pagination is simpler and supports direct page navigation, 
-    while cursor-based pagination is more efficient and consistent for large or frequently changing datasets, especially for infinite scrolling.
+    while cursor-based pagination is more efficient and consistent for large or frequently changing data-sets, especially for infinite scrolling.
 
     ->Offset pagination:
         Offset pagination is a database and API querying method that breaks large datasets into smaller chunks by specifying 
