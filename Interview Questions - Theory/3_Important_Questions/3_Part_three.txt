@@ -61,8 +61,7 @@ Answer:
         useCallback()
         useRef()
 
-    ->Built-in HOC Example:
-        React.memo()
+    ->Built-in HOC Example: React.memo()
          const MyComponent = React.memo(function MyComponent(props) {
                                 return <h1>{props.name}</h1>;
                             });
@@ -121,15 +120,16 @@ Answer:
 
     ->Example:
         const obj = new Person(); // ❌ ReferenceError
+        o/p: ReferenceError: Cannot access 'Person' before initialization
 
         class Person {
             constructor(name) {
                 this.name = name;
             }
         }
-        o/p: ReferenceError: Cannot access 'Person' before initialization
 
         const obj = new Person(); // works fine here
+
 
 ------------------------------------------------------------------------------------------------------------------
 Question 5:  How would you optimize a slow React app?
@@ -287,6 +287,7 @@ Answer:
                         </div>
                     );
                 }
+        
         Note: The important thing is that the server can generate the HTML, but it cannot execute the browser onClick.
 
     -> 2. Server renders HTML:
