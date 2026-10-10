@@ -393,4 +393,27 @@ Question 10: What is the difference between Polling, Long Polling, WebSockets, a
              - How does each communication method work?
              - Which would you choose for real-time notifications, chat applications, or live dashboards?
 Answer:
+        Polling vs Long Polling vs WebSockets vs SSE
+        All four are communication techniques used to get updated data from a server, but they differ in how frequently data is requested and how the server sends updates.
 
+        1. Polling:
+                The client repeatedly sends HTTP requests to the server at fixed intervals to check for new data.
+
+                Client             Server
+                | ---- Request ----> |
+                | <---- Response --- |
+                |                    |
+                |    Wait 5 sec      |
+                | ---- Request ----> |
+                | <---- Response --- |
+                |                    |
+                |    Wait 5 sec      |
+                | ---- Request ----> |
+
+                Example: A dashboard fetching updated statistics every 5 seconds.
+                Polling is:
+                        - Simple to implement.
+                        - Can waste requests when nothing changes.
+                        - Updates are delayed until the next request.
+
+        
