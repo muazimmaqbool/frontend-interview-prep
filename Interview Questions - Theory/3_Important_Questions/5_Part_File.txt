@@ -163,9 +163,53 @@ Answer:
 Question 6: What is the difference between Horizontal Scaling and Vertical Scaling?
             - When would you choose one over the other?
             - What are their advantages and limitations?
-
 Answer:
+        1. Horizontal Scaling (Scale Out):
+                Adding more servers to handle increasing traffic.
+                Example: Instead of one server handling 10,000 users, use 3 servers and distribute traffic using a load balancer.
+                                     Load Balancer
+                                         |
+                                ┌────────┼────────┐
+                                ↓        ↓        ↓
+                        Server 1     Server 2  Server 3
+        
+                Advantages:
+                        - Handles large traffic efficiently.
+                        - Better availability; if one server fails, others can continue serving requests.
+                        - Can scale by adding more servers.
+                Limitations:
+                        - More complex to manage.
+                        - Requires load balancing.
+                        - Shared state, sessions, and databases need careful handling.
 
+        2. Vertical Scaling (Scale Up):
+                Increasing the resources of an existing server, such as CPU, RAM, or storage.
+                Example: Upgrade a server from 8 GB RAM to 32 GB RAM.
+                                Before: Server (4 CPU, 8 GB RAM)
+                                        ↓
+                                After:  Server (8 CPU, 32 GB RAM)
+                Advantages:
+                        - Simple to implement.
+                        - No major architecture changes.
+                        - Easier to manage.
+                Limitations:
+                        - Hardware has a maximum capacity.
+                        - Upgrades can be expensive.
+                        - A single server can remain a single point of failure.
+
+        When would I choose each?
+                Horizontal Scaling	                          Vertical Scaling
+                --------------------------------------------------------------------------
+                Large applications with growing traffic	        Small to medium applications
+                Need high availability	                        Need a quick performance boost
+                Workload can run across multiple servers	Application is difficult to distribute
+                Long-term scalability	                        Simpler short-term scaling
+
+        Interview answer:
+                Vertical scaling means increasing the CPU or RAM of an existing server, while horizontal scaling means adding more servers to distribute the workload.
+                I would choose vertical scaling for smaller applications because it's simpler and faster to implement. 
+                For large applications expecting high traffic and requiring high availability, I would prefer horizontal scaling with load balancing.
+                Both can also be combined depending on the application's requirements.
 
 --------------------------------------------------------------------------------------------------------
 Question 7: What is Load Balancing, and how does it improve application performance and availability?
@@ -193,4 +237,4 @@ Question 10: What is the difference between Polling, Long Polling, WebSockets, a
              - How does each communication method work?
              - Which would you choose for real-time notifications, chat applications, or live dashboards?
 Answer:
-        
+
