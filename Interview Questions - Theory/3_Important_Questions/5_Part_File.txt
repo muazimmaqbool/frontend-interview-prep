@@ -416,4 +416,43 @@ Answer:
                         - Can waste requests when nothing changes.
                         - Updates are delayed until the next request.
 
+        2. Long Polling:
+                The client sends a request, but the server holds the request open until new data is available or a timeout occurs.
+                After receiving a response, the client sends another request.
+
+                Client               Server
+                | ---- Request -----> |
+                |                     |
+                |   Server waits...   |
+                |                     |
+                | <---- New Data ---- |
+                |                     |
+                | ---- Request -----> |
+
+                Example: WhatsApp-like chat applications, multiplayer games, collaborative editing.
+
+                Long polling can:
+                        - Supports real-time two-way communication.
+                        - Low communication overhead after connection establishment.
+                        - Requires connection management, reconnection handling, and additional infrastructure considerations.
+
+        3. WebSockets:
+                WebSockets establish a persistent, bidirectional connection between the client and server.
+                Both can send messages at any time.
+                        Client              Server
+                        | ---- Connect -----> |
+                        | <--- Connected ---- |
+                        |                     |
+                        | ---- Message -----> |
+                        | <---- Message ----- |
+                        | <---- Update ------ |
+                        | ---- Message -----> |
+
+                Example: WhatsApp-like chat applications, multiplayer games, collaborative editing.
+
+                WebSockets:
+                        - Supports real-time two-way communication.
+                        - Low communication overhead after connection establishment.
+                        - Requires connection management, reconnection handling, and additional infrastructure considerations.
+
         
