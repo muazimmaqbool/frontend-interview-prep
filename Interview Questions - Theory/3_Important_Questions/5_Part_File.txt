@@ -439,6 +439,7 @@ Answer:
         3. WebSockets:
                 WebSockets establish a persistent, bidirectional connection between the client and server.
                 Both can send messages at any time.
+
                         Client              Server
                         | ---- Connect -----> |
                         | <--- Connected ---- |
@@ -450,9 +451,31 @@ Answer:
 
                 Example: WhatsApp-like chat applications, multiplayer games, collaborative editing.
 
-                WebSockets:
+                WebSockets can:
                         - Supports real-time two-way communication.
                         - Low communication overhead after connection establishment.
                         - Requires connection management, reconnection handling, and additional infrastructure considerations.
 
+        4. Server-Sent Events (SSE):
+                SSE establishes a persistent HTTP connection where the server continuously pushes updates to the client.
+                Unlike WebSockets, SSE is one-way: server to client.
+
+                Client               Server
+                | ---- Connect -----> |
+                |                     |
+                | <---- Update 1 ---- |
+                | <---- Update 2 ---- |
+                | <---- Update 3 ---- |
+
+                Example: Live news feeds, stock price updates, server-generated notifications.
+
+                Server-Sent Events can:
+                        - Simple for server-to-client updates.
+                        - Browser EventSource supports automatic reconnection.
+                        - Cannot send client-to-server messages over the same SSE connection.
         
+        Interview Answer:
+                Polling repeatedly requests data at fixed intervals, while long polling keeps an HTTP request open until new data becomes available.
+                WebSockets provide persistent, bidirectional communication, whereas SSE provides persistent, one-way communication from server to client.
+                I would choose WebSockets for chat applications, SSE for real-time notifications, and polling or SSE for dashboards depending on how frequently the data changes.
+                My decision would depend on the application's real-time requirements, infrastructure complexity, and scalability needs.
