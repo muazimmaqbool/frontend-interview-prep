@@ -36,40 +36,7 @@ Answer:
 
 
 --------------------------------------------------------------------------------------------------------
-Question 2: How does JavaScript work asynchronously?
-Answer:
-        JavaScript is single-threaded, but it can handle asynchronous operations using the Event Loop.
-        Simple flow:
-                JavaScript (Call Stack)
-                        ↓
-                Async task (setTimeout, API, etc.)
-                        ↓
-                Browser/Node handles it separately
-                        ↓
-                Callback / Promise is ready
-                        ↓
-                Event Loop moves it to Call Stack
-                        ↓
-                JavaScript executes it
-
-        Example:
-                console.log("Start");
-                setTimeout(() => {
-                    console.log("Async Task");
-                }, 1000);
-
-                console.log("End");
-
-                o/p:
-                    Start
-                    End
-                    Async Task
-
-        In short: JavaScript handles asynchronous operations using browser/Node APIs, callback queues, Promise microtasks, 
-                  and the Event Loop, while keeping JavaScript execution itself single-threaded.
-
---------------------------------------------------------------------------------------------------------
-Question 3: How do you find memory leaks in a frontend application?
+Question 2: How do you find memory leaks in a frontend application?
 Answer:
         I use Chrome DevTools, especially the Memory and Performance tabs, to check whether memory keeps increasing after navigating, opening/closing components, or repeating an action.
         My approach:
@@ -91,7 +58,7 @@ Answer:
                 and then checking common causes such as listeners, timers, subscriptions, and retained references.
 
 ------------------------------------------------------------------------------------------------------------
-Question 4: why index as key can cause problems?
+Question 3: why index as key can cause problems?
 Answer:
         Using the array index as a React key can cause problems when items are added, removed, sorted, or reordered.
 
@@ -138,7 +105,7 @@ Answer:
         Note: Index is generally okay when the list is static and will never be reordered, inserted into, or deleted from.
 
 -------------------------------------------------------------------------------------------------------------
-Question 5: What is the difference between api and endpoint?
+Question 4: What is the difference between api and endpoint?
 Answer:
         An API is the overall system/interface that allows applications to communicate, while an endpoint is a specific URL within that API used for a particular operation.
 
@@ -172,7 +139,7 @@ Answer:
 
 
 --------------------------------------------------------------------------------------------------------
-Question 6: What are Suspense and Concurrent Rendering?
+Question 5: What are Suspense and Concurrent Rendering?
 Answer:
         Suspense and Concurrent Rendering are modern React features that work together to make web apps load faster and feel smoother.
 
@@ -191,3 +158,39 @@ Answer:
         ->How They Work Together:
                 Concurrency gives React the ability to multitask under the hood, and Suspense gives you an easy way to display loading states while those tasks finish.
                    
+
+--------------------------------------------------------------------------------------------------------
+Question 6: What is the difference between Horizontal Scaling and Vertical Scaling?
+            - When would you choose one over the other?
+            - What are their advantages and limitations?
+
+Answer:
+
+
+--------------------------------------------------------------------------------------------------------
+Question 7: What is Load Balancing, and how does it improve application performance and availability?
+            - What are common load-balancing algorithms?
+            - How does a load balancer handle server failures?
+Answer:
+
+
+--------------------------------------------------------------------------------------------------------
+Question 8: What is Caching, and what are the different caching strategies?
+            - Difference between browser caching, CDN caching, and server-side caching.
+            - What are cache invalidation and TTL?
+Answer:
+
+
+--------------------------------------------------------------------------------------------------------
+Question 9: What is the difference between Monolithic and Microservices Architecture?
+            - What are the advantages and disadvantages?
+            - When should an application move from a monolith to microservices?
+Answer:
+
+
+--------------------------------------------------------------------------------------------------------
+Question 10: What is the difference between Polling, Long Polling, WebSockets, and Server-Sent Events (SSE)?
+             - How does each communication method work?
+             - Which would you choose for real-time notifications, chat applications, or live dashboards?
+Answer:
+        
