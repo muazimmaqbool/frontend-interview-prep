@@ -216,8 +216,56 @@ Question 7: What is Load Balancing, and how does it improve application performa
             - What are common load-balancing algorithms?
             - How does a load balancer handle server failures?
 Answer:
+        What is Load Balancing?
+                Load balancing is the process of distributing incoming requests across multiple servers so that no single server becomes overloaded.
+           It improves:
+                - Performance: Distributes traffic across servers, reducing overload and improving response times.
+                - Availability: If one server fails, requests can be sent to healthy servers.
+                - Scalability: More servers can be added as traffic increases.
 
+           Simple Architecture:
+                             Users
+                                |
+                                ↓
+                        Load Balancer
+                                |
+                        ┌─────────┼─────────┐
+                        ↓         ↓         ↓
+                    Server 1   Server 2  Server 3
+                    Healthy    Healthy   Failed ❌
+                        ↑         ↑
+                        └────┬────┘
+                             |
+                        Traffic distributed
+                        to healthy servers
+                
+                Note: if server 3 was also working fine then traffic gets distributed among all 3 servers.
 
+           Common Load Balancing Algorithms:
+                Algorithm	                How it works
+                ---------------------------------------------------
+                Round Robin	              Distributes requests to servers one by one in order.
+                Least Connections	      Sends requests to the server with the fewest active connections.
+                Weighted Round Robin	      Sends more requests to servers with higher assigned capacity.
+                IP Hash	                      Uses the client's IP address to consistently select a server.
+
+            How does a load balancer handle server failures?
+                1. Health Checks: Regularly checks whether servers are healthy.
+                2. Detect Failure: If a server fails its health checks, the load balancer marks it unhealthy.
+                3. Redirect Traffic: Stops sending new requests to the failed server.
+                4. Recovery: Once the server becomes healthy again, it can receive requests.
+           For example, if Server 2 crashes, the load balancer distributes new requests between Server 1 and Server 3.
+           
+           Interview Answer:
+                Load balancing distributes incoming traffic across multiple servers to improve performance, scalability, and availability.
+                Common algorithms include Round Robin, Least Connections, Weighted Round Robin, and IP Hash.
+                A load balancer uses health checks to detect unhealthy servers and stops routing new requests to them. 
+                Once a server recovers, it can be added back into rotation.
+
+           Important: A load balancer itself can become a single point of failure, so production systems often use redundant 
+                      load balancers or managed load-balancing services.
+
+                      
 --------------------------------------------------------------------------------------------------------
 Question 8: What is Caching, and what are the different caching strategies?
             - Difference between browser caching, CDN caching, and server-side caching.
