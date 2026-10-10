@@ -265,19 +265,81 @@ Answer:
            Important: A load balancer itself can become a single point of failure, so production systems often use redundant 
                       load balancers or managed load-balancing services.
 
-                      
---------------------------------------------------------------------------------------------------------
-Question 8: What is Caching, and what are the different caching strategies?
-            - Difference between browser caching, CDN caching, and server-side caching.
-            - What are cache invalidation and TTL?
-Answer:
-
 
 --------------------------------------------------------------------------------------------------------
-Question 9: What is the difference between Monolithic and Microservices Architecture?
+Question 8: What is the difference between Monolithic and Microservices Architecture?
             - What are the advantages and disadvantages?
             - When should an application move from a monolith to microservices?
 Answer:
+
+
+--------------------------------------------------------------------------------------------------------
+Question 9: What is Caching, and what are the different caching strategies?
+            - Difference between browser caching, CDN caching, and server-side caching.
+            - What are cache invalidation and TTL?
+Answer:
+        What is Caching?
+                Caching is the process of storing frequently accessed data temporarily so future requests can be served faster without fetching or calculating the same data again.
+       
+        It helps improve:
+                - Performance: Faster response times.
+                - Scalability: Reduces load on servers and databases.
+                - Cost: Reduces repeated API calls and database queries.
+        
+        1. Types of Caching:
+                Type	                         Description	                                          Example
+                --------------------------------------------------------------------------------------------------------------------
+                Browser Caching	        Stores resources in the user's browser.	                Images, CSS, JavaScript files
+                CDN Caching	        Stores content on servers closer to users.	        Website images, videos, static assets
+                Server-Side Caching	Stores frequently requested data on the backend.	Redis caching database query results
+
+        2. Common Caching Strategies:
+                1. Cache-Aside (Lazy Loading)
+                        - Application checks the cache first.
+                        - If data is missing, fetches it from the database and stores it in the cache.
+                        - Commonly used with Redis.
+                2. Write-Through
+                        - When data is updated, it is written to both the cache and database.
+                        - Helps keep cached data updated.
+                3. Write-Back (Write-Behind)
+                        - Data is written to the cache first.
+                        - The database is updated later asynchronously.
+                        - Faster writes, but cached data can be lost if the cache fails before persistence.
+                4. Write-Around
+                        - Data is written directly to the database.
+                        - Cache is updated only when data is requested again.
+                        - Useful when recently written data is unlikely to be read immediately.
+
+        3. What is Cache Invalidation?
+                Cache invalidation means removing or updating cached data when it becomes outdated.
+                Example:
+                        User updates profile name
+                                ↓
+                        Database updated
+                                ↓
+                        Old cached profile removed
+                                ↓
+                        Next request fetches fresh data
+
+                Without cache invalidation, users might see outdated information.
+
+        4. What is TTL (Time To Live)?
+                TTL defines how long cached data remains valid before it expires.
+                Example:
+                        // Redis example
+                        await redis.set("user:101", JSON.stringify(user), {
+                                EX: 300, // Cache expires after 300 seconds (5 minutes)
+                        });
+                After 5 minutes, Redis automatically expires the key.
+                TTL vs Cache Invalidation:
+                        - TTL: Automatically expires cached data after a specified duration.
+                        - Cache Invalidation: Explicitly removes or updates cached data when it changes.
+
+        Interview Answer:
+                Caching stores frequently accessed data temporarily to improve performance and reduce server load.
+                Browser caching stores resources locally, CDN caching stores content closer to users, and server-side caching stores frequently requested data using tools like Redis.
+                Common strategies include cache-aside, write-through, write-back, and write-around.
+                Cache invalidation removes or updates outdated data, while TTL defines how long cached data remains valid before expiring.
 
 
 --------------------------------------------------------------------------------------------------------
