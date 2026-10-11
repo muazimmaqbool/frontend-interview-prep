@@ -37,6 +37,7 @@ import U_usePreviousHook from "../Machine_Coding/Medium/U_usePreviousHook";
 import P_Guess_Number from "../Machine_Coding/Easy/P_Guess_Number";
 import V_Undo_Redo from "../Machine_Coding/Medium/V_Undo_Redo";
 import Q_Implement_useContext from "../Machine_Coding/Easy/Q_Implement_useContext";
+import R_Implement_useLayoutEffect from "../Machine_Coding/Easy/R_Implement_useLayoutEffect";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
       {/* <O_GetWeekDay/> */}
       {/* <P_Guess_Number/> */}
       {/* <Q_Implement_useContext/> */}
+      <R_Implement_useLayoutEffect/>
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
