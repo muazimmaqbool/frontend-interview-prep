@@ -42,8 +42,9 @@ log("Hello"); // Executes immediately
 log("Hi");    // Ignored
 log("Hey");   // Ignored
 
-// After 1 second
-log("Welcome"); // Executes
+setTimeout(() => {
+  log("Welcome"); // Executes
+}, 1000);
 
 //example 2:
 const throttledLog = throttle((message) => {

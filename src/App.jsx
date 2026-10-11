@@ -60,7 +60,7 @@ function App() {
       {/* <O_GetWeekDay/> */}
       {/* <P_Guess_Number/> */}
       {/* <Q_Implement_useContext/> */}
-      <R_Implement_useLayoutEffect/>
+      {/* <R_Implement_useLayoutEffect/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}
