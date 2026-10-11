@@ -52,7 +52,6 @@ const R_Implement_useLayoutEffect = () => {
           padding: "20px",
           boxSizing: "border-box",
           backgroundColor: getBoxBgColor(),
-          transition: "width 0.3s ease",
         }}
       >
         Resize Me
