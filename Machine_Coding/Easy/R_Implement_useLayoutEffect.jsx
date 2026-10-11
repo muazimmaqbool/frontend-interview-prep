@@ -63,6 +63,19 @@ const R_Implement_useLayoutEffect = () => {
     </div>
   );
 };
+/*
+->Interview Follow-up Questions:
+  1. What is the difference between useEffect and useLayoutEffect?
+  useEffect generally runs after the browser paints, while useLayoutEffect runs synchronously after DOM updates but before the browser paints.
 
+  2. Why is useLayoutEffect useful for DOM measurements?
+  It allows us to measure DOM elements and update the UI before the browser paints, preventing layout flickering.
+
+  3. When can useLayoutEffect negatively affect performance?
+  Because it blocks browser painting until it finishes. Heavy calculations or unnecessary state updates inside useLayoutEffect can delay rendering and make the UI feel slow.
+
+  Interview tip: 
+    Prefer useEffect for most side effects. Use useLayoutEffect only when you need synchronous DOM measurements or visual adjustments before paint.
+*/
 
 export default R_Implement_useLayoutEffect;
