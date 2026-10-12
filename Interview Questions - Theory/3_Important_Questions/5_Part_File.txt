@@ -429,12 +429,12 @@ Answer:
                 |                     |
                 | ---- Request -----> |
 
-                Example: WhatsApp-like chat applications, multiplayer games, collaborative editing.
+                Example: A notification system where the client waits for new notifications.
 
                 Long polling can:
-                        - Supports real-time two-way communication.
-                        - Low communication overhead after connection establishment.
-                        - Requires connection management, reconnection handling, and additional infrastructure considerations.
+                        - More responsive than regular polling.
+                        - Avoids repeated empty requests.
+                        - Creates overhead from repeated HTTP requests and reconnections.
 
         3. WebSockets:
                 WebSockets establish a persistent, bidirectional connection between the client and server.
