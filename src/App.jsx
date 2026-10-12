@@ -38,6 +38,7 @@ import P_Guess_Number from "../Machine_Coding/Easy/P_Guess_Number";
 import V_Undo_Redo from "../Machine_Coding/Medium/V_Undo_Redo";
 import Q_Implement_useContext from "../Machine_Coding/Easy/Q_Implement_useContext";
 import R_Implement_useLayoutEffect from "../Machine_Coding/Easy/R_Implement_useLayoutEffect";
+import W_API_Chaching from "../Machine_Coding/Medium/W_API_Chaching";
 
 function App() {
   return (
@@ -85,6 +86,7 @@ function App() {
       {/* <T_Track_Prev_Value/> */}
       {/* <U_usePreviousHook/> */}
       {/* <V_Undo_Redo/> */}
+      <W_API_Chaching/>
     </div>
   );
 }
