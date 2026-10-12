@@ -323,9 +323,12 @@ Answer:
 Question 9: What is Caching, and what are the different caching strategies?
             - Difference between browser caching, CDN caching, and server-side caching.
             - What are cache invalidation and TTL?
+
+            (It's about backend)
 Answer:
         What is Caching?
-                Caching is the process of storing frequently accessed data temporarily so future requests can be served faster without fetching or calculating the same data again.
+                Caching is the process of storing frequently accessed data temporarily so future requests can be served faster 
+                without fetching or calculating the same data again.
        
         It helps improve:
                 - Performance: Faster response times.
@@ -344,13 +347,16 @@ Answer:
                         - Application checks the cache first.
                         - If data is missing, fetches it from the database and stores it in the cache.
                         - Commonly used with Redis.
+
                 2. Write-Through
                         - When data is updated, it is written to both the cache and database.
                         - Helps keep cached data updated.
+
                 3. Write-Back (Write-Behind)
                         - Data is written to the cache first.
                         - The database is updated later asynchronously.
                         - Faster writes, but cached data can be lost if the cache fails before persistence.
+
                 4. Write-Around
                         - Data is written directly to the database.
                         - Cache is updated only when data is requested again.
