@@ -1,0 +1,404 @@
+﻿Question 1: How would you design a scalable frontend architecture for a large React application?
+             - How would you organize folders and components?
+             - How would you separate business logic from UI?
+             - How would you ensure maintainability as the application grows?
+Answer:
+        Start by understanding the application's domains, team ownership, and expected growth.
+        Use feature-based organization so related UI, hooks, API calls, and tests stay together.
+
+        1. Folder and component organization:
+                src/
+                    app/                 Routes, providers, and application setup
+                    features/
+                        auth/
+                            components/
+                            hooks/
+                            api/
+                            types/
+                        orders/
+                            components/
+                            hooks/
+                            api/
+                            utils/
+                    shared/
+                        ui/              Generic Button, Input, Modal
+                        lib/             Shared HTTP client and utilities
+                        styles/          Theme tokens and global styles
+
+                Keep feature-specific components inside their feature. Move components to shared/ui
+                when they have a clear reusable purpose. Avoid a giant shared folder.
+                Expose each feature through a small public API and avoid circular dependencies.
+
+        2. Separate business logic from UI:
+                - UI components receive data and callbacks through props.
+                - Custom hooks coordinate state, fetching, and user interactions.
+                - API modules handle requests and response mapping.
+                - Pure domain functions handle calculations and validation independently of React.
+
+                Example:
+                    OrderPage -> useOrders() -> ordersApi.getOrders()
+                    OrderSummary -> calculateOrderTotal(items)
+
+        3. Maintainability:
+                Use TypeScript contracts, consistent naming, linting, formatting, code reviews,
+                and tests for important behavior. Document module boundaries and architectural decisions.
+                Use CI checks and define feature ownership. Start with a modular application;
+                consider micro-frontends only when independent teams and deployment needs justify them.
+
+        Interview answer:
+                I organize by feature, keep UI separate from domain and API logic, and enforce clear
+                module boundaries with types, tests, and tooling so teams can change features safely.
+
+--------------------------------------------------------------------------------------------------------
+Question 2: How would you manage state in a large React application?
+             - When would you use local state, Context API, or Redux Toolkit?
+             - What is the difference between client state and server state?
+             - How would you prevent unnecessary re-renders?
+Answer:
+        Classify state by ownership and lifetime before choosing a tool.
+
+        1. Choosing where state belongs:
+                - Local state: useState/useReducer for input values, modal visibility, and local workflows.
+                  Keep state close to the components that use it; lift it to their nearest shared parent.
+                - Context API: distribute values such as theme or locale across a subtree.
+                  Context distributes a value; useState/useReducer can manage that value.
+                - Redux Toolkit: complex shared client workflows used across many features, especially
+                  when predictable updates, selectors, middleware, and debugging are useful.
+                - URL state: filters, sorting, and pagination that should survive refresh or be shareable.
+
+        2. Client state vs server state:
+                Client state is owned by the browser, such as an unsaved form or selected tab.
+                Server state is owned remotely, such as products, permissions, or order history.
+                Server state needs fetching, synchronization, freshness, and invalidation.
+                Use TanStack Query or RTK Query for it; avoid duplicating the same response in another store.
+
+        3. Reduce unnecessary renders:
+                Colocate state, split contexts by responsibility, and keep provider values stable when useful.
+                Context consumers can re-render when the provider value changes, even with React.memo.
+                Use narrow Redux selectors and preserve references through immutable updates.
+                Derive values instead of storing redundant state. Profile before adding memoization.
+
+        Interview answer:
+                I keep local UI state local, use Context for shared dependencies, Redux Toolkit for complex
+                shared client state, and a query library for server state. Narrow subscriptions limit renders.
+
+--------------------------------------------------------------------------------------------------------
+Question 3: How would you design an efficient API data-fetching and caching strategy?
+             - How would you avoid duplicate API requests?
+             - How would you implement caching using TanStack Query?
+             - How would you handle stale data, retries, and cache invalidation?
+Answer:
+        1. Avoid duplicate requests:
+                Share one browser QueryClient and consistent query keys. Concurrent observers of the
+                same query share its in-flight request. Include every input affecting the response in the key,
+                including user/tenant scope where necessary. Debounce rapidly changing search input.
+
+        2. TanStack Query example (v5 API):
+                // Create a stable client outside a browser component render.
+                // For SSR, create an isolated client per request.
+                const queryClient = new QueryClient();
+
+                // Wrap the application in QueryClientProvider with this client.
+                const productsQuery = useQuery({
+                    queryKey: ['products', category],
+                    queryFn: async ({ signal }) => {
+                        const response = await fetch(
+                            `/api/products?category=${encodeURIComponent(category)}`,
+                            { signal }
+                        );
+                        if (!response.ok) throw new Error('Unable to load products');
+                        return response.json();
+                    },
+                    staleTime: 60_000,
+                    gcTime: 5 * 60_000,
+                    retry: 2,
+                });
+
+        3. Freshness and failures:
+                staleTime controls freshness; stale queries can refetch on mount, focus, or reconnect.
+                It is not a polling interval. gcTime controls removal of inactive cached queries.
+                Choose freshness by business need. Retry transient failures with bounded backoff;
+                exclude permanent failures such as invalid input or forbidden access.
+                Show initial loading, background refresh, empty, and error states separately.
+
+        4. Invalidation:
+                After a successful product mutation:
+                    queryClient.invalidateQueries({ queryKey: ['products'] });
+                Matching queries become stale; active ones normally refetch in the background.
+                Update known results with setQueryData when appropriate. Roll back failed optimistic updates.
+                Clear user-specific cached data on logout or account changes.
+
+        Interview answer:
+                I use stable query keys and a shared query client, configure freshness and retries,
+                and invalidate affected queries after mutations so the UI stays synchronized.
+
+        References:
+                https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults
+                https://tanstack.com/query/latest/docs/framework/react/guides/query-invalidation
+
+--------------------------------------------------------------------------------------------------------
+Question 4: How would you optimize the performance of a large React application?
+             - How would you identify performance bottlenecks?
+             - When would you use React.memo, useMemo, and useCallback?
+             - How would you implement lazy loading, code splitting, and virtualization?
+Answer:
+        1. Measure first:
+                Use React DevTools Profiler for expensive or repeated renders, browser Performance tools
+                for long tasks and layout work, and Network tools for request waterfalls and large assets.
+                Check bundle sizes and real-user LCP, INP, and CLS. Test realistic devices and networks.
+
+        2. Memoization:
+                - React.memo can skip a component render when props compare equal. Its own state
+                  and consumed context can still trigger renders.
+                - useMemo caches a calculation result until dependencies change.
+                - useCallback caches a function reference until dependencies change, which can help
+                  memoized children or hooks that depend on that reference.
+                Memoization has overhead. Apply it to measured problems and keep dependencies correct.
+                When React Compiler is enabled, it can reduce the need for manual memoization.
+
+        3. Load less work:
+                Split at route or heavy-feature boundaries using dynamic import and React.lazy:
+                    const ReportsPage = lazy(() => import('./ReportsPage'));
+                    <Suspense fallback={<Loading />}>
+                        <ReportsPage />
+                    </Suspense>
+                Provide an error boundary for failed chunk loads. Avoid many tiny chunks and waterfalls.
+                Virtualize long lists so only visible rows plus a small buffer are mounted.
+                Preserve stable item keys and account for keyboard navigation and variable row heights.
+
+        4. Other improvements:
+                Paginate large responses, compress and resize images, reserve image dimensions,
+                remove unused dependencies, and move expensive CPU work to Web Workers when appropriate.
+                Re-measure the same interaction after changes.
+
+        Interview answer:
+                I profile first, then reduce expensive renders, JavaScript downloads, DOM size, and main-thread
+                work using targeted memoization, code splitting, virtualization, and asset optimization.
+
+        References:
+                https://react.dev/reference/react/memo
+                https://react.dev/reference/react/useMemo
+                https://react.dev/reference/react/useCallback
+
+--------------------------------------------------------------------------------------------------------
+Question 5: How would you design authentication and authorization in a frontend application?
+             - How would you implement protected routes?
+             - How would you handle access tokens, refresh tokens, and session expiration?
+             - How would you implement role-based access control (RBAC)?
+Answer:
+        Authentication identifies the user. Authorization determines what they may do.
+
+        1. Protected routes:
+                Resolve session status before rendering a protected page. Show a loading state while
+                checking, redirect unauthenticated users to login, and show a forbidden page when needed.
+                Preserve a validated internal return URL. Route guards improve UX; every API must also
+                authenticate and authorize the request on the server.
+
+        2. Tokens and expiration:
+                Prefer a backend-managed session or backend-for-frontend where suitable, using a Secure,
+                HttpOnly cookie with an appropriate SameSite policy and CSRF protection.
+                If access tokens are needed in JavaScript, use short lifetimes and consider memory storage;
+                keep refresh credentials in appropriately secured cookies when the architecture allows it.
+                Coordinate concurrent 401 responses through one refresh attempt, then retry each request
+                at most once. If refresh fails, clear session state and redirect to login.
+                Avoid infinite refresh loops and do not refresh merely because an API returns 403.
+                Server-side expiry, refresh-token rotation/revocation, and logout complete the lifecycle.
+
+        3. RBAC:
+                Map roles to permissions, such as admin -> users:write and viewer -> users:read.
+                Use permission checks for navigation, routes, and controls, but enforce permissions and
+                resource ownership on the backend. Never trust a role supplied by the browser.
+
+        Interview answer:
+                I combine session-aware routes and permission-aware UI with server-enforced authorization,
+                secure credential handling, and a controlled refresh and session-expiration flow.
+
+        Reference:
+                https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
+
+--------------------------------------------------------------------------------------------------------
+Question 6: How would you handle errors and failures in a large frontend application?
+             - How would you implement global error handling?
+             - What are React Error Boundaries?
+             - How would you handle API failures, retries, and network disconnections?
+Answer:
+        1. Global handling:
+                Normalize API errors in a shared request layer and report unexpected failures through
+                centralized monitoring. Include release, route, and request IDs without logging secrets.
+                Use window error/unhandledrejection listeners as a reporting safety net.
+                Handle expected validation errors beside the relevant field or action.
+
+        2. React Error Boundaries:
+                A boundary catches errors in descendant rendering and lifecycle work and shows fallback UI.
+                Implement one with getDerivedStateFromError/componentDidCatch or use a boundary library.
+                Put boundaries around routes and independent widgets so one failure does not remove the page.
+                Boundaries do not generally catch event-handler errors, asynchronous callbacks, server-side
+                rendering errors, or failures in the boundary itself. Handle those in their own execution path.
+                Rejected API requests need query error handling unless deliberately thrown during rendering.
+
+        3. API and network failures:
+                Distinguish validation, authentication, authorization, rate-limit, server, and network errors.
+                Retry transient failures with a limit, exponential backoff, and jitter; honor Retry-After.
+                Avoid automatic retries of non-idempotent writes unless the server supports idempotency keys.
+                Keep usable cached data visible, show connection status, and offer an explicit retry.
+                Browser online/offline signals are hints; verify recovery through actual requests.
+                Queue offline writes only when conflict resolution and duplicate prevention are designed.
+
+        Interview answer:
+                I use boundaries for rendering failures, a consistent API error layer for requests, centralized
+                reporting, and bounded recovery flows that keep useful UI available during failures.
+
+        Reference:
+                https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
+
+--------------------------------------------------------------------------------------------------------
+Question 7: What is the difference between CSR, SSR, SSG, and hydration?
+             - How does each rendering strategy work?
+             - How do they affect SEO and performance?
+             - When would you choose Next.js over a traditional React SPA?
+Answer:
+        1. CSR (Client-Side Rendering):
+                The browser downloads JavaScript and generates the page UI, often fetching data afterward.
+                It suits interactive authenticated tools. Initial content can be delayed by JavaScript and
+                request waterfalls. Some crawlers execute JavaScript, but pre-rendered HTML is more reliable.
+
+        2. SSR (Server-Side Rendering):
+                The server generates HTML for a request. Content can arrive before client JavaScript runs,
+                helping content discovery and perceived loading. Server work can increase response time;
+                interactive components still need JavaScript. Personalized responses need safe cache boundaries.
+
+        3. SSG (Static Site Generation):
+                HTML is generated ahead of requests, typically at build time, and can be served from a CDN.
+                It suits documentation, marketing pages, and relatively stable content. Updates require a
+                rebuild or a supported revalidation strategy. Large sites must consider build duration.
+
+        4. Hydration:
+                React connects client behavior to existing server-generated HTML. It is a step used with
+                pre-rendering, rather than a competing rendering strategy. Initial server and client output
+                must agree; browser-only values or random output can cause hydration mismatches.
+
+        5. Choosing Next.js:
+                Choose it when routes benefit from pre-rendering, server-side data access, integrated routing,
+                or a mix of static and dynamic rendering. Its App Router also supports Server Components;
+                these are a separate concept from SSR. Choose a traditional SPA when browser-centric workflows
+                and static hosting meet the requirements. Compare operational complexity and team experience.
+                SSR alone does not guarantee good performance; measure server latency and client execution.
+
+        Interview answer:
+                CSR renders in the browser, SSR renders per request, and SSG prebuilds HTML. Hydration makes
+                pre-rendered interactive UI work in the browser. I select strategies per route and content needs.
+
+        References:
+                https://nextjs.org/docs/app/getting-started/server-and-client-components
+                https://nextjs.org/docs/14/pages/building-your-application/rendering
+
+--------------------------------------------------------------------------------------------------------
+Question 8: How would you design a reusable component library or design system?
+             - How would you create reusable components?
+             - How would you manage themes, styling, and accessibility?
+             - How would you maintain consistent UI across multiple applications?
+Answer:
+        1. Reusable components:
+                Start with shared foundations: typography, spacing, colors, and interaction patterns.
+                Build primitives such as Button, Input, Dialog, and Select, then compose larger patterns.
+                Define clear typed props, variants, controlled/uncontrolled behavior, and sensible defaults.
+                Keep application-specific fetching and business rules outside generic components.
+
+        2. Themes and styling:
+                Define design tokens and semantic names such as color-text and color-surface.
+                Use CSS variables for theme changes and a consistent styling approach for component states.
+                Avoid hard-coded values scattered across consuming applications.
+
+        3. Accessibility:
+                Prefer native HTML semantics, associated labels, accessible names, visible focus,
+                keyboard support, and sufficient contrast. Dialogs need focus management and focus restoration.
+                Use ARIA when native semantics are insufficient. Check screen readers, keyboard-only use,
+                reduced motion, zoom, and automated accessibility rules.
+
+        4. Consistency across applications:
+                Publish a versioned package with documented examples and usage guidelines, for example in
+                Storybook. Use interaction tests, visual regression checks, and accessibility checks.
+                Coordinate design and engineering changes through review, changelogs, and migration guides.
+                Track adoption and provide supported extension points instead of encouraging copied components.
+
+        Interview answer:
+                I build accessible, composable components on shared design tokens and distribute them through
+                a documented, versioned package with validation and a clear contribution process.
+
+--------------------------------------------------------------------------------------------------------
+Question 9: How would you design a real-time frontend application?
+             - When would you use Polling, SSE, or WebSockets?
+             - How would you handle reconnection and duplicate messages?
+             - How would you manage real-time updates without unnecessary re-renders?
+Answer:
+        1. Choose a transport:
+                - Polling: periodic HTTP requests; simple for updates where several seconds of delay is fine.
+                  Avoid overlapping requests and reduce polling for hidden tabs when appropriate.
+                - SSE: persistent server-to-client events; useful for notifications and live feeds.
+                  Send client actions through separate HTTP requests.
+                - WebSockets: bidirectional messaging; useful for chat, collaboration, and frequent two-way updates.
+                Choose based on latency, traffic, infrastructure, and direction of communication.
+
+        2. Connection recovery and correctness:
+                Start with a snapshot, then apply events using server versions or a resumable cursor so
+                events arriving between snapshot retrieval and subscription are not silently lost.
+                Reconnect WebSockets with bounded exponential backoff and jitter; use heartbeats where needed.
+                EventSource provides automatic reconnection; event IDs support resumption when the server
+                honors Last-Event-ID. Resynchronize from a snapshot if history is no longer available.
+                Deduplicate using stable event IDs and detect sequence gaps or out-of-order updates.
+                Use idempotency keys for retried client commands. Do not assume exactly-once delivery.
+
+        3. Efficient React updates:
+                Own connections in a shared service/provider instead of opening one per component.
+                Update only affected entities in the query cache or store using immutable updates.
+                Subscribe through narrow selectors, batch/coalesce frequent updates, and virtualize long feeds.
+                Limit buffers under high traffic and clean up listeners and connections when no longer needed.
+
+        Interview answer:
+                I choose polling, SSE, or WebSockets by latency and communication needs, then design resume,
+                deduplication, and targeted state updates so reconnects preserve correctness and performance.
+
+        Reference:
+                https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+
+--------------------------------------------------------------------------------------------------------
+Question 10: How would you ensure security in a large frontend application?
+              - How would you prevent XSS and CSRF attacks?
+              - Where would you store authentication tokens?
+              - How would you protect sensitive data and manage environment variables?
+Answer:
+        1. XSS (Cross-Site Scripting):
+                Render untrusted content as text; React escapes ordinary string interpolation.
+                Avoid unsafe HTML injection. Sanitize intentionally rendered HTML with a maintained sanitizer,
+                validate untrusted URLs, and use a restrictive Content Security Policy as defense in depth.
+                Keep dependencies updated. Input validation alone does not prevent every injection context.
+
+        2. CSRF (Cross-Site Request Forgery):
+                Cookie-authenticated requests need server-side CSRF protection for state-changing operations.
+                Use framework CSRF protection or validated session-bound tokens and check request origins.
+                SameSite cookies help but should not be the only defense. Do not change state through GET.
+                CORS alone does not prevent CSRF.
+
+        3. Token storage:
+                Prefer server-managed sessions with Secure, HttpOnly cookies and suitable SameSite settings.
+                HttpOnly prevents JavaScript from reading a cookie, but XSS can still perform actions as the user.
+                Avoid long-lived credentials in localStorage/sessionStorage because scripts can read them.
+                If the architecture requires browser bearer tokens, consider short-lived in-memory access tokens
+                with a secured refresh flow. Memory storage also remains exposed to active malicious scripts.
+
+        4. Sensitive data and environment variables:
+                Use HTTPS, minimize returned personal data, and redact logs and analytics.
+                Enforce authorization on the server for every resource and operation.
+                Any environment variable embedded in a frontend bundle is public, including build-time values.
+                Keep private API keys and credentials on the server or in a server-side secrets manager.
+                Public API URLs and publishable keys may be exposed only when designed for public use.
+                Exclude secret files from version control, scan for leaks, and rotate exposed credentials.
+                Never rely on hidden buttons, obfuscation, or client-side validation to protect data.
+
+        Interview answer:
+                I prevent unsafe content execution, protect cookie-based actions against CSRF, minimize
+                credential exposure, and keep secrets and authorization enforcement on the server.
+
+        References:
+                https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html
+                https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
