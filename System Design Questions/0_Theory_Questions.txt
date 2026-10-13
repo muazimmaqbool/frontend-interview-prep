@@ -267,10 +267,7 @@ Answer:
 
         4. Hydration:
                 Hydration means React connects to already rendered HTML in the browser.
-                It makes server-generated pages interactive without reloading the page.
-                The server HTML and client output must match closely, or hydration errors can happen.
-
-        5. Choosing Next.js:
+                It makes server-generated pages                   
                 Pick Next.js when you want route-level rendering strategies, server data access, or SEO-friendly pages.
                 Use a traditional SPA when the app is mostly browser-based and static hosting is enough.
                 SSR and SSG are not automatically faster. You still need to measure server time and client performance.
