@@ -242,7 +242,7 @@ Answer:
                 Note: if server 3 was also working fine then traffic gets distributed among all 3 servers.
 
            Common Load Balancing Algorithms:
-                Algorithm	                How it works
+                Algorithm	              How it works
                 ---------------------------------------------------
                 Round Robin	              Distributes requests to servers one by one in order.
                 Least Connections	      Sends requests to the server with the fewest active connections.
