@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 // return cached data instead of making another API call.
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
 const getApiResponse = async (url) => {
   // Check if data already exists in localStorage
   const cached = localStorage.getItem(url);
@@ -30,20 +29,18 @@ const getApiResponse = async (url) => {
   // If cache is missing or expired, fetch fresh data
   console.log("Fetching data from API...");
 
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
+  const res=await fetch(url);
+  if(!res.ok){
+    throw new Error(`HTTP error! status: ${res.status}`);
   }
-
-  const data = await response.json();
+  const data=await res.json()
 
   // Store API response with current timestamp
   localStorage.setItem(
     url,
     JSON.stringify({
       data,
-      timestamp: Date.now(),
+      timestamp:Date.now(),
     })
   );
 
