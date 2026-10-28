@@ -106,32 +106,33 @@ const W_API_Chaching = () => {
   );
 };
 
-//How caching works:
 /*
-Component Mounts
-       |
-       v
-Check localStorage
-       |
-       v
-Is cached data available?
-       |
-    Yes / No
-     |     |
-     v     v
- Check   Fetch API            //Time-to-Live (TTL)
-  TTL       |
-   |        v
-   |    Store response
-   |    + timestamp
-   v        |
-Valid?      |
-  |         |
-  v         v
-Return cached/fetched data
-       |
-       v
-   Update React UI
+->How caching works:
+
+        Component Mounts
+              |
+              v
+        Check localStorage
+              |
+              v
+        Is cached data available?
+              |
+            Yes / No
+            |     |
+            v     v
+        Check   Fetch API            //Time-to-Live (TTL)
+          TTL       |
+          |        v
+          |    Store response
+          |    + timestamp
+          v         |
+        Valid?      |
+          |         |
+          v         v
+        Return  cached/fetched data
+              |
+              v
+          Update React UI
 */
 
 export default W_API_Chaching;

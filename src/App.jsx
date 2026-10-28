@@ -86,7 +86,7 @@ function App() {
       {/* <T_Track_Prev_Value/> */}
       {/* <U_usePreviousHook/> */}
       {/* <V_Undo_Redo/> */}
-      {/* <W_API_Chaching/> */}
+      <W_API_Chaching/>
     </div>
   );
 }
