@@ -44,7 +44,7 @@ function App() {
   return (
     <div>
       {/* ************** Easy Machine Coding Questions ***************** */}
-      {/* <A_Counter/> */}
+      <A_Counter/>
       {/* <B_Char_Count/> */}
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
@@ -86,7 +86,7 @@ function App() {
       {/* <T_Track_Prev_Value/> */}
       {/* <U_usePreviousHook/> */}
       {/* <V_Undo_Redo/> */}
-      <W_API_Chaching/>
+      {/* <W_API_Chaching/> */}
     </div>
   );
 }
