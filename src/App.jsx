@@ -44,8 +44,8 @@ function App() {
   return (
     <div>
       {/* ************** Easy Machine Coding Questions ***************** */}
-      <A_Counter/>
-      {/* <B_Char_Count/> */}
+      {/* <A_Counter/> */}
+      <B_Char_Count/>
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
       {/* <E_TodoList/> */}
