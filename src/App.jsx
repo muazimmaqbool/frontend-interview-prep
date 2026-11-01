@@ -45,10 +45,10 @@ function App() {
     <div>
       {/* ************** Easy Machine Coding Questions ***************** */}
       {/* <A_Counter/> */}
-      <B_Char_Count/>
+      {/* <B_Char_Count/> */}
       {/* <C_Toggle_Theme/> */}
       {/* <D_Show_Hide_Pass/> */}
-      {/* <E_TodoList/> */}
+      <E_TodoList/>
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
       {/* <H_Tabs/> */}
