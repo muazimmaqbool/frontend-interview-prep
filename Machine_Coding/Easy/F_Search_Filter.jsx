@@ -30,7 +30,7 @@ const F_Search_Filter = () => {
   );
   return (
     <div>
-      <h2 >Search Filter</h2>
+      <h2>Search Filter</h2>
       <div style={{ display: "flex", gap: "10px", alignItems: "center"}}>
         <h2 style={{ margin: 0 }}>Search:</h2>
         <input
