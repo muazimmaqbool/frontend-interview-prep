@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-// Question: Click a title to expand/collapse.
+// Question: Make an accordion, where a title is clicked to expand and collapse.
 const G_Accordion = () => {
   const [open, setOpen] = useState(null);
 
