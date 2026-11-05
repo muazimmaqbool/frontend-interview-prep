@@ -44,3 +44,61 @@ Answer:
     Generated at build time	               |   Generated at build time and regenerated later
     Requires rebuild/redeploy to update	   |   Can update individual pages
     Suitable for mostly static content	   |   Suitable for periodically changing content
+
+    ->Important: ISR does not automatically make every piece of data real-time. Frequently changing data may still need API requests.
+
+
+----------------------------------------------------------------------------------------------------------------------
+3. What is Server-Side Rendering (SSR)?
+Answer:
+    SSR generates HTML on the server for each incoming request.
+
+    The process:
+        1. User requests a page.
+        2. Server receives the request.
+        3. Server fetches the required data.
+        4. Server generates HTML.
+        5. Browser receives the rendered HTML.
+        6. JavaScript hydrates the page to make it interactive.
+
+    Advantages:
+        - Fresh content on each request.
+        - Better initial HTML availability for SEO.
+        - Supports personalized content.
+        - Useful for dynamic pages.
+
+    Disadvantages:
+        - More server computation.
+        - Can increase response time under heavy traffic.
+        - Requires careful caching and server resource management.
+
+    Real-world examples: Personalized dashboards, user profiles and social media feeds.
+
+
+----------------------------------------------------------------------------------------------------------------------
+4. What is Client-Side Rendering (CSR)?
+Answer:
+    CSR means the browser handles most of the rendering work.
+
+    The server initially sends a basic HTML document and JavaScript bundles. The browser executes JavaScript, fetches API data and builds the UI.
+
+    For example, in a React application created using Vite:
+        1. Browser requests the application.
+        2. Server returns HTML and JavaScript assets.
+        3. React initializes.
+        4. Components render.
+        5. API requests fetch application data.
+        6. React updates the UI.
+
+    Advantages:
+        - Excellent interactivity.
+        - Smooth navigation after initial loading.
+        - Less server-side rendering computation.
+        - Suitable for complex applications.
+
+    Disadvantages:
+        - Initial loading can be slower.
+        - Large JavaScript bundles can affect performance.
+        - SEO can require additional rendering strategies.
+        
+    Real-world examples: Figma-like editors, internal dashboards and complex SaaS applications.
