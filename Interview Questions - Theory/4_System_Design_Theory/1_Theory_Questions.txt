@@ -100,5 +100,50 @@ Answer:
         - Initial loading can be slower.
         - Large JavaScript bundles can affect performance.
         - SEO can require additional rendering strategies.
-        
+
     Real-world examples: Figma-like editors, internal dashboards and complex SaaS applications.
+
+
+----------------------------------------------------------------------------------------------------------------------
+5. What is Hybrid Rendering? Why would you use it?
+Answer:
+    Hybrid rendering combines multiple rendering approaches within the same application.
+
+    You don't have to choose only SSR, CSR or SSG for your entire application.
+
+    For example, consider an e-commerce application:
+        Page	            Rendering strategy	     Reason
+        -----------------------------------------------------------------------
+        Homepage	      | SSG	                  |  Mostly static content
+        Product listing	  | SSG/ISR	              |  Cached catalog
+        Product details	  | ISR	                  |  Periodically changing content
+        User profile	  | SSR	                  |  Personalized content
+        Shopping cart	  | CSR	                  |  Highly interactive
+
+    Why use it?
+        It allows you to optimize each route according to its requirements rather than applying one rendering strategy everywhere.
+
+
+----------------------------------------------------------------------------------------------------------------------
+6. What is a CDN, and how does Edge Delivery improve performance?
+Answer:
+    A Content Delivery Network (CDN) is a geographically distributed network of servers that stores cached copies of content.
+
+    Without a CDN:
+        A user in India might need to download assets from a server located in the US.
+
+    With a CDN:
+        The user can receive cached assets from a nearby CDN location.
+
+    Edge delivery takes this further by allowing computation and, in some architectures, rendering to happen closer to users.
+
+    Benefits:
+        - Reduced network latency.
+        - Faster asset delivery.
+        - Reduced load on the origin server.
+        - Better global scalability.
+
+    Interview follow-up: Does a CDN cache everything?
+
+    No. Static assets are commonly cached, while personalized or sensitive responses require carefully configured caching policies. 
+        Incorrectly caching private responses can expose user data.
