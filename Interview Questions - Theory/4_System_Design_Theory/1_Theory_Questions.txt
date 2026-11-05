@@ -1,0 +1,46 @@
+1. What is Static Site Generation (SSG), and how does it work?
+Answer:
+    SSG generates HTML pages at build time instead of generating them for every incoming request.
+
+    The process:
+        1. During the build, the framework fetches the required data.
+        2. It generates HTML files for each route.
+        3. These files are deployed to a CDN or hosting provider.
+        4. When a user visits the page, the pre-generated HTML is delivered immediately.
+
+    Advantages:
+        - Very fast initial page delivery.
+        - Excellent SEO because HTML is available immediately.
+        - Easy to scale using CDN caching.
+        - Less computation required per request.
+
+    Disadvantages:
+        - Content can become outdated.
+        - Updating content may require rebuilding the site.
+
+    Real-world example: Documentation websites, blogs and marketing websites.
+
+    Que: Interview follow-up: What happens if the content changes after the build?
+    Ans: You need to rebuild and redeploy the page, unless you use a mechanism such as ISR.
+
+
+-----------------------------------------------------------------------------------------------------------------
+2. What is Incremental Static Regeneration (ISR), and how is it different from SSG?
+Answer:
+    ISR allows statically generated pages to be regenerated after deployment without rebuilding the entire application.
+
+    For example, consider an e-commerce product page.
+        - Product description rarely changes.
+        - Product price may change periodically.
+        - Stock availability may change frequently.
+    
+    With ISR, you can configure a revalidation interval.
+
+    When the page becomes stale, a visitor can trigger background regeneration. 
+    The previously generated version can be served while the new version is generated.
+
+    SSG	                                       ISR
+    ---------------------------------------------------------------------------------------------
+    Generated at build time	               |   Generated at build time and regenerated later
+    Requires rebuild/redeploy to update	   |   Can update individual pages
+    Suitable for mostly static content	   |   Suitable for periodically changing content
