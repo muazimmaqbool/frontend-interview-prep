@@ -11,7 +11,7 @@ const H_Tabs = () => {
   const [activeTab, setactiveTab] = useState("");
   return (
     <div>
-      <h2>Tabs in react.</h2>
+      <h2>Tabs in react</h2>
 
       {/* Object.keys() returns an array of all object keys
           ["Home", "About", "Contact"] */}
