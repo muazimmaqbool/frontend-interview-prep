@@ -216,3 +216,26 @@ Answer:
     Que: Interview follow-up: What is the difference between lazy loading and code splitting?
     Ans: Code splitting divides JavaScript into smaller bundles. Lazy loading determines when those bundles should be loaded.
 
+
+----------------------------------------------------------------------------------------------------------------------
+9. What are Service Workers, and how do they help with caching?
+Answer:
+    A service worker is a JavaScript script that runs separately from the main browser page.
+
+    It can intercept network requests and implement caching strategies.
+
+    For example:
+        A user opens a news application for the first time.
+            1. The service worker caches important application assets.
+            2. The user closes the browser.
+            3. The user opens the application again without internet.
+            4. The service worker serves cached assets.
+            5. The application can display previously cached content.
+
+    Common caching strategies:
+        - Cache First: Check cache before requesting the network.
+        - Network First: Try the network first, then use cached data if necessary.
+        - Stale While Revalidate: Return cached data immediately while updating it in the background.
+
+    Important: A service worker does not automatically make every API request work offline. 
+               You must implement appropriate caching and data synchronization strategies.
