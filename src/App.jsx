@@ -51,8 +51,8 @@ function App() {
       {/* <E_TodoList/> */}
       {/* <F_Search_Filter/> */}
       {/* <G_Accordion/> */}
-      <H_Tabs/>
-      {/* <I_Progress_Bar/> */}
+      {/* <H_Tabs/> */}
+      <I_Progress_Bar/>
       {/* <J_Modal/> */}
       {/* <K_FocusInput/> */}
       {/* <L_Back_To_Top/> */}

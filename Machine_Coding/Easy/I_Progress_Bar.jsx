@@ -6,6 +6,7 @@ const I_Progress_Bar = () => {
 
   //will be used to stop the auto increase
   const [timer, settimer] = useState();
+  
   //This increases the progress every second and automatically stops at 100%.
   const autoIncrease = () => {
     const interval = setInterval(() => {
