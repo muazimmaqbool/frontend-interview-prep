@@ -1,3 +1,10 @@
+Note: These questions are taken from this article: https://newsletter.systemdesign.one/p/frontend-system-design
+
+
+**************************************************************************************************************************
+Part 1. Rendering & Delivery Models:
+    These concepts help you decide where and when your application's HTML should be generated.
+
 1. What is Static Site Generation (SSG), and how does it work?
 Answer:
     SSG generates HTML pages at build time instead of generating them for every incoming request.
@@ -147,3 +154,31 @@ Answer:
 
     No. Static assets are commonly cached, while personalized or sensitive responses require carefully configured caching policies. 
         Incorrectly caching private responses can expose user data.
+
+
+***********************************************************************************************************************************************
+Part 2. Performance & Optimization:
+    These concepts are particularly important when designing applications with large bundles, complex dashboards and thousands of records.
+
+7. What are TTFB, FCP, LCP and CLS?
+Answer:
+    These are important frontend performance metrics.
+    Metric	       Meaning	                    What it measures
+    ------------------------------------------------------------------------------------
+    TTF       Time to First Byte	         How quickly the server starts responding
+    FCP	      First Contentful Paint	     When the first visible content appears
+    LCP	      Largest Contentful Paint	     When the largest visible content element appears
+    CLS	      Cumulative Layout Shift	     Unexpected movement of page elements
+
+    Example:
+        Imagine opening a dashboard:
+            - TTFB: Browser receives the first response bytes.
+            - FCP: Header or loading indicator appears.
+            - LCP: Main dashboard chart becomes visible.
+            - CLS: The chart suddenly shifts downward because its container had no reserved height.
+            
+        How do you improve them?
+            - TTFB: Improve server response time, CDN usage and caching.
+            - FCP: Reduce render-blocking resources.
+            - LCP: Optimize hero images, fonts and critical resources.
+            - CLS: Reserve image dimensions and avoid injecting unexpected content.
