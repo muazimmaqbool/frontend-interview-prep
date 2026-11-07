@@ -5,6 +5,7 @@ Note: These questions are taken from this article: https://newsletter.systemdesi
 Part 1. Rendering & Delivery Models:
     These concepts help you decide where and when your application's HTML should be generated.
 
+----------------------------------------------------------------------------------------------------------------------
 1. What is Static Site Generation (SSG), and how does it work?
 Answer:
     SSG generates HTML pages at build time instead of generating them for every incoming request.
@@ -160,6 +161,7 @@ Answer:
 Part 2. Performance & Optimization:
     These concepts are particularly important when designing applications with large bundles, complex dashboards and thousands of records.
 
+----------------------------------------------------------------------------------------------------------------------
 7. What are TTFB, FCP, LCP and CLS?
 Answer:
     These are important frontend performance metrics.
@@ -239,3 +241,55 @@ Answer:
 
     Important: A service worker does not automatically make every API request work offline. 
                You must implement appropriate caching and data synchronization strategies.
+
+            
+***********************************************************************************************************************************************
+Part 3. Data & State Management:
+    This is one of the most important sections for React developers because choosing the right data ownership model directly affects application maintainability.
+
+----------------------------------------------------------------------------------------------------------------------
+10. What is the difference between Local State, Global State and Server State?
+Answer:
+    These three categories represent different types of application data.
+
+    1. Local State: State that belongs to a particular component.
+
+        Example: const [isOpen, setIsOpen] = useState(false);
+        Use it for:
+            - Modal visibility.
+            - Input fields.
+            - Dropdown states.
+            - Component-specific interactions.
+
+    2. Global State: State that multiple components or pages need to access.
+
+        Examples:
+            - Authenticated user.
+            - Selected clinic/Gym/Etc.
+            - Theme preferences.
+            - Application-wide configuration.
+
+        Tools include Redux, Zustand and React Context.
+
+    3. Server State: Data that originates from an external server or API.
+
+        Examples:
+            - Doctor listings.
+            - Patient records.
+            - User profiles.
+            - Appointment information.
+
+        Tools such as TanStack Query help manage server state.
+
+        They provide:
+            - Caching.
+            - Background refetching.
+            - Request deduplication.
+            - Loading and error states.
+            - Cache invalidation.
+
+    Senior-level question: Why shouldn't you store all API responses in Redux?
+
+    Because server state has a different lifecycle from client-owned state. 
+            It requires caching, synchronization, refetching and invalidation. 
+            A dedicated server-state solution can manage these concerns more effectively.
