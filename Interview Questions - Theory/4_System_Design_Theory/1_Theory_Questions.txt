@@ -182,3 +182,37 @@ Answer:
             - FCP: Reduce render-blocking resources.
             - LCP: Optimize hero images, fonts and critical resources.
             - CLS: Reserve image dimensions and avoid injecting unexpected content.
+
+    
+----------------------------------------------------------------------------------------------------------------------
+8. What is Lazy Loading? How would you implement it in React?
+Answer:
+    Lazy loading means loading resources only when they are needed instead of loading everything during the initial page load.
+
+    For example, if an application has 20 routes, loading JavaScript for all 20 routes immediately can increase the initial bundle size.
+
+    React provides React.lazy() and Suspense.
+
+    Example:
+        import { lazy, Suspense } from "react";
+        const Reports = lazy(() => import("./Reports"));
+
+        function App() {
+            return (
+                <Suspense fallback={<p>Loading reports...</p>}>
+                    <Reports />
+                </Suspense>
+            );
+        }
+
+    Now the Reports component can be downloaded/Rendered when it is needed.
+
+    Other examples:
+        - Lazy-loading images.
+        - Loading modals only when opened.
+        - Loading heavy charts on demand.
+        - Loading components when they enter the viewport.
+
+    Que: Interview follow-up: What is the difference between lazy loading and code splitting?
+    Ans: Code splitting divides JavaScript into smaller bundles. Lazy loading determines when those bundles should be loaded.
+
