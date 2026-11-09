@@ -35,8 +35,9 @@ const K_FocusInput = () => {
   const removeFocus = () => {
     if (inputRef.current) {
       inputRef.current.blur();
-      //or
-      // inputRef.current=null; // this is not professional way to remove focus from input. It will remove the reference to the input element and it will not be able to focus again.
+               //or
+      // inputRef.current=null; 
+      // this is not professional way to remove focus from input. It will remove the reference to the input element and you will not be able to focus again.
     }
   };
   return (
@@ -45,8 +46,7 @@ const K_FocusInput = () => {
       <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
         {/* 
           Attach the ref to the input.
-          React will automatically assign the input DOM element
-          to inputRef.current.
+          React will automatically assign the input DOM element to inputRef.current.
         */}
         <input ref={inputRef} type="text" placeholder="Type here..." />
         <button onClick={handleClick}>Focus Input</button>
