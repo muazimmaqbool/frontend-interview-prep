@@ -465,3 +465,40 @@ Answer:
     Ans: Not necessarily. 
          If notifications only need to flow from server to client, SSE may be simpler. 
          If the application needs bidirectional real-time communication, WebSockets are a stronger choice.
+
+
+**************************************************************************************************************************
+Part 4. Architecture & Scalability
+
+-------------------------------------------------------------------------------------------------------
+15. What are Micro Frontends? Why would an organization use them?
+Answer:
+    Micro Frontends divide a large frontend application into smaller, independently developed and deployed applications.
+
+    Imagine an enterprise healthcare application with these modules:
+        - Patient Management.
+        - Doctor Dashboard.
+        - Appointment Management.
+        - Billing.
+        - Reports.
+
+    Different teams can own different modules:
+        -> They can develop, test and deploy their modules independently while the modules work together as one application.
+        -> Module Federation is one technique that allows independently built applications to expose and consume modules at runtime.
+
+    Advantages:
+        - Independent deployments.
+        - Parallel development.
+        - Team autonomy.
+        - Clearer ownership.
+
+    Disadvantages:
+        - More architectural complexity.
+        - Dependency management challenges.
+        - Potential duplication of shared libraries.
+        - Cross-application communication becomes harder.
+
+    Que: Senior-level question: Should every React application use micro frontends?
+    Ans: No. A modular monolith is often simpler for small and medium-sized teams.
+
+    Note: Micro frontends become valuable when organizational boundaries, independent deployment requirements and team ownership justify their additional complexity.
