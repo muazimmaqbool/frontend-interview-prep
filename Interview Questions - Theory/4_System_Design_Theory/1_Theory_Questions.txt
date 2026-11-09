@@ -358,3 +358,42 @@ Answer:
       Ans:No.
         GraphQL can reduce over-fetching and multiple client requests, but it can introduce expensive resolver execution, N+1 query problems and more complex caching.
         The correct choice depends on the application's requirements.
+
+
+---------------------------------------------------------------------------------------------------------------
+13. What is the difference between Offset Pagination and Cursor Pagination?
+Answer:
+    Both techniques divide large datasets into smaller chunks.
+
+    -> Offset Pagination:
+        You request records based on the number of records to skip.
+        GET /api/doctors?limit=20&offset=40
+
+        This retrieves 20 records after skipping the first 40.
+
+        Advantages:
+            - Easy to implement.
+            - Supports numbered pages.
+            - Useful for relatively stable datasets.
+        Disadvantages:
+            - Large offsets can become expensive.
+            - New records can shift positions.
+            - Can cause missing or duplicated records when data changes.
+
+    ->Cursor Pagination:
+        Uses a cursor representing the position of the last returned record.
+        GET /api/doctors?limit=20&cursor=doctor_125
+
+        The next request retrieves records after that cursor.
+
+        Advantages:
+            - More reliable for changing datasets.
+            - Suitable for infinite scrolling.
+            - Avoids many offset-related consistency problems.
+        Disadvantages:
+            - More complex implementation.
+            - Direct navigation to arbitrary page numbers is less natural.
+    
+    ->Real-world examples:
+        - Offset: Admin tables with numbered pages.
+        - Cursor: Social media feeds, notifications and chat messages.
