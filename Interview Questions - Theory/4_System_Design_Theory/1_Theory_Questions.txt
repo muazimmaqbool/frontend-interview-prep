@@ -397,3 +397,71 @@ Answer:
     ->Real-world examples:
         - Offset: Admin tables with numbered pages.
         - Cursor: Social media feeds, notifications and chat messages.
+
+    
+----------------------------------------------------------------------------------------------------------
+14. What is the difference between WebSockets, Server-Sent Events (SSE) and Polling?
+Answer:
+    All three techniques allow applications to receive updated information from servers.
+
+    1. Polling:
+        The browser repeatedly requests information from the server.
+        setInterval(() => {
+            fetch("/api/notifications");
+        }, 5000);
+
+        Advantages:
+            - Simple to implement.
+            - Works with standard HTTP.
+        Disadvantages:
+            - Repeated unnecessary requests.
+            - Updates may be delayed.
+            - Can increase server load.
+
+    2. Server-Sent Events (SSE):
+        The server pushes updates to the browser through a persistent HTTP connection.
+        Communication is one-way: server to client.
+
+        Example: const source = new EventSource("/api/events");
+
+        source.onmessage = (event) => {
+         console.log(event.data);
+        };
+
+        Useful for:
+            - Live notifications.
+            - Stock prices.
+            - Server logs.
+            - Live dashboards.
+
+    3. WebSockets:
+        WebSockets provide persistent, bidirectional communication.
+        Both client and server can send messages whenever needed.
+        
+        const socket = new WebSocket("wss://example.com");
+
+        socket.onmessage = (event) => {
+            console.log(event.data);
+        };
+
+        socket.onopen = () => {
+            socket.send("Hello server");
+        };
+
+        Useful for:
+            - Chat applications.
+            - Multiplayer games.
+            - Collaborative editors.
+            - Real-time communication.
+
+    ->    Feature	             Polling	              SSE	               WebSockets
+        --------------------------------------------------------------------------------------
+        Communication	      | Client requests	    |  Server pushes	 |   Both directions
+        Persistent connection |  No	                |    Yes	         |   Yes
+        Real-time efficiency  |	 Lower	            |    Good	         |   Good
+        Complexity	          |  Low	            |    Medium	         |   Higher
+
+    Que: Interview follow-up: Would you use WebSockets for a notification system?
+    Ans: Not necessarily. 
+         If notifications only need to flow from server to client, SSE may be simpler. 
+         If the application needs bidirectional real-time communication, WebSockets are a stronger choice.
