@@ -316,3 +316,45 @@ Answer:
 
     Important: Browser caching must account for stale data, invalidation, storage limits and security. 
                Never treat client-side cached data as the source of truth for authorization.
+
+
+---------------------------------------------------------------------------------------------------------
+12. What is the difference between REST and GraphQL?
+Answer:
+    REST and GraphQL are two approaches to designing APIs.
+
+    ->REST: Uses multiple resource-based endpoints.
+        For example:
+            GET /api/users/10
+            GET /api/users/10/posts
+            GET /api/posts/20/comments
+
+        Sometimes the frontend receives more data than it needs or requires several requests to construct a screen.
+    
+    ->GraphQL: Allows the client to request specific fields through a query.
+        Example:
+            query {
+                user(id: 10) {
+                    name
+                    posts {
+                    title
+                    comments {
+                        message
+                    }
+                  }
+                }
+            }
+        The server returns the requested fields.
+
+    ->Difference between REST and GraphQL:
+        REST	                                    GraphQL
+        ---------------------------------------------------------------------------
+        Multiple resource endpoints	      |    Commonly a single GraphQL endpoint
+        Response structure defined by API |    Client selects requested fields
+        Straightforward HTTP caching	  |    Requires more deliberate caching
+        Simpler for many standard APIs	  |    Useful for complex data requirements
+
+    ->Que: Senior-level question: Is GraphQL always faster than REST?
+      Ans:No.
+        GraphQL can reduce over-fetching and multiple client requests, but it can introduce expensive resolver execution, N+1 query problems and more complex caching.
+        The correct choice depends on the application's requirements.
