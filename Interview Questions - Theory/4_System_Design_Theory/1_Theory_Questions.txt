@@ -293,3 +293,26 @@ Answer:
     Because server state has a different lifecycle from client-owned state. 
             It requires caching, synchronization, refetching and invalidation. 
             A dedicated server-state solution can manage these concerns more effectively.
+
+
+---------------------------------------------------------------------------------------------------------
+11. How does API caching with expiration work?
+Answer:
+    API caching stores previously fetched responses so that the application doesn't need to request the same information repeatedly.
+
+    For example:
+        A dashboard fetches clinic information.
+            - First request: API is called.
+            - Response: Stored in cache.
+            - Second request: Cached response is returned.
+            - After expiration: Data is fetched again.
+
+    Common browser storage options:
+        Storage	         Characteristics	              Suitable for
+        ---------------------------------------------------------------------
+        In-memory	 |  Fast, temporary	               | Current session data
+        localStorage |	Persistent key-value storage   | Small non-sensitive preferences
+        IndexedDB	 |  Persistent structured storage  | Larger datasets and offline data
+
+    Important: Browser caching must account for stale data, invalidation, storage limits and security. 
+               Never treat client-side cached data as the source of truth for authorization.
