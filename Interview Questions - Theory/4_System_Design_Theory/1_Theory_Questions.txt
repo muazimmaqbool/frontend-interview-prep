@@ -826,3 +826,20 @@ Answer:
         - Retry mechanisms for transient failures.
 
     For critical workflows, I would also consider IndexedDB and queued mutations with synchronization when connectivity returns.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+25. Your application has a dashboard, public landing page and user profile. Which rendering strategy would you choose?
+Answer:
+    I would use hybrid rendering.
+        Application area	                   Strategy
+        ---------------------------------------------------
+        Public landing page	             |      SSG
+        Frequently updated content page	 |      ISR
+        Personalized user profile	     |      SSR
+        Interactive dashboard	         |      CSR or SSR with client hydration
+
+    The decision depends on SEO requirements, personalization, freshness and initial loading performance.
+
+
+    
