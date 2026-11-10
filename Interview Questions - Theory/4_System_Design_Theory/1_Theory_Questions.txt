@@ -899,5 +899,28 @@ Answer:
         6. Check browser compatibility.
         7. Inspect the production build and source maps.
         8. Reproduce the issue using the affected browser and user workflow.
-        
+
     I would also check whether the issue started immediately after a deployment.
+
+
+------------------------------------------------------------------------------------------------------------------------
+29. How would you design a real-time notification system?
+Answer:
+    First, I would identify the communication requirements.
+        - If the server only needs to push notifications, I would consider SSE.
+        - If bidirectional communication is required, I would use WebSockets.
+        - For simple periodic updates, polling may be sufficient.
+
+        I would additionally implement:
+            - Notification persistence on the backend.
+            - Unread/read status.
+            - Reconnection handling.
+            - Duplicate-event protection.
+            - Client-side notification state.
+            - Appropriate authorization.
+            - Pagination for notification history.
+    
+    The real-time connection should not be the only source of truth. Persisted notifications should remain accessible after reconnecting or opening another device.
+
+
+-----------------------------------------------------------------------------------------------------------------------
