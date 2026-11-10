@@ -712,3 +712,45 @@ Answer:
     Que: Senior-level question: Is storing a JWT in localStorage completely safe?
     Ans: No. JavaScript running in the same origin can access localStorage. If an attacker successfully executes XSS, they may steal the token.
          An HttpOnly cookie prevents JavaScript from directly reading the cookie, although cookie-based authentication needs appropriate CSRF protection.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+21. What is Frontend Observability, and how do you monitor production errors?
+Answer:
+    Frontend observability is the ability to understand what is happening inside an application using collected runtime, performance and user-interaction information.
+
+    It helps answer:
+        - Why did the application crash?
+        - Which component caused an error?
+        - Which browser is affected?
+        - Which API is failing?
+        - Why is a page loading slowly?
+        - What actions did the user perform before encountering an issue?
+
+    Important areas:
+        1. Error Monitoring:
+            Track JavaScript exceptions, failed API requests and React rendering errors.
+
+        2. Performance Monitoring:
+            Track page loading, slow components and Core Web Vitals.
+
+        3. User Session Insights:
+            Understand the sequence of interactions that led to an issue, subject to privacy controls.
+
+    Popular tools:
+        - Sentry.
+        - LogRocket.
+        - Google Lighthouse.
+
+    Example: After deploying a new version of your React application, users report that the patient registration form crashes.
+
+    With frontend monitoring, you can investigate:
+        - Error stack trace.
+        - Browser and device.
+        - Application version.
+        - User interaction leading to the error.
+        - Related failed API requests.
+
+    This helps identify and resolve production problems faster.
+
+
