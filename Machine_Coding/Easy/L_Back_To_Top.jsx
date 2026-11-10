@@ -10,8 +10,7 @@ Things to do:
     . When clicked, smoothly scroll the page to the top.
     . Make sure the button is positioned so it's always visible on the screen when shown.
 
-Note:
-    Ensure the page has enough content to allow scrolling (e.g., multiple paragraphs or elements) so that the "Back to Top" button can be tested.
+Note: Ensure the page has enough content to allow scrolling (e.g., multiple paragraphs or elements) so that the "Back to Top" button can be tested.
 */
 const L_Back_To_Top = () => {
   const [isVisible, setIsVisible] = useState(false);
