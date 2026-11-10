@@ -885,3 +885,19 @@ Answer:
 
     Depending on the application, I could also use optimistic updates to immediately reflect changes in the UI.
     However, optimistic updates need rollback handling if the server rejects the mutation.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+28. Your React application works perfectly locally but crashes in production. How would you investigate it?
+Answer:
+    I would follow a systematic debugging process:
+        1. Check frontend error-monitoring tools such as Sentry.
+        2. Inspect browser console errors.
+        3. Check failed network requests.
+        4. Compare production and development environment variables.
+        5. Verify API URLs and authentication configuration.
+        6. Check browser compatibility.
+        7. Inspect the production build and source maps.
+        8. Reproduce the issue using the affected browser and user workflow.
+        
+    I would also check whether the issue started immediately after a deployment.
