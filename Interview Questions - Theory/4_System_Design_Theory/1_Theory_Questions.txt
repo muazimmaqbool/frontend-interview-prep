@@ -547,3 +547,59 @@ Answer:
     Que: Senior-level follow-up: What's the difference between a component library and a design system?
     Ans: A component library provides reusable UI components. 
          A design system includes the broader design principles, tokens, guidelines and patterns that govern how those components should be used.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+17. What is CI/CD in frontend development?
+Answer:
+    CI/CD automates the process of integrating, testing and deploying frontend code.
+    A typical pipeline looks like this:
+        Developer pushes code
+                |
+                v
+        Git Repository
+                |
+                v
+        CI Pipeline
+                |
+                v
+        Install Dependencies
+                |
+                v
+            Run Linting
+                |
+                v
+            Run Tests
+                |
+                v
+        Build Application
+                |
+                v
+        Deployment Approval
+                |
+                v
+        Deploy to Production
+
+    -> Continuous Integration (CI): Automatically validates code changes through builds, linting and tests.
+
+    -> Continuous Delivery/Deployment (CD): Prepares or automatically releases validated code to an environment.
+
+    Common tools:
+        - GitHub Actions.
+        - GitLab CI/CD.
+        - Jenkins.
+        - Vercel.
+        - AWS.
+
+    Que: Senior-level question: How would you prevent a broken frontend deployment from affecting all users?
+    Ans: Possible strategies:
+            - Automated testing.
+            - Preview deployments.
+            - Staging environments.
+            - Feature flags.
+            - Canary releases. 
+            - Rollback mechanisms.
+
+    Note: What is a canary releases:
+          Ans: A canary release (or canary deployment) is a software development practice where a new version of an application is rolled out 
+              to a small subset of users or servers before releasing it to the entire user base
