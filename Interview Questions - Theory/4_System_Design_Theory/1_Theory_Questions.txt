@@ -924,3 +924,20 @@ Answer:
 
 
 -----------------------------------------------------------------------------------------------------------------------
+30. How would you design an application that should work both online and offline?
+Answer:
+    I would use an offline-first PWA architecture.
+
+    Components:
+        - Service worker for application asset caching.
+        - IndexedDB for structured offline data.
+        - Web App Manifest for installation.
+        - A queue for pending user actions.
+        - Background synchronization where supported.
+        - Conflict-resolution logic.
+        - Clear online/offline indicators.
+
+    For example, a doctor could create a draft consultation without internet connectivity. 
+                 When the connection returns, the application synchronizes the pending data with the backend.
+
+    I would also ensure that sensitive medical information is protected when stored locally.
