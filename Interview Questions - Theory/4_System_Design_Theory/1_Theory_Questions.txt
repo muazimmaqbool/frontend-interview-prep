@@ -842,4 +842,46 @@ Answer:
     The decision depends on SEO requirements, personalization, freshness and initial loading performance.
 
 
-    
+-----------------------------------------------------------------------------------------------------------------------
+26. Your application has multiple frontend teams. How would you organize the architecture?
+Answer:
+    First, I would evaluate whether a modular monolith is sufficient.
+    If teams need independent deployment and ownership, I would consider micro frontends.
+
+    I would establish:
+        - Clear module boundaries.
+        - Shared design system.
+        - API contracts.
+        - Authentication strategy.
+        - Shared dependency management.
+        - Error boundaries.
+        - Independent CI/CD pipelines.
+        - Cross-module communication conventions.
+
+    The goal is to minimize coupling between teams while maintaining a consistent user experience.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+27. A user updates a record, but the old information still appears on another page. How would you solve this?
+Answer:
+    This is a server-state synchronization and cache invalidation problem.
+    If using TanStack Query, after a successful mutation, I would invalidate the relevant queries.
+
+    Example:
+        const queryClient = useQueryClient();
+        const updatePatient = useMutation({
+            mutationFn: updatePatientAPI,
+
+            onSuccess: (_, variables) => {
+                queryClient.invalidateQueries({
+                    queryKey: ["patients"],
+                });
+
+                queryClient.invalidateQueries({
+                    queryKey: ["patient", variables.id],
+                });
+            },
+        });
+
+    Depending on the application, I could also use optimistic updates to immediately reflect changes in the UI.
+    However, optimistic updates need rollback handling if the server rejects the mutation.
