@@ -754,3 +754,43 @@ Answer:
     This helps identify and resolve production problems faster.
 
 
+******************************************************************************************************
+Part 6. Senior-Level Scenario-Based Questions:
+    These are especially important because senior frontend interviews usually test how you apply concepts rather than whether you can define them.
+------------------------------------------------------------------------------------------------------
+22. You are building a healthcare dashboard with 50+ API requests. How would you optimize its performance?
+Answer:
+    I would approach this in multiple layers.
+
+    1. Data fetching:
+        - Use TanStack Query for server-state management.
+        - Avoid duplicate API requests.
+        - Parallelize independent requests.
+        - Use dependent queries only when necessary.
+
+    2. Caching:
+        - Cache frequently accessed data.
+        - Define appropriate staleTime and gcTime.
+        - Invalidate queries after mutations.
+        - Refetch critical information when necessary.
+
+    3. Rendering:
+        - Use code splitting.
+        - Lazy-load heavy components.
+        - Avoid unnecessary component re-renders.
+        - Use virtualization for large tables.
+
+    4. API optimization:
+        - Reduce unnecessary API calls.
+        - Use pagination.
+        - Consider GraphQL or backend aggregation if multiple endpoints create excessive network overhead.
+
+    5. Monitoring:
+        - Measure Core Web Vitals.
+        - Track slow API requests.
+        - Monitor JavaScript errors.
+
+    Note: The objective is to reduce initial loading time, network overhead and unnecessary rendering.
+
+
+------------------------------------------------------------------------------------------------------------------
