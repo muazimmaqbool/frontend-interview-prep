@@ -810,3 +810,19 @@ Answer:
     Why virtualization?
         Even if you fetch only 100 records, rendering hundreds or thousands of DOM elements unnecessarily can affect performance.
         Virtualization renders only the visible rows and a small buffer.
+
+
+----------------------------------------------------------------------------------------------------------------------
+24. Your application must support users with slow or unstable internet. What would you do?
+Answer:
+    I would focus on:
+        - CDN delivery for static assets.
+        - Smaller JavaScript bundles.
+        - Lazy loading.
+        - Optimized images.
+        - API caching.
+        - Service workers.
+        - Offline-first architecture where appropriate.
+        - Retry mechanisms for transient failures.
+
+    For critical workflows, I would also consider IndexedDB and queued mutations with synchronization when connectivity returns.
