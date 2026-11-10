@@ -794,3 +794,19 @@ Answer:
 
 
 ------------------------------------------------------------------------------------------------------------------
+23. You have a table displaying 100,000 records. How would you design it?
+Answer:
+    I would avoid loading all 100,000 records into the browser.
+
+    My approach:
+        1. Implement server-side pagination.
+        2. Use cursor pagination if records change frequently.
+        3. Implement server-side filtering and sorting.
+        4. Use virtualization to render only visible rows.
+        5. Debounce search input.
+        6. Cache previously fetched pages.
+        7. Display loading and error states.
+
+    Why virtualization?
+        Even if you fetch only 100 records, rendering hundreds or thousands of DOM elements unnecessarily can affect performance.
+        Virtualization renders only the visible rows and a small buffer.
