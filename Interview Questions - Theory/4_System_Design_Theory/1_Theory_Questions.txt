@@ -635,3 +635,35 @@ Answer:
     5. Responsive Design: The application should work across different screen sizes.
 
     Note: Accessibility should be considered during component design, not added as an afterthought.
+
+
+-----------------------------------------------------------------------------------------------------------
+19. What is a Progressive Web App (PWA), and how does Offline-First architecture work?
+Answer:
+    A Progressive Web App is a web application that can provide app-like capabilities, including installation and offline functionality.
+
+    The major building blocks are:
+
+        1. Service Worker: Runs in the background and intercepts network requests to implement caching.
+
+        2. Web App Manifest:
+            Defines application metadata such as:
+                - App name.
+                - Icons.
+                - Theme color.
+                - Display mode.
+                - Start URL.
+
+        3. HTTPS: secure communication and is required for service workers in normal production environments.
+
+    -> Offline-first architecture means designing the application to remain useful when the network is unavailable.
+        For example, a field-service application could:
+            1. Cache essential application files.
+            2. Store selected records in IndexedDB.
+            3. Allow users to create records offline.
+            4. Queue pending changes.
+            5. Synchronize changes when connectivity returns.
+
+    Que: Senior-level follow-up: What happens when two users update the same record while offline?
+    Ans: You need a conflict-resolution strategy, such as version checks, timestamps, server-side reconciliation or domain-specific merge rules. 
+         Simply synchronizing queued requests is not enough.
