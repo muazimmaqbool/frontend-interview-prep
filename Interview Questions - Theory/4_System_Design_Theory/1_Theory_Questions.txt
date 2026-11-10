@@ -468,7 +468,7 @@ Answer:
 
 
 **************************************************************************************************************************
-Part 4. Architecture & Scalability
+Part 4. Architecture & Scalability:
 
 -------------------------------------------------------------------------------------------------------
 15. What are Micro Frontends? Why would an organization use them?
@@ -603,3 +603,35 @@ Answer:
     Note: What is a canary releases:
           Ans: A canary release (or canary deployment) is a software development practice where a new version of an application is rolled out 
               to a small subset of users or servers before releasing it to the entire user base
+
+
+******************************************************************************************************
+Part 5. User Experience & Reliability:
+
+------------------------------------------------------------------------------------------------------
+18. What is Accessibility (a11y), and why is it important in frontend architecture?
+Answer:
+    Accessibility means designing applications that can be used by people with different abilities, including people who rely on assistive technologies.
+
+    Important considerations:
+        1. Semantic HTML:
+            Prefer:
+                <button onClick={handleSubmit}>
+                    Submit
+                </button>
+
+            Instead of:
+                <div onClick={handleSubmit}>
+                    Submit
+                </div>
+
+
+    2. Keyboard Navigation: Users should be able to navigate and interact using a keyboard.
+
+    3. Screen Reader Support: Use meaningful labels, accessible names and appropriate ARIA attributes where necessary.
+
+    4. Color Contrast: Ensure text remains readable against its background.
+
+    5. Responsive Design: The application should work across different screen sizes.
+
+    Note: Accessibility should be considered during component design, not added as an afterthought.
