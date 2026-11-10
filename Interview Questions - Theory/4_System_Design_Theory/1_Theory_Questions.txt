@@ -502,3 +502,48 @@ Answer:
     Ans: No. A modular monolith is often simpler for small and medium-sized teams.
 
     Note: Micro frontends become valuable when organizational boundaries, independent deployment requirements and team ownership justify their additional complexity.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+16. What is Component-Based Architecture and a Design System?
+Answer:
+    Component-based architecture divides an application into reusable UI components.
+
+    For example:
+        Application
+            │
+            ├── Layout
+            │   ├── Header
+            │   ├── Sidebar
+            │   └── Footer
+            │
+            ├── Common Components
+            │   ├── Button
+            │   ├── Input
+            │   ├── Modal
+            │   └── Table
+            │
+            └── Features
+                ├── Patients
+                ├── Appointments
+                └── Reports
+
+    A design system goes beyond reusable components.
+    It defines:
+        - Design tokens.
+        - Colors.
+        - Typography.
+        - Spacing.
+        - Component variants.
+        - Interaction patterns.
+        - Accessibility guidelines.
+
+    Examples include Shopify Polaris and IBM Carbon.
+
+    ->Why is this important?
+        Without a shared design system, different teams may implement buttons, forms and modals differently.
+        A design system creates consistency and reduces duplicated development work.
+
+    Que: Senior-level follow-up: What's the difference between a component library and a design system?
+    Ans: A component library provides reusable UI components. 
+         A design system includes the broader design principles, tokens, guidelines and patterns that govern how those components should be used.
