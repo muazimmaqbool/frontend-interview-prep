@@ -667,3 +667,48 @@ Answer:
     Que: Senior-level follow-up: What happens when two users update the same record while offline?
     Ans: You need a conflict-resolution strategy, such as version checks, timestamps, server-side reconciliation or domain-specific merge rules. 
          Simply synchronizing queued requests is not enough.
+
+
+-----------------------------------------------------------------------------------------------------------
+20. Explain XSS, CSRF, CSP and frontend authentication security.
+Answer:
+    These are important web security concepts.
+
+    1. XSS – Cross-Site Scripting: 
+        An attacker injects malicious JavaScript into a web page.
+
+        Example:
+            If an application renders untrusted user input as HTML without sanitization, an attacker might inject a script that executes in another user's browser.
+
+        Prevention:
+            - Avoid unsafe HTML injection.
+            - Escape untrusted content.
+            - Sanitize HTML when rendering user-generated markup.
+            - Implement Content Security Policy.
+
+    2. CSRF – Cross-Site Request Forgery:
+        An attacker tricks an authenticated user's browser into making an unwanted request to another website.
+
+        Prevention:
+            - CSRF tokens.
+            - SameSite cookie configuration.
+            - Origin/Referer validation where appropriate.
+
+    3. CSP – Content Security Policy:
+        CSP is a browser security mechanism that controls which sources are allowed to load scripts, styles and other resources.
+        It helps reduce the impact of certain XSS attacks.
+
+    4. Authentication Security:
+        Frontend applications must handle authentication credentials carefully.
+
+        Consider:
+            - Secure cookie configuration.
+            - Token expiration.
+            - Refresh token rotation.
+            - HTTPS.
+
+        - Avoiding sensitive credentials in localStorage when safer alternatives are available.
+    
+    Que: Senior-level question: Is storing a JWT in localStorage completely safe?
+    Ans: No. JavaScript running in the same origin can access localStorage. If an attacker successfully executes XSS, they may steal the token.
+         An HttpOnly cookie prevents JavaScript from directly reading the cookie, although cookie-based authentication needs appropriate CSRF protection.
