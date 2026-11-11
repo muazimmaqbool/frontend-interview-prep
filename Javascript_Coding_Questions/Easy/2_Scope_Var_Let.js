@@ -12,8 +12,8 @@ for (var i = 0; i < 3; i++) {
         Instead, the same i variable is shared by all iteration
 
     ->What setTimeout does:
-        It schedules the callback (console.log(i)) to run after the loop finishes (1s later)
-        The loop completes in less than a millisecond, so by the time the timeouts run: i has already became 3
+        It schedules the callback (console.log(i)) to run after the loop finishes (1 second later)
+        The loop completes in less than a millisecond, so by the time the timeout runs the i has already became 3
         Therefore, all three callbacks print the same final value of i → 3.
 
     ->Timeline:
@@ -29,7 +29,7 @@ for (var i = 0; i < 3; i++) {
     
     ->So when setTimeout runs later, it prints the final value of that shared i.
     
-    ->Now use let instead of var to fix it because i is block scoped
+    ->Now use let instead of var to fix it,
 */
 
 for (let i = 0; i < 3; i++) {
@@ -45,8 +45,7 @@ for (let i = 0; i < 3; i++) {
 /*
 ->Visual Explanation:
     with var:
-        One shared i →
-        i: 0 → 1 → 2 → 3
+        One shared i for all 3 iterations → i: 0 → 1 → 2 → 3
         Timeout callbacks all read the same final i → 3 so o/p is 3,3,3
 
     with let:
