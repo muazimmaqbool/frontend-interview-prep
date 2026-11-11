@@ -4,10 +4,10 @@
 */
 
 //➡️: What will be the output?
-console.log(0 == '');        // true
-console.log(false == '0');   // true
+console.log(0 == ""); // true
+console.log(false == "0"); // true
 console.log(null == undefined); // true
-console.log([] == ![]);      // true
+console.log([] == ![]); // true
 //Note: if you replace '==' with '===' the all above 4 conditions will be false
 //Because JS with '==' automatically converts types behind the scenes.
 /*
@@ -25,7 +25,6 @@ Explanation:
 ->Type coercion is the automatic or implicit conversion of values from one data type to another by a programming language during an operation
 */
 
-
 //➡️: What’s the difference between == and === ?
 /*
     == → compares values, performs type conversion
@@ -33,18 +32,18 @@ Explanation:
     "Always use === unless you specifically want type coercion."
 */
 
-console.log("***************")
+console.log("***************");
 
 //➡️: what is the Output?
-console.log('2' + 2);   // "22"
-console.log(10 + '20');   // "1020"
-console.log('2' - 2);   // 0
-console.log('10' - '5');   // 5
-console.log('2' * '3'); // 6
-console.log('A' - 1);   // NaN
-console.log(5 - 'M');   // NaN
-console.log('10'/ 5); // 2
-console.log(20 % '4') // 0
+console.log("2" + 2); // "22"
+console.log(10 + "20"); // "1020"
+console.log("2" - 2); // 0
+console.log("10" - "5"); // 5
+console.log("2" * "3"); // 6
+console.log("A" - 1); // NaN
+console.log(5 - "M"); // NaN
+console.log("10" / 5); // 2
+console.log(20 % "4"); // 0
 /*
 Explanation
     + → string concatenation
@@ -56,14 +55,12 @@ Explanation
     '2' is a string
     2 is a number
     With +, JavaScript converts the number to a string
-    Then joins them:
-    '2' + 2  => "2" + "2" = "22"
+    Then joins them: '2' + 2  => "2" + "2" = "22"
 
 ->console.log('2' - 2); // 0
     Because the - (minus) operator does NOT do concatenation.
     It forces both values to become numbers:
-    '2' → 2
-    => 2 - 2 = 0
+    '2' → 2 => 2 - 2 = 0
     So the result is 0.
 
 ->console.log('2' * '3'); // 6
@@ -82,22 +79,22 @@ JS tries to convert 'A' to a number for — operations but 'A' is not numeric.
     NaN = Not a Number
     (When JavaScript fails to convert the value into a number.)
 */
-console.log("*****************")
+console.log("*****************");
 //➡️: Hoisting and scope
 //Tests if you understand how JS executes code line-by-line.
 
-    //1:What’s the output?
-    console.log(a); //undefined
-    var a = 5;
+//1:What’s the output?
+console.log(a); //undefined
+var a = 5;
 
-    //2:What happens here?
-    //console.log(b); //Cannot access 'b' before initialization
-    let b = 10;
+//2:What happens here?
+//console.log(b); //Cannot access 'b' before initialization
+let b = 10;
 
-    //3:What’s the output and why?
-    function test() {
-    console.log(x); //undefined
-    var x = 2;
-    console.log(x); //2
-    }
-    test();
+//3:What’s the output and why?
+function test() {
+  console.log(x); //undefined
+  var x = 2;
+  console.log(x); //2
+}
+test();
