@@ -25,16 +25,16 @@ console.log('End');
 Q: Why do Promises execute before setTimeout?
 A: Because microtasks have higher priority than tasks/macro task.
 
-->WHAT GOES WHERE?
-| Type         | Queue      |
-| ------------ | ---------- |
-| sync code    | Call Stack |
-| Promise.then | Microtask  |
-| await        | Microtask  |
-| setTimeout   | Task       |
-| setInterval  | Task       |
-| DOM events   | Task       |
-->task = macro/task/callback queue
+->WHAT GOES WHERE:
+  | Type         | Queue      |
+  | ------------ | ---------- |
+  | sync code    | Call Stack |
+  | Promise.then | Microtask  |
+  | await        | Microtask  |
+  | setTimeout   | MacroTask  |
+  | setInterval  | MacroTask  |
+  | DOM events   | MacroTask  |
+
 */
 
 console.log("**************")
