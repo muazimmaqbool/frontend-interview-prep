@@ -20,7 +20,7 @@ const reverseWords=(str)=>{
     let result=""
     while(stack.length){
         const current=stack.pop()
-        //if current is empty (empty space), then the condition will fail and we will not add-up empty space to the result
+        //if current is empty (empty space/string), then the condition will fail and we will not add-up empty space to the result
         if(current){ 
             // console.log("current:",current)
             result+=" "+current
@@ -37,6 +37,7 @@ console.log(reverseWords("a good                boy")) //  boy good a
 //Space complexity : O(n)
 
 console.log("****************")
+
 //solution 2 without using stack
 const reverseStr=(str)=>{
     //return str.split(" ").reverse().join(" ") // will also return spaces as given in input
