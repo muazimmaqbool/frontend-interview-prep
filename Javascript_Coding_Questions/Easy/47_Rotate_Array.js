@@ -3,8 +3,8 @@
 // [1,2,3,4,5,6,7,8,9],5 ------->>>>>>>> [7, 8, 9, 1, 2,3, 4, 5, 6]
 
 const rotateArray = (arr, k) => {
-  //this is to make sure that rotation count doesn't exceed the array length
-  k = k % arr.length;
+  k = k % arr.length; //this is to make sure that rotation count doesn't exceed the array length
+  //suupose k =23 so 23/5 (5 is arr length) we got reminder 3 so k is 3
 
   return [...arr.slice(-k),...arr.slice(0,-k)]
 };
@@ -15,7 +15,6 @@ in return we first have ...arr.slice(-k)] : .slice returns part of the array and
                                                so not last 2: [1,2,3,4,5].slice(0,-2) = [1,2,3]
             and then spread operator concates them: [4,5,1,2,3]
 */
-
 console.log("rotateArray by 2:",rotateArray([1,2,3,4,5], 2)); // [4,5,1,2,3]
 console.log("rotateArray by 5:",rotateArray([1,2,3,4,5,6,7,8,9],5)) // [5, 6, 7, 8, 9,1, 2, 3, 4]
 
