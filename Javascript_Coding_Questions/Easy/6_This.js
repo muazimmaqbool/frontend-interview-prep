@@ -11,23 +11,23 @@
 //1. what is the ouput of this code?
 const user = {
   name: "Muazim",
-  branch:"CSE",
+  branch: "CSE",
   getName() {
     //Here, this = user because user is calling the function.
     return this.name;
   },
-  getBranch(){
+  getBranch() {
     //Here also, this = user because user is calling the function.
     console.log(this.branch);
-  }
+  },
 };
 
-console.log(user.getName())// o/p: Muazim
-user.getBranch() // o/p: CSE
+console.log(user.getName()); // o/p: Muazim
+user.getBranch(); // o/p: CSE
 
 //calling getName seperately
 const g = user.getName;
-console.log(g()) //o/p: 'undefined' 
+console.log(g()); //o/p: 'undefined'
 /*
 because when you remove a method from an object and call it alone it loses its owner object,
 so: In strict mode → this is undefined
@@ -36,8 +36,8 @@ so: In strict mode → this is undefined
 */
 
 //fix it with bind():
-const h=user.getName.bind(user)
-console.log(h()) // Muazim
+const h = user.getName.bind(user);
+console.log(h()); // Muazim
 /*
 Why does this work?
     bind() forces this to always be user obj:
@@ -54,9 +54,9 @@ Why does this work?
 | `call/apply/bind` | ❌ Ignored      | ✅ Works          |
 */
 
-//2. Arrow Function this:
-const arrow=()=>console.log("this inside arrow function():",this);
-arrow() // o/p: window (or {} in Node)
+//2. This kyeword in Arrow Function:
+const arrow = () => console.log("this inside arrow function():", this);
+arrow(); // o/p: window (or {} in Node)
 /*
 Why?
 Arrow functions do not have their own this.
