@@ -15,11 +15,12 @@ const reverseArray=(array)=>{
     //method 2 without reverse(): (Important)
     let start=0,end=array.length-1
     //end will have value less then array length and that will be index of last element in array
+   
     while(start<end){
         [array[start],array[end]]=[array[end],array[start]];
-         /*
-        first iteration: arr[0],arr[8]=arr[8],arr[0] i.e arr[0] will be arr[8] so in index 0 will be index 8 i.e 0 replaced by 9 and so on...
-        */
+         
+        //first iteration: arr[0],arr[8]=arr[8],arr[0] i.e arr[0] will be arr[8] so in index 0 will be index 8 i.e 0 replaced by 9 and so on...
+    
         end--;
         start++
     }
