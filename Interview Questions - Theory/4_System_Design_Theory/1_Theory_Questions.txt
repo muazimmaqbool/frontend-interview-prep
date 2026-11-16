@@ -159,6 +159,14 @@ Answer:
         The user can receive cached assets from a nearby CDN location.
 
     Edge delivery takes this further by allowing computation and, in some architectures, rendering happens closer to users.
+            or
+    Edge delivery in a Content Delivery Network (CDN) refers to the practice of caching, processing, and serving digital content 
+    (such as web pages, images, and scripts) from edge servers (Points of Presence or PoPs) located physically close to the end user rather than from a central origin server.
+
+    Core Concepts of Edge Delivery:
+        - Reduced Latency: By placing data closer to the visitor, the physical distance data has to travel is minimized, resulting in faster load times and snappier interactions.
+        - Caching Static & Dynamic Content: Edge servers store copies of static assets (images, CSS, JavaScript) and can handle dynamic requests or edge-compute logic (such as serverless functions or personalization) directly at the edge.
+        - Origin Server Offloading: Because the edge network handles the majority of user requests, the central origin server faces far less traffic, reducing bandwidth costs and the risk of server overloads.
 
     Benefits:
         - Reduced network latency.
