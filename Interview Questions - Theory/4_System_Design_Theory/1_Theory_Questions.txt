@@ -102,7 +102,8 @@ Answer:
 Answer:
     CSR means the browser handles most of the rendering work.
 
-    The server initially sends a basic HTML document and JavaScript bundles. The browser executes JavaScript, fetches API data and builds the UI.
+    The server initially sends a basic HTML document and JavaScript bundles. 
+    The browser executes JavaScript, fetches API data and builds the UI.
 
     For example, in a React application created using Vite:
         1. Browser requests the application.
@@ -157,7 +158,7 @@ Answer:
     With a CDN:
         The user can receive cached assets from a nearby CDN location.
 
-    Edge delivery takes this further by allowing computation and, in some architectures, rendering to happen closer to users.
+    Edge delivery takes this further by allowing computation and, in some architectures, rendering happens closer to users.
 
     Benefits:
         - Reduced network latency.
@@ -165,10 +166,10 @@ Answer:
         - Reduced load on the origin server.
         - Better global scalability.
 
-    Interview follow-up: Does a CDN cache everything?
-
-    No. Static assets are commonly cached, while personalized or sensitive responses require carefully configured caching policies. 
-        Incorrectly caching private responses can expose user data.
+    Que: Interview follow-up: Does a CDN cache everything?
+    Ans: No. 
+            Static assets are commonly cached, while personalized or sensitive responses require carefully configured caching policies. 
+            Incorrectly caching private responses can expose user data.
 
 
 ***********************************************************************************************************************************************
