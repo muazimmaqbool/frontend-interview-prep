@@ -30,6 +30,7 @@
         'Clothing': [{ id: 2, category: 'Clothing' }]
     }
 */
+
 //Solution:
 function groupBy(arr, key) {
   let result = {};
@@ -37,7 +38,7 @@ function groupBy(arr, key) {
     const keyValue = item[key];
     // console.log("keyValue:",keyValue) like 25,30,25 for example 1
 
-    //checks if this keyValue is already inside obj or not if it's then add item to it and if not the initialize it wil empty array
+    //checks if this keyValue is already inside result obj or not if it's then add item to it and if not the initialize it with empty array
     if (!result.hasOwnProperty(keyValue)) {
       result[keyValue] = [];
     }
