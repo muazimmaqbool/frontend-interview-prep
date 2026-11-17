@@ -198,15 +198,15 @@ Answer:
     Example:
         Imagine opening a dashboard:
             - TTFB: Browser receives the first response bytes.
-            - FCP: Header or loading indicator appears.
-            - LCP: Main dashboard chart becomes visible.
-            - CLS: The chart suddenly shifts downward because its container had no reserved height.
+            - FCP:  Header or loading indicator appears.
+            - LCP:  Main dashboard chart becomes visible.
+            - CLS:  The chart suddenly shifts downward because its container had no reserved height.
             
         How do you improve them?
             - TTFB: Improve server response time, CDN usage and caching.
-            - FCP: Reduce render-blocking resources.
-            - LCP: Optimize hero images, fonts and critical resources.
-            - CLS: Reserve image dimensions and avoid injecting unexpected content.
+            - FCP:  Reduce render-blocking resources.
+            - LCP:  Optimize hero images, fonts and critical resources.
+            - CLS:  Reserve image dimensions and avoid injecting unexpected content.
 
     
 ----------------------------------------------------------------------------------------------------------------------
