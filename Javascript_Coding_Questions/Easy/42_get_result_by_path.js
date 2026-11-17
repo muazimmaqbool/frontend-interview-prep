@@ -60,9 +60,25 @@ function getResultByPath(path, obj) {
 ->Explanation:
     . We use path.replace(/\[(\d+)\]/g, '.$1') to convert paths like data.results[1].status[0] into data.results.1.status.0.
     . Splitting this by . gives an array of keys: ['data','results', '1', 'status', '0'].
-    . We loop through each key, updating result step-by-step. If  at any point the key doesn't exist, undefined is returned.
+    . We loop through each key, updating result step-by-step. If at any point the key doesn't exist, undefined is returned.
     . This approach works for both objects and arrays seamlessly.
 */
+/*
+Time Complexity: O(n)
+  There are three main operations:
+    1. path.replace() – traverses the path string: O(n).
+    2. split(".") – creates an array of keys: O(n).
+    3. for loop – iterates through each key once: O(n).
+    Therefore: O(n) + O(n) + O(n) = O(n)
+
+Space Complexity: O(n)
+  - normalizedPath creates a new string.
+  - keys creates an array containing the path segments.
+  - result uses only a constant amount of additional space.
+  Therefore: O(n)
+*/
+
+
 //Example 1:
 const path = "data.results.status";
 const obj = {
