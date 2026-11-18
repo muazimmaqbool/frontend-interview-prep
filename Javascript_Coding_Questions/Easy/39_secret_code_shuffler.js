@@ -84,6 +84,7 @@ Important:
         In our code letter is already a single character.
         But "a" is still technically a string of length 1 i.e letter = "a", so its index is 0
 */
+
 console.log(decodeSecretCode("a2b3c1")) // ced
 console.log(decodeSecretCode("x1y2z3")) // y{}
 console.log(decodeSecretCode("a0b0c0")) // abc

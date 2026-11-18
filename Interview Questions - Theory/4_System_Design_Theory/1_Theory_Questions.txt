@@ -321,7 +321,7 @@ Answer:
 ---------------------------------------------------------------------------------------------------------
 11. How does API caching with expiration work?
 Answer:
-    API caching stores previously fetched responses so that the application doesn't need to request the same information repeatedly.
+    API caching stores previously fetched responses so that the application doesn't need to request again for the same resource.
 
     For example:
         A dashboard fetches clinic information.
@@ -448,7 +448,7 @@ Answer:
         Example: const source = new EventSource("/api/events");
 
         source.onmessage = (event) => {
-         console.log(event.data);
+            console.log(event.data);
         };
 
         Useful for:
@@ -486,8 +486,8 @@ Answer:
 
     Que: Interview follow-up: Would you use WebSockets for a notification system?
     Ans: Not necessarily. 
-         If notifications only need to flow from server to client, SSE may be simpler. 
-         If the application needs bidirectional real-time communication, WebSockets are a stronger choice.
+            If notifications only need to flow from server to client, SSE may be simpler. 
+            If the application needs bidirectional real-time communication, WebSockets are a stronger choice.
 
 
 **************************************************************************************************************************
