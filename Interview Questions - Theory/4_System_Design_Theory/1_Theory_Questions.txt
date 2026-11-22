@@ -506,8 +506,8 @@ Answer:
         - Reports.
 
     Different teams can own different modules:
-        -> They can develop, test and deploy their modules independently while the modules work together as one application.
-        -> Module Federation is one technique that allows independently built applications to expose and consume modules at runtime.
+        - They can develop, test and deploy their modules independently while the modules work together as one application.
+        - Module Federation is one technique that allows independently built applications to expose and consume modules at runtime.
 
     Advantages:
         - Independent deployments.
@@ -552,14 +552,14 @@ Answer:
                 └── Reports
 
     A design system goes beyond reusable components.
-    It defines:
-        - Design tokens.
-        - Colors.
-        - Typography.
-        - Spacing.
-        - Component variants.
-        - Interaction patterns.
-        - Accessibility guidelines.
+        It defines:
+            - Design tokens.
+            - Colors.
+            - Typography.
+            - Spacing.
+            - Component variants.
+            - Interaction patterns.
+            - Accessibility guidelines.
 
     Examples include Shopify Polaris and IBM Carbon.
 
@@ -606,6 +606,8 @@ Answer:
     -> Continuous Integration (CI): Automatically validates code changes through builds, linting and tests.
 
     -> Continuous Delivery/Deployment (CD): Prepares or automatically releases validated code to an environment.
+
+    ->Note: Linting is the automated process of checking source code for programmatic errors, bugs, stylistic issues, and suspicious patterns before the code is run
 
     Common tools:
         - GitHub Actions.
