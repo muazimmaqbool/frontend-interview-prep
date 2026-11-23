@@ -69,5 +69,4 @@ console.log(firstNonRepeatingChar("aabbcc"));   // null
         
         Final count = { a: 2, b: 1 }
 
-    count[char] = (count[char] || 0) + 1;
 */  

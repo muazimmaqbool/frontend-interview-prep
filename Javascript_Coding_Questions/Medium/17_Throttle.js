@@ -7,8 +7,8 @@ Implement a custom throttle() function that limits how frequently a function can
         - Preserve the original function's arguments and this context.
         - Return the result of the last successful execution.
 
-    Throttle limits a function so that it can execute at most once within a specified time interval. It's commonly used for high-frequency events 
-    like scroll, resize, and mouse movement.
+    Throttle limits a function so that it can execute at most once within a specified time interval. 
+    It's commonly used for high-frequency events like scroll, resize, and mouse movement.
 */
 function throttle(func, delay) {
   //stores the time when func was executed last time
