@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 //useLayoutEffect is a React Hook that runs synchronously right after React has updated the DOM, but before the browser paints the screen
 
 /*
-->Use the useLayoutEffect hook to measure the width of a DOM element and dynamically update its styling based on its width.
+->Use the useLayoutEffect hook to measure the width/height of a DOM elements and dynamically update the styling based on the width/height.
 
 Requirements:
     1. Create a box with some text inside it.
@@ -11,9 +11,9 @@ Requirements:
     3. Use useLayoutEffect to measure its width using getBoundingClientRect().
     4. Display the measured width below the box.
     5. Change the box's background color based on its width:
-    - Less than 300px → Red
-    - 300px–500px → Orange
-    - Greater than 500px → Green
+          - Less than 300px → Red
+          - 300px–500px → Orange
+          - Greater than 500px → Green
     6. Add buttons to increase and decrease the box width.
     7. Ensure measurements are updated before the browser paints.
 */
@@ -29,7 +29,9 @@ const R_Implement_useLayoutEffect = () => {
     if (!boxRef.current) return;
 
     // Get the actual width of the box
-    const { width } = boxRef.current.getBoundingClientRect();
+    const { width } = boxRef.current.getBoundingClientRect(); 
+    // it will still work without this line because we are already setting the width in the state, 
+    // but this is to demonstrate how to measure the actual width of the DOM element
 
     setMeasuredWidth(width);
   }, [width]);
@@ -65,13 +67,13 @@ const R_Implement_useLayoutEffect = () => {
 /*
 ->Interview Follow-up Questions:
   1. What is the difference between useEffect and useLayoutEffect?
-  useEffect generally runs after the browser paints, while useLayoutEffect runs synchronously after DOM updates but before the browser paints.
+      useEffect generally runs after the browser paints, while useLayoutEffect runs synchronously after DOM updates but before the browser paints.
 
   2. Why is useLayoutEffect useful for DOM measurements?
-  It allows us to measure DOM elements and update the UI before the browser paints, preventing layout flickering.
+      It allows us to measure DOM elements and update the UI before the browser paints, preventing layout flickering.
 
   3. When can useLayoutEffect negatively affect performance?
-  Because it blocks browser painting until it finishes. Heavy calculations or unnecessary state updates inside useLayoutEffect can delay rendering and make the UI feel slow.
+      Because it blocks browser painting until it finishes. Heavy calculations or unnecessary state updates inside useLayoutEffect can delay rendering and make the UI feel slow.
 
   Interview tip: 
     Prefer useEffect for most side effects. Use useLayoutEffect only when you need synchronous DOM measurements or visual adjustments before paint.
