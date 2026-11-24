@@ -931,10 +931,10 @@ Answer:
 ------------------------------------------------------------------------------------------------------------------------
 29. How would you design a real-time notification system?
 Answer:
-    First, I would identify the communication requirements.
-        - If the server only needs to push notifications, I would consider SSE.
-        - If bidirectional communication is required, I would use WebSockets.
-        - For simple periodic updates, polling may be sufficient.
+    First,  - I would identify the communication requirements.
+            - If the server only needs to push notifications, I would consider SSE.
+            - If bidirectional communication is required, I would use WebSockets.
+            - For simple periodic updates, polling may be sufficient.
 
         I would additionally implement:
             - Notification persistence on the backend.
@@ -945,7 +945,8 @@ Answer:
             - Appropriate authorization.
             - Pagination for notification history.
     
-    The real-time connection should not be the only source of truth. Persisted notifications should remain accessible after reconnecting or opening another device.
+    The real-time connection should not be the only source of truth. 
+    Persisted notifications should remain accessible after reconnecting or opening another device.
 
 
 -----------------------------------------------------------------------------------------------------------------------
