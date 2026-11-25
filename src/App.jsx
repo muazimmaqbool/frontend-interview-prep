@@ -60,8 +60,8 @@ function App() {
       {/* <N_Auto_Save_Text/> */}
       {/* <O_GetWeekDay/> */}
       {/* <P_Guess_Number/> */}
-      {/* <Q_Implement_useContext/> */}
-      <R_Implement_useLayoutEffect/>
+      <Q_Implement_useContext/>
+      {/* <R_Implement_useLayoutEffect/> */}
 
       {/* ************ Medium Machine Coding Questions ****************** */}
       {/* <A_Debounce/> */}

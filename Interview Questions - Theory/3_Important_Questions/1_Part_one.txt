@@ -6,17 +6,17 @@ Answer:
     -> In functional components, these lifecycle methods are replaced by the useEffect hook. 
        By controlling the dependency array, useEffect can mimic mounting, updating, and unmounting behavior.
 
-    | Lifecycle Phase | Class Component          | Functional Component (Hooks)               |
-    | --------------- | ------------------------ | ------------------------------------------ |
-    | Mounting        | `componentDidMount()`    | `useEffect(() => {}, [])`                  |
-    | Updating        | `componentDidUpdate()`   | `useEffect(() => {}, [dependencies])`      |
-    | Unmounting      | `componentWillUnmount()` | `useEffect(() => { return () => {} }, [])` |
+        | Lifecycle Phase | Class Component          | Functional Component                       |
+        | --------------- | ------------------------ | ------------------------------------------ |
+        | Mounting        | `componentDidMount()`    | `useEffect(() => {}, [])`                  |
+        | Updating        | `componentDidUpdate()`   | `useEffect(() => {}, [dependencies])`      |
+        | Unmounting      | `componentWillUnmount()` | `useEffect(() => { return () => {} }, [])` |
 
 
 ----------------------------------------------------------------------------------------------------------
 Question 2: Explain React reconciliation and the Virtual DOM diffing algorithm ?
 Answer:
-    ->React Reconciliation is the process React uses to determine what has changed in the UI and update only the necessary parts of the 
+    ->React Reconciliation is the process React uses to determine what has changed in the UI and updates only the necessary parts of the 
       DOM instead of re-rendering the entire page.
 
     ->When a component's state or props change, React creates a new Virtual DOM. 
@@ -26,7 +26,7 @@ Answer:
     ->The diffing algorithm is optimized to work efficiently by following a few assumptions:
         1. If two elements have different types (for example, <div> changes to <span>), React removes the old element and creates a new one.
         2. If two elements are of the same type, React updates only the changed attributes instead of replacing the entire element. 
-           Eg. class name of an element is changed it will keep element same only update class name
+           Eg. class name of an element is changed it will keep element same only updates the class name
         3. When rendering lists, React uses the key prop to identify which items have been added, removed, or reordered. 
            Stable and unique keys help React update lists efficiently and avoid unnecessary re-renders.
 
@@ -68,15 +68,15 @@ Answer:
     ->Difference between Server Components and Client Components:
       | Server Components                               | Client Components                                    |
       | ----------------------------------------------- | ---------------------------------------------------- |
-      | Render on the server  ->                          | Render in the browser                                |
+      | Render on the server                            | Render in the browser                                |
       | Can fetch data directly                         | Fetch data using APIs                                |
-      | Didn't send JavaScript to the client by default  | JavaScript is downloaded and executed in the browser |
+      | Didn't send JavaScript to the client by default | JavaScript is downloaded and executed in the browser |
       | Cannot use hooks like `useState` or `useEffect` | Can use React hooks and browser APIs                 |
       | Best for static content and data fetching       | Best for interactive UI                              |
 
     ->Interview Summary:
         "React Server Components are rendered on the server, allowing data fetching and UI generation before sending the result to the browser. 
-         They reduce the client-side JavaScript bundle, which improvies performance and SEO, and keeps sensitive logic on the server. 
+         They reduce the client-side JavaScript bundle, which improves performance and SEO, and keeps sensitive logic on the server. 
          However, they cannot use client-side hooks like useState or useEffect, so interactive features are implemented using Client Components."
 
 
