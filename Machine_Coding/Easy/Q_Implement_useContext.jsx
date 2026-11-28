@@ -19,7 +19,7 @@ const Q_Implement_useContext = () => {
 function Comp2() {
   return (
     <>
-      <h5>component 2</h5>
+      <h2>component 2</h2>
       <Comp3 />
     </>
   );
@@ -27,7 +27,7 @@ function Comp2() {
 function Comp3() {
   return (
     <>
-      <h5>component 3</h5>
+      <h2>component 3</h2>
       <Comp4 />
     </>
   );
@@ -35,7 +35,7 @@ function Comp3() {
 function Comp4() {
   return (
     <>
-      <h5>component 4</h5>
+      <h2>component 4</h2>
       <Comp5 />
     </>
   );
@@ -44,7 +44,7 @@ function Comp5() {
     const value=useContext(context)
   return (
     <>
-      <h5>component 5</h5>
+      <h2>component 5</h2>
       <h4>item in comp5: {value}</h4>
     </>
   );
