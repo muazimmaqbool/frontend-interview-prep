@@ -240,6 +240,11 @@ Explaining process.nextTick() and setImmediate():
         console.log("3. nextTick (Cut the line)");
       });
 
+      //Goes inside Macro task queue so it runs at last
+      setTimeout(()=>{
+        console.log("Hello")
+      },0)
+
       console.log("2. End");
 
     Output:
@@ -247,6 +252,7 @@ Explaining process.nextTick() and setImmediate():
       2. End
       3. nextTick (Cut the line)
       4. setImmediate (Next turn)
+      Hello
 
     Quick Rule of Thumb:
       • Use setImmediate() almost all the time—it is safer and won't accidentally freeze your app.
