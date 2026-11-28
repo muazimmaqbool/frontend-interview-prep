@@ -217,6 +217,41 @@ Answer:
             In Node.js, process.nextTick() executes before both setTimeout() and setImmediate().
 
 
+Explaining process.nextTick() and setImmediate():
+
+    ->process.nextTick() ("Cut the line"): Runs immediately after your current code finishes, before Node.js moves on to anything else.
+      Analogy: You are a waiter taking an order. Before walking back to the kitchen, 
+               you quickly scribble a note on your pad. You do it right now before taking a single step.
+
+    ->setImmediate() ("Next turn"): Runs on the next cycle of the event loop, right after pending I/O tasks (like reading files or network requests) are checked.
+      Analogy: You drop the order off at the kitchen, finish checking the other tables, and come back to handle this task on your next round.
+
+
+    ->Code Example:
+      console.log("1. Start");
+
+      // Runs on the NEXT cycle (after I/O)
+      setImmediate(() => {
+        console.log("4. setImmediate (Next turn)");
+      });
+
+      // Cuts the line: runs RIGHT AFTER the current script finishes
+      process.nextTick(() => {
+        console.log("3. nextTick (Cut the line)");
+      });
+
+      console.log("2. End");
+
+    Output:
+      1. Start
+      2. End
+      3. nextTick (Cut the line)
+      4. setImmediate (Next turn)
+
+    Quick Rule of Thumb:
+      • Use setImmediate() almost all the time—it is safer and won't accidentally freeze your app.
+      • Use process.nextTick() only when you must run something before any I/O events happen (like throwing an error before a file starts reading).
+
 ------------------------------------------------------------------------------------------------------------------------
 Question 10: What are Error Boundaries, and when would you use them?
 Answer:
